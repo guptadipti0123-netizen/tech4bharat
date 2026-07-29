@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The Express/MySQL API in backend/ is a separate CommonJS Node.js project
+    // with its own conventions — it isn't part of this Next.js ESLint scope.
+    "backend/**",
   ]),
 ]);
 

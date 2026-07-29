@@ -1,0 +1,10 @@
+node_modules/
+.env
+npm-debug.log*
+
+# Uploaded files (keep folder structure, ignore actual uploads)
+uploads/**/*
+!uploads/**/.gitkeep
+
+*.log
+.DS_Store
