@@ -7,7 +7,7 @@
 export const ctaBackgroundImage = "/images/cta/cta-background.jpg";
 
 export const aboutImages = {
-  team: "/images/about/about-team.jpg",
+  team: "/images/about/team.png",
   innovationCenter: "/images/about/about-innovation-center.jpg",
   meeting: "/images/about/about-meeting.jpg",
   office: "/images/about/office-contact.jpg",

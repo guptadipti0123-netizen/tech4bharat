@@ -96,7 +96,7 @@ export default function Navbar() {
       >
         <Container className="flex h-17.5 items-center justify-between">
           <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-            <Image src="/logo.png" alt="Tech4Bharat" width={36} height={36} className="rounded-lg" />
+            <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="rounded-lg" />
             <span className="font-heading text-lg font-bold leading-none text-brand-900">
               Tech<span className="text-secondary-500">4</span>Bharat
             </span>
