@@ -12,11 +12,11 @@ interface PageHeroProps {
 
 export default function PageHero({ eyebrow, title, description, image }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-brand-950 via-brand-900 to-brand-950 pb-14 pt-32 text-white">
+    <section className="relative overflow-hidden bg-brand-950 pb-14 pt-32 text-white">
       {image && (
         <>
           <Image src={image} alt="" fill priority sizes="100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-linear-to-b from-brand-950/90 via-brand-950/85 to-brand-950" />
+          <div className="absolute inset-0 bg-brand-950/85" />
         </>
       )}
       <Container className="relative">
@@ -24,7 +24,7 @@ export default function PageHero({ eyebrow, title, description, image }: PageHer
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80">
             {eyebrow}
           </span>
-          <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+          <h1 className="mt-5 text-[30px] font-bold leading-tight tracking-tight sm:text-[42px]">
             {title}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-white/70 sm:text-lg">{description}</p>

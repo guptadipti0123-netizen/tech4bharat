@@ -6,7 +6,7 @@ import { partners } from "@/lib/data";
 
 export default function PartnersPreview() {
   return (
-    <section id="partners" className="border-y border-slate-100 bg-white py-12 sm:py-16">
+    <section id="partners" className="border-y border-slate-100 bg-white py-10 sm:py-17.5">
       <Container>
         <AnimatedSection>
           <SectionTitle eyebrow="Partners" title="Backed by an ecosystem that believes in Bharat" />

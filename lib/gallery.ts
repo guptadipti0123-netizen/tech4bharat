@@ -15,6 +15,8 @@ export const galleryCategories: GalleryCategory[] = [
   { slug: "technology", label: "Technology" },
   { slug: "research", label: "Research" },
   { slug: "agriculture", label: "Agriculture" },
+  { slug: "award-ceremonies", label: "Award Ceremonies" },
+  { slug: "demo-day", label: "Demo Day" },
 ];
 
 export interface GalleryImage {

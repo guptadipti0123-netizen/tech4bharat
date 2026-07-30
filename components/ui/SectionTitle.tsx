@@ -39,7 +39,7 @@ export default function SectionTitle({
       )}
       <h2
         className={cn(
-          "mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl",
+          "mt-4 text-[30px] font-bold tracking-tight sm:text-[42px]",
           isDark ? "text-white" : "text-ink-900"
         )}
       >

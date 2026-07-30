@@ -26,7 +26,7 @@ export default function EventsPage() {
         description="Where founders learn, connect, and grow."
       />
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="bg-white py-10 sm:py-17.5">
         <Container>
           <AnimatedSection>
             <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-slate-600">

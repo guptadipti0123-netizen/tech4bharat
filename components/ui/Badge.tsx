@@ -13,7 +13,7 @@ const variantStyles: Record<BadgeVariant, string> = {
   secondary: "bg-secondary-50 text-secondary-700",
   accent: "bg-accent-500/10 text-accent-600",
   neutral: "bg-slate-100 text-slate-600",
-  success: "bg-emerald-50 text-emerald-700",
+  success: "bg-brand-700 text-white",
 };
 
 export default function Badge({ children, variant = "brand", className }: BadgeProps) {

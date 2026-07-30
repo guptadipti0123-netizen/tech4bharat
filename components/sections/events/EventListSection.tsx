@@ -20,7 +20,7 @@ export default function EventListSection({
   if (events.length === 0) return null;
 
   return (
-    <section className={tone === "muted" ? "bg-slate-50 py-12 sm:py-16" : "py-12 sm:py-16"}>
+    <section className={tone === "muted" ? "bg-slate-50 py-10 sm:py-17.5" : "py-10 sm:py-17.5"}>
       <Container>
         <AnimatedSection>
           <SectionTitle eyebrow="Events" title={title} description={description} />

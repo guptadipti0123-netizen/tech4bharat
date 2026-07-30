@@ -35,6 +35,14 @@ export function InstagramIcon(props: IconProps) {
   );
 }
 
+export function FacebookIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M13.5 21v-7.5h2.52l.38-2.93h-2.9V8.71c0-.85.24-1.43 1.46-1.43h1.56V4.66c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.91v2.18H7.9v2.93h2.54V21h3.06z" />
+    </svg>
+  );
+}
+
 export function WhatsappIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>

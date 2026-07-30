@@ -34,12 +34,10 @@ const baseStyles =
   "relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-medium transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:hover:translate-y-0";
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    "bg-linear-to-r from-brand-700 to-brand-600 text-white hover:from-brand-800 hover:to-brand-700 shadow-lg shadow-brand-700/20",
-  secondary:
-    "bg-linear-to-r from-accent-500 to-accent-400 text-white hover:from-accent-600 hover:to-accent-500 shadow-lg shadow-accent-500/25",
-  outline: "border border-brand-200 text-brand-900 hover:bg-brand-50",
-  ghost: "text-brand-900 hover:bg-brand-50",
+  primary: "bg-brand-700 text-white shadow-md shadow-brand-900/15 hover:bg-secondary-500 hover:text-ink-900",
+  secondary: "bg-secondary-500 text-ink-900 shadow-md shadow-secondary-700/15 hover:bg-brand-700 hover:text-white",
+  outline: "border border-brand-200 text-brand-900 hover:border-secondary-400 hover:bg-secondary-50 hover:text-secondary-700",
+  ghost: "text-brand-900 hover:bg-secondary-50 hover:text-secondary-700",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

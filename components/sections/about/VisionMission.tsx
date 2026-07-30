@@ -5,7 +5,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function VisionMission() {
   return (
-    <section id="vision-mission" className="py-12 sm:py-16">
+    <section id="vision-mission" className="py-10 sm:py-17.5">
       <Container>
         <div className="grid gap-6 lg:grid-cols-2">
           <AnimatedSection>
@@ -14,7 +14,7 @@ export default function VisionMission() {
                 <Compass size={28} />
               </div>
               <h3 className="mt-6 text-2xl font-bold text-ink-900">Our Vision</h3>
-              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
                 A Bharat where geography never limits ambition, and every founder can access
                 the mentorship, capital, and community to build a category-defining company.
               </p>
@@ -27,7 +27,7 @@ export default function VisionMission() {
                 <Target size={28} />
               </div>
               <h3 className="mt-6 text-2xl font-bold text-ink-900">Our Mission</h3>
-              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
                 To incubate and accelerate high-potential Indian startups through structured
                 mentorship, funding access, and ecosystem partnerships that drive real impact.
               </p>

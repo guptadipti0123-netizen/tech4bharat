@@ -41,7 +41,7 @@ const homePrograms: HomeProgram[] = [
 
 export default function ProgramsPreview() {
   return (
-    <section id="programs" className="bg-slate-50 py-12 sm:py-16">
+    <section id="programs" className="bg-slate-50 py-10 sm:py-17.5">
       <Container>
         <AnimatedSection>
           <SectionTitle

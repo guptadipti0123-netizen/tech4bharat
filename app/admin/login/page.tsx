@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-linear-to-b from-brand-950 via-brand-900 to-brand-950 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-brand-950 px-4">
       <div className="w-full max-w-md rounded-3xl bg-white p-8 shadow-2xl sm:p-10">
         <Link href="/" className="font-heading text-xl font-bold text-brand-900">
           Tech<span className="text-accent-500">4</span>Bharat

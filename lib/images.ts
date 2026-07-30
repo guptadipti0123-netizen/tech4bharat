@@ -4,7 +4,6 @@
  * real asset later without touching a single component.
  */
 
-export const heroImage = "/images/hero/hero-main.jpg";
 export const ctaBackgroundImage = "/images/cta/cta-background.jpg";
 
 export const aboutImages = {
@@ -31,7 +30,7 @@ export const domainImageMap: Record<string, string> = {
   "Other Social Impact Innovations": "/images/domains/social-impact.jpg",
   // Aliases for the homepage's shorter Phase 1 domain labels.
   EdTech: "/images/domains/education-technology.jpg",
-  FinTech: "/images/domains/livelihood-generation.jpg",
+  FinTech: "/images/domains/fintech.jpg",
   DeepTech: "/images/domains/ai-ml.jpg",
 };
 

@@ -21,6 +21,7 @@ export default function PartnersPage() {
         eyebrow="Our Network"
         title="Partners"
         description="Trusted by institutions across Bharat."
+        image="/images/partners/partners-collaboration.jpg"
       />
       <PartnerCategoryGrid />
     </>

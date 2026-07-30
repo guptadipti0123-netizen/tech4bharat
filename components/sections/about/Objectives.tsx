@@ -35,7 +35,7 @@ const objectives: Objective[] = [
 
 export default function Objectives() {
   return (
-    <section className="bg-slate-50 py-12 sm:py-16">
+    <section className="bg-slate-50 py-10 sm:py-17.5">
       <Container>
         <AnimatedSection>
           <SectionTitle eyebrow="Objectives" title="What we're working to achieve" />

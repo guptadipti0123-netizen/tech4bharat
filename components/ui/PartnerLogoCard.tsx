@@ -20,8 +20,8 @@ export default function PartnerLogoCard({ name, className }: PartnerLogoCardProp
     >
       <span
         className={cn(
-          "flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-secondary-500 text-sm font-bold text-white",
-          "grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-110"
+          "flex h-11 w-11 items-center justify-center rounded-xl bg-brand-700 text-sm font-bold text-white",
+          "transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary-500 group-hover:text-ink-900"
         )}
       >
         {getInitials(name)}

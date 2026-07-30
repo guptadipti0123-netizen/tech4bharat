@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function MaintenancePage() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-linear-to-b from-brand-950 via-brand-900 to-brand-950 py-32 text-white">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-brand-950 py-32 text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-150 w-150 -translate-x-1/2 rounded-full bg-brand-600/30 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-100 w-100 rounded-full bg-accent-500/20 blur-3xl" />
@@ -18,7 +18,7 @@ export default function MaintenancePage() {
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-accent-400">
           <Wrench size={32} />
         </div>
-        <h1 className="mt-6 text-3xl font-bold sm:text-4xl">We&apos;ll be right back</h1>
+        <h1 className="mt-6 text-[30px] font-bold sm:text-[42px]">We&apos;ll be right back</h1>
         <p className="mx-auto mt-4 max-w-md text-white/70">
           Tech4Bharat is undergoing scheduled maintenance to bring you a better experience.
           Please check back shortly.

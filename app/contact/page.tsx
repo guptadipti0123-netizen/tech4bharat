@@ -44,7 +44,7 @@ export default function ContactPage() {
         description="Whether you're a founder, mentor, or partner, our team would love to hear from you."
       />
 
-      <section className="py-24 sm:py-32">
+      <section className="py-10 sm:py-17.5">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
             <AnimatedSection>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-ink-900/75 via-ink-900/10 to-transparent" />
+                  <div className="absolute inset-0 bg-ink-900/45" />
                   <p className="absolute bottom-4 left-4 text-sm font-medium text-white">
                     Visit us at IIT Bombay, Powai
                   </p>
@@ -105,15 +105,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-linear-to-br from-brand-50 via-white to-slate-50">
-                  <div
-                    className="absolute inset-0 opacity-50"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(#d7e9e0 1px, transparent 1px), linear-gradient(90deg, #d7e9e0 1px, transparent 1px)",
-                      backgroundSize: "28px 28px",
-                    }}
-                  />
+                <div className="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-brand-50">
                   <div className="relative flex flex-col items-center gap-3 text-center">
                     <span className="relative flex h-12 w-12 items-center justify-center">
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500/30" />
@@ -140,12 +132,12 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-slate-50 py-24 sm:py-32">
+      <section className="bg-slate-50 py-10 sm:py-17.5">
         <Container>
           <AnimatedSection>
             <SectionTitle eyebrow="FAQ" title="Frequently asked questions" />
           </AnimatedSection>
-          <div className="mx-auto mt-14 max-w-3xl">
+          <div className="mx-auto mt-14 max-w-2xl">
             <Accordion items={contactFaqs} />
           </div>
         </Container>

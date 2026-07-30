@@ -42,7 +42,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-linear-to-b from-brand-950 via-brand-900 to-brand-950 pb-20 pt-40 text-white">
+      <section className="relative overflow-hidden bg-brand-950 pb-20 pt-40 text-white">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-40 left-1/2 h-100 w-100 -translate-x-1/2 rounded-full bg-brand-600/30 blur-3xl" />
         </div>
@@ -60,7 +60,7 @@ export default async function EventDetailPage({ params }: PageProps) {
               </Badge>
               <span className="text-sm font-medium text-white/60">{event.type}</span>
             </div>
-            <h1 className="mt-4 max-w-3xl text-3xl font-bold sm:text-4xl">{event.title}</h1>
+            <h1 className="mt-4 max-w-3xl text-[30px] font-bold sm:text-[42px]">{event.title}</h1>
             <div className="mt-6 flex flex-wrap gap-6 text-sm text-white/70">
               <span className="flex items-center gap-2">
                 <Calendar size={16} /> {event.date}
@@ -76,12 +76,12 @@ export default async function EventDetailPage({ params }: PageProps) {
         </Container>
       </section>
 
-      <section className="py-24 sm:py-32">
+      <section className="py-10 sm:py-17.5">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
             <AnimatedSection>
               <h2 className="text-2xl font-bold text-ink-900">About this Event</h2>
-              <p className="mt-4 text-lg leading-relaxed text-slate-600">{event.longDescription}</p>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">{event.longDescription}</p>
 
               <h3 className="mt-10 text-xl font-semibold text-ink-900">Speakers</h3>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">

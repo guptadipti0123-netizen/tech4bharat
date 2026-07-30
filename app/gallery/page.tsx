@@ -25,7 +25,7 @@ export default function GalleryPage() {
         title="Moments from the Tech4Bharat ecosystem"
         description="A look inside our bootcamps, mentorship sessions, hackathons, and the founders building Bharat's future."
       />
-      <section className="py-24 sm:py-32">
+      <section className="py-10 sm:py-17.5">
         <Container>
           <GalleryGrid />
         </Container>

@@ -30,7 +30,6 @@ export default function ProgramImageCard({
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-ink-900/70 via-ink-900/5 to-transparent" />
         <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 text-brand-700 shadow-md backdrop-blur-sm">
           <Icon size={20} />
         </div>

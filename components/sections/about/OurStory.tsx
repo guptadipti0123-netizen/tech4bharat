@@ -5,14 +5,14 @@ import { aboutImages } from "@/lib/images";
 
 export default function OurStory() {
   return (
-    <section className="bg-slate-50 py-12 sm:py-16">
+    <section className="bg-slate-50 py-10 sm:py-17.5">
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <AnimatedSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-brand-700">
               Our Story
             </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+            <h2 className="mt-4 text-[30px] font-bold tracking-tight text-ink-900 sm:text-[42px]">
               Born from a simple belief: great ideas shouldn&apos;t need a metro city zip code
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-600">
@@ -24,13 +24,13 @@ export default function OurStory() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg">
+            <div className="group relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg">
               <Image
                 src={aboutImages.team}
                 alt="The Tech4Bharat team collaborating"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           </AnimatedSection>
