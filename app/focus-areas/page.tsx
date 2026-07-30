@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import FocusAreaGrid from "@/components/sections/focus-areas/FocusAreaGrid";
-import ContactCTA from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Focus Areas | Tech4Bharat",
@@ -21,10 +20,9 @@ export default function FocusAreasPage() {
       <PageHero
         eyebrow="Focus Areas"
         title="Domains where we back bold founders"
-        description="From AgriTech to social impact innovation, we support startups solving India's most pressing opportunities."
+        description="The sectors where Tech4Bharat invests mentorship, capital, and ecosystem support."
       />
       <FocusAreaGrid />
-      <ContactCTA />
     </>
   );
 }

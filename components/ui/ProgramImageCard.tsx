@@ -38,7 +38,7 @@ export default function ProgramImageCard({
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold text-ink-900">{title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{description}</p>
-        <Button href={learnMoreHref} variant="ghost" className="-ml-4 mt-5 w-fit">
+        <Button href={learnMoreHref} variant="ghost" size="sm" className="-ml-4 mt-5 w-fit">
           Learn More <ArrowUpRight size={16} />
         </Button>
       </div>

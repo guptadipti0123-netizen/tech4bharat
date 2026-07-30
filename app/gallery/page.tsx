@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
-import GalleryTabs from "@/components/sections/gallery/GalleryTabs";
+import GalleryGrid from "@/components/sections/gallery/GalleryGrid";
 import ContactCTA from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function GalleryPage() {
       />
       <section className="py-24 sm:py-32">
         <Container>
-          <GalleryTabs />
+          <GalleryGrid />
         </Container>
       </section>
       <ContactCTA />

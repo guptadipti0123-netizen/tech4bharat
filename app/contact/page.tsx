@@ -110,7 +110,7 @@ export default function ContactPage() {
                     className="absolute inset-0 opacity-50"
                     style={{
                       backgroundImage:
-                        "linear-gradient(#e0e7ff 1px, transparent 1px), linear-gradient(90deg, #e0e7ff 1px, transparent 1px)",
+                        "linear-gradient(#d7e9e0 1px, transparent 1px), linear-gradient(90deg, #d7e9e0 1px, transparent 1px)",
                       backgroundSize: "28px 28px",
                     }}
                   />

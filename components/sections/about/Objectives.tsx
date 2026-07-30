@@ -1,34 +1,62 @@
-import { CheckCircle2 } from "lucide-react";
+import { GraduationCap, Handshake, Lightbulb, Rocket, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Card from "@/components/ui/Card";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { cn } from "@/lib/utils";
-import { objectives } from "@/lib/data";
+
+interface Objective {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+const objectives: Objective[] = [
+  {
+    title: "Support Innovation",
+    description: "Backing bold ideas with the resources founders need to build.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Startup Incubation",
+    description: "Structured support from first idea to a fundable company.",
+    icon: Rocket,
+  },
+  {
+    title: "Skill Development",
+    description: "Hands-on training in the skills founders need to scale.",
+    icon: GraduationCap,
+  },
+  {
+    title: "Industry Collaboration",
+    description: "Connecting founders with partners across academia and industry.",
+    icon: Handshake,
+  },
+];
 
 export default function Objectives() {
   return (
-    <section className="bg-slate-50 py-24 sm:py-32">
+    <section className="bg-slate-50 py-12 sm:py-16">
       <Container>
         <AnimatedSection>
           <SectionTitle eyebrow="Objectives" title="What we're working to achieve" />
         </AnimatedSection>
 
-        <ul className="mx-auto mt-14 max-w-3xl space-y-4">
-          {objectives.map((objective, i) => (
-            <AnimatedSection key={objective.title} delay={i * 0.06}>
-              <li className="flex items-start gap-4 rounded-3xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/10">
-                <CheckCircle2
-                  size={24}
-                  className={cn(
-                    "mt-0.5 shrink-0",
-                    i % 2 === 0 ? "text-brand-600" : "text-secondary-600"
-                  )}
-                />
-                <span className="text-lg text-slate-700">{objective.title}</span>
-              </li>
-            </AnimatedSection>
-          ))}
-        </ul>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {objectives.map((objective, i) => {
+            const Icon = objective.icon;
+            return (
+              <AnimatedSection key={objective.title} delay={i * 0.06}>
+                <Card>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-ink-900">{objective.title}</h3>
+                  <p className="mt-2 text-slate-600">{objective.description}</p>
+                </Card>
+              </AnimatedSection>
+            );
+          })}
+        </div>
       </Container>
     </section>
   );

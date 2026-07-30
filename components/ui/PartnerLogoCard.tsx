@@ -14,7 +14,7 @@ export default function PartnerLogoCard({ name, className }: PartnerLogoCardProp
   return (
     <div
       className={cn(
-        "group flex h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-900/10",
+        "group flex h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-300 hover:scale-105 hover:border-brand-200 hover:shadow-md",
         className
       )}
     >

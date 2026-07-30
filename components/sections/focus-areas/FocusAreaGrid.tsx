@@ -1,69 +1,77 @@
-import Image from "next/image";
-import {
-  BrainCircuit,
-  Briefcase,
-  CloudSun,
-  Droplets,
-  GraduationCap,
-  HandHeart,
-  HeartPulse,
-  Lightbulb,
-  Recycle,
-  Sprout,
-  Stethoscope,
-  TreePine,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
+import { Cpu, GraduationCap, HeartPulse, Leaf, Sprout, Wallet, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { allFocusAreas, type FocusAreaDetail } from "@/lib/data";
-import { getDomainImage } from "@/lib/images";
+import { cn } from "@/lib/utils";
 
-const icons: Record<FocusAreaDetail["icon"], LucideIcon> = {
-  Sprout,
-  BrainCircuit,
-  CloudSun,
-  HeartPulse,
-  Stethoscope,
-  Droplets,
-  GraduationCap,
-  Zap,
-  Recycle,
-  TreePine,
-  HandHeart,
-  Briefcase,
-  Lightbulb,
-};
+interface FocusArea {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+const focusAreas: FocusArea[] = [
+  {
+    title: "AI & Data Science",
+    description: "Backing founders building applied AI products with real-world impact.",
+    icon: Cpu,
+  },
+  {
+    title: "Healthcare",
+    description: "Solutions expanding access to quality, affordable care across India.",
+    icon: HeartPulse,
+  },
+  {
+    title: "Agriculture",
+    description: "Technology strengthening farmer incomes and rural supply chains.",
+    icon: Leaf,
+  },
+  {
+    title: "FinTech",
+    description: "Products bringing formal financial services to underserved communities.",
+    icon: Wallet,
+  },
+  {
+    title: "Sustainability",
+    description: "Ventures tackling climate, energy, and resource challenges at scale.",
+    icon: Sprout,
+  },
+  {
+    title: "Education",
+    description: "Platforms making quality learning accessible beyond the metros.",
+    icon: GraduationCap,
+  },
+];
 
 export default function FocusAreaGrid() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="bg-white py-12 sm:py-16">
       <Container>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {allFocusAreas.map((area, i) => {
-            const Icon = icons[area.icon];
+        <AnimatedSection>
+          <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-slate-600">
+            Tech4Bharat backs founders building category-defining companies across sectors
+            critical to India&apos;s next decade of growth. These are the domains where we
+            invest our mentorship, capital, and ecosystem support.
+          </p>
+        </AnimatedSection>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {focusAreas.map((area, i) => {
+            const Icon = area.icon;
+            const isGold = i % 2 === 1;
             return (
-              <AnimatedSection key={area.title} delay={(i % 4) * 0.06}>
-                <Card className="flex flex-col overflow-hidden p-0">
-                  <div className="relative h-32 w-full overflow-hidden">
-                    <Image
-                      src={getDomainImage(area.title)}
-                      alt=""
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-ink-900/70 via-ink-900/10 to-transparent" />
-                    <div className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white text-brand-700 shadow-lg">
-                      <Icon size={20} />
-                    </div>
+              <AnimatedSection key={area.title} delay={i * 0.08}>
+                <Card>
+                  <div
+                    className={cn(
+                      "flex h-12 w-12 items-center justify-center rounded-xl",
+                      isGold ? "bg-secondary-50 text-secondary-700" : "bg-brand-50 text-brand-700"
+                    )}
+                  >
+                    <Icon size={24} />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-ink-900">{area.title}</h3>
-                    <p className="mt-2 text-sm text-slate-600">{area.description}</p>
-                  </div>
+                  <h3 className="mt-5 text-xl font-semibold text-ink-900">{area.title}</h3>
+                  <p className="mt-2 text-slate-600">{area.description}</p>
                 </Card>
               </AnimatedSection>
             );

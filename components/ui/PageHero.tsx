@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
@@ -5,25 +6,28 @@ interface PageHeroProps {
   eyebrow: string;
   title: string;
   description: string;
+  /** Optional background photo — falls back to the plain brand gradient when omitted. */
+  image?: string;
 }
 
-export default function PageHero({ eyebrow, title, description }: PageHeroProps) {
+export default function PageHero({ eyebrow, title, description, image }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-brand-950 via-brand-900 to-brand-950 pb-20 pt-40 text-white">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 left-1/2 h-100 w-100 -translate-x-1/2 rounded-full bg-brand-600/30 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-accent-500/20 blur-3xl" />
-      </div>
-
+    <section className="relative overflow-hidden bg-linear-to-b from-brand-950 via-brand-900 to-brand-950 pb-14 pt-32 text-white">
+      {image && (
+        <>
+          <Image src={image} alt="" fill priority sizes="100vw" className="object-cover" />
+          <div className="absolute inset-0 bg-linear-to-b from-brand-950/90 via-brand-950/85 to-brand-950" />
+        </>
+      )}
       <Container className="relative">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80">
             {eyebrow}
           </span>
-          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+          <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
             {title}
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-white/70">{description}</p>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-white/70 sm:text-lg">{description}</p>
         </AnimatedSection>
       </Container>
     </section>

@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ProgramGrid from "@/components/sections/programs/ProgramGrid";
-import FundingOpportunities from "@/components/sections/programs/FundingOpportunities";
-import Resources from "@/components/sections/programs/Resources";
-import ContactCTA from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Startup Support Programs | Tech4Bharat",
@@ -22,14 +19,12 @@ export default function ProgramsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Startup Support Programs"
-        title="Everything a founder needs, in one ecosystem"
-        description="Eleven pillars of support designed to take founders from first idea to sustained growth."
+        eyebrow="What We Offer"
+        title="Programs"
+        description="Structured support for founders at every stage of the journey."
+        image="/images/programs/technology-innovation.jpg"
       />
       <ProgramGrid />
-      <FundingOpportunities />
-      <Resources />
-      <ContactCTA />
     </>
   );
 }

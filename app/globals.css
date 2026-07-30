@@ -7,41 +7,42 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Primary — deep corporate navy (#0B2E59 at 700, the workhorse shade used
+  /* Primary — deep forest green (#1F4E3D at 700, the workhorse shade used
      for buttons, links, and active states across the site). */
-  --color-brand-50: #eef4fb;
-  --color-brand-100: #d9e8f7;
-  --color-brand-200: #b3d1ef;
-  --color-brand-300: #82b3e1;
-  --color-brand-400: #4c8dcb;
-  --color-brand-500: #2a6bae;
-  --color-brand-600: #17518c;
-  --color-brand-700: #0b2e59;
-  --color-brand-800: #092447;
-  --color-brand-900: #071b36;
-  --color-brand-950: #041022;
+  --color-brand-50: #eef5f1;
+  --color-brand-100: #d7e9e0;
+  --color-brand-200: #afd3c1;
+  --color-brand-300: #7fb69c;
+  --color-brand-400: #4e9575;
+  --color-brand-500: #2f7859;
+  --color-brand-600: #245f47;
+  --color-brand-700: #1f4e3d;
+  --color-brand-800: #17392d;
+  --color-brand-900: #0f281f;
+  --color-brand-950: #091a14;
 
-  /* Secondary — teal (#00A99D), used for icon accents, tags, and gradient details. */
-  --color-secondary-50: #e6f9f7;
-  --color-secondary-100: #ccf2ee;
-  --color-secondary-200: #99e6dd;
-  --color-secondary-300: #5cd3c6;
-  --color-secondary-400: #22bcac;
-  --color-secondary-500: #00a99d;
-  --color-secondary-600: #00897f;
-  --color-secondary-700: #016b64;
+  /* Secondary — gold (#D4A017), used for icon accents, tags, and highlight moments. */
+  --color-secondary-50: #fbf3e1;
+  --color-secondary-100: #f6e4b8;
+  --color-secondary-200: #eed089;
+  --color-secondary-300: #e4b855;
+  --color-secondary-400: #daa82e;
+  --color-secondary-500: #d4a017;
+  --color-secondary-600: #b0830e;
+  --color-secondary-700: #8c670b;
 
-  /* Accent — amber (#F59E0B), used for CTAs and highlight moments. */
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --color-accent-600: #d97706;
+  /* Accent aliases the same gold family as secondary — a single warm highlight
+     color across the site rather than a separate third hue. */
+  --color-accent-400: #e4b855;
+  --color-accent-500: #d4a017;
+  --color-accent-600: #b0830e;
 
-  --color-ink-900: #0f172a;
+  --color-ink-900: #222222;
 }
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f8f7f3;
+  --foreground: #222222;
 }
 
 html {

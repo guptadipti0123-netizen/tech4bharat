@@ -1,74 +1,71 @@
-import { Code2, Handshake, Landmark, Lightbulb, Presentation, Rocket, TrendingUp, Wallet } from "lucide-react";
+import { Presentation, Rocket, Users, Wallet, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
-import ProgramCard from "@/components/ui/ProgramCard";
+import ProgramImageCard from "@/components/ui/ProgramImageCard";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-const categories = [
+interface HomeProgram {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const homePrograms: HomeProgram[] = [
   {
     icon: Rocket,
-    title: "Incubation",
+    title: "Startup Incubation",
     description: "Structured, cohort-based support from first idea to a working, fundable company.",
+    image: "/images/programs/incubation.jpg",
   },
   {
-    icon: TrendingUp,
-    title: "Acceleration",
-    description: "Focused sprints to sharpen go-to-market, unit economics, and growth velocity.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation Challenges",
-    description: "Themed competitions that surface and fund bold solutions to real-world problems.",
-  },
-  {
-    icon: Code2,
-    title: "Hackathons",
-    description: "Intensive build sprints connecting student and early-career talent with real startups.",
+    icon: Users,
+    title: "Mentorship",
+    description: "One-on-one guidance from experienced operators and industry mentors.",
+    image: "/images/programs/mentoring.jpg",
   },
   {
     icon: Presentation,
-    title: "Bootcamps",
-    description: "Hands-on workshops covering fundraising, product, and go-to-market fundamentals.",
+    title: "Workshops",
+    description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
+    image: "/images/programs/business-workshop.jpg",
   },
   {
     icon: Wallet,
     title: "Funding Support",
     description: "Grant facilitation and structured introductions to our angel and VC network.",
-  },
-  {
-    icon: Landmark,
-    title: "Government Schemes",
-    description: "Guided access to Startup India, state, and central government incentive programs.",
-  },
-  {
-    icon: Handshake,
-    title: "Investor Connect",
-    description: "Curated investor meets and demo days to help founders raise their next round.",
+    image: "/images/programs/investors-meeting.jpg",
   },
 ];
 
 export default function ProgramsPreview() {
   return (
-    <section id="programs" className="bg-white py-24 sm:py-32">
+    <section id="programs" className="bg-slate-50 py-12 sm:py-16">
       <Container>
         <AnimatedSection>
           <SectionTitle
-            eyebrow="Featured Programs"
+            eyebrow="Programs"
             title="A program for every stage of your journey"
             description="From first idea to scale-up, structured tracks and support designed around founder needs."
           />
         </AnimatedSection>
 
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((category, i) => (
-            <AnimatedSection key={category.title} delay={i * 0.06} animation="scale">
-              <ProgramCard icon={category.icon} title={category.title} description={category.description} />
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {homePrograms.map((program, i) => (
+            <AnimatedSection key={program.title} delay={i * 0.06} animation="scale">
+              <ProgramImageCard
+                image={program.image}
+                icon={program.icon}
+                title={program.title}
+                description={program.description}
+                learnMoreHref="/programs"
+              />
             </AnimatedSection>
           ))}
         </div>
 
-        <AnimatedSection delay={0.3} className="mt-12 text-center">
+        <AnimatedSection delay={0.3} className="mt-10 text-center">
           <Button href="/programs" variant="outline">
             Explore All Programs
           </Button>
