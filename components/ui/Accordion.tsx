@@ -25,7 +25,10 @@ export default function Accordion({ items, className }: AccordionProps) {
         return (
           <div
             key={item.question}
-            className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
+            className={cn(
+              "overflow-hidden rounded-2xl border bg-white transition-colors duration-300",
+              isOpen ? "border-brand-200 shadow-sm" : "border-slate-200"
+            )}
           >
             <button
               type="button"
@@ -34,13 +37,17 @@ export default function Accordion({ items, className }: AccordionProps) {
               aria-expanded={isOpen}
             >
               <span className="font-semibold text-ink-900">{item.question}</span>
-              <ChevronDown
-                size={20}
+              <span
                 className={cn(
-                  "shrink-0 text-brand-600 transition-transform duration-300",
-                  isOpen && "rotate-180"
+                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+                  isOpen ? "bg-brand-500 text-white" : "bg-brand-50 text-brand-600"
                 )}
-              />
+              >
+                <ChevronDown
+                  size={16}
+                  className={cn("transition-transform duration-300", isOpen && "rotate-180")}
+                />
+              </span>
             </button>
             <AnimatePresence initial={false}>
               {isOpen && (

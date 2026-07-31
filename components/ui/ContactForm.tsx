@@ -25,8 +25,8 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-3xl border border-slate-200 bg-white p-12 text-center">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+      <div className="flex flex-col items-center justify-center rounded-4xl border border-slate-200 bg-white p-12 text-center">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-brand-500">
           <CheckCircle2 size={32} />
         </div>
         <h3 className="mt-6 text-2xl font-bold text-ink-900">Message sent!</h3>
@@ -50,7 +50,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-10"
+      className="rounded-4xl border border-slate-200 bg-white p-8 shadow-[0_4px_20px_rgba(22,58,58,0.06)] sm:p-10"
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
@@ -62,7 +62,7 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={(e) => handleChange("name", e.target.value)}
-            className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100"
+            className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-ink-900 transition-colors focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
             placeholder="Your name"
           />
         </div>
@@ -76,7 +76,7 @@ export default function ContactForm() {
             required
             value={form.email}
             onChange={(e) => handleChange("email", e.target.value)}
-            className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100"
+            className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-ink-900 transition-colors focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
             placeholder="you@example.com"
           />
         </div>
@@ -91,7 +91,7 @@ export default function ContactForm() {
           required
           value={form.subject}
           onChange={(e) => handleChange("subject", e.target.value)}
-          className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100"
+          className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-ink-900 transition-colors focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
           placeholder="How can we help?"
         />
       </div>
@@ -106,7 +106,7 @@ export default function ContactForm() {
           rows={5}
           value={form.message}
           onChange={(e) => handleChange("message", e.target.value)}
-          className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100"
+          className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-ink-900 transition-colors focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
           placeholder="Tell us a bit about your startup or query..."
         />
       </div>

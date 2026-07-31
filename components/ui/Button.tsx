@@ -31,13 +31,16 @@ interface Ripple {
 let rippleSeed = 0;
 
 const baseStyles =
-  "relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-medium transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:hover:translate-y-0";
+  "relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:hover:translate-y-0";
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-brand-700 text-white shadow-md shadow-brand-900/15 hover:bg-secondary-500 hover:text-ink-900",
-  secondary: "bg-secondary-500 text-ink-900 shadow-md shadow-secondary-700/15 hover:bg-brand-700 hover:text-white",
-  outline: "border border-brand-200 text-brand-900 hover:border-secondary-400 hover:bg-secondary-50 hover:text-secondary-700",
-  ghost: "text-brand-900 hover:bg-secondary-50 hover:text-secondary-700",
+  primary:
+    "bg-brand-500 text-white shadow-lg shadow-brand-500/25 hover:bg-brand-600 hover:shadow-xl hover:shadow-brand-500/30",
+  secondary:
+    "bg-accent-500 text-ink-900 shadow-lg shadow-accent-500/25 hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/30",
+  outline:
+    "border-2 border-brand-500 bg-white text-brand-700 hover:border-brand-500 hover:bg-brand-500 hover:text-white",
+  ghost: "text-brand-700 hover:bg-brand-50",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

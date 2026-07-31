@@ -29,19 +29,19 @@ const homePrograms: HomeProgram[] = [
     icon: Presentation,
     title: "Workshops",
     description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
-    image: "/images/programs/business-workshop.jpg",
+    image: "/images/gallery/hackathons-1.jpg",
   },
   {
     icon: Wallet,
     title: "Funding Support",
     description: "Grant facilitation and structured introductions to our angel and VC network.",
-    image: "/images/programs/investors-meeting.jpg",
+    image: "/images/gallery/gallery-3.jpg",
   },
 ];
 
 export default function ProgramsPreview() {
   return (
-    <section id="programs" className="bg-slate-50 py-10 sm:py-17.5">
+    <section id="programs" className="bg-brand-50 py-16 sm:py-24">
       <Container>
         <AnimatedSection>
           <SectionTitle

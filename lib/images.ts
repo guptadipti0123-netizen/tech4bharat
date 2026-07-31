@@ -13,10 +13,16 @@ export const aboutImages = {
   office: "/images/about/office-contact.jpg",
 };
 
-/** Focus Areas / domain imagery — one distinct photo per domain. */
+/**
+ * Focus Areas / domain imagery — one distinct photo per domain. A few of the original
+ * `domains/*` assets are either synthetic renders or show non-Indian people, so those
+ * are overridden here with verified real-Indian-people photos from the gallery shoot;
+ * the remaining `domains/*` files are genuine photographs with no people in them
+ * (solar panels, lab equipment, etc.) and are kept as-is.
+ */
 export const domainImageMap: Record<string, string> = {
   AgriTech: "/images/domains/agritech.jpg",
-  "AI/ML": "/images/domains/ai-ml.jpg",
+  "AI/ML": "/images/gallery/hackathons-2.jpg",
   ClimateTech: "/images/domains/climatetech.jpg",
   HealthTech: "/images/domains/healthtech.jpg",
   MedTech: "/images/domains/medtech.jpg",
@@ -24,14 +30,14 @@ export const domainImageMap: Record<string, string> = {
   "Education Technology": "/images/domains/education-technology.jpg",
   "Clean Energy": "/images/domains/clean-energy.jpg",
   "Waste Management": "/images/domains/waste-management.jpg",
-  "Rural Development": "/images/domains/rural-development.jpg",
-  "Women Empowerment": "/images/domains/women-empowerment.jpg",
-  "Livelihood Generation": "/images/domains/livelihood-generation.jpg",
-  "Other Social Impact Innovations": "/images/domains/social-impact.jpg",
+  "Rural Development": "/images/gallery/agriculture-3.jpg",
+  "Women Empowerment": "/images/programs/mentoring.jpg",
+  "Livelihood Generation": "/images/gallery/gallery-9.jpg",
+  "Other Social Impact Innovations": "/images/gallery/gallery-5.jpg",
   // Aliases for the homepage's shorter Phase 1 domain labels.
   EdTech: "/images/domains/education-technology.jpg",
-  FinTech: "/images/domains/fintech.jpg",
-  DeepTech: "/images/domains/ai-ml.jpg",
+  FinTech: "/images/gallery/gallery-3.jpg",
+  DeepTech: "/images/gallery/hackathons-2.jpg",
 };
 
 export function getDomainImage(domain: string | null | undefined): string {
@@ -83,16 +89,16 @@ export function getHeadshot(index: number): string {
 
 /** Events & Bootcamps imagery — one distinct banner per event, keyed by slug. */
 export const eventImageMap: Record<string, string> = {
-  "tech4bharat-startup-bootcamp-2026": "/images/events/event-bootcamp.jpg",
-  "fundraising-masterclass": "/images/events/event-fundraising.jpg",
-  "agritech-innovation-challenge": "/images/events/event-agritech-challenge.jpg",
-  "healthtech-summit-2025": "/images/events/event-healthtech-summit.jpg",
-  "product-validation-bootcamp-2025": "/images/events/event-product-validation.jpg",
-  "women-founders-networking-night": "/images/events/event-women-founders.jpg",
+  "tech4bharat-startup-bootcamp-2026": "/images/gallery/gallery-1.jpg",
+  "fundraising-masterclass": "/images/gallery/gallery-7.jpg",
+  "agritech-innovation-challenge": "/images/domains/agritech.jpg",
+  "healthtech-summit-2025": "/images/domains/healthtech.jpg",
+  "product-validation-bootcamp-2025": "/images/gallery/hackathons-1.jpg",
+  "women-founders-networking-night": "/images/programs/mentoring.jpg",
 };
 
 export function getEventImage(slug: string): string {
-  return eventImageMap[slug] || "/images/events/event-bootcamp.jpg";
+  return eventImageMap[slug] || "/images/gallery/gallery-2.jpg";
 }
 
 /** Blog cover imagery, keyed by category. */
@@ -112,17 +118,17 @@ export function getBlogImage(category: string | null | undefined): string {
 /** Startup Support Programs imagery, keyed by program title. */
 export const programImageMap: Record<string, string> = {
   Incubation: "/images/programs/incubation.jpg",
-  Acceleration: "/images/programs/technology-innovation.jpg",
+  Acceleration: "/images/gallery/hackathons-2.jpg",
   Mentorship: "/images/programs/mentoring.jpg",
-  "Funding Support": "/images/programs/investors-meeting.jpg",
-  "Investor Connect": "/images/programs/startup-pitching.jpg",
-  "Government Scheme Support": "/images/programs/business-workshop.jpg",
-  "Market Access": "/images/programs/entrepreneurs-working.jpg",
-  "Product Validation": "/images/programs/innovation-lab.jpg",
-  "Innovation Challenges": "/images/programs/technology-innovation.jpg",
-  Bootcamps: "/images/programs/business-workshop.jpg",
-  "Startup Bootcamps": "/images/programs/business-workshop.jpg",
-  Networking: "/images/programs/entrepreneurs-working.jpg",
+  "Funding Support": "/images/gallery/gallery-4.jpg",
+  "Investor Connect": "/images/gallery/gallery-3.jpg",
+  "Government Scheme Support": "/images/gallery/gallery-2.jpg",
+  "Market Access": "/images/gallery/hackathons-2.jpg",
+  "Product Validation": "/images/gallery/hackathons-1.jpg",
+  "Innovation Challenges": "/images/gallery/hackathons-1.jpg",
+  Bootcamps: "/images/gallery/gallery-1.jpg",
+  "Startup Bootcamps": "/images/gallery/gallery-1.jpg",
+  Networking: "/images/gallery/hackathons-2.jpg",
 };
 
 export function getProgramImage(title: string): string {

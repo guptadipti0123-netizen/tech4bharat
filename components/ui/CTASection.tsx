@@ -24,11 +24,11 @@ export default function CTASection({ image, eyebrow, title, description, buttons
   return (
     <Container className={className}>
       <AnimatedSection>
-        <div className="relative overflow-hidden rounded-3xl px-8 py-20 text-center shadow-lg sm:px-16 sm:py-24">
+        <div className="relative overflow-hidden rounded-4xl px-8 py-20 text-center shadow-xl sm:px-16 sm:py-24">
           <Image src={image} alt="" fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
-          <div className="absolute inset-0 bg-brand-950/90" />
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-500/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-secondary-500/20 blur-3xl" />
+          <div className="absolute inset-0 bg-linear-to-br from-brand-600/95 via-brand-500/90 to-secondary-600/90" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-400/25 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
 
           <div className="relative mx-auto max-w-2xl">
             {eyebrow && (
@@ -37,9 +37,9 @@ export default function CTASection({ image, eyebrow, title, description, buttons
             <h2 className="mt-2 text-[30px] font-bold text-white sm:text-[42px]">{title}</h2>
             {description && <p className="mt-4 text-lg text-white/70">{description}</p>}
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              {buttons.map((btn) => (
+              {buttons.map((btn, i) => (
                 <Button
-                  key={btn.href + (typeof btn.label === "string" ? btn.label : "")}
+                  key={btn.href + i}
                   href={btn.href}
                   size="lg"
                   variant={btn.variant ?? "secondary"}

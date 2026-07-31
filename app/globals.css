@@ -1,48 +1,114 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-heading: var(--font-poppins);
-  --font-body: var(--font-poppins);
+  --font-heading: var(--font-manrope);
+  --font-body: var(--font-manrope);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Primary — deep forest green (#1F4E3D at 700, the workhorse shade used
-     for buttons, links, and active states across the site). */
-  --color-brand-50: #eef5f1;
-  --color-brand-100: #d7e9e0;
-  --color-brand-200: #afd3c1;
-  --color-brand-300: #7fb69c;
-  --color-brand-400: #4e9575;
-  --color-brand-500: #2f7859;
-  --color-brand-600: #245f47;
-  --color-brand-700: #1f4e3d;
-  --color-brand-800: #17392d;
-  --color-brand-900: #0f281f;
-  --color-brand-950: #091a14;
+  /* Primary — Tech4Bharat green (#4CAF8D at 500), the workhorse shade for
+     buttons, links, active states, and primary accents. */
+  --color-brand-50: #edfbf5;
+  --color-brand-100: #d2f4e5;
+  --color-brand-200: #a6e8cc;
+  --color-brand-300: #79d8b0;
+  --color-brand-400: #5cc49c;
+  --color-brand-500: #4caf8d;
+  --color-brand-600: #3c9277;
+  --color-brand-700: #2f7561;
+  --color-brand-800: #235a4a;
+  --color-brand-900: #1a4438;
+  --color-brand-950: #123028;
 
-  /* Secondary — gold (#D4A017), used for icon accents, tags, and highlight moments. */
-  --color-secondary-50: #fbf3e1;
-  --color-secondary-100: #f6e4b8;
-  --color-secondary-200: #eed089;
-  --color-secondary-300: #e4b855;
-  --color-secondary-400: #daa82e;
-  --color-secondary-500: #d4a017;
-  --color-secondary-600: #b0830e;
-  --color-secondary-700: #8c670b;
+  /* Secondary — teal (#2EC4B6), used for icon accents, gradients, and the
+     "very light teal" alternate section background (secondary-50). */
+  --color-secondary-50: #e7fbf9;
+  --color-secondary-100: #c7f4ef;
+  --color-secondary-200: #93e9df;
+  --color-secondary-300: #5cdbcb;
+  --color-secondary-400: #35ccbb;
+  --color-secondary-500: #2ec4b6;
+  --color-secondary-600: #229d92;
+  --color-secondary-700: #1b7a72;
+  --color-secondary-800: #165f59;
 
-  /* Accent aliases the same gold family as secondary — a single warm highlight
-     color across the site rather than a separate third hue. */
-  --color-accent-400: #e4b855;
-  --color-accent-500: #d4a017;
-  --color-accent-600: #b0830e;
+  /* Accent — warm orange (#FFB84D), used sparingly for highlights, badges,
+     and floating detail moments. */
+  --color-accent-50: #fff6e9;
+  --color-accent-100: #ffeaca;
+  --color-accent-200: #ffd79a;
+  --color-accent-300: #ffce85;
+  --color-accent-400: #ffc369;
+  --color-accent-500: #ffb84d;
+  --color-accent-600: #f5a128;
+  --color-accent-700: #db8a16;
 
-  --color-ink-900: #222222;
+  /* Sand — soft beige, used as one of the alternating section backgrounds. */
+  --color-sand-50: #fdf6ea;
+  --color-sand-100: #fbedd4;
+  --color-sand-200: #f6dfb0;
+  --color-sand-300: #efcd84;
+
+  /* Heading ink — deep teal-green, replaces the old near-black ink-900. */
+  --color-ink-900: #163a3a;
+
+  /* Neutral scale — retuned from Tailwind's default slate to a warm,
+     mint-tinted gray so `slate-*` utilities already used across ~30
+     components automatically match the new palette (slate-200 == the
+     spec's Border color, slate-600 == the spec's Paragraph color). */
+  --color-slate-50: #f6fbf9;
+  --color-slate-100: #eaf6f2;
+  --color-slate-200: #dcefe8;
+  --color-slate-300: #c3ded5;
+  --color-slate-400: #93afa6;
+  --color-slate-500: #7c928a;
+  --color-slate-600: #5f6b6b;
+  --color-slate-700: #46524f;
+  --color-slate-800: #34403d;
+  --color-slate-900: #232d2a;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 7s ease-in-out 1.5s infinite;
+  --animate-blob: blob-drift 18s ease-in-out infinite;
+  --animate-marquee: marquee 38s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(3%, 4%) scale(1.05);
+  }
+  66% {
+    transform: translate(-3%, -2%) scale(0.97);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 :root {
-  --background: #f8f7f3;
-  --foreground: #222222;
+  --background: #f8fffc;
+  --foreground: #5f6b6b;
 }
 
 html {
@@ -63,15 +129,28 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-ink-900);
 }
 
 p {
   line-height: 1.7;
 }
 
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-ink-900);
+}
+
 /* Offset scroll targets so the fixed navbar never covers a section heading */
 section[id] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 110px;
+}
+
+/* Frosted-glass surface used by the floating header and glass cards */
+.glass-surface {
+  background: color-mix(in srgb, white 78%, transparent);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
 }

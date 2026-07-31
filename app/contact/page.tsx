@@ -44,7 +44,7 @@ export default function ContactPage() {
         description="Whether you're a founder, mentor, or partner, our team would love to hear from you."
       />
 
-      <section className="py-10 sm:py-17.5">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
             <AnimatedSection>
@@ -53,7 +53,7 @@ export default function ContactPage() {
 
             <AnimatedSection delay={0.1}>
               <div className="space-y-6">
-                <div className="group relative aspect-video overflow-hidden rounded-2xl shadow-lg">
+                <div className="group relative aspect-video overflow-hidden rounded-3xl border-4 border-white shadow-lg">
                   <Image
                     src={aboutImages.office}
                     alt="Tech4Bharat office at IIT Bombay"
@@ -61,13 +61,13 @@ export default function ContactPage() {
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-ink-900/45" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-900/60 via-transparent to-transparent" />
                   <p className="absolute bottom-4 left-4 text-sm font-medium text-white">
                     Visit us at IIT Bombay, Powai
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
                     Get in Touch
                   </h3>
@@ -105,26 +105,22 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-brand-50">
-                  <div className="relative flex flex-col items-center gap-3 text-center">
-                    <span className="relative flex h-12 w-12 items-center justify-center">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500/30" />
-                      <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-brand-700 text-white shadow-lg">
-                        <MapPin size={20} />
-                      </span>
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-ink-900">IIT Bombay, Powai</p>
-                      <a
-                        href="https://maps.google.com/?q=IIT+Bombay+Powai+Mumbai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-brand-700 hover:text-brand-800"
-                      >
-                        Get Directions <ExternalLink size={12} />
-                      </a>
-                    </div>
-                  </div>
+                <div className="relative h-64 overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+                  <iframe
+                    title="Tech4Bharat office location — IIT Bombay, Powai, Mumbai"
+                    src="https://www.google.com/maps?q=IIT+Bombay,+Powai,+Mumbai,+Maharashtra+400076&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="h-full w-full grayscale-15"
+                  />
+                  <a
+                    href="https://maps.google.com/?q=IIT+Bombay+Powai+Mumbai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-semibold text-brand-700 shadow-lg transition-colors hover:bg-brand-50"
+                  >
+                    Get Directions <ExternalLink size={12} />
+                  </a>
                 </div>
               </div>
             </AnimatedSection>
@@ -132,7 +128,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-slate-50 py-10 sm:py-17.5">
+      <section className="bg-secondary-50 py-16 sm:py-24">
         <Container>
           <AnimatedSection>
             <SectionTitle eyebrow="FAQ" title="Frequently asked questions" />

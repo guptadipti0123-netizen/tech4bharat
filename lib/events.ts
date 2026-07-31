@@ -6,6 +6,12 @@ export interface EventSpeaker {
   designation: string;
 }
 
+export interface AgendaSession {
+  time: string;
+  title: string;
+  speaker?: string;
+}
+
 export interface EventItem {
   id: string;
   slug: string;
@@ -18,6 +24,7 @@ export interface EventItem {
   longDescription: string;
   speakers: EventSpeaker[];
   featured?: boolean;
+  agenda?: AgendaSession[];
 }
 
 // Sample data shaped for a future API integration (e.g. GET /api/events, GET /api/events/:slug)
@@ -40,6 +47,15 @@ export const events: EventItem[] = [
       { name: "Dr. Suresh Menon", designation: "Professor, IIT Bombay" },
     ],
     featured: true,
+    agenda: [
+      { time: "Day 1 · 09:00 AM", title: "Registration & Welcome Breakfast" },
+      { time: "Day 1 · 10:00 AM", title: "Opening Keynote: State of Indian Startups", speaker: "Priya Nair" },
+      { time: "Day 1 · 02:00 PM", title: "Workshop: Product Validation Sprint" },
+      { time: "Day 2 · 10:00 AM", title: "Fundraising Masterclass", speaker: "Rohan Mehta" },
+      { time: "Day 2 · 03:00 PM", title: "Mentor Speed-Dating Sessions" },
+      { time: "Day 3 · 10:00 AM", title: "Pitch Craft Workshop", speaker: "Dr. Suresh Menon" },
+      { time: "Day 3 · 04:00 PM", title: "Demo Day & Closing Ceremony" },
+    ],
   },
   {
     id: "2",
@@ -53,6 +69,11 @@ export const events: EventItem[] = [
     longDescription:
       "Join Blume Ventures Partner Rohan Mehta for a deep-dive workshop on what investors actually look for at the seed stage — covering data room structure, cap table hygiene, and how to tell a compelling growth story with limited traction data.",
     speakers: [{ name: "Rohan Mehta", designation: "Partner, Blume Ventures" }],
+    agenda: [
+      { time: "10:00 AM", title: "What Investors Actually Look For at Seed Stage", speaker: "Rohan Mehta" },
+      { time: "11:00 AM", title: "Building Your Data Room: Live Walkthrough" },
+      { time: "12:00 PM", title: "Open Q&A and 1:1 Office Hours" },
+    ],
   },
   {
     id: "3",

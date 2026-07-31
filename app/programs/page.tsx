@@ -22,7 +22,6 @@ export default function ProgramsPage() {
         eyebrow="What We Offer"
         title="Programs"
         description="Structured support for founders at every stage of the journey."
-        image="/images/programs/technology-innovation.jpg"
       />
       <ProgramGrid />
     </>

@@ -4,7 +4,7 @@ import { ctaBackgroundImage } from "@/lib/images";
 
 export default function ContactCTA() {
   return (
-    <section id="contact" className="bg-slate-50 py-10 sm:py-17.5">
+    <section id="contact" className="bg-white py-16 sm:py-24">
       <CTASection
         image={ctaBackgroundImage}
         eyebrow="Get Started"

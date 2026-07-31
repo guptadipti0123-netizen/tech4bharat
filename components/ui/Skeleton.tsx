@@ -11,7 +11,7 @@ export function Skeleton({ className }: SkeletonProps) {
 
 export function SkeletonCard() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+    <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
       <Skeleton className="h-40 w-full rounded-none" />
       <div className="space-y-3 p-6">
         <Skeleton className="h-4 w-1/3" />

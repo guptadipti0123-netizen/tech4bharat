@@ -14,14 +14,14 @@ export default function PartnerLogoCard({ name, className }: PartnerLogoCardProp
   return (
     <div
       className={cn(
-        "group flex h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-300 hover:scale-105 hover:border-brand-200 hover:shadow-md",
+        "group flex h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg",
         className
       )}
     >
       <span
         className={cn(
-          "flex h-11 w-11 items-center justify-center rounded-xl bg-brand-700 text-sm font-bold text-white",
-          "transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary-500 group-hover:text-ink-900"
+          "flex h-11 w-11 items-center justify-center rounded-full bg-brand-50 text-sm font-bold text-brand-600",
+          "transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-white"
         )}
       >
         {getInitials(name)}

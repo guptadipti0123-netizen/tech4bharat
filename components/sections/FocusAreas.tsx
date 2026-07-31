@@ -52,9 +52,15 @@ const homeFocusAreas: HomeFocusArea[] = [
   },
 ];
 
+const iconTones = [
+  "bg-brand-50/95 text-brand-700",
+  "bg-secondary-50/95 text-secondary-700",
+  "bg-accent-100/95 text-accent-700",
+];
+
 export default function FocusAreas() {
   return (
-    <section id="focus-areas" className="bg-white py-10 sm:py-17.5">
+    <section id="focus-areas" className="bg-secondary-50 py-16 sm:py-24">
       <Container>
         <AnimatedSection>
           <SectionTitle
@@ -67,7 +73,6 @@ export default function FocusAreas() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {homeFocusAreas.map((area, i) => {
             const Icon = area.icon;
-            const isGold = i % 2 === 1;
             return (
               <AnimatedSection key={area.title} delay={i * 0.08}>
                 <Card className="overflow-hidden p-0">
@@ -81,8 +86,8 @@ export default function FocusAreas() {
                     />
                     <div
                       className={cn(
-                        "absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-xl shadow-md backdrop-blur-sm",
-                        isGold ? "bg-secondary-50/95 text-secondary-700" : "bg-brand-50/95 text-brand-700"
+                        "absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-full shadow-md backdrop-blur-sm",
+                        iconTones[i % iconTones.length]
                       )}
                     >
                       <Icon size={22} />

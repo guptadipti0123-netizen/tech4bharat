@@ -30,8 +30,10 @@ export default function SectionTitle({
       {eyebrow && (
         <span
           className={cn(
-            "inline-block rounded-full px-4 py-1.5 text-sm font-semibold tracking-wide",
-            isDark ? "bg-white/10 text-accent-400" : "bg-brand-50 text-brand-700"
+            "inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-semibold tracking-wide",
+            isDark
+              ? "bg-white/10 text-accent-400"
+              : "bg-linear-to-r from-brand-50 to-secondary-50 text-brand-700"
           )}
         >
           {eyebrow}
@@ -39,14 +41,14 @@ export default function SectionTitle({
       )}
       <h2
         className={cn(
-          "mt-4 text-[30px] font-bold tracking-tight sm:text-[42px]",
+          "mt-4 text-[32px] font-extrabold leading-[1.15] tracking-tight sm:text-[44px]",
           isDark ? "text-white" : "text-ink-900"
         )}
       >
         {title}
       </h2>
       {description && (
-        <p className={cn("mt-4 text-lg", isDark ? "text-white/70" : "text-slate-600")}>
+        <p className={cn("mt-4 text-lg leading-relaxed", isDark ? "text-white/70" : "text-slate-600")}>
           {description}
         </p>
       )}

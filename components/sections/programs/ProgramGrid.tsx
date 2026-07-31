@@ -27,19 +27,19 @@ const programs: ProgramItem[] = [
     icon: Presentation,
     title: "Workshops & Training",
     description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
-    image: "/images/programs/business-workshop.jpg",
+    image: "/images/gallery/hackathons-1.jpg",
   },
   {
     icon: Handshake,
     title: "Funding & Networking Support",
     description: "Grant facilitation and curated introductions to our investor and partner network.",
-    image: "/images/programs/investors-meeting.jpg",
+    image: "/images/gallery/gallery-3.jpg",
   },
 ];
 
 export default function ProgramGrid() {
   return (
-    <section className="bg-white py-10 sm:py-17.5">
+    <section className="bg-brand-50 py-16 sm:py-24">
       <Container>
         <AnimatedSection>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-slate-600">
@@ -49,9 +49,9 @@ export default function ProgramGrid() {
           </p>
         </AnimatedSection>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2">
           {programs.map((program, i) => (
-            <AnimatedSection key={program.title} delay={i * 0.06} animation="scale">
+            <AnimatedSection key={program.title} delay={i * 0.08} animation="scale" className="h-full">
               <ProgramImageCard
                 image={program.image}
                 icon={program.icon}

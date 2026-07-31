@@ -35,7 +35,7 @@ const objectives: Objective[] = [
 
 export default function Objectives() {
   return (
-    <section className="bg-slate-50 py-10 sm:py-17.5">
+    <section className="bg-sand-50 py-16 sm:py-24">
       <Container>
         <AnimatedSection>
           <SectionTitle eyebrow="Objectives" title="What we're working to achieve" />
@@ -47,7 +47,7 @@ export default function Objectives() {
             return (
               <AnimatedSection key={objective.title} delay={i * 0.06}>
                 <Card>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-600">
                     <Icon size={24} />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold text-ink-900">{objective.title}</h3>

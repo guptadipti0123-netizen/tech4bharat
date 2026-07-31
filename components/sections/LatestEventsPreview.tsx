@@ -10,7 +10,7 @@ export default function LatestEventsPreview() {
   if (latest.length === 0) return null;
 
   return (
-    <section id="events" className="bg-slate-50 py-10 sm:py-17.5">
+    <section id="events" className="bg-secondary-50 py-16 sm:py-24">
       <Container>
         <AnimatedSection>
           <SectionTitle eyebrow="Events" title="Latest events" />

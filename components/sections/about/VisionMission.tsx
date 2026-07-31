@@ -5,12 +5,12 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function VisionMission() {
   return (
-    <section id="vision-mission" className="py-10 sm:py-17.5">
+    <section id="vision-mission" className="bg-brand-50 py-16 sm:py-24">
       <Container>
         <div className="grid gap-6 lg:grid-cols-2">
           <AnimatedSection>
             <Card>
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-700 text-white">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-500 text-white shadow-md shadow-brand-500/25">
                 <Compass size={28} />
               </div>
               <h3 className="mt-6 text-2xl font-bold text-ink-900">Our Vision</h3>
@@ -23,7 +23,7 @@ export default function VisionMission() {
 
           <AnimatedSection delay={0.1}>
             <Card>
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-500 text-white">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary-500 text-white shadow-md shadow-secondary-500/25">
                 <Target size={28} />
               </div>
               <h3 className="mt-6 text-2xl font-bold text-ink-900">Our Mission</h3>

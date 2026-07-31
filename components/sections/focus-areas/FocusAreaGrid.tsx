@@ -1,59 +1,52 @@
 import Image from "next/image";
-import { Cpu, GraduationCap, HeartPulse, Leaf, Sprout, Wallet, type LucideIcon } from "lucide-react";
+import {
+  Briefcase,
+  BrainCircuit,
+  CloudSun,
+  Droplets,
+  GraduationCap,
+  HandHeart,
+  HeartPulse,
+  Lightbulb,
+  Recycle,
+  Sprout,
+  Stethoscope,
+  TreePine,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { cn } from "@/lib/utils";
+import { allFocusAreas } from "@/lib/data";
+import { getDomainImage } from "@/lib/images";
 
-interface FocusArea {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  image: string;
-}
+const iconMap: Record<string, LucideIcon> = {
+  Sprout,
+  BrainCircuit,
+  CloudSun,
+  HeartPulse,
+  Stethoscope,
+  Droplets,
+  GraduationCap,
+  Zap,
+  Recycle,
+  TreePine,
+  HandHeart,
+  Briefcase,
+  Lightbulb,
+};
 
-const focusAreas: FocusArea[] = [
-  {
-    title: "AI & Data Science",
-    description: "Backing founders building applied AI products with real-world impact.",
-    icon: Cpu,
-    image: "/images/domains/ai-ml.jpg",
-  },
-  {
-    title: "Healthcare",
-    description: "Solutions expanding access to quality, affordable care across India.",
-    icon: HeartPulse,
-    image: "/images/domains/healthtech.jpg",
-  },
-  {
-    title: "Agriculture",
-    description: "Technology strengthening farmer incomes and rural supply chains.",
-    icon: Leaf,
-    image: "/images/domains/agritech.jpg",
-  },
-  {
-    title: "FinTech",
-    description: "Products bringing formal financial services to underserved communities.",
-    icon: Wallet,
-    image: "/images/programs/investors-meeting.jpg",
-  },
-  {
-    title: "Sustainability",
-    description: "Ventures tackling climate, energy, and resource challenges at scale.",
-    icon: Sprout,
-    image: "/images/domains/climatetech.jpg",
-  },
-  {
-    title: "Education",
-    description: "Platforms making quality learning accessible beyond the metros.",
-    icon: GraduationCap,
-    image: "/images/domains/education-technology.jpg",
-  },
+const iconTones = [
+  "bg-brand-50/95 text-brand-700",
+  "bg-secondary-50/95 text-secondary-700",
+  "bg-accent-100/95 text-accent-700",
 ];
 
 export default function FocusAreaGrid() {
   return (
-    <section className="bg-white py-10 sm:py-17.5">
+    <section className="bg-secondary-50 py-16 sm:py-24">
       <Container>
         <AnimatedSection>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-slate-600">
@@ -64,15 +57,14 @@ export default function FocusAreaGrid() {
         </AnimatedSection>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {focusAreas.map((area, i) => {
-            const Icon = area.icon;
-            const isGold = i % 2 === 1;
+          {allFocusAreas.map((area, i) => {
+            const Icon = iconMap[area.icon];
             return (
-              <AnimatedSection key={area.title} delay={i * 0.08}>
+              <AnimatedSection key={area.title} delay={(i % 6) * 0.06}>
                 <Card className="overflow-hidden p-0">
                   <div className="relative h-36 w-full overflow-hidden">
                     <Image
-                      src={area.image}
+                      src={getDomainImage(area.title)}
                       alt={area.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -80,8 +72,8 @@ export default function FocusAreaGrid() {
                     />
                     <div
                       className={cn(
-                        "absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-xl shadow-md backdrop-blur-sm",
-                        isGold ? "bg-secondary-50/95 text-secondary-700" : "bg-brand-50/95 text-brand-700"
+                        "absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-full shadow-md backdrop-blur-sm",
+                        iconTones[i % iconTones.length]
                       )}
                     >
                       <Icon size={22} />

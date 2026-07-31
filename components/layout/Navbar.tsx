@@ -36,6 +36,7 @@ const navLinks: NavItem[] = [
     children: [
       { label: "Focus Areas", href: "/focus-areas" },
       { label: "Programs", href: "/programs" },
+      { label: "Startup Portfolio", href: "/portfolio" },
     ],
   },
   {
@@ -43,10 +44,19 @@ const navLinks: NavItem[] = [
     href: "/partners",
     children: [
       { label: "Partners", href: "/partners" },
+      { label: "Mentors & Advisors", href: "/mentors" },
       { label: "Gallery", href: "/gallery" },
     ],
   },
   { label: "Events", href: "/events" },
+  {
+    label: "Resources",
+    href: "/blogs",
+    children: [
+      { label: "Success Stories", href: "/success-stories" },
+      { label: "Blogs & Resources", href: "/blogs" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -92,13 +102,13 @@ export default function Navbar() {
     <>
       <header
         onMouseLeave={closeWithDelay}
-        className="fixed inset-x-0 top-0 z-50 border-b border-slate-100 bg-white shadow-sm"
+        className="glass-surface fixed inset-x-0 top-0 z-50 rounded-b-3xl shadow-[0_8px_30px_rgba(22,58,58,0.08)]"
       >
         <Container className="flex h-17.5 items-center justify-between">
           <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-            <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="rounded-lg" />
-            <span className="font-heading text-lg font-bold leading-none text-brand-900">
-              Tech<span className="text-secondary-500">4</span>Bharat
+            <Image src="/logo1.png" alt="Tech4Bharat" width={44} height={44} className="rounded-xl" />
+            <span className="font-heading text-xl font-extrabold leading-none text-ink-900">
+              Tech<span className="text-brand-500">4</span>Bharat
             </span>
           </Link>
 
@@ -112,35 +122,37 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "flex items-center gap-1 rounded-full px-4 py-2 font-heading text-sm font-medium transition-colors",
-                    isActive(link) ? "text-brand-700" : "text-slate-700 hover:text-brand-700"
+                    "relative flex items-center gap-1 rounded-full px-4 py-2 font-heading text-sm font-medium transition-colors",
+                    isActive(link) ? "text-white" : "text-slate-700 hover:text-brand-700"
                   )}
                 >
-                  {link.label}
-                  {link.children && (
-                    <ChevronDown
-                      size={14}
-                      className={cn("transition-transform duration-200", openMenu === link.label && "rotate-180")}
+                  {isActive(link) && (
+                    <motion.span
+                      layoutId="navbar-active-pill"
+                      className="absolute inset-0 -z-10 rounded-full bg-brand-500 shadow-md shadow-brand-500/25"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
+                  <span className="relative z-10 flex items-center gap-1">
+                    {link.label}
+                    {link.children && (
+                      <ChevronDown
+                        size={14}
+                        className={cn("transition-transform duration-200", openMenu === link.label && "rotate-180")}
+                      />
+                    )}
+                  </span>
                 </Link>
-                {isActive(link) && (
-                  <motion.span
-                    layoutId="navbar-active-pill"
-                    className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-brand-700"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
 
                 {link.children && (
                   <AnimatePresence>
                     {openMenu === link.label && (
                       <motion.div
-                        initial={{ opacity: 0, y: -6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -6 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute left-0 top-full mt-1 w-56 overflow-hidden rounded-xl border border-slate-100 bg-white py-2 shadow-lg"
+                        initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                        transition={{ duration: 0.18, ease: "easeOut" }}
+                        className="glass-surface absolute left-0 top-full mt-2 w-56 overflow-hidden rounded-2xl border border-slate-100 py-2 shadow-xl"
                       >
                         {link.children.map((child) => (
                           <Link
@@ -162,7 +174,7 @@ export default function Navbar() {
           <div className="flex items-center gap-1 xl:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-full p-2 text-brand-900"
+              className="inline-flex items-center justify-center rounded-full bg-brand-50 p-2 text-brand-700"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -180,7 +192,7 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="overflow-hidden border-t border-slate-100 bg-white xl:hidden"
+              className="glass-surface overflow-hidden rounded-b-3xl border-t border-slate-100 xl:hidden"
             >
               <nav className="flex flex-col gap-1 px-4 pb-6 pt-2">
                 {navLinks.map((link) => (

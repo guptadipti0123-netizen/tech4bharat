@@ -18,10 +18,10 @@ export default function FilterTabs({ options, active, onChange, className }: Fil
           type="button"
           onClick={() => onChange(option)}
           className={cn(
-            "rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200",
+            "rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200",
             active === option
-              ? "border-brand-700 bg-brand-700 text-white"
-              : "border-slate-200 bg-white text-slate-600 hover:border-brand-200 hover:text-brand-700"
+              ? "border-brand-500 bg-brand-500 text-white shadow-md shadow-brand-500/25"
+              : "border-slate-200 bg-white text-slate-600 hover:border-brand-300 hover:text-brand-700"
           )}
         >
           {option}
