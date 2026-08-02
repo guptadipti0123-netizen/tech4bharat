@@ -4,10 +4,11 @@ import { Camera, Sparkles } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import CountUp from "@/components/ui/CountUp";
+import Button from "@/components/ui/Button";
 
 export default function GalleryHero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-[#FFFDF7] via-[#FFF6E4] to-white pb-20 pt-40 sm:pb-28 sm:pt-48">
+    <section className="relative overflow-hidden bg-linear-to-b from-[#FFFDF7] via-[#FFF6E4] to-white pb-14 pt-40 sm:pb-20 sm:pt-48">
       <div
         className="pointer-events-none absolute -left-40 top-10 h-96 w-96 animate-blob rounded-full"
         style={{ background: "radial-gradient(circle, rgba(212,160,23,0.18), transparent 70%)" }}
@@ -41,12 +42,13 @@ export default function GalleryHero() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <a
+            <Button
               href="#gallery-masonry"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1F4E3D] px-7 py-3.5 font-semibold text-white shadow-lg shadow-[#1F4E3D]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#173d2f] hover:shadow-xl hover:shadow-[#1F4E3D]/25"
+              size="lg"
+              className="bg-[#1F4E3D] text-white shadow-lg shadow-[#1F4E3D]/20 hover:bg-[#173d2f] hover:shadow-xl hover:shadow-[#1F4E3D]/25"
             >
               <Camera size={18} /> Explore the Gallery
-            </a>
+            </Button>
           </div>
 
           <div className="mx-auto mt-12 flex max-w-lg items-center justify-center gap-8 border-t border-[#1F4E3D]/10 pt-8 sm:gap-14">
@@ -54,21 +56,21 @@ export default function GalleryHero() {
               <p className="text-3xl font-extrabold text-[#1F4E3D]">
                 <CountUp value={500} suffix="+" />
               </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">Photos</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-600">Photos</p>
             </div>
             <div className="h-10 w-px bg-[#1F4E3D]/10" />
             <div className="text-center">
               <p className="text-3xl font-extrabold text-[#1F4E3D]">
                 <CountUp value={120} suffix="+" />
               </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">Events</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-600">Events</p>
             </div>
             <div className="h-10 w-px bg-[#1F4E3D]/10" />
             <div className="text-center">
               <p className="text-3xl font-extrabold text-[#1F4E3D]">
                 <CountUp value={45} suffix="+" />
               </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">Cities</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-600">Cities</p>
             </div>
           </div>
         </AnimatedSection>

@@ -106,6 +106,16 @@
   }
 }
 
+/** A slow, barely-there Ken Burns drift for full-bleed quote/CTA background photos. */
+@keyframes quote-drift {
+  from {
+    transform: scale(1.06) translate(0, 0);
+  }
+  to {
+    transform: scale(1.14) translate(-1.5%, -1%);
+  }
+}
+
 :root {
   --background: #f8fffc;
   --foreground: #5f6b6b;

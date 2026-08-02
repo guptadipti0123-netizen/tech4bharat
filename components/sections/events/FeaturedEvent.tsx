@@ -17,7 +17,7 @@ export default function FeaturedEvent({ event }: { event: EventItem }) {
         >
           <Image
             src={getEventImage(event.slug)}
-            alt=""
+            alt={event.title}
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 60vw"

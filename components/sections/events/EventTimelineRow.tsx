@@ -27,7 +27,7 @@ export default function EventTimelineRow({ event, reverse = false }: EventTimeli
       >
         <Image
           src={getEventImage(event.slug)}
-          alt=""
+          alt={event.title}
           fill
           loading="lazy"
           sizes="(max-width: 1024px) 100vw, 50vw"
@@ -46,7 +46,7 @@ export default function EventTimelineRow({ event, reverse = false }: EventTimeli
       <div className={cn(reverse && "lg:order-1 lg:text-right")}>
         <div
           className={cn(
-            "flex flex-wrap items-center gap-3 text-sm text-slate-500",
+            "flex flex-wrap items-center gap-3 text-sm text-slate-600",
             reverse && "lg:justify-end"
           )}
         >

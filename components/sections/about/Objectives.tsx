@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Card from "@/components/ui/Card";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import DotGrid from "@/components/ui/DotGrid";
 
 interface Objective {
   title: string;
@@ -35,8 +36,10 @@ const objectives: Objective[] = [
 
 export default function Objectives() {
   return (
-    <section className="bg-sand-50 py-16 sm:py-24">
-      <Container>
+    <section className="relative overflow-hidden bg-sand-50 py-16 sm:py-24">
+      <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
+
+      <Container className="relative">
         <AnimatedSection>
           <SectionTitle eyebrow="Objectives" title="What we're working to achieve" />
         </AnimatedSection>

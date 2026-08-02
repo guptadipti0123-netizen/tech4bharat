@@ -34,7 +34,7 @@ export default function CTASection({ image, eyebrow, title, description, buttons
             {eyebrow && (
               <span className="text-sm font-semibold uppercase tracking-wider text-accent-400">{eyebrow}</span>
             )}
-            <h2 className="mt-2 text-[30px] font-bold text-white sm:text-[42px]">{title}</h2>
+            <h2 className="mt-2 text-[32px] font-extrabold text-white sm:text-[44px]">{title}</h2>
             {description && <p className="mt-4 text-lg text-white/70">{description}</p>}
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               {buttons.map((btn, i) => (

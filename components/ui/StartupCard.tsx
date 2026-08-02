@@ -4,12 +4,13 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import type { Startup } from "@/lib/data";
 
+// All dark enough to keep white monogram text at or above WCAG AA contrast (4.5:1).
 const LOGO_TONES = [
-  "bg-brand-500",
-  "bg-secondary-500",
-  "bg-accent-500",
   "bg-brand-700",
   "bg-secondary-700",
+  "bg-brand-900",
+  "bg-secondary-800",
+  "bg-brand-800",
 ];
 
 function toneForName(name: string): string {
@@ -30,10 +31,10 @@ export default function StartupCard({ startup }: { startup: Startup }) {
       </div>
 
       <h3 className="mt-5 text-xl font-bold text-ink-900">{startup.name}</h3>
-      <span className="mt-1 text-sm font-semibold text-brand-600">{startup.domain}</span>
+      <span className="mt-1 text-sm font-semibold text-brand-700">{startup.domain}</span>
       <p className="mt-3 flex-1 leading-relaxed text-slate-600">{startup.tagline}</p>
 
-      <div className="mt-5 space-y-1.5 border-t border-slate-100 pt-4 text-sm text-slate-500">
+      <div className="mt-5 space-y-1.5 border-t border-slate-100 pt-4 text-sm text-slate-600">
         <p className="flex items-center gap-2">
           <User size={14} className="shrink-0 text-brand-500" /> {startup.founder}
         </p>

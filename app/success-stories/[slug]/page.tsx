@@ -51,13 +51,13 @@ export default async function SuccessStoryDetailPage({ params }: PageProps) {
           <AnimatedSection>
             <Link
               href="/success-stories"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-brand-700"
+              className="-my-2 inline-flex items-center gap-2 py-2 text-sm font-medium text-slate-600 hover:text-brand-700"
             >
               <ArrowLeft size={16} /> Back to Success Stories
             </Link>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Badge variant="success">{story.domain}</Badge>
-              <span className="text-sm font-medium text-slate-500">Success Story</span>
+              <span className="text-sm font-medium text-slate-600">Success Story</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-[32px] font-extrabold text-ink-900 sm:text-[44px]">
               {story.startup}
@@ -101,16 +101,16 @@ export default async function SuccessStoryDetailPage({ params }: PageProps) {
 
             <AnimatedSection delay={0.1}>
               <div className="rounded-3xl border border-slate-200 bg-brand-50 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600">
                   About {story.startup}
                 </h3>
                 <dl className="mt-4 space-y-4 text-sm">
                   <div>
-                    <dt className="text-slate-500">Founder</dt>
+                    <dt className="text-slate-600">Founder</dt>
                     <dd className="font-medium text-ink-900">{story.founder}</dd>
                   </div>
                   <div>
-                    <dt className="text-slate-500">Focus Area</dt>
+                    <dt className="text-slate-600">Focus Area</dt>
                     <dd className="font-medium text-ink-900">{story.domain}</dd>
                   </div>
                 </dl>

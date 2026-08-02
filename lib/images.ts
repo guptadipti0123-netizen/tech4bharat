@@ -8,9 +8,7 @@ export const ctaBackgroundImage = "/images/cta/cta-background.jpg";
 
 export const aboutImages = {
   team: "/images/about/team.png",
-  innovationCenter: "/images/about/about-innovation-center.jpg",
-  meeting: "/images/about/about-meeting.jpg",
-  office: "/images/about/office-contact.jpg",
+  innovationCenter: "/images/gallery/gallery-8.jpg",
 };
 
 /**
@@ -27,7 +25,7 @@ export const domainImageMap: Record<string, string> = {
   HealthTech: "/images/domains/healthtech.jpg",
   MedTech: "/images/domains/medtech.jpg",
   "Water & Sanitation": "/images/domains/water-sanitation.jpg",
-  "Education Technology": "/images/domains/education-technology.jpg",
+  "Education Technology": "/images/gallery/gallery-6.jpg",
   "Clean Energy": "/images/domains/clean-energy.jpg",
   "Waste Management": "/images/domains/waste-management.jpg",
   "Rural Development": "/images/gallery/agriculture-3.jpg",
@@ -35,7 +33,7 @@ export const domainImageMap: Record<string, string> = {
   "Livelihood Generation": "/images/gallery/gallery-9.jpg",
   "Other Social Impact Innovations": "/images/gallery/gallery-5.jpg",
   // Aliases for the homepage's shorter Phase 1 domain labels.
-  EdTech: "/images/domains/education-technology.jpg",
+  EdTech: "/images/gallery/gallery-6.jpg",
   FinTech: "/images/gallery/gallery-3.jpg",
   DeepTech: "/images/gallery/hackathons-2.jpg",
 };
@@ -43,48 +41,6 @@ export const domainImageMap: Record<string, string> = {
 export function getDomainImage(domain: string | null | undefined): string {
   if (domain && domainImageMap[domain]) return domainImageMap[domain];
   return domainImageMap["Other Social Impact Innovations"];
-}
-
-/** Startup Portfolio imagery — deliberately distinct from the Focus Areas domain photos. */
-export const startupImageMap: Record<string, string> = {
-  AgriTech: "/images/startups/startup-agritech.jpg",
-  HealthTech: "/images/startups/startup-healthtech.jpg",
-  EdTech: "/images/startups/startup-edtech.jpg",
-  FinTech: "/images/startups/startup-fintech.jpg",
-  ClimateTech: "/images/startups/startup-climatetech.jpg",
-  DeepTech: "/images/startups/startup-deeptech.jpg",
-  "Water & Sanitation": "/images/startups/startup-water.jpg",
-  "Waste Management": "/images/startups/startup-waste.jpg",
-};
-
-export function getStartupImage(domain: string | null | undefined): string {
-  if (domain && startupImageMap[domain]) return startupImageMap[domain];
-  return startupImageMap.DeepTech;
-}
-
-/** Professional headshot-style portraits — assigned round-robin to mentor/testimonial records. */
-export const headshotImages: string[] = [
-  "/images/mentors/mentor-01.jpg",
-  "/images/mentors/mentor-02.jpg",
-  "/images/mentors/mentor-03.jpg",
-  "/images/mentors/mentor-04.jpg",
-  "/images/mentors/mentor-05.jpg",
-  "/images/mentors/mentor-06.jpg",
-  "/images/mentors/mentor-07.jpg",
-  "/images/mentors/mentor-08.jpg",
-  "/images/mentors/mentor-09.jpg",
-  "/images/mentors/mentor-10.jpg",
-  "/images/mentors/mentor-11.jpg",
-  "/images/mentors/mentor-12.jpg",
-  "/images/mentors/mentor-13.jpg",
-  "/images/mentors/mentor-14.jpg",
-  "/images/mentors/mentor-15.jpg",
-  "/images/mentors/mentor-16.jpg",
-];
-
-export function getHeadshot(index: number): string {
-  const i = ((index % headshotImages.length) + headshotImages.length) % headshotImages.length;
-  return headshotImages[i];
 }
 
 /** Events & Bootcamps imagery — one distinct banner per event, keyed by slug. */
@@ -103,11 +59,11 @@ export function getEventImage(slug: string): string {
 
 /** Blog cover imagery, keyed by category. */
 export const blogCategoryImageMap: Record<string, string> = {
-  Ecosystem: "/images/blogs/blog-ecosystem.jpg",
-  Fundraising: "/images/blogs/blog-fundraising.jpg",
-  Mentorship: "/images/blogs/blog-mentorship.jpg",
-  Policy: "/images/blogs/blog-policy.jpg",
-  Product: "/images/blogs/blog-product.jpg",
+  Ecosystem: "/images/gallery/gallery-9.jpg",
+  Fundraising: "/images/gallery/gallery-13.jpg",
+  Mentorship: "/images/gallery/gallery-12.jpg",
+  Policy: "/images/gallery/gallery-10.jpg",
+  Product: "/images/gallery/gallery-3.jpg",
 };
 
 export function getBlogImage(category: string | null | undefined): string {

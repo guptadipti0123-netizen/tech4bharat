@@ -22,9 +22,9 @@ export default function MaintenancePage() {
           Tech4Bharat is undergoing scheduled maintenance to bring you a better experience.
           Please check back shortly.
         </p>
-        <p className="mt-8 text-sm text-slate-500">
+        <p className="mt-8 text-sm text-slate-600">
           Need something urgent? Email us at{" "}
-          <a href="mailto:hello@tech4bharat.org" className="font-medium text-brand-600 hover:text-brand-700">
+          <a href="mailto:hello@tech4bharat.org" className="font-medium text-brand-700 hover:text-brand-800">
             hello@tech4bharat.org
           </a>
         </p>

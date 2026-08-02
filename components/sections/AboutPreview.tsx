@@ -3,6 +3,7 @@ import { ArrowRight, FlaskConical, Globe2, Rocket, Users, type LucideIcon } from
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import SectionDivider from "@/components/ui/SectionDivider";
 
 interface Highlight {
   icon: LucideIcon;
@@ -14,13 +15,6 @@ const highlights: Highlight[] = [
   { icon: Users, label: "Mentorship" },
   { icon: FlaskConical, label: "Innovation Labs" },
   { icon: Globe2, label: "National Network" },
-];
-
-const badges = [
-  { emoji: "🚀", label: "Startup Support", className: "-left-4 top-10 sm:-left-9 sm:top-12", delay: "0s" },
-  { emoji: "💡", label: "Innovation", className: "-right-2 top-0 sm:-right-7 sm:top-2", delay: "0.7s" },
-  { emoji: "🤝", label: "Mentorship", className: "-left-6 bottom-24 sm:-left-11 sm:bottom-28", delay: "1.4s" },
-  { emoji: "🏆", label: "Success", className: "-right-3 bottom-8 sm:-right-8 sm:bottom-10", delay: "2.1s" },
 ];
 
 /** Organic, blob-shaped photo frame — an off-circle silhouette rather than a hard rectangle. */
@@ -113,22 +107,13 @@ export default function AboutPreview() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-
-                {badges.map((badge) => (
-                  <span
-                    key={badge.label}
-                    className={`absolute inline-flex animate-float items-center gap-1.5 rounded-full border border-[#C89B3C]/25 bg-white/95 px-3.5 py-2 text-xs font-semibold text-[#1F4E3D] shadow-lg backdrop-blur-sm ${badge.className}`}
-                    style={{ animationDelay: badge.delay }}
-                  >
-                    <span aria-hidden="true">{badge.emoji}</span>
-                    {badge.label}
-                  </span>
-                ))}
               </div>
             </div>
           </AnimatedSection>
         </div>
       </Container>
+
+      <SectionDivider color="text-secondary-50" />
     </section>
   );
 }

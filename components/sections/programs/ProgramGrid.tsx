@@ -2,6 +2,7 @@ import { Handshake, Presentation, Rocket, Users, type LucideIcon } from "lucide-
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import ProgramImageCard from "@/components/ui/ProgramImageCard";
+import GeometricPattern from "@/components/ui/GeometricPattern";
 
 interface ProgramItem {
   icon: LucideIcon;
@@ -39,8 +40,10 @@ const programs: ProgramItem[] = [
 
 export default function ProgramGrid() {
   return (
-    <section className="bg-brand-50 py-16 sm:py-24">
-      <Container>
+    <section className="relative overflow-hidden bg-brand-50 py-16 sm:py-24">
+      <GeometricPattern className="-left-32 bottom-0 h-96 w-96 text-brand-700/8" />
+
+      <Container className="relative">
         <AnimatedSection>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-slate-600">
             From first idea to sustained growth, Tech4Bharat offers structured programs that

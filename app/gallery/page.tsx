@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import GalleryHero from "@/components/sections/gallery/GalleryHero";
-import FeaturedEvents from "@/components/sections/gallery/FeaturedEvents";
-import GalleryGrid from "@/components/sections/gallery/GalleryGrid";
+import FeaturedEventsGallery from "@/components/sections/gallery/FeaturedEventsGallery";
+import AppleHorizontalGallery from "@/components/sections/gallery/AppleHorizontalGallery";
+import MasonryGallery from "@/components/sections/gallery/MasonryGallery";
+import BentoGallery from "@/components/sections/gallery/BentoGallery";
+import OffsetGallery from "@/components/sections/gallery/OffsetGallery";
 import TimelineGallery from "@/components/sections/gallery/TimelineGallery";
-import GalleryCarousel from "@/components/sections/gallery/GalleryCarousel";
-import GalleryStats from "@/components/sections/gallery/GalleryStats";
-import GalleryQuote from "@/components/sections/gallery/GalleryQuote";
-import GalleryCTA from "@/components/sections/gallery/GalleryCTA";
+import InfiniteCarousel from "@/components/sections/gallery/InfiniteCarousel";
+import StatsSection from "@/components/sections/gallery/StatsSection";
+import QuoteGallery from "@/components/sections/gallery/QuoteGallery";
+import CTASection from "@/components/sections/gallery/CTASection";
+import { getGalleryCategories, getGallerySections } from "@/lib/gallery/service";
 
 export const metadata: Metadata = {
   title: "Gallery | Tech4Bharat",
@@ -22,21 +26,36 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GalleryPage() {
+/**
+ * Every photo shown on this page is fetched exactly once here, then handed down as props —
+ * no section component imports the data layer itself. Swapping the underlying photo store
+ * (see `lib/gallery/repository.ts`) later never requires touching a component in this tree.
+ *
+ * Seven sections, seven distinct layouts — Magazine, Apple-style horizontal, Pinterest
+ * masonry, Bento grid, scroll-stacked cards, Timeline, and an infinite carousel — each with
+ * its own card design and its own hover signature (zoom, focus-blur, lift, tilt, parallax,
+ * glow, glass-overlay) so no two sections ever look alike.
+ */
+export default async function GalleryPage() {
+  const [sections, categories] = await Promise.all([getGallerySections(), getGalleryCategories()]);
+
   return (
     <>
       <GalleryHero />
-      <FeaturedEvents />
-      <section className="bg-[#FFFDF8] py-20 sm:py-28">
+      <FeaturedEventsGallery photos={sections.magazine} />
+      <AppleHorizontalGallery photos={sections.appleHorizontal} />
+      <section className="bg-[#FFFDF8] py-14 sm:py-20">
         <Container>
-          <GalleryGrid />
+          <MasonryGallery photos={sections.masonry} categories={categories} />
         </Container>
       </section>
-      <TimelineGallery />
-      <GalleryCarousel />
-      <GalleryStats />
-      <GalleryQuote />
-      <GalleryCTA />
+      <BentoGallery photos={sections.bento} />
+      <OffsetGallery photos={sections.offset} />
+      <TimelineGallery photos={sections.timeline} />
+      <InfiniteCarousel photos={sections.carousel} />
+      <StatsSection />
+      <QuoteGallery image={sections.quote} />
+      <CTASection image={sections.cta} />
     </>
   );
 }

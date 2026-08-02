@@ -232,7 +232,7 @@ export const advisors: Advisor[] = [
     institution: "IIT Bombay",
     expertise: "Deep-Tech & Academic Research",
     bio: "Leads applied research translation at IIT Bombay and guides Tech4Bharat's deep-tech cohorts from lab to market.",
-    photo: "/images/domains/education-technology.jpg",
+    photo: "/images/gallery/gallery-6.jpg",
     initials: "SM",
     linkedinUrl: "#",
   },

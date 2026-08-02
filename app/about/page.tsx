@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Compass } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import OurStory from "@/components/sections/about/OurStory";
+import AboutStats from "@/components/sections/about/AboutStats";
 import VisionMission from "@/components/sections/about/VisionMission";
 import Objectives from "@/components/sections/about/Objectives";
 import { aboutImages } from "@/lib/images";
@@ -26,8 +28,10 @@ export default function AboutPage() {
         title="About Tech4Bharat"
         description="A startup incubator helping ambitious founders build category-defining companies across India."
         image={aboutImages.innovationCenter}
+        icon={Compass}
       />
       <OurStory />
+      <AboutStats />
       <VisionMission />
       <Objectives />
     </>

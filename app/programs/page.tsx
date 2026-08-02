@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Lightbulb } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import ProgramGrid from "@/components/sections/programs/ProgramGrid";
 
@@ -22,6 +23,7 @@ export default function ProgramsPage() {
         eyebrow="What We Offer"
         title="Programs"
         description="Structured support for founders at every stage of the journey."
+        icon={Lightbulb}
       />
       <ProgramGrid />
     </>

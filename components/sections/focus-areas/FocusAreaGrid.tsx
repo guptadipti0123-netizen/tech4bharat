@@ -18,6 +18,8 @@ import {
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import Blob from "@/components/ui/Blob";
+import DotGrid from "@/components/ui/DotGrid";
 import { cn } from "@/lib/utils";
 import { allFocusAreas } from "@/lib/data";
 import { getDomainImage } from "@/lib/images";
@@ -46,8 +48,11 @@ const iconTones = [
 
 export default function FocusAreaGrid() {
   return (
-    <section className="bg-secondary-50 py-16 sm:py-24">
-      <Container>
+    <section className="relative overflow-hidden bg-secondary-50 py-16 sm:py-24">
+      <DotGrid className="left-0 top-0 h-full w-full text-secondary-700/6" />
+      <Blob tone="accent" className="-right-24 top-0 h-72 w-72" animate={false} />
+
+      <Container className="relative">
         <AnimatedSection>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-slate-600">
             Tech4Bharat backs founders building category-defining companies across sectors

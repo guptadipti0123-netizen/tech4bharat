@@ -129,7 +129,7 @@ export default function Navbar() {
                   {isActive(link) && (
                     <motion.span
                       layoutId="navbar-active-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-brand-500 shadow-md shadow-brand-500/25"
+                      className="absolute inset-0 -z-10 rounded-full bg-brand-700 shadow-md shadow-brand-700/25"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -218,7 +218,7 @@ export default function Navbar() {
                           }
                           aria-label={`Toggle ${link.label} submenu`}
                           aria-expanded={mobileExpanded === link.label}
-                          className="p-3 text-slate-500"
+                          className="p-3 text-slate-600"
                         >
                           <ChevronDown
                             size={16}

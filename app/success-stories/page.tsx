@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Trophy } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -25,6 +26,7 @@ export default function SuccessStoriesPage() {
         eyebrow="Success Stories"
         title="From idea to real-world impact"
         description="The founders who turned an early idea into a company changing how India works, learns, and heals."
+        icon={Trophy}
       />
 
       <section className="bg-white py-16 sm:py-24">

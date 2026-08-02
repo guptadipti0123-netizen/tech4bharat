@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import { Waypoints } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import MentorCard from "@/components/ui/MentorCard";
+import Blob from "@/components/ui/Blob";
+import DotGrid from "@/components/ui/DotGrid";
 import ContactCTA from "@/components/sections/ContactCTA";
 import { advisors, mentors } from "@/lib/data";
 
@@ -26,10 +29,13 @@ export default function MentorsPage() {
         eyebrow="Our Network"
         title="Mentors & Advisors"
         description="Operators, investors, and academics who give Tech4Bharat founders an unfair advantage."
+        icon={Waypoints}
       />
 
-      <section className="bg-white py-16 sm:py-24">
-        <Container>
+      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+        <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
+
+        <Container className="relative">
           <AnimatedSection>
             <SectionTitle
               eyebrow="Mentors"
@@ -56,8 +62,11 @@ export default function MentorsPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-50 py-16 sm:py-24">
-        <Container>
+      <section className="relative overflow-hidden bg-brand-50 py-16 sm:py-24">
+        <Blob tone="secondary" className="-right-24 top-0 h-72 w-72" />
+        <Blob tone="brand" className="-left-20 bottom-0 h-64 w-64" animate={false} />
+
+        <Container className="relative">
           <AnimatedSection>
             <SectionTitle
               eyebrow="Advisors"

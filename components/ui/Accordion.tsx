@@ -40,7 +40,7 @@ export default function Accordion({ items, className }: AccordionProps) {
               <span
                 className={cn(
                   "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
-                  isOpen ? "bg-brand-500 text-white" : "bg-brand-50 text-brand-600"
+                  isOpen ? "bg-brand-700 text-white" : "bg-brand-50 text-brand-600"
                 )}
               >
                 <ChevronDown

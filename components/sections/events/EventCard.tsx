@@ -12,7 +12,7 @@ export default function EventCard({ event }: { event: EventItem }) {
       <div className="relative h-36 w-full overflow-hidden">
         <Image
           src={getEventImage(event.slug)}
-          alt=""
+          alt={event.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -28,7 +28,7 @@ export default function EventCard({ event }: { event: EventItem }) {
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold text-ink-900">{event.title}</h3>
-        <div className="mt-3 space-y-1.5 text-sm text-slate-500">
+        <div className="mt-3 space-y-1.5 text-sm text-slate-600">
           <p className="flex items-center gap-2">
             <Calendar size={14} /> {event.date}
           </p>

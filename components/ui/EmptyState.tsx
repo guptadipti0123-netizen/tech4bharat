@@ -22,7 +22,7 @@ export default function EmptyState({
         <Icon size={26} />
       </div>
       <h3 className="mt-5 text-lg font-semibold text-ink-900">{title}</h3>
-      {description && <p className="mt-2 max-w-sm text-slate-500">{description}</p>}
+      {description && <p className="mt-2 max-w-sm text-slate-600">{description}</p>}
       {actionLabel && actionHref && (
         <Button href={actionHref} variant="outline" className="mt-6">
           {actionLabel}

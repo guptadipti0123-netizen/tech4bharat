@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Layers } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import FocusAreaGrid from "@/components/sections/focus-areas/FocusAreaGrid";
 
@@ -21,6 +22,7 @@ export default function FocusAreasPage() {
         eyebrow="Focus Areas"
         title="Domains where we back bold founders"
         description="The sectors where Tech4Bharat invests mentorship, capital, and ecosystem support."
+        icon={Layers}
       />
       <FocusAreaGrid />
     </>

@@ -13,6 +13,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tech4bharat.org"),
   title: "Tech4Bharat | Empowering India's Next-Generation Startups",
   description:
     "Tech4Bharat is a startup incubator helping ambitious Indian founders build category-defining companies through mentorship, capital access, and a thriving startup ecosystem.",

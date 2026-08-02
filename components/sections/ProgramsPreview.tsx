@@ -4,6 +4,9 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 import ProgramImageCard from "@/components/ui/ProgramImageCard";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import Blob from "@/components/ui/Blob";
+import GeometricPattern from "@/components/ui/GeometricPattern";
+import SectionDivider from "@/components/ui/SectionDivider";
 
 interface HomeProgram {
   icon: LucideIcon;
@@ -41,8 +44,11 @@ const homePrograms: HomeProgram[] = [
 
 export default function ProgramsPreview() {
   return (
-    <section id="programs" className="bg-brand-50 py-16 sm:py-24">
-      <Container>
+    <section id="programs" className="relative overflow-hidden bg-brand-50 py-16 sm:py-24">
+      <GeometricPattern className="-right-32 -top-32 h-96 w-96 text-brand-700/8" />
+      <Blob tone="brand" className="-left-24 bottom-10 h-72 w-72" animate={false} />
+
+      <Container className="relative">
         <AnimatedSection>
           <SectionTitle
             eyebrow="Programs"
@@ -71,6 +77,8 @@ export default function ProgramsPreview() {
           </Button>
         </AnimatedSection>
       </Container>
+
+      <SectionDivider color="text-sand-50" />
     </section>
   );
 }

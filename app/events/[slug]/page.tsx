@@ -50,7 +50,7 @@ export default async function EventDetailPage({ params }: PageProps) {
           <AnimatedSection>
             <Link
               href="/events"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-brand-700"
+              className="-my-2 inline-flex items-center gap-2 py-2 text-sm font-medium text-slate-600 hover:text-brand-700"
             >
               <ArrowLeft size={16} /> Back to Events
             </Link>
@@ -58,7 +58,7 @@ export default async function EventDetailPage({ params }: PageProps) {
               <Badge variant={event.status === "Upcoming" ? "success" : "neutral"}>
                 {event.status}
               </Badge>
-              <span className="text-sm font-medium text-slate-500">{event.type}</span>
+              <span className="text-sm font-medium text-slate-600">{event.type}</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-[32px] font-extrabold text-ink-900 sm:text-[44px]">{event.title}</h1>
             <div className="mt-6 flex flex-wrap gap-6 text-sm text-slate-600">
@@ -90,11 +90,11 @@ export default async function EventDetailPage({ params }: PageProps) {
                     {event.agenda.map((session) => (
                       <div key={session.time + session.title} className="relative">
                         <span className="absolute -left-7.25 top-1 h-3 w-3 rounded-full border-2 border-white bg-brand-500 shadow-[0_0_0_3px_rgba(76,175,141,0.2)]" />
-                        <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-brand-600">
+                        <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-brand-700">
                           <Clock size={12} /> {session.time}
                         </span>
                         <p className="mt-1 font-semibold text-ink-900">{session.title}</p>
-                        {session.speaker && <p className="text-sm text-slate-500">{session.speaker}</p>}
+                        {session.speaker && <p className="text-sm text-slate-600">{session.speaker}</p>}
                       </div>
                     ))}
                   </div>
@@ -117,7 +117,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                     </div>
                     <div>
                       <p className="font-semibold text-ink-900">{speaker.name}</p>
-                      <p className="text-sm text-slate-500">{speaker.designation}</p>
+                      <p className="text-sm text-slate-600">{speaker.designation}</p>
                     </div>
                   </div>
                 ))}
@@ -126,20 +126,20 @@ export default async function EventDetailPage({ params }: PageProps) {
 
             <AnimatedSection delay={0.1}>
               <div className="rounded-3xl border border-slate-200 bg-brand-50 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600">
                   Event Details
                 </h3>
                 <dl className="mt-4 space-y-4 text-sm">
                   <div>
-                    <dt className="text-slate-500">Date</dt>
+                    <dt className="text-slate-600">Date</dt>
                     <dd className="font-medium text-ink-900">{event.date}</dd>
                   </div>
                   <div>
-                    <dt className="text-slate-500">Venue</dt>
+                    <dt className="text-slate-600">Venue</dt>
                     <dd className="font-medium text-ink-900">{event.venue}</dd>
                   </div>
                   <div>
-                    <dt className="text-slate-500">Format</dt>
+                    <dt className="text-slate-600">Format</dt>
                     <dd className="font-medium text-ink-900">{event.type}</dd>
                   </div>
                 </dl>
