@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getInitials } from "@/lib/utils";
 import { allPartners } from "@/lib/partners";
 
@@ -18,9 +19,15 @@ export default function TrustedByMarquee() {
               key={`${partner.name}-${i}`}
               className="flex shrink-0 items-center gap-2.5 text-sm font-semibold text-slate-500"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-xs font-bold text-brand-600">
-                {getInitials(partner.name)}
-              </span>
+              {partner.logo ? (
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-slate-100">
+                  <Image src={partner.logo} alt="" width={22} height={22} className="object-contain" />
+                </span>
+              ) : (
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-xs font-bold text-brand-600">
+                  {getInitials(partner.name)}
+                </span>
+              )}
               {partner.name}
             </span>
           ))}

@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
-import GalleryHero from "@/components/sections/gallery/GalleryHero";
-import FeaturedEventsGallery from "@/components/sections/gallery/FeaturedEventsGallery";
-import AppleHorizontalGallery from "@/components/sections/gallery/AppleHorizontalGallery";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import MasonryGallery from "@/components/sections/gallery/MasonryGallery";
-import BentoGallery from "@/components/sections/gallery/BentoGallery";
-import OffsetGallery from "@/components/sections/gallery/OffsetGallery";
-import TimelineGallery from "@/components/sections/gallery/TimelineGallery";
-import InfiniteCarousel from "@/components/sections/gallery/InfiniteCarousel";
-import StatsSection from "@/components/sections/gallery/StatsSection";
-import QuoteGallery from "@/components/sections/gallery/QuoteGallery";
-import CTASection from "@/components/sections/gallery/CTASection";
-import { getGalleryCategories, getGallerySections } from "@/lib/gallery/service";
+import { getAllGalleryPhotos, getGalleryCategories } from "@/lib/gallery/service";
 
 export const metadata: Metadata = {
   title: "Gallery | Tech4Bharat",
@@ -26,36 +17,34 @@ export const metadata: Metadata = {
   },
 };
 
-/**
- * Every photo shown on this page is fetched exactly once here, then handed down as props —
- * no section component imports the data layer itself. Swapping the underlying photo store
- * (see `lib/gallery/repository.ts`) later never requires touching a component in this tree.
- *
- * Seven sections, seven distinct layouts — Magazine, Apple-style horizontal, Pinterest
- * masonry, Bento grid, scroll-stacked cards, Timeline, and an infinite carousel — each with
- * its own card design and its own hover signature (zoom, focus-blur, lift, tilt, parallax,
- * glow, glass-overlay) so no two sections ever look alike.
- */
+/** Deliberately minimal: heading, one-line description, the filterable photo grid, and a
+ *  Load More button — nothing else. The full photo library is fetched once here and handed
+ *  down as a prop; the grid itself owns filtering, pagination, and the lightbox. */
 export default async function GalleryPage() {
-  const [sections, categories] = await Promise.all([getGallerySections(), getGalleryCategories()]);
+  const [photos, categories] = await Promise.all([getAllGalleryPhotos(), getGalleryCategories()]);
 
   return (
-    <>
-      <GalleryHero />
-      <FeaturedEventsGallery photos={sections.magazine} />
-      <AppleHorizontalGallery photos={sections.appleHorizontal} />
-      <section className="bg-[#FFFDF8] py-14 sm:py-20">
-        <Container>
-          <MasonryGallery photos={sections.masonry} categories={categories} />
-        </Container>
-      </section>
-      <BentoGallery photos={sections.bento} />
-      <OffsetGallery photos={sections.offset} />
-      <TimelineGallery photos={sections.timeline} />
-      <InfiniteCarousel photos={sections.carousel} />
-      <StatsSection />
-      <QuoteGallery image={sections.quote} />
-      <CTASection image={sections.cta} />
-    </>
+    <section className="bg-white pb-10 pt-20 sm:pt-24">
+      <Container>
+        <AnimatedSection className="mx-auto max-w-2xl text-center">
+          <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
+            <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
+            Explore
+            <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
+          </span>
+          <h1 className="mt-4 text-[32px] font-extrabold tracking-tight text-ink-900 sm:text-[44px]">
+            Gallery
+          </h1>
+          <p className="mx-auto mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+            Real moments from India&apos;s innovation ecosystem — hackathons, incubation, mentorship,
+            and startup showcases.
+          </p>
+        </AnimatedSection>
+
+        <div className="mt-10">
+          <MasonryGallery photos={photos} categories={categories} />
+        </div>
+      </Container>
+    </section>
   );
 }

@@ -4,7 +4,7 @@ import AboutPreview from "@/components/sections/AboutPreview";
 import FocusAreas from "@/components/sections/FocusAreas";
 import ProgramsPreview from "@/components/sections/ProgramsPreview";
 import PartnersPreview from "@/components/sections/PartnersPreview";
-import ContactCTA from "@/components/sections/ContactCTA";
+import GalleryPreview from "@/components/sections/GalleryPreview";
 
 export const metadata: Metadata = {
   title: "Tech4Bharat | Empowering India's Next-Generation Startups",
@@ -54,12 +54,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <Hero />
-      
       <AboutPreview />
       <FocusAreas />
       <ProgramsPreview />
       <PartnersPreview />
-      <ContactCTA />
+      <GalleryPreview />
     </>
   );
 }

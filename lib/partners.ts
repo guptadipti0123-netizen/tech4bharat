@@ -1,6 +1,9 @@
 export interface Partner {
   name: string;
   description: string;
+  /** Optional real logo image path (e.g. "/images/partners/iit-bombay.svg"). Most entries
+   *  omit this today — PartnerCard/TrustedByMarquee fall back to an initials monogram. */
+  logo?: string;
 }
 
 export interface PartnerCategoryGroup {
@@ -21,6 +24,8 @@ export const partnerCategories: PartnerCategoryGroup[] = [
       { name: "IIT Delhi", description: "Joint innovation challenges and student founder pipelines." },
       { name: "IIM Ahmedabad", description: "Go-to-market and business strategy mentorship for cohorts." },
       { name: "BITS Pilani", description: "Engineering talent pipeline and campus innovation cells." },
+      { name: "COEP Technological University", description: "Pune-based technical talent pipeline and joint workshop programming." },
+      { name: "VJTI Mumbai", description: "Engineering research collaboration and student founder outreach in Mumbai." },
     ],
   },
   {
@@ -79,6 +84,7 @@ export const partnerCategories: PartnerCategoryGroup[] = [
       { name: "TIFR", description: "Fundamental research partnerships for deep-tech founders." },
       { name: "CSIR", description: "National lab access for applied science ventures." },
       { name: "BIRAC", description: "Biotech innovation funding and regulatory guidance." },
+      { name: "Observer Research Foundation", description: "Policy research collaboration on technology and governance." },
     ],
   },
   {
@@ -92,14 +98,5 @@ export const partnerCategories: PartnerCategoryGroup[] = [
     ],
   },
 ];
-
-/** The single most prominent partnership, spotlighted at the top of the Partners page. */
-export const featuredPartner: Partner & { category: string; stat: string } = {
-  name: "IIT Bombay",
-  category: "Founding Academic Partner",
-  description:
-    "Tech4Bharat was founded on the IIT Bombay campus, and it remains our deepest institutional partnership — shared lab infrastructure, joint research translation programs, and a direct pipeline of student founders into our incubation cohorts.",
-  stat: "Since 2023",
-};
 
 export const allPartners: Partner[] = partnerCategories.flatMap((group) => group.partners);

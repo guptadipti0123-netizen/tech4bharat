@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Images, X, ZoomIn } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, Images, X, ZoomIn } from "lucide-react";
 import FilterTabs from "@/components/ui/FilterTabs";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import EmptyState from "@/components/ui/EmptyState";
@@ -22,6 +22,8 @@ function masonryHeight(index: number): string {
   return TIER_HEIGHTS[index % TIER_HEIGHTS.length];
 }
 
+const PAGE_SIZE = 16;
+
 /** Pinterest-style masonry layout — the comprehensive, filterable photo archive. Purely
  *  presentational: the full photo library and category taxonomy both arrive as props. */
 export default function MasonryGallery({ photos, categories }: MasonryGalleryProps) {
@@ -30,12 +32,16 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
   const labelToSlug = new Map(categories.map((c) => [c.label, c.slug]));
 
   const [activeFilter, setActiveFilter] = useState("All");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered: GalleryPhoto[] =
     activeFilter === "All"
       ? photos
       : photos.filter((photo) => photo.categories.includes(labelToSlug.get(activeFilter) ?? ""));
+
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
 
   function openLightbox(index: number) {
     setLightboxIndex(index);
@@ -46,26 +52,26 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
   }
 
   function showNext() {
-    setLightboxIndex((i) => (i === null ? null : (i + 1) % filtered.length));
+    setLightboxIndex((i) => (i === null ? null : (i + 1) % visible.length));
   }
 
   function showPrev() {
-    setLightboxIndex((i) => (i === null ? null : (i - 1 + filtered.length) % filtered.length));
+    setLightboxIndex((i) => (i === null ? null : (i - 1 + visible.length) % visible.length));
   }
 
-  const active = lightboxIndex !== null ? filtered[lightboxIndex] : null;
+  const active = lightboxIndex !== null ? visible[lightboxIndex] : null;
 
   useEffect(() => {
     if (lightboxIndex === null) return;
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") setLightboxIndex(null);
-      if (e.key === "ArrowRight") setLightboxIndex((i) => (i === null ? null : (i + 1) % filtered.length));
+      if (e.key === "ArrowRight") setLightboxIndex((i) => (i === null ? null : (i + 1) % visible.length));
       if (e.key === "ArrowLeft")
-        setLightboxIndex((i) => (i === null ? null : (i - 1 + filtered.length) % filtered.length));
+        setLightboxIndex((i) => (i === null ? null : (i - 1 + visible.length) % visible.length));
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [lightboxIndex, filtered.length]);
+  }, [lightboxIndex, visible.length]);
 
   return (
     <div id="gallery-masonry" className="scroll-mt-28">
@@ -75,6 +81,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
           active={activeFilter}
           onChange={(value) => {
             setActiveFilter(value);
+            setVisibleCount(PAGE_SIZE);
             setLightboxIndex(null);
           }}
         />
@@ -87,40 +94,54 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
           description="Check back soon — we're always adding new moments from the Tech4Bharat ecosystem."
         />
       ) : (
-        <div className="mt-8 columns-2 gap-4 sm:columns-3 lg:columns-4">
-          <AnimatePresence initial={false} mode="popLayout">
-            {filtered.map((photo, i) => (
-              <motion.button
-                key={photo.id + activeFilter}
+        <>
+          <div className="mt-8 columns-2 gap-4 sm:columns-3 lg:columns-4">
+            <AnimatePresence initial={false} mode="popLayout">
+              {visible.map((photo, i) => (
+                <motion.button
+                  key={photo.id + activeFilter}
+                  type="button"
+                  initial={{ opacity: 0, scale: 0.92, y: 16 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.92 }}
+                  transition={{ duration: 0.4, delay: (i % 8) * 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
+                  onClick={() => openLightbox(i)}
+                  aria-label={`View ${photo.alt}`}
+                  className={cn(
+                    "group relative mb-4 block w-full overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all duration-300 ease-out hover:z-10 hover:-translate-y-2 hover:shadow-[0_20px_36px_rgba(31,78,61,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F4E3D] focus-visible:ring-offset-2",
+                    masonryHeight(i)
+                  )}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover object-top"
+                  />
+                  <div className="absolute inset-0 flex items-end bg-linear-to-t from-[#1F4E3D]/0 to-transparent p-4 opacity-0 transition-all duration-300 group-hover:from-[#1F4E3D]/70 group-hover:opacity-100">
+                    <span className="flex items-center gap-1.5 text-xs font-semibold text-white">
+                      <ZoomIn size={14} /> View
+                    </span>
+                  </div>
+                </motion.button>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {hasMore && (
+            <div className="mt-4 flex justify-center">
+              <button
                 type="button"
-                initial={{ opacity: 0, scale: 0.92, y: 16 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ duration: 0.4, delay: (i % 8) * 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
-                onClick={() => openLightbox(i)}
-                aria-label={`View ${photo.alt}`}
-                className={cn(
-                  "group relative mb-4 block w-full overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all duration-300 ease-out hover:z-10 hover:-translate-y-2 hover:shadow-[0_20px_36px_rgba(31,78,61,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F4E3D] focus-visible:ring-offset-2",
-                  masonryHeight(i)
-                )}
+                onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-2.5 text-sm font-semibold text-[#1F4E3D] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1F4E3D]/30 hover:shadow-md"
               >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-0 flex items-end bg-linear-to-t from-[#1F4E3D]/0 to-transparent p-4 opacity-0 transition-all duration-300 group-hover:from-[#1F4E3D]/70 group-hover:opacity-100">
-                  <span className="flex items-center gap-1.5 text-xs font-semibold text-white">
-                    <ZoomIn size={14} /> View
-                  </span>
-                </div>
-              </motion.button>
-            ))}
-          </AnimatePresence>
-        </div>
+                Load More <ChevronDown size={16} />
+              </button>
+            </div>
+          )}
+        </>
       )}
 
       <AnimatePresence>
@@ -145,7 +166,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
             </button>
 
             <span className="absolute left-5 top-6 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white">
-              {lightboxIndex !== null ? lightboxIndex + 1 : 0} / {filtered.length}
+              {lightboxIndex !== null ? lightboxIndex + 1 : 0} / {visible.length}
             </span>
 
             <button

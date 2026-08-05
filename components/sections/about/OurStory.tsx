@@ -1,30 +1,54 @@
 import Image from "next/image";
-import { MapPin } from "lucide-react";
+import { Lightbulb, MapPin, TrendingUp } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Blob from "@/components/ui/Blob";
 import { aboutImages } from "@/lib/images";
 
+const storyBlocks = [
+  {
+    icon: Lightbulb,
+    label: "The Gap",
+    body: "Tech4Bharat started at IIT Bombay to close a gap: brilliant ideas were being built across India, but the support to turn them into companies was concentrated in a handful of cities.",
+  },
+  {
+    icon: TrendingUp,
+    label: "Today",
+    body: "We back founders wherever they are with mentorship, capital access, and a community that goes the distance.",
+  },
+];
+
 export default function OurStory() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+    <section id="our-story" className="relative overflow-hidden bg-white py-8 sm:py-12">
       <Blob tone="accent" className="-right-28 top-10 h-72 w-72" animate={false} />
 
       <Container className="relative">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-linear-to-r from-brand-50 to-secondary-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
+            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
+              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
               Our Story
             </span>
             <h2 className="mt-4 text-[32px] font-extrabold tracking-tight text-ink-900 sm:text-[44px]">
               Born from a simple belief: great ideas shouldn&apos;t need a metro city zip code
             </h2>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-600">
-              Tech4Bharat started at IIT Bombay to close a gap: brilliant ideas were being
-              built across India, but the support to turn them into companies was
-              concentrated in a handful of cities. Today, we back founders wherever they are
-              with mentorship, capital access, and a community that goes the distance.
-            </p>
+            <div className="relative mt-8 max-w-lg space-y-7 border-l-2 border-brand-100 pl-7">
+              {storyBlocks.map((block) => {
+                const Icon = block.icon;
+                return (
+                  <div key={block.label} className="relative">
+                    <span className="absolute -left-11 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-brand-700 text-white shadow-md shadow-brand-700/25">
+                      <Icon size={15} />
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wide text-brand-600">
+                      {block.label}
+                    </span>
+                    <p className="mt-1 leading-relaxed text-slate-600">{block.body}</p>
+                  </div>
+                );
+              })}
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>

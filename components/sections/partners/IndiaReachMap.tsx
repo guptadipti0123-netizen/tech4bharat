@@ -29,7 +29,7 @@ const cities: CityNode[] = [
  *  so it reads as premium data-viz (Stripe/Linear style) rather than an inaccurate outline. */
 export default function IndiaReachMap() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+    <section className="relative overflow-hidden bg-white py-8 sm:py-12">
       <Container className="relative">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <AnimatedSection>

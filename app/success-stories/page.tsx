@@ -4,7 +4,6 @@ import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SuccessStoryCard from "@/components/ui/SuccessStoryCard";
-import ContactCTA from "@/components/sections/ContactCTA";
 import { successStories } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -23,13 +22,12 @@ export default function SuccessStoriesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Success Stories"
         title="From idea to real-world impact"
         description="The founders who turned an early idea into a company changing how India works, learns, and heals."
         icon={Trophy}
       />
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-8 sm:py-12">
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {successStories.map((story, i) => (
@@ -41,7 +39,6 @@ export default function SuccessStoriesPage() {
         </Container>
       </section>
 
-      <ContactCTA />
     </>
   );
 }

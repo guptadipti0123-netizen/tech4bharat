@@ -1,0 +1,153 @@
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import Container from "@/components/ui/Container";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+
+interface ExpertCategory {
+  image: string;
+  badge: string;
+  title: string;
+  description: string;
+  /** Tailwind color family driving the accent strip, badge tint, and hover border. */
+  theme: string;
+}
+
+// No specific speaker lineup has been announced yet, so these stay category cards rather
+// than named individuals — each paired with a real photo of that kind of moment from the
+// Tech4Bharat gallery, not a stock placeholder or a fabricated name.
+const categories: ExpertCategory[] = [
+  {
+    image: "/images/gallery/gallery-12.jpg",
+    badge: "Mentor",
+    title: "Startup Mentors",
+    description: "Operators who've built and scaled companies of their own.",
+    theme: "brand",
+  },
+  {
+    image: "/images/gallery/gallery-3.jpg",
+    badge: "Investor",
+    title: "Investors",
+    description: "Angels and VCs actively backing early-stage Indian founders.",
+    theme: "accent",
+  },
+  {
+    image: "/images/gallery/gallery-10.jpg",
+    badge: "Industry Leader",
+    title: "Industry Experts",
+    description: "Specialists across product, growth, and go-to-market.",
+    theme: "orange",
+  },
+  {
+    image: "/images/gallery/students-1.jpg",
+    badge: "Researcher",
+    title: "Academic Institutions",
+    description: "Researchers and faculty supporting deep-tech translation.",
+    theme: "violet",
+  },
+  {
+    image: "/images/gallery/gallery-2.jpg",
+    badge: "Leader",
+    title: "Incubation Leaders",
+    description: "Leaders from India's incubation and accelerator ecosystem.",
+    theme: "secondary",
+  },
+];
+
+const themeClasses: Record<string, { gradient: string; badge: string; border: string }> = {
+  brand: {
+    gradient: "from-brand-500 to-brand-700",
+    badge: "bg-brand-50 text-brand-700",
+    border: "group-hover:border-brand-300",
+  },
+  accent: {
+    gradient: "from-accent-400 to-accent-600",
+    badge: "bg-accent-50 text-accent-700",
+    border: "group-hover:border-accent-300",
+  },
+  orange: {
+    gradient: "from-orange-400 to-orange-600",
+    badge: "bg-orange-50 text-orange-700",
+    border: "group-hover:border-orange-300",
+  },
+  violet: {
+    gradient: "from-violet-400 to-violet-600",
+    badge: "bg-violet-50 text-violet-700",
+    border: "group-hover:border-violet-300",
+  },
+  secondary: {
+    gradient: "from-secondary-400 to-secondary-600",
+    badge: "bg-secondary-50 text-secondary-700",
+    border: "group-hover:border-secondary-300",
+  },
+};
+
+/** Who You'll Meet — five category cards, each with its own accent color and a real photo
+ *  standing in for that kind of person (no lineup announced yet, so no fabricated names). */
+export default function ExpertsSpeakers() {
+  return (
+    <section className="bg-white py-8 sm:py-12">
+      <Container>
+        <AnimatedSection>
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
+              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
+              Who You&apos;ll Meet
+              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
+            </span>
+            <h2 className="relative mt-4 inline-block text-[38px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[46px]">
+              Experts &amp; Speakers
+              <span
+                className="absolute inset-x-1 -bottom-1.5 h-2.5 rounded-full bg-linear-to-r from-brand-300 via-accent-300 to-secondary-300 opacity-50"
+                aria-hidden="true"
+              />
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              Throughout the day, participants will interact directly with:
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {categories.map((category, i) => {
+            const theme = themeClasses[category.theme];
+            return (
+              <AnimatedSection key={category.title} delay={i * 0.06} animation="scale">
+                <div
+                  className={`group relative flex h-full flex-col items-center overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 text-center shadow-[0_4px_20px_rgba(22,58,58,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,58,58,0.14)] ${theme.border}`}
+                >
+                  <span
+                    className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${theme.gradient} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative h-23 w-23 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-md">
+                    <Image
+                      src={category.image}
+                      alt={category.title}
+                      fill
+                      sizes="92px"
+                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <span
+                    className={`mt-3 inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${theme.badge}`}
+                  >
+                    {category.badge}
+                  </span>
+                  <h3 className="mt-1.5 text-base font-bold leading-tight text-ink-900">{category.title}</h3>
+                  <p className="mt-1 line-clamp-2 text-sm leading-snug text-slate-600">{category.description}</p>
+
+                  <ArrowRight
+                    size={15}
+                    className="mt-2 -translate-y-1 text-slate-300 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                  />
+                </div>
+              </AnimatedSection>
+            );
+          })}
+        </div>
+      </Container>
+    </section>
+  );
+}

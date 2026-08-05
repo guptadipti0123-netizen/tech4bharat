@@ -71,7 +71,7 @@
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-delayed: float 7s ease-in-out 1.5s infinite;
   --animate-blob: blob-drift 18s ease-in-out infinite;
-  --animate-marquee: marquee 38s linear infinite;
+  --animate-marquee: marquee 60s linear infinite;
 }
 
 @keyframes float {
@@ -121,36 +121,45 @@
   --foreground: #5f6b6b;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
+/*
+ * Wrapped in `@layer base` deliberately: Tailwind v4's utility classes live in
+ * `@layer utilities`, and per the CSS Cascade Layers spec, an *unlayered* rule always
+ * wins over a layered one regardless of specificity. Left unlayered, this block would
+ * silently override every `text-*` color/typography utility applied to an h1-h6 (or
+ * `html`/`body`/`p`) anywhere on the site — no class name would ever be able to beat it.
+ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  overflow-x: hidden;
-}
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    overflow-x: hidden;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-  color: var(--color-ink-900);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--color-ink-900);
+  }
 
-p {
-  line-height: 1.7;
-}
+  p {
+    line-height: 1.7;
+  }
 
-::selection {
-  background: var(--color-brand-200);
-  color: var(--color-ink-900);
+  ::selection {
+    background: var(--color-brand-200);
+    color: var(--color-ink-900);
+  }
 }
 
 /* Offset scroll targets so the fixed navbar never covers a section heading */

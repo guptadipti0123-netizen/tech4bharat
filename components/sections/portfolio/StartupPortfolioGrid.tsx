@@ -20,7 +20,7 @@ export default function StartupPortfolioGrid() {
         <FilterTabs options={domains} active={activeDomain} onChange={setActiveDomain} className="justify-center" />
       </AnimatedSection>
 
-      <motion.div layout className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div layout className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence initial={false} mode="popLayout">
           {filtered.map((startup, i) => (
             <motion.div

@@ -7,6 +7,11 @@ interface SectionTitleProps {
   align?: "left" | "center";
   theme?: "light" | "dark";
   className?: string;
+  /** Escape hatch to override the h2's size/weight/tracking for a specific section
+   *  without changing the default for every other page that uses this component. */
+  titleClassName?: string;
+  /** Same escape hatch as `titleClassName`, for the description paragraph. */
+  descriptionClassName?: string;
 }
 
 export default function SectionTitle({
@@ -16,6 +21,8 @@ export default function SectionTitle({
   align = "center",
   theme = "light",
   className,
+  titleClassName,
+  descriptionClassName,
 }: SectionTitleProps) {
   const isDark = theme === "dark";
 
@@ -30,25 +37,31 @@ export default function SectionTitle({
       {eyebrow && (
         <span
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-semibold tracking-wide",
-            isDark
-              ? "bg-white/10 text-accent-400"
-              : "bg-linear-to-r from-brand-50 to-secondary-50 text-brand-700"
+            "inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em]",
+            isDark ? "text-accent-400" : "text-brand-600"
           )}
         >
+          <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
           {eyebrow}
         </span>
       )}
       <h2
         className={cn(
-          "mt-4 text-[32px] font-extrabold leading-[1.15] tracking-tight sm:text-[44px]",
-          isDark ? "text-white" : "text-ink-900"
+          "mt-4 text-[36px] font-extrabold leading-[1.1] tracking-tight sm:text-[48px] lg:text-[56px]",
+          isDark ? "text-white" : "text-ink-900",
+          titleClassName
         )}
       >
         {title}
       </h2>
       {description && (
-        <p className={cn("mt-4 text-lg leading-relaxed", isDark ? "text-white/70" : "text-slate-600")}>
+        <p
+          className={cn(
+            "mt-4 text-lg leading-relaxed sm:text-xl",
+            isDark ? "text-white/70" : "text-slate-600",
+            descriptionClassName
+          )}
+        >
           {description}
         </p>
       )}

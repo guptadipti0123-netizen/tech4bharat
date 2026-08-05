@@ -19,16 +19,16 @@ export default function PartnershipMetrics() {
   ];
 
   return (
-    <section className="bg-brand-50 py-12 sm:py-16">
+    <section className="bg-brand-50 py-8 sm:py-10">
       <Container>
-        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {stats.map(({ icon: Icon, value, suffix, label }, i) => (
             <AnimatedSection key={label} delay={i * 0.08} animation="scale">
               <div className="flex flex-col items-center text-center">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-700 text-white shadow-md shadow-brand-700/25">
-                  <Icon size={20} />
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-700 text-white shadow-md shadow-brand-700/25">
+                  <Icon size={16} />
                 </span>
-                <p className="mt-3 text-3xl font-extrabold text-ink-900 sm:text-4xl">
+                <p className="mt-2 text-2xl font-extrabold text-ink-900 sm:text-3xl">
                   <CountUp value={value} suffix={suffix} />
                 </p>
                 <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-600">{label}</p>

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Rocket } from "lucide-react";
+import { Building2 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
 import StartupPortfolioGrid from "@/components/sections/portfolio/StartupPortfolioGrid";
-import ContactCTA from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Startup Portfolio | Tech4Bharat",
@@ -21,17 +20,15 @@ export default function PortfolioPage() {
   return (
     <>
       <PageHero
-        eyebrow="Startup Portfolio"
         title="Founders we've backed"
         description="A growing portfolio of Indian startups building category-defining companies across sectors critical to Bharat's next decade."
-        icon={Rocket}
+        icon={Building2}
       />
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white pb-8 pt-4 sm:pb-12 sm:pt-6">
         <Container>
           <StartupPortfolioGrid />
         </Container>
       </section>
-      <ContactCTA />
     </>
   );
 }

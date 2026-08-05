@@ -196,6 +196,79 @@ export const localGalleryPhotos: GalleryPhoto[] = [
     categories: ["startup", "networking"],
     source: "local",
   },
+  {
+    id: "policy-workshop-2",
+    src: "/images/legacy/policy-workshop-2.png",
+    alt: "Dr. Chaitanya Giri of Observer Research Foundation speaking at the Digital & Tech Policy Workshop",
+    categories: ["government", "research"],
+    source: "local",
+  },
+  {
+    id: "policy-workshop-3",
+    src: "/images/legacy/policy-workshop-3.jpg",
+    alt: "Students and faculty at the closing session of the Digital & Tech Policy Workshop, COEP",
+    categories: ["students", "government"],
+    source: "local",
+  },
+  // Full 6-day Digital & Tech Policy Workshop archive (Dec 18-23, 2025, COEP Technological
+  // University), extracted from the old Tech For Bharat website. Grouped under their own
+  // "legacy-workshops" category so the complete day-by-day set has a dedicated home.
+  {
+    id: "legacy-day1-i2",
+    src: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png",
+    alt: "Day 1 — Introduction to Technology Policy: a speaker addresses the cohort at the podium",
+    categories: ["legacy-workshops", "government"],
+    source: "local",
+  },
+  {
+    id: "legacy-day2-i1",
+    src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
+    alt: "Day 2 — Digital Narratives & Blockchain: the full cohort and faculty in the auditorium",
+    categories: ["legacy-workshops", "networking"],
+    source: "local",
+  },
+  {
+    id: "legacy-day2-i2",
+    src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
+    alt: "Day 2 — Digital Public Infrastructure & AI: faculty and students at the session close",
+    categories: ["legacy-workshops", "government"],
+    source: "local",
+  },
+  {
+    id: "legacy-day3-i2",
+    src: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png",
+    alt: "Day 3 — Strategic Innovation Frameworks: a candid group photo with the cohort",
+    categories: ["legacy-workshops", "students"],
+    source: "local",
+  },
+  {
+    id: "legacy-day4-i1",
+    src: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg",
+    alt: "Day 4 — Clean Energy & Cyber-Physical Systems: a memento exchange between speakers",
+    categories: ["legacy-workshops", "research"],
+    source: "local",
+  },
+  {
+    id: "legacy-day4-i2",
+    src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png",
+    alt: "Day 4 — UAV Simulation & Security Analysis: the cohort in the lecture hall",
+    categories: ["legacy-workshops", "students"],
+    source: "local",
+  },
+  {
+    id: "legacy-day5-i1",
+    src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png",
+    alt: "Day 5 — Earth Observation & Strategic Technologies: the cohort on their field visit to C-DAC",
+    categories: ["legacy-workshops", "research"],
+    source: "local",
+  },
+  {
+    id: "legacy-day5-i2",
+    src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",
+    alt: "Day 5 — Field Visit & Advanced Computing: the cohort back in session",
+    categories: ["legacy-workshops", "students"],
+    source: "local",
+  },
 ];
 
 export const localGalleryCategories: GalleryCategory[] = [
@@ -210,4 +283,5 @@ export const localGalleryCategories: GalleryCategory[] = [
   { slug: "government", label: "Government" },
   { slug: "research", label: "Research" },
   { slug: "awards", label: "Awards" },
+  { slug: "legacy-workshops", label: "Legacy Workshops" },
 ];

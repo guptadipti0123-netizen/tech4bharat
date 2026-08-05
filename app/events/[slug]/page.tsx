@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock, Images, MapPin, Users } from "lucide-react";
+import { ArrowLeft, BookOpen, Calendar, Clock, Images, ListChecks, MapPin, Tag, Users } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Blob from "@/components/ui/Blob";
-import ContactCTA from "@/components/sections/ContactCTA";
 import { events } from "@/lib/events";
 
 interface PageProps {
@@ -43,7 +42,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white pb-16 pt-36">
+      <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white pb-8 pt-20">
         <Blob tone="secondary" className="-left-24 -top-24 h-72 w-72" />
         <Blob tone="accent" className="-right-16 top-10 h-64 w-64" animate={false} />
         <Container className="relative">
@@ -68,20 +67,43 @@ export default async function EventDetailPage({ params }: PageProps) {
               <span className="flex items-center gap-2">
                 <MapPin size={16} className="text-brand-600" /> {event.venue}
               </span>
-              <span className="flex items-center gap-2">
-                <Users size={16} className="text-brand-600" /> {event.speakers.length} Speakers
-              </span>
+              {event.speakers.length > 0 && (
+                <span className="flex items-center gap-2">
+                  <Users size={16} className="text-brand-600" /> {event.speakers.length} Speakers
+                </span>
+              )}
             </div>
           </AnimatedSection>
         </Container>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-8 sm:py-12">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
             <AnimatedSection>
-              <h2 className="text-2xl font-bold text-ink-900">About this Event</h2>
-              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">{event.longDescription}</p>
+              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-brand-600">
+                  <BookOpen size={18} />
+                </span>
+                <h2 className="mt-4 text-2xl font-bold text-ink-900">About this Event</h2>
+                <p className="mt-3 max-w-2xl text-lg leading-relaxed text-slate-600">{event.longDescription}</p>
+
+                <div className="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-6">
+                  {event.agenda && event.agenda.length > 0 && (
+                    <span className="inline-flex items-center gap-2 rounded-full bg-slate-50 px-4 py-2 text-sm font-semibold text-ink-900">
+                      <ListChecks size={15} className="text-brand-600" /> {event.agenda.length} Sessions
+                    </span>
+                  )}
+                  {event.speakers.length > 0 && (
+                    <span className="inline-flex items-center gap-2 rounded-full bg-slate-50 px-4 py-2 text-sm font-semibold text-ink-900">
+                      <Users size={15} className="text-brand-600" /> {event.speakers.length} Speakers
+                    </span>
+                  )}
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-50 px-4 py-2 text-sm font-semibold text-ink-900">
+                    <Tag size={15} className="text-brand-600" /> {event.type}
+                  </span>
+                </div>
+              </div>
 
               {event.agenda && event.agenda.length > 0 && (
                 <>
@@ -101,27 +123,31 @@ export default async function EventDetailPage({ params }: PageProps) {
                 </>
               )}
 
-              <h3 className="mt-10 text-xl font-semibold text-ink-900">Speakers</h3>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                {event.speakers.map((speaker) => (
-                  <div
-                    key={speaker.name}
-                    className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                  >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-50 text-sm font-bold text-brand-700">
-                      {speaker.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .slice(0, 2)
-                        .join("")}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-ink-900">{speaker.name}</p>
-                      <p className="text-sm text-slate-600">{speaker.designation}</p>
-                    </div>
+              {event.speakers.length > 0 && (
+                <>
+                  <h3 className="mt-10 text-xl font-semibold text-ink-900">Speakers</h3>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                    {event.speakers.map((speaker) => (
+                      <div
+                        key={speaker.name}
+                        className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                      >
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-50 text-sm font-bold text-brand-700">
+                          {speaker.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .slice(0, 2)
+                            .join("")}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-ink-900">{speaker.name}</p>
+                          <p className="text-sm text-slate-600">{speaker.designation}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              )}
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
@@ -161,7 +187,6 @@ export default async function EventDetailPage({ params }: PageProps) {
         </Container>
       </section>
 
-      <ContactCTA />
     </>
   );
 }

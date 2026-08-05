@@ -8,7 +8,6 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Blob from "@/components/ui/Blob";
-import ContactCTA from "@/components/sections/ContactCTA";
 import { successStories } from "@/lib/data";
 
 interface PageProps {
@@ -44,7 +43,7 @@ export default async function SuccessStoryDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white pb-16 pt-36">
+      <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white pb-8 pt-20">
         <Blob tone="secondary" className="-left-24 -top-24 h-72 w-72" />
         <Blob tone="accent" className="-right-16 top-10 h-64 w-64" animate={false} />
         <Container className="relative">
@@ -67,7 +66,7 @@ export default async function SuccessStoryDetailPage({ params }: PageProps) {
         </Container>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-8 sm:py-12">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
             <AnimatedSection>
@@ -81,21 +80,28 @@ export default async function SuccessStoryDetailPage({ params }: PageProps) {
                 />
               </div>
 
-              <div className="mt-10 space-y-8">
-                <div>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-100 text-accent-700">
+              <div className="relative mt-10 grid gap-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm lg:grid-cols-2">
+                <div className="p-6 sm:p-8">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600">
                     <Target size={18} />
                   </span>
                   <h2 className="mt-4 text-xl font-bold text-ink-900">The Challenge</h2>
-                  <p className="mt-2 max-w-2xl leading-relaxed text-slate-600">{story.challenge}</p>
+                  <p className="mt-2 leading-relaxed text-slate-600">{story.challenge}</p>
                 </div>
-                <div>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-brand-600">
+                <div className="border-t border-slate-100 bg-brand-50/60 p-6 sm:p-8 lg:border-l lg:border-t-0">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-700 text-white">
                     <Sparkles size={18} />
                   </span>
                   <h2 className="mt-4 text-xl font-bold text-ink-900">The Impact</h2>
-                  <p className="mt-2 max-w-2xl leading-relaxed text-slate-600">{story.impact}</p>
+                  <p className="mt-2 leading-relaxed text-slate-600">{story.impact}</p>
                 </div>
+
+                <span
+                  className="pointer-events-none absolute left-1/2 top-1/2 hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-brand-700 text-white shadow-md lg:flex"
+                  aria-hidden="true"
+                >
+                  <ArrowRight size={18} />
+                </span>
               </div>
             </AnimatedSection>
 
@@ -123,7 +129,6 @@ export default async function SuccessStoryDetailPage({ params }: PageProps) {
         </Container>
       </section>
 
-      <ContactCTA />
     </>
   );
 }

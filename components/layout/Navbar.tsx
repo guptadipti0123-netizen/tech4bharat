@@ -5,13 +5,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  Award,
+  Briefcase,
+  ChevronDown,
+  Flame,
+  Handshake,
+  Menu,
+  Users,
+  Wallet,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
 interface NavChild {
   label: string;
   href: string;
+  icon: LucideIcon;
 }
 
 interface NavItem {
@@ -20,41 +32,34 @@ interface NavItem {
   children?: NavChild[];
 }
 
+// Each dropdown only contains pages that genuinely belong to that category — no page is
+// duplicated across dropdowns.
 const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "About",
-    href: "/about",
-    children: [
-      { label: "About Tech4Bharat", href: "/about" },
-      { label: "Vision & Mission", href: "/about#vision-mission" },
-    ],
-  },
+  { label: "About", href: "/about" },
   {
     label: "Programs",
     href: "/programs",
     children: [
-      { label: "Focus Areas", href: "/focus-areas" },
-      { label: "Programs", href: "/programs" },
-      { label: "Startup Portfolio", href: "/portfolio" },
+      { label: "Startup Portfolio", href: "/portfolio", icon: Briefcase },
+      { label: "Startup Bootcamp", href: "/startup-bootcamp", icon: Flame },
     ],
   },
   {
     label: "Network",
     href: "/partners",
     children: [
-      { label: "Partners", href: "/partners" },
-      { label: "Mentors & Advisors", href: "/mentors" },
-      { label: "Gallery", href: "/gallery" },
+      { label: "Mentors", href: "/mentors", icon: Users },
+      { label: "Partners", href: "/partners", icon: Handshake },
     ],
   },
   { label: "Events", href: "/events" },
   {
     label: "Resources",
-    href: "/blogs",
+    href: "/funding-opportunities",
     children: [
-      { label: "Success Stories", href: "/success-stories" },
-      { label: "Blogs & Resources", href: "/blogs" },
+      { label: "Funding Opportunities", href: "/funding-opportunities", icon: Wallet },
+      { label: "Success Stories", href: "/success-stories", icon: Award },
     ],
   },
   { label: "Contact", href: "/contact" },
@@ -152,14 +157,17 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -6, scale: 0.98 }}
                         transition={{ duration: 0.18, ease: "easeOut" }}
-                        className="glass-surface absolute left-0 top-full mt-2 w-56 overflow-hidden rounded-2xl border border-slate-100 py-2 shadow-xl"
+                        className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-2xl border border-slate-100 bg-white py-3 shadow-[0_20px_50px_rgba(22,58,58,0.18)]"
                       >
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2.5 font-heading text-sm text-slate-700 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                            className="group/item flex items-center gap-3 px-4 py-3 font-heading text-sm text-slate-700 transition-all duration-200 hover:translate-x-0.5 hover:bg-brand-50 hover:text-brand-700"
                           >
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-200 group-hover/item:bg-brand-700 group-hover/item:text-white">
+                              <child.icon size={16} />
+                            </span>
                             {child.label}
                           </Link>
                         ))}
@@ -237,8 +245,9 @@ export default function Navbar() {
                             key={child.href}
                             href={child.href}
                             onClick={() => setMobileOpen(false)}
-                            className="rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-brand-50 hover:text-brand-700"
+                            className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-brand-50 hover:text-brand-700"
                           >
+                            <child.icon size={15} className="shrink-0 text-brand-500" />
                             {child.label}
                           </Link>
                         ))}

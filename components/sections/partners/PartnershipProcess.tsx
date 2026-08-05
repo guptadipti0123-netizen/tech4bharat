@@ -1,4 +1,4 @@
-import { Handshake, MessageSquare, Rocket, Search } from "lucide-react";
+import { Handshake, MessageSquare, Search, TrendingUp } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -21,7 +21,7 @@ const steps = [
     description: "Joint programs, funding access, or mentorship go live with our cohorts.",
   },
   {
-    icon: Rocket,
+    icon: TrendingUp,
     title: "Grow",
     description: "We track impact together and expand the partnership year over year.",
   },
@@ -31,7 +31,7 @@ const steps = [
  *  timeline-style sections (no left-label/right-image split, just a connected step row). */
 export default function PartnershipProcess() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+    <section id="collaborations" className="relative overflow-hidden bg-white py-8 sm:py-12">
       <DotGrid className="left-0 top-0 h-full w-full text-brand-700/5" />
 
       <Container className="relative">
@@ -39,7 +39,7 @@ export default function PartnershipProcess() {
           <SectionTitle eyebrow="How It Works" title="From first conversation to shared impact" />
         </AnimatedSection>
 
-        <div className="relative mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <span
             aria-hidden="true"
             className="absolute left-0 right-0 top-6 hidden h-px bg-linear-to-r from-transparent via-brand-200 to-transparent lg:block"

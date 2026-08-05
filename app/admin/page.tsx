@@ -9,8 +9,8 @@ import {
   Mail,
   MessageSquare,
   Quote,
-  Rocket,
   Sparkles,
+  Sprout,
   Users,
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -63,7 +63,7 @@ export default function AdminDashboardPage() {
       ) : (
         <>
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            <StatCard label="Startups" value={counts.totalStartups} icon={Rocket} />
+            <StatCard label="Startups" value={counts.totalStartups} icon={Sprout} />
             <StatCard label="Mentors" value={counts.totalMentors} icon={Users} />
             <StatCard label="Advisors" value={counts.totalAdvisors} icon={Users} />
             <StatCard label="Partners" value={counts.totalPartners} icon={Handshake} />

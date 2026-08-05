@@ -1,11 +1,11 @@
-import { GraduationCap, Handshake, Landmark, Rocket, Users, Venus, type LucideIcon } from "lucide-react";
+import { GraduationCap, Handshake, Landmark, Sprout, Users, Venus, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Blob from "@/components/ui/Blob";
 import CountUp from "@/components/ui/CountUp";
 import { impactStats } from "@/lib/data";
 
-const iconMap: Record<string, LucideIcon> = { Rocket, Venus, GraduationCap, Users, Landmark, Handshake };
+const iconMap: Record<string, LucideIcon> = { Sprout, Venus, GraduationCap, Users, Landmark, Handshake };
 
 // A focused slice of the full impact dataset — enough to read as substantive without
 // crowding the page; the complete set already lives on the home page's stats strip.
@@ -16,14 +16,14 @@ export default function AboutStats() {
   const stats = impactStats.filter((stat) => featured.includes(stat.label));
 
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-secondary-50/40 to-white py-16 sm:py-24">
+    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-secondary-50/40 to-white py-8 sm:py-12">
       <Blob tone="brand" className="-left-24 top-0 h-72 w-72" />
       <Blob tone="secondary" className="-right-20 bottom-0 h-64 w-64" animate={false} />
 
       <Container className="relative">
         <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
           {stats.map((stat, i) => {
-            const Icon = iconMap[stat.icon] ?? Rocket;
+            const Icon = iconMap[stat.icon] ?? Sprout;
             return (
               <AnimatedSection key={stat.label} delay={i * 0.08} animation="scale">
                 <div className="glass-surface flex flex-col items-center rounded-3xl border border-white/60 p-6 text-center shadow-[0_8px_28px_rgba(31,78,61,0.08)] transition-all duration-300 hover:-translate-y-1.5 sm:p-8">

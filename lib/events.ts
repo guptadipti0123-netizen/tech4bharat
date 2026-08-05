@@ -1,4 +1,24 @@
-export type EventType = "Bootcamp" | "Workshop" | "Summit" | "Webinar" | "Challenge";
+/** Pulls a { day, month } pair out of a formatted date string like "September 12–14, 2026"
+ *  or "August 20, 2026" — enough to power a compact calendar-style date badge. */
+export function getDateParts(dateStr: string): { day: string; month: string } {
+  const match = dateStr.match(/([A-Za-z]+)\s+(\d+)/);
+  if (!match) return { day: "--", month: dateStr.slice(0, 3).toUpperCase() };
+  const [, monthName, day] = match;
+  return { day, month: monthName.slice(0, 3).toUpperCase() };
+}
+
+// "Bootcamp" is kept only for the Tech4Bharat Startup Bootcamp's own data (it now lives on
+// its dedicated /startup-bootcamp page); the Events page filters every Bootcamp-typed event
+// out, so it never appears there. Every other event should use one of the remaining types.
+export type EventType =
+  | "Bootcamp"
+  | "Workshop"
+  | "Challenge"
+  | "Hackathon"
+  | "Networking"
+  | "Pitch Event"
+  | "Demo Day"
+  | "Webinar";
 export type EventStatus = "Upcoming" | "Past";
 
 export interface EventSpeaker {
@@ -19,6 +39,7 @@ export interface EventItem {
   type: EventType;
   status: EventStatus;
   date: string;
+  time?: string;
   venue: string;
   description: string;
   longDescription: string;
@@ -32,29 +53,30 @@ export const events: EventItem[] = [
   {
     id: "1",
     slug: "tech4bharat-startup-bootcamp-2026",
-    title: "Tech4Bharat Startup Bootcamp",
+    title: "One-Day Startup Bootcamp 2026",
     type: "Bootcamp",
     status: "Upcoming",
-    date: "September 12–14, 2026",
-    venue: "IIT Bombay, Mumbai",
+    date: "October 2026",
+    time: "9:00 AM – 6:00 PM",
+    venue: "Mumbai",
     description:
-      "A 3-day, immersive bootcamp taking founders from idea to investor-ready pitch.",
+      "A one-day intensive bootcamp helping early-stage founders validate ideas, build sustainable businesses, and prepare for funding.",
     longDescription:
-      "The Tech4Bharat Startup Bootcamp is our flagship, three-day intensive program bringing together 100+ early-stage founders for hands-on workshops covering product validation, growth strategy, fundraising, and pitch craft. Attendees work directly with mentors and leave with a refined pitch deck and a peer network that lasts well beyond the bootcamp.",
+      "The Tech4Bharat One-Day Startup Bootcamp brings together early-stage and social impact founders for a single, intensive day of expert-led sessions, mentoring, networking, and investor readiness — covering fundraising, business model development, product validation, market access, and government schemes.",
     speakers: [
       { name: "Priya Nair", designation: "Founder & CEO, NimbusPay" },
       { name: "Rohan Mehta", designation: "Partner, Blume Ventures" },
       { name: "Dr. Suresh Menon", designation: "Professor, IIT Bombay" },
     ],
-    featured: true,
     agenda: [
-      { time: "Day 1 · 09:00 AM", title: "Registration & Welcome Breakfast" },
-      { time: "Day 1 · 10:00 AM", title: "Opening Keynote: State of Indian Startups", speaker: "Priya Nair" },
-      { time: "Day 1 · 02:00 PM", title: "Workshop: Product Validation Sprint" },
-      { time: "Day 2 · 10:00 AM", title: "Fundraising Masterclass", speaker: "Rohan Mehta" },
-      { time: "Day 2 · 03:00 PM", title: "Mentor Speed-Dating Sessions" },
-      { time: "Day 3 · 10:00 AM", title: "Pitch Craft Workshop", speaker: "Dr. Suresh Menon" },
-      { time: "Day 3 · 04:00 PM", title: "Demo Day & Closing Ceremony" },
+      { time: "9:00 AM", title: "Registration" },
+      { time: "9:30 AM", title: "Welcome Session" },
+      { time: "10:00 AM", title: "Expert Talks" },
+      { time: "11:30 AM", title: "Business Workshops" },
+      { time: "1:00 PM", title: "Lunch & Networking" },
+      { time: "2:00 PM", title: "Investor Readiness Session" },
+      { time: "3:30 PM", title: "Startup Pitching" },
+      { time: "5:00 PM", title: "Closing & Networking" },
     ],
   },
   {
@@ -64,6 +86,7 @@ export const events: EventItem[] = [
     type: "Workshop",
     status: "Upcoming",
     date: "August 20, 2026",
+    time: "10:00 AM – 12:00 PM",
     venue: "Online",
     description: "A hands-on session on building an investor-ready data room and pitch narrative.",
     longDescription:
@@ -82,6 +105,7 @@ export const events: EventItem[] = [
     type: "Challenge",
     status: "Upcoming",
     date: "October 5, 2026",
+    time: "11:00 AM onwards",
     venue: "Nagpur, Maharashtra",
     description: "A competitive challenge inviting founders to solve real farmer pain points.",
     longDescription:
@@ -89,10 +113,67 @@ export const events: EventItem[] = [
     speakers: [{ name: "Tanvi Shah", designation: "Founder, Formerly of CropConnect" }],
   },
   {
+    id: "7",
+    slug: "demo-day-winter-cohort",
+    title: "Demo Day: Winter Cohort",
+    type: "Demo Day",
+    status: "Upcoming",
+    date: "November 14, 2026",
+    time: "3:00 PM onwards",
+    venue: "Bengaluru, Karnataka",
+    description: "Winter cohort founders pitch investor-ready decks to a room of VCs and operators.",
+    longDescription:
+      "The culmination of our winter incubation cohort — 15 founders take the stage to pitch to a curated room of VCs, angels, and corporate innovation leads, after 12 weeks of structured mentorship.",
+    speakers: [{ name: "Kavita Rao", designation: "Partner, Sequoia Surge" }],
+    featured: true,
+  },
+  {
+    id: "8",
+    slug: "deep-tech-founders-roundtable",
+    title: "Deep-Tech Founders Roundtable",
+    type: "Workshop",
+    status: "Upcoming",
+    date: "September 25, 2026",
+    time: "2:00 PM – 5:00 PM",
+    venue: "Hyderabad, Telangana",
+    description: "A closed-door roundtable for AI and deep-tech founders on compute costs and regulation.",
+    longDescription:
+      "Deep-tech founders face unique challenges — compute costs, IP protection, and slow enterprise sales cycles. This roundtable brings together a small group of AI and hardware founders with operators who've scaled deep-tech companies in India.",
+    speakers: [{ name: "Rahul Bhatt", designation: "Founder, VoxAI" }],
+  },
+  {
+    id: "9",
+    slug: "women-in-tech-meetup",
+    title: "Women in Tech Meetup",
+    type: "Webinar",
+    status: "Upcoming",
+    date: "October 18, 2026",
+    time: "6:00 PM – 7:30 PM",
+    venue: "Online",
+    description: "A virtual meetup connecting women founders across the Tech4Bharat portfolio.",
+    longDescription:
+      "An informal virtual evening for women founders to connect, trade fundraising and hiring playbooks, and build a peer support network beyond their immediate cohort.",
+    speakers: [{ name: "Meera Iyer", designation: "Founder, CareCircle" }],
+  },
+  {
+    id: "10",
+    slug: "climate-innovation-challenge",
+    title: "Climate Innovation Challenge",
+    type: "Challenge",
+    status: "Upcoming",
+    date: "November 2, 2026",
+    time: "10:00 AM onwards",
+    venue: "Ahmedabad, Gujarat",
+    description: "A competitive challenge for founders building climate and clean-energy solutions.",
+    longDescription:
+      "In partnership with state renewable energy bodies, this challenge invites climate-tech founders to prototype solutions to grid, water, and waste-management problems — with mentorship and fast-tracked incubation for winning teams.",
+    speakers: [{ name: "Sanjana Iyer", designation: "Founder, GreenGrid" }],
+  },
+  {
     id: "4",
     slug: "healthtech-summit-2025",
     title: "HealthTech Summit",
-    type: "Summit",
+    type: "Networking",
     status: "Past",
     date: "November 18, 2025",
     venue: "Pune, Maharashtra",
@@ -126,5 +207,31 @@ export const events: EventItem[] = [
     longDescription:
       "Held on International Women's Day, this virtual networking evening connected 60+ women founders across our portfolio with mentors and investors focused on backing women-led ventures.",
     speakers: [{ name: "Sneha Kapoor", designation: "Founder, EduSpark" }],
+  },
+  {
+    id: "11",
+    slug: "digital-tech-policy-workshop-2025",
+    title: "Digital & Tech Policy Workshop",
+    type: "Workshop",
+    status: "Past",
+    date: "December 18–23, 2025",
+    venue: "COEP Technological University, Pune",
+    description: "A 6-day intensive on technology, governance, and strategic decision-making.",
+    longDescription:
+      "Run with COEP Technological University and VJTI Mumbai, this program explored the intersections of technology, policy, and governance — covering AI governance, digital public infrastructure, innovation strategy, and hands-on policy drafting exercises, with a field visit to C-DAC.",
+    speakers: [{ name: "Dr. Chaitanya Giri", designation: "Fellow, Observer Research Foundation" }],
+  },
+  {
+    id: "12",
+    slug: "ai-workshop-bharatgen-2025",
+    title: "AI Workshop by BharatGen",
+    type: "Workshop",
+    status: "Past",
+    date: "March 21, 2025",
+    venue: "Cognizant Lab, COEP, Pune",
+    description: "\"GenAI for Everyone, by Everyone\" — a hands-on introduction to building with generative AI.",
+    longDescription:
+      "A hands-on session introducing AI development with minimal coding requirements — covering LangChain, Hugging Face Transformers, neural networks, and large language models, alongside a look at AI career pathways.",
+    speakers: [],
   },
 ];

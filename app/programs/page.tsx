@@ -20,7 +20,6 @@ export default function ProgramsPage() {
   return (
     <>
       <PageHero
-        eyebrow="What We Offer"
         title="Programs"
         description="Structured support for founders at every stage of the journey."
         icon={Lightbulb}

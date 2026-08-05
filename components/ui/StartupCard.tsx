@@ -1,51 +1,55 @@
-import { ArrowUpRight, MapPin, User } from "lucide-react";
-import Card from "@/components/ui/Card";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
+import { getDomainImage } from "@/lib/images";
 import type { Startup } from "@/lib/data";
 
-// All dark enough to keep white monogram text at or above WCAG AA contrast (4.5:1).
-const LOGO_TONES = [
-  "bg-brand-700",
-  "bg-secondary-700",
-  "bg-brand-900",
-  "bg-secondary-800",
-  "bg-brand-800",
-];
-
-function toneForName(name: string): string {
-  const index = name.charCodeAt(0) % LOGO_TONES.length;
-  return LOGO_TONES[index];
-}
-
+/** Directory-style portfolio card — a real industry photo tile + wrapping name up top,
+ *  sector/stage pills, a truncated description, and a Read More / outline-arrow-button row
+ *  pinned to the bottom. Equal height across the grid via `h-full flex flex-col`. */
 export default function StartupCard({ startup }: { startup: Startup }) {
+  const href = startup.website ?? "/contact";
+
   return (
-    <Card className="flex h-full flex-col">
-      <div className="flex items-start justify-between gap-3">
-        <span
-          className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md ${toneForName(startup.name)}`}
+    <div className="group flex h-full flex-col rounded-3xl border border-secondary-100 bg-white p-9 shadow-[0_2px_14px_rgba(18,60,51,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(18,60,51,0.14)]">
+      <div className="flex items-start gap-4">
+        <div className="relative h-25 w-25 shrink-0 overflow-hidden rounded-xl border border-slate-100 shadow-[0_2px_10px_rgba(18,60,51,0.1)]">
+          <Image
+            src={getDomainImage(startup.domain)}
+            alt={`${startup.domain} industry`}
+            fill
+            sizes="100px"
+            className="object-cover object-top"
+          />
+        </div>
+        <h3 className="mt-1 text-[30px] font-bold leading-tight text-[#123C33]">{startup.name}</h3>
+      </div>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        <Badge className="bg-secondary-50 text-sm text-secondary-700">{startup.domain}</Badge>
+        <Badge className="bg-secondary-50 text-sm text-secondary-700">{startup.stage}</Badge>
+      </div>
+
+      <p className="mt-4 line-clamp-3 flex-1 text-[17px] font-medium leading-relaxed text-slate-600">
+        {startup.tagline}
+      </p>
+
+      <div className="mt-7 flex items-center justify-between border-t border-secondary-100 pt-5">
+        <Link
+          href={href}
+          className="text-base font-semibold uppercase tracking-wide text-brand-700 transition-colors hover:underline"
         >
-          {startup.logoInitial}
-        </span>
-        <Badge variant="neutral">{startup.stage}</Badge>
+          Read More
+        </Link>
+        <Link
+          href={href}
+          aria-label={`Read more about ${startup.name}`}
+          className="flex h-13 w-13 shrink-0 items-center justify-center rounded-full border-2 border-brand-600 text-brand-600 transition-all duration-300 group-hover:bg-brand-600 group-hover:text-white"
+        >
+          <ArrowUpRight size={20} />
+        </Link>
       </div>
-
-      <h3 className="mt-5 text-xl font-bold text-ink-900">{startup.name}</h3>
-      <span className="mt-1 text-sm font-semibold text-brand-700">{startup.domain}</span>
-      <p className="mt-3 flex-1 leading-relaxed text-slate-600">{startup.tagline}</p>
-
-      <div className="mt-5 space-y-1.5 border-t border-slate-100 pt-4 text-sm text-slate-600">
-        <p className="flex items-center gap-2">
-          <User size={14} className="shrink-0 text-brand-500" /> {startup.founder}
-        </p>
-        <p className="flex items-center gap-2">
-          <MapPin size={14} className="shrink-0 text-brand-500" /> {startup.location}
-        </p>
-      </div>
-
-      <Button href="/contact" variant="ghost" size="sm" className="-ml-4 mt-5 w-fit">
-        Learn More <ArrowUpRight size={16} />
-      </Button>
-    </Card>
+    </div>
   );
 }

@@ -4,8 +4,6 @@
  * real asset later without touching a single component.
  */
 
-export const ctaBackgroundImage = "/images/cta/cta-background.jpg";
-
 export const aboutImages = {
   team: "/images/about/team.png",
   innovationCenter: "/images/gallery/gallery-8.jpg",
@@ -51,6 +49,12 @@ export const eventImageMap: Record<string, string> = {
   "healthtech-summit-2025": "/images/domains/healthtech.jpg",
   "product-validation-bootcamp-2025": "/images/gallery/hackathons-1.jpg",
   "women-founders-networking-night": "/images/programs/mentoring.jpg",
+  "demo-day-winter-cohort": "/images/programs/incubation.jpg",
+  "deep-tech-founders-roundtable": "/images/gallery/gallery-13.jpg",
+  "women-in-tech-meetup": "/images/gallery/gallery-6.jpg",
+  "climate-innovation-challenge": "/images/domains/climatetech.jpg",
+  "digital-tech-policy-workshop-2025": "/images/legacy/policy-workshop-1.png",
+  "ai-workshop-bharatgen-2025": "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
 };
 
 export function getEventImage(slug: string): string {

@@ -3,7 +3,7 @@ import { Skeleton, SkeletonGrid } from "@/components/ui/Skeleton";
 
 export default function Loading() {
   return (
-    <div className="py-24 pt-40 sm:py-32">
+    <div className="pb-16 pt-20 sm:pb-20 sm:pt-24">
       <Container>
         <div className="flex flex-wrap justify-center gap-2">
           {Array.from({ length: 7 }).map((_, i) => (

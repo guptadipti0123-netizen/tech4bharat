@@ -1,7 +1,7 @@
 export interface FocusArea {
   title: string;
   description: string;
-  icon: "Cpu" | "Leaf" | "HeartPulse" | "GraduationCap" | "Landmark" | "Rocket";
+  icon: "Cpu" | "Leaf" | "HeartPulse" | "GraduationCap" | "Landmark" | "Zap";
 }
 
 export const focusAreas: FocusArea[] = [
@@ -38,7 +38,7 @@ export const focusAreas: FocusArea[] = [
     title: "ClimateTech",
     description:
       "Sustainable ventures tackling climate and clean-energy challenges.",
-    icon: "Rocket",
+    icon: "Zap",
   },
 ];
 
@@ -81,8 +81,10 @@ export interface Startup {
   tagline: string;
   domain: string;
   logoInitial: string;
+  image: string;
   location: string;
   stage: StartupStage;
+  website?: string;
 }
 
 export const startups: Startup[] = [
@@ -92,8 +94,10 @@ export const startups: Startup[] = [
     tagline: "AI-powered crop health monitoring for smallholder farmers.",
     domain: "AgriTech",
     logoInitial: "AS",
+    image: "/images/domains/agritech.jpg",
     location: "Nagpur, Maharashtra",
     stage: "Growth Stage",
+    website: "#",
   },
   {
     name: "MedLink",
@@ -101,8 +105,10 @@ export const startups: Startup[] = [
     tagline: "Telemedicine platform connecting rural India to specialist care.",
     domain: "HealthTech",
     logoInitial: "ML",
+    image: "/images/domains/healthtech.jpg",
     location: "Pune, Maharashtra",
     stage: "Early Stage",
+    website: "#",
   },
   {
     name: "PathShala",
@@ -110,8 +116,10 @@ export const startups: Startup[] = [
     tagline: "Vernacular micro-learning for Tier 2 & 3 students.",
     domain: "EdTech",
     logoInitial: "PS",
+    image: "/images/gallery/students-1.jpg",
     location: "Bengaluru, Karnataka",
     stage: "Growth Stage",
+    website: "#",
   },
   {
     name: "RupeeStack",
@@ -119,8 +127,10 @@ export const startups: Startup[] = [
     tagline: "Embedded lending infrastructure for small businesses.",
     domain: "FinTech",
     logoInitial: "RS",
+    image: "/images/gallery/technology-1.jpg",
     location: "Mumbai, Maharashtra",
     stage: "Early Stage",
+    website: "#",
   },
   {
     name: "GreenGrid",
@@ -128,8 +138,10 @@ export const startups: Startup[] = [
     tagline: "Decentralized solar micro-grids for last-mile electrification.",
     domain: "ClimateTech",
     logoInitial: "GG",
+    image: "/images/domains/clean-energy.jpg",
     location: "Ahmedabad, Gujarat",
     stage: "Idea Stage",
+    website: "#",
   },
   {
     name: "VoxAI",
@@ -137,8 +149,10 @@ export const startups: Startup[] = [
     tagline: "Multilingual voice AI for public service delivery.",
     domain: "DeepTech",
     logoInitial: "VX",
+    image: "/images/gallery/research-1.jpg",
     location: "Hyderabad, Telangana",
     stage: "Scaled",
+    website: "#",
   },
   {
     name: "KrishiChain",
@@ -146,8 +160,10 @@ export const startups: Startup[] = [
     tagline: "Blockchain-backed supply chain traceability for farm produce.",
     domain: "AgriTech",
     logoInitial: "KC",
+    image: "/images/gallery/agriculture-2.jpg",
     location: "Bhopal, Madhya Pradesh",
     stage: "Early Stage",
+    website: "#",
   },
   {
     name: "SafalNaari",
@@ -155,8 +171,10 @@ export const startups: Startup[] = [
     tagline: "A micro-enterprise marketplace helping women build home-grown businesses.",
     domain: "Women Empowerment",
     logoInitial: "SN",
+    image: "/images/gallery/gallery-14.jpg",
     location: "Jaipur, Rajasthan",
     stage: "Idea Stage",
+    website: "#",
   },
 ];
 
@@ -272,7 +290,7 @@ export interface ImpactStat {
 // "Our Impact" homepage snapshot — reach/scale, distinct from the
 // outcomes-focused stats on the About page (150+ startups, funding raised, etc.).
 export const impactStats: ImpactStat[] = [
-  { label: "Startups Supported", value: 150, suffix: "+", icon: "Rocket" },
+  { label: "Startups Supported", value: 150, suffix: "+", icon: "Sprout" },
   { label: "Women Entrepreneurs", value: 60, suffix: "+", icon: "Venus" },
   { label: "Students Trained", value: 50000, suffix: "+", icon: "GraduationCap" },
   { label: "Mentors", value: 100, suffix: "+", icon: "Users" },
@@ -405,51 +423,6 @@ export const objectives: Objective[] = [
   { title: "Create measurable, lasting impact on livelihoods and communities" },
 ];
 
-export interface CoreValue {
-  title: string;
-  description: string;
-  icon: "ShieldCheck" | "Lightbulb" | "HandHeart" | "Users" | "TrendingUp" | "Star";
-}
-
-export const coreValues: CoreValue[] = [
-  {
-    title: "Integrity",
-    description:
-      "We operate with transparency and hold ourselves accountable to founders and partners alike.",
-    icon: "ShieldCheck",
-  },
-  {
-    title: "Innovation",
-    description:
-      "We back original thinking and support founders willing to challenge the status quo.",
-    icon: "Lightbulb",
-  },
-  {
-    title: "Inclusivity",
-    description:
-      "We actively widen access to opportunity for underrepresented founders and regions.",
-    icon: "HandHeart",
-  },
-  {
-    title: "Collaboration",
-    description:
-      "We believe the best outcomes come from founders, mentors, and partners building together.",
-    icon: "Users",
-  },
-  {
-    title: "Impact",
-    description:
-      "We measure success by the real-world outcomes our startups create for India.",
-    icon: "TrendingUp",
-  },
-  {
-    title: "Excellence",
-    description:
-      "We hold our programs, mentors, and support to the highest possible standard.",
-    icon: "Star",
-  },
-];
-
 export interface Milestone {
   year: string;
   title: string;
@@ -489,50 +462,13 @@ export const journey: Milestone[] = [
   },
 ];
 
-// ---- Focus Areas page ----
-
-export interface FocusAreaDetail {
-  title: string;
-  description: string;
-  icon:
-    | "Sprout"
-    | "BrainCircuit"
-    | "CloudSun"
-    | "HeartPulse"
-    | "Stethoscope"
-    | "Droplets"
-    | "GraduationCap"
-    | "Zap"
-    | "Recycle"
-    | "TreePine"
-    | "HandHeart"
-    | "Briefcase"
-    | "Lightbulb";
-}
-
-export const allFocusAreas: FocusAreaDetail[] = [
-  { title: "AgriTech", description: "Technology-driven solutions strengthening farm productivity and rural incomes.", icon: "Sprout" },
-  { title: "AI/ML", description: "Applied artificial intelligence solving real-world problems at scale.", icon: "BrainCircuit" },
-  { title: "ClimateTech", description: "Innovations building climate resilience and environmental sustainability.", icon: "CloudSun" },
-  { title: "HealthTech", description: "Digital health solutions expanding access to quality care.", icon: "HeartPulse" },
-  { title: "MedTech", description: "Medical devices and diagnostics improving clinical outcomes.", icon: "Stethoscope" },
-  { title: "Water & Sanitation", description: "Solutions ensuring safe water access and sanitation infrastructure.", icon: "Droplets" },
-  { title: "Education Technology", description: "Reimagining learning outcomes for India's next generation.", icon: "GraduationCap" },
-  { title: "Clean Energy", description: "Renewable and decentralized energy solutions for a sustainable Bharat.", icon: "Zap" },
-  { title: "Waste Management", description: "Circular-economy ventures turning waste into value.", icon: "Recycle" },
-  { title: "Rural Development", description: "Infrastructure and services strengthening rural livelihoods.", icon: "TreePine" },
-  { title: "Women Empowerment", description: "Ventures expanding economic opportunity and safety for women.", icon: "HandHeart" },
-  { title: "Livelihood Generation", description: "Platforms creating sustainable income and employment opportunities.", icon: "Briefcase" },
-  { title: "Other Social Impact Innovations", description: "Bold ideas creating measurable social good beyond traditional categories.", icon: "Lightbulb" },
-];
-
 // ---- Startup Support Programs page ----
 
 export interface SupportProgram {
   title: string;
   description: string;
   icon:
-    | "Rocket"
+    | "Sprout"
     | "TrendingUp"
     | "Users"
     | "Landmark"
@@ -546,7 +482,7 @@ export interface SupportProgram {
 }
 
 export const supportPrograms: SupportProgram[] = [
-  { title: "Incubation", description: "Hands-on support to validate your idea and build a strong founding foundation.", icon: "Rocket" },
+  { title: "Incubation", description: "Hands-on support to validate your idea and build a strong founding foundation.", icon: "Sprout" },
   { title: "Acceleration", description: "Structured sprints to scale traction, revenue, and team fast.", icon: "TrendingUp" },
   { title: "Mentorship", description: "One-on-one guidance from operators and founders who've built at scale.", icon: "Users" },
   { title: "Funding Support", description: "Grant facilitation and funding readiness to fuel your next stage of growth.", icon: "Landmark" },
@@ -659,3 +595,4 @@ export const successStories: SuccessStory[] = [
     slug: "pathshala-neha-kulkarni",
   },
 ];
+

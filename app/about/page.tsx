@@ -5,6 +5,9 @@ import OurStory from "@/components/sections/about/OurStory";
 import AboutStats from "@/components/sections/about/AboutStats";
 import VisionMission from "@/components/sections/about/VisionMission";
 import Objectives from "@/components/sections/about/Objectives";
+import CoreValues from "@/components/sections/about/CoreValues";
+import WhereWeFocus from "@/components/sections/about/WhereWeFocus";
+import AboutLegacyMoments from "@/components/sections/about/AboutLegacyMoments";
 import { aboutImages } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -24,7 +27,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Who We Are"
         title="About Tech4Bharat"
         description="A startup incubator helping ambitious founders build category-defining companies across India."
         image={aboutImages.innovationCenter}
@@ -34,6 +36,9 @@ export default function AboutPage() {
       <AboutStats />
       <VisionMission />
       <Objectives />
+      <AboutLegacyMoments />
+      <CoreValues />
+      <WhereWeFocus />
     </>
   );
 }

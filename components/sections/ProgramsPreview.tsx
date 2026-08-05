@@ -1,84 +1,74 @@
-import { Presentation, Rocket, Users, Wallet, type LucideIcon } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
-import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
-import ProgramImageCard from "@/components/ui/ProgramImageCard";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import Blob from "@/components/ui/Blob";
-import GeometricPattern from "@/components/ui/GeometricPattern";
-import SectionDivider from "@/components/ui/SectionDivider";
 
 interface HomeProgram {
-  icon: LucideIcon;
   title: string;
   description: string;
   image: string;
+  href: string;
 }
 
 const homePrograms: HomeProgram[] = [
   {
-    icon: Rocket,
-    title: "Startup Incubation",
-    description: "Structured, cohort-based support from first idea to a working, fundable company.",
+    title: "Startup Portfolio",
+    description: "The startups Tech4Bharat has backed and incubated.",
     image: "/images/programs/incubation.jpg",
+    href: "/portfolio",
   },
   {
-    icon: Users,
-    title: "Mentorship",
-    description: "One-on-one guidance from experienced operators and industry mentors.",
-    image: "/images/programs/mentoring.jpg",
-  },
-  {
-    icon: Presentation,
-    title: "Workshops",
-    description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
+    title: "Startup Bootcamp",
+    description: "A one-day intensive program for early-stage founders.",
     image: "/images/gallery/hackathons-1.jpg",
-  },
-  {
-    icon: Wallet,
-    title: "Funding Support",
-    description: "Grant facilitation and structured introductions to our angel and VC network.",
-    image: "/images/gallery/gallery-3.jpg",
+    href: "/startup-bootcamp",
   },
 ];
 
+/** Programs preview — exactly the two real programs that exist as dedicated pages, each a
+ *  large horizontal split card instead of a small icon-grid tile. */
 export default function ProgramsPreview() {
   return (
-    <section id="programs" className="relative overflow-hidden bg-brand-50 py-16 sm:py-24">
-      <GeometricPattern className="-right-32 -top-32 h-96 w-96 text-brand-700/8" />
-      <Blob tone="brand" className="-left-24 bottom-10 h-72 w-72" animate={false} />
-
-      <Container className="relative">
+    <section id="programs" className="bg-slate-50 py-8 sm:py-12">
+      <Container>
         <AnimatedSection>
-          <SectionTitle
-            eyebrow="Programs"
-            title="A program for every stage of your journey"
-            description="From first idea to scale-up, structured tracks and support designed around founder needs."
-          />
+          <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-700">
+            <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
+            Programs
+          </span>
+          <h2 className="mt-4 max-w-3xl text-balance text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[40px]">
+            How founders work with us
+          </h2>
         </AnimatedSection>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {homePrograms.map((program, i) => (
-            <AnimatedSection key={program.title} delay={i * 0.06} animation="scale">
-              <ProgramImageCard
-                image={program.image}
-                icon={program.icon}
-                title={program.title}
-                description={program.description}
-                learnMoreHref="/programs"
-              />
+            <AnimatedSection key={program.title} delay={i * 0.08}>
+              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm sm:flex-row">
+                <div className="relative h-48 w-full shrink-0 sm:h-auto sm:w-2/5">
+                  <Image
+                    src={program.image}
+                    alt={program.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 20vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col justify-center p-6 sm:p-7">
+                  <h3 className="text-2xl font-bold text-ink-900">{program.title}</h3>
+                  <p className="mt-2 text-base leading-relaxed text-slate-600">{program.description}</p>
+                  <div className="mt-5">
+                    <Button href={program.href} variant="outline" size="sm">
+                      Learn More <ArrowRight size={16} />
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </AnimatedSection>
           ))}
         </div>
-
-        <AnimatedSection delay={0.3} className="mt-10 text-center">
-          <Button href="/programs" variant="outline">
-            Explore All Programs
-          </Button>
-        </AnimatedSection>
       </Container>
-
-      <SectionDivider color="text-sand-50" />
     </section>
   );
 }

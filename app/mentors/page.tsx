@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Waypoints } from "lucide-react";
-import PageHero from "@/components/ui/PageHero";
+import MentorsOverview from "@/components/sections/mentors/MentorsOverview";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import MentorCard from "@/components/ui/MentorCard";
 import Blob from "@/components/ui/Blob";
 import DotGrid from "@/components/ui/DotGrid";
-import ContactCTA from "@/components/sections/ContactCTA";
 import { advisors, mentors } from "@/lib/data";
+
+const badgeStyles = ["solid", "outline", "gradient", "dot"] as const;
 
 export const metadata: Metadata = {
   title: "Mentors & Advisors | Tech4Bharat",
@@ -25,26 +25,21 @@ export const metadata: Metadata = {
 export default function MentorsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Our Network"
-        title="Mentors & Advisors"
-        description="Operators, investors, and academics who give Tech4Bharat founders an unfair advantage."
-        icon={Waypoints}
-      />
+      <MentorsOverview />
 
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-white pb-8 pt-4 sm:pb-10 sm:pt-6">
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
 
         <Container className="relative">
           <AnimatedSection>
             <SectionTitle
               eyebrow="Mentors"
-              title="Hands-on guidance from people who've built"
-              description="One-on-one mentorship from operators and founders who've scaled real companies."
+              title="Operators who've built at scale"
+              description="Hands-on guidance from founders and operators who've done it before."
             />
           </AnimatedSection>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {mentors.map((mentor, i) => (
               <AnimatedSection key={mentor.name} delay={i * 0.08} animation="scale">
                 <MentorCard
@@ -55,6 +50,7 @@ export default function MentorsPage() {
                   expertise={mentor.expertise}
                   bio={mentor.bio}
                   linkedinUrl={mentor.linkedinUrl}
+                  badgeStyle={badgeStyles[i % badgeStyles.length]}
                 />
               </AnimatedSection>
             ))}
@@ -62,7 +58,7 @@ export default function MentorsPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-50 py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-brand-50 py-8 sm:py-10">
         <Blob tone="secondary" className="-right-24 top-0 h-72 w-72" />
         <Blob tone="brand" className="-left-20 bottom-0 h-64 w-64" animate={false} />
 
@@ -75,7 +71,7 @@ export default function MentorsPage() {
             />
           </AnimatedSection>
 
-          <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+          <div className="mx-auto mt-8 grid max-w-2xl gap-5 sm:grid-cols-2">
             {advisors.map((advisor, i) => (
               <AnimatedSection key={advisor.name} delay={i * 0.08} animation="scale">
                 <MentorCard
@@ -86,6 +82,7 @@ export default function MentorsPage() {
                   expertise={advisor.expertise}
                   bio={advisor.bio}
                   linkedinUrl={advisor.linkedinUrl}
+                  badgeStyle={badgeStyles[(i + 2) % badgeStyles.length]}
                 />
               </AnimatedSection>
             ))}
@@ -93,7 +90,6 @@ export default function MentorsPage() {
         </Container>
       </section>
 
-      <ContactCTA />
     </>
   );
 }

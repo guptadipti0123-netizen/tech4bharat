@@ -1,119 +1,58 @@
 import Image from "next/image";
-import { ArrowRight, FlaskConical, Globe2, Rocket, Users, type LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import SectionDivider from "@/components/ui/SectionDivider";
+import { aboutImages } from "@/lib/images";
 
-interface Highlight {
-  icon: LucideIcon;
-  label: string;
-}
-
-const highlights: Highlight[] = [
-  { icon: Rocket, label: "Startup Incubation" },
-  { icon: Users, label: "Mentorship" },
-  { icon: FlaskConical, label: "Innovation Labs" },
-  { icon: Globe2, label: "National Network" },
-];
-
-/** Organic, blob-shaped photo frame — an off-circle silhouette rather than a hard rectangle. */
-const blobRadius = "63% 37% 54% 46% / 55% 48% 52% 45%";
-
+/** About preview — a plain bordered photo on the left, two short paragraphs and one button
+ *  on the right, inside a single bordered container. No blob shapes, no blurred glow, no
+ *  icon-highlight grid. */
 export default function AboutPreview() {
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden bg-linear-to-b from-[#FFFDF7] via-[#FFF9ED] to-white py-24 sm:py-32"
-    >
-      <div
-        className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(200,155,60,0.16), transparent 70%)" }}
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -right-32 bottom-0 h-125 w-125 rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(200,155,60,0.14), transparent 70%)" }}
-        aria-hidden="true"
-      />
+    <section id="about" className="bg-slate-50 py-8 sm:py-12">
+      <Container>
+        <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <AnimatedSection>
+              <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-slate-200">
+                <Image
+                  src={aboutImages.team}
+                  alt="The Tech4Bharat team"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover"
+                />
+              </div>
+            </AnimatedSection>
 
-      <Container className="relative">
-        <div className="grid items-center gap-16 lg:grid-cols-[55fr_45fr] lg:gap-12">
-          <AnimatedSection>
-            <div className="flex items-center gap-3">
-              <span className="h-px w-9 bg-[#C89B3C]" />
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#C89B3C]">
+            <AnimatedSection delay={0.1}>
+              <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-700">
+                <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
                 About Tech4Bharat
               </span>
-            </div>
+              <h2 className="mt-4 text-balance text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[40px]">
+                A startup incubator built for Indian founders
+              </h2>
 
-            <h2 className="mt-6 text-[34px] font-extrabold leading-[1.12] tracking-tight text-[#1F4E3D] sm:text-[46px] lg:text-[52px]">
-              Building India&apos;s <span className="text-[#C89B3C]">Innovation Future</span>{" "}
-              Through Technology &amp; Entrepreneurship
-            </h2>
+              <p className="mt-5 text-lg leading-relaxed text-slate-600">
+                Tech4Bharat is a startup incubator helping ambitious founders build
+                category-defining companies across India.
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                We support founders through mentorship, capital access, and a thriving
+                nationwide startup ecosystem.
+              </p>
 
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-600">
-              We partner with early-stage founders to build durable companies — combining deep
-              operating experience, access to capital, and a nationwide community that compounds
-              over time.
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Button
-                href="/about"
-                className="bg-[#1F4E3D] text-white shadow-lg shadow-[#1F4E3D]/20 hover:bg-[#173d2f] hover:shadow-xl hover:shadow-[#1F4E3D]/25"
-              >
-                Explore About <ArrowRight size={18} />
-              </Button>
-              <Button
-                href="/programs"
-                variant="outline"
-                className="border-[#1F4E3D]/25 text-[#1F4E3D] hover:border-[#1F4E3D] hover:bg-[#1F4E3D] hover:text-white"
-              >
-                Our Programs
-              </Button>
-            </div>
-
-            <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[#1F4E3D]/10 pt-8">
-              {highlights.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C89B3C]/10 text-[#C89B3C]">
-                    <Icon size={18} />
-                  </span>
-                  <span className="text-sm font-semibold text-[#1F4E3D]">{label}</span>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.15}>
-            <div className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none">
-              <div
-                className="absolute inset-0 scale-110 animate-blob bg-[#C89B3C]/25 blur-3xl"
-                style={{ borderRadius: blobRadius }}
-                aria-hidden="true"
-              />
-
-              <div className="group relative h-full w-full animate-float">
-                <div
-                  className="relative h-full w-full overflow-hidden border-[10px] border-white/85 shadow-2xl"
-                  style={{ borderRadius: blobRadius }}
-                >
-                  <Image
-                    src="/images/gallery/gallery-1.jpg"
-                    alt="Students and founders across the Tech4Bharat innovation ecosystem"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
+              <div className="mt-7">
+                <Button href="/about" variant="outline">
+                  Learn More <ArrowRight size={16} />
+                </Button>
               </div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+          </div>
         </div>
       </Container>
-
-      <SectionDivider color="text-secondary-50" />
     </section>
   );
 }

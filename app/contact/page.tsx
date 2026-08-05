@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ExternalLink, Handshake, Mail, MapPin, Megaphone, Phone, Rocket, Users } from "lucide-react";
+import { ExternalLink, Handshake, Lightbulb, Mail, MapPin, Megaphone, Phone, Users } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -8,7 +8,6 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import ContactForm from "@/components/ui/ContactForm";
 import Accordion from "@/components/ui/Accordion";
-import CTASection from "@/components/ui/CTASection";
 import Blob from "@/components/ui/Blob";
 import DotGrid from "@/components/ui/DotGrid";
 import {
@@ -40,7 +39,7 @@ const socials = [
 
 const quickContacts = [
   {
-    icon: Rocket,
+    icon: Lightbulb,
     title: "For Founders",
     description: "Applying to a program or have a startup idea to discuss.",
     email: "programs@tech4bharat.org",
@@ -69,14 +68,13 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact Us"
         title="Let's start a conversation"
         description="Whether you're a founder, mentor, or partner, our team would love to hear from you."
         image="/images/gallery/gallery-3.jpg"
         icon={MapPin}
       />
 
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-white py-8 sm:py-12">
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
 
         <Container className="relative">
@@ -105,7 +103,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary-50 py-16 sm:py-24">
+      <section className="bg-secondary-50 py-8 sm:py-12">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
             <AnimatedSection>
@@ -192,30 +190,17 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-white py-8 sm:py-12">
         <Blob tone="secondary" className="-right-24 top-10 h-72 w-72" animate={false} />
 
         <Container className="relative">
           <AnimatedSection>
             <SectionTitle eyebrow="FAQ" title="Frequently asked questions" />
           </AnimatedSection>
-          <div className="mx-auto mt-14 max-w-2xl">
+          <div className="mx-auto mt-10 max-w-2xl">
             <Accordion items={contactFaqs} />
           </div>
         </Container>
-      </section>
-
-      <section className="bg-brand-50 py-16 sm:py-24">
-        <CTASection
-          image="/images/gallery/gallery-9.jpg"
-          eyebrow="Partnerships"
-          title="Partner With Tech4Bharat"
-          description="Universities, government bodies, corporates, and NGOs — join our ecosystem and help build India's next generation of founders."
-          buttons={[
-            { label: "Become a Partner", href: "mailto:partnerships@tech4bharat.org", variant: "secondary" },
-            { label: "View Our Partners", href: "/partners", variant: "outline" },
-          ]}
-        />
       </section>
     </>
   );

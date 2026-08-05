@@ -1,4 +1,4 @@
-import { GraduationCap, Handshake, Lightbulb, Rocket, type LucideIcon } from "lucide-react";
+import { GraduationCap, Handshake, Lightbulb, Sprout, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Card from "@/components/ui/Card";
@@ -20,7 +20,7 @@ const objectives: Objective[] = [
   {
     title: "Startup Incubation",
     description: "Structured support from first idea to a fundable company.",
-    icon: Rocket,
+    icon: Sprout,
   },
   {
     title: "Skill Development",
@@ -36,12 +36,17 @@ const objectives: Objective[] = [
 
 export default function Objectives() {
   return (
-    <section className="relative overflow-hidden bg-sand-50 py-16 sm:py-24">
+    <section id="objectives" className="relative overflow-hidden bg-sand-50 py-8 sm:py-12">
       <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
 
       <Container className="relative">
         <AnimatedSection>
-          <SectionTitle eyebrow="Objectives" title="What we're working to achieve" />
+          <SectionTitle
+            eyebrow="Objectives"
+            title="Building the future of innovation."
+            className="max-w-200"
+            titleClassName="text-balance"
+          />
         </AnimatedSection>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

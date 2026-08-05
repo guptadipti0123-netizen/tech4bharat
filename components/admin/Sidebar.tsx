@@ -12,8 +12,8 @@ import {
   Mail,
   MessageSquare,
   Quote,
-  Rocket,
   Sparkles,
+  Sprout,
   Users,
   UserSquare2,
   X,
@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, resource: "dashboard" },
-  { href: "/admin/startups", label: "Startups", icon: Rocket, resource: "startups" },
+  { href: "/admin/startups", label: "Startups", icon: Sprout, resource: "startups" },
   { href: "/admin/mentors", label: "Mentors", icon: Users, resource: "mentors" },
   { href: "/admin/advisors", label: "Advisors", icon: UserSquare2, resource: "advisors" },
   { href: "/admin/partners", label: "Partners", icon: Handshake, resource: "partners" },
