@@ -57,14 +57,6 @@ export default function Footer() {
             <Button href="/contact" variant="secondary" size="lg">
               Apply Now <ArrowRight size={18} />
             </Button>
-            <Button
-              href="/contact"
-              variant="outline"
-              size="lg"
-              className="border-white/25 text-white hover:border-white/40 hover:bg-white/10"
-            >
-              Contact Us
-            </Button>
           </div>
         </div>
 
