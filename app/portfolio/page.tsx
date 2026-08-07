@@ -23,8 +23,10 @@ export default function PortfolioPage() {
         title="Founders we've backed"
         description="A growing portfolio of Indian startups building category-defining companies across sectors critical to Bharat's next decade."
         icon={Building2}
+        titleClassName="font-(family-name:--font-poppins) text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]"
+        descriptionClassName="mx-auto mt-3 max-w-175 text-[18px] text-[#5B6B73]"
       />
-      <section className="bg-white pb-8 pt-4 sm:pb-12 sm:pt-6">
+      <section className="bg-white pb-8 pt-4 sm:pb-12 sm:pt-2">
         <Container>
           <StartupPortfolioGrid />
         </Container>

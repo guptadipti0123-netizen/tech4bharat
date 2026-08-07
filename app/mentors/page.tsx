@@ -33,9 +33,10 @@ export default function MentorsPage() {
         <Container className="relative">
           <AnimatedSection>
             <SectionTitle
-              eyebrow="Mentors"
               title="Operators who've built at scale"
               description="Hands-on guidance from founders and operators who've done it before."
+              titleClassName="text-[30px] font-bold leading-[1.1] text-[#163B2D] sm:text-[36px] lg:text-[42px]"
+              descriptionClassName="mx-auto mt-4 max-w-2xl text-center text-lg sm:text-lg text-[#667085]"
             />
           </AnimatedSection>
 
@@ -65,9 +66,11 @@ export default function MentorsPage() {
         <Container className="relative">
           <AnimatedSection>
             <SectionTitle
-              eyebrow="Advisors"
               title="Strategic counsel from across the ecosystem"
               description="Academic and industry advisors shaping Tech4Bharat's programs and partnerships."
+              className="max-w-225"
+              titleClassName="text-[20px] font-semibold leading-[1.5] text-[#163B2D] sm:text-[22px] lg:text-[24px] lg:whitespace-nowrap"
+              descriptionClassName="mx-auto mt-4 max-w-2xl text-center text-lg sm:text-lg text-[#667085]"
             />
           </AnimatedSection>
 

@@ -31,12 +31,16 @@ const steps = [
  *  timeline-style sections (no left-label/right-image split, just a connected step row). */
 export default function PartnershipProcess() {
   return (
-    <section id="collaborations" className="relative overflow-hidden bg-white py-8 sm:py-12">
+    <section id="collaborations" className="relative overflow-hidden bg-white pb-8 pt-6 sm:pb-12 sm:pt-9">
       <DotGrid className="left-0 top-0 h-full w-full text-brand-700/5" />
 
       <Container className="relative">
         <AnimatedSection>
-          <SectionTitle eyebrow="How It Works" title="From first conversation to shared impact" />
+          <SectionTitle
+            title="From first conversation to shared impact"
+            className="max-w-250"
+            titleClassName="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163A39] sm:text-[34px] lg:text-[40px] lg:whitespace-nowrap"
+          />
         </AnimatedSection>
 
         <div className="relative mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

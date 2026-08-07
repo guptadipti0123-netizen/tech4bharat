@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Blob from "@/components/ui/Blob";
 import DotGrid from "@/components/ui/DotGrid";
+import { cn } from "@/lib/utils";
 
 interface PageHeroProps {
   title: string;
@@ -13,6 +14,11 @@ interface PageHeroProps {
   /** Optional oversized, near-invisible watermark icon — gives each page's hero its own
    *  identity (a camera for Gallery, a calendar for Events, a map pin for Contact, …). */
   icon?: LucideIcon;
+  /** Escape hatch to override the h1's size/weight/color for a specific page without
+   *  changing the default for every other page that uses this component. */
+  titleClassName?: string;
+  /** Same escape hatch as `titleClassName`, for the description paragraph. */
+  descriptionClassName?: string;
 }
 
 /**
@@ -25,7 +31,14 @@ interface PageHeroProps {
  * immediately — every page using this component shares this same tight rhythm. There is no
  * eyebrow badge above the title — every page leads with a single, direct heading.
  */
-export default function PageHero({ title, description, image, icon: Icon }: PageHeroProps) {
+export default function PageHero({
+  title,
+  description,
+  image,
+  icon: Icon,
+  titleClassName,
+  descriptionClassName,
+}: PageHeroProps) {
   return (
     <section className="relative bg-linear-to-b from-brand-50 via-white to-white pb-7 pt-20 sm:pb-10 sm:pt-24">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -43,10 +56,22 @@ export default function PageHero({ title, description, image, icon: Icon }: Page
 
       <Container className="relative">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <h1 className="text-[32px] font-extrabold leading-tight tracking-tight text-ink-900 sm:text-[44px]">
+          <h1
+            className={cn(
+              "text-[32px] font-extrabold leading-tight tracking-tight text-ink-900 sm:text-[44px]",
+              titleClassName
+            )}
+          >
             {title}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">{description}</p>
+          <p
+            className={cn(
+              "mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg",
+              descriptionClassName
+            )}
+          >
+            {description}
+          </p>
         </AnimatedSection>
 
         {image && (

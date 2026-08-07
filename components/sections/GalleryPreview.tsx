@@ -27,11 +27,7 @@ export default function GalleryPreview() {
     <section className="bg-slate-50 py-8 sm:py-12">
       <Container>
         <AnimatedSection className="text-center">
-          <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-700">
-            <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-            Gallery
-          </span>
-          <h2 className="mt-4 text-balance text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[40px]">
+          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-bold leading-tight text-ink-900 md:text-4xl">
             Moments from the ecosystem
           </h2>
         </AnimatedSection>

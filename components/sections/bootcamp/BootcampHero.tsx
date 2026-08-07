@@ -27,10 +27,10 @@ export default function BootcampHero() {
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <h1 className="text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[46px]">
+            <h1 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
               One-Day Startup Bootcamp 2026
             </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-600">
+            <p className="mt-3 max-w-xl text-lg leading-relaxed text-slate-600">
               A one-day intensive startup bootcamp designed to help early-stage founders
               validate ideas, build sustainable businesses, connect with experts, and prepare
               for funding opportunities.

@@ -26,26 +26,21 @@ const highlightPhotos: HighlightPhoto[] = [
  *  moments, rather than a feature-card grid. */
 export default function BootcampHighlights() {
   return (
-    <section className="bg-sand-50 py-8 sm:py-12">
+    <section className="bg-sand-50 py-10 sm:py-11">
       <Container>
         <AnimatedSection>
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-              At a Glance
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-            </span>
-            <h2 className="mt-4 text-[44px] font-extrabold leading-[1.05] tracking-tight text-ink-900 sm:text-[56px] lg:text-[64px]">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
               Bootcamp Highlights
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-slate-600 sm:text-xl">
+            <p className="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]">
               Everything packed into one intensive day—from founder learning and investor
               interactions to mentorship and startup networking.
             </p>
           </div>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-10">
+        <AnimatedSection delay={0.1} className="mt-9">
           <div className="rounded-4xl border border-brand-100 bg-white p-4 shadow-[0_20px_60px_rgba(22,58,58,0.1)] sm:p-6">
             <div className="flex gap-4 overflow-x-auto pb-1 sm:gap-5">
               {highlightPhotos.map((photo) => (

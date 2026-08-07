@@ -85,29 +85,20 @@ const themeClasses: Record<string, { gradient: string; badge: string; border: st
  *  standing in for that kind of person (no lineup announced yet, so no fabricated names). */
 export default function ExpertsSpeakers() {
   return (
-    <section className="bg-white py-8 sm:py-12">
+    <section className="bg-white py-10 sm:py-11">
       <Container>
         <AnimatedSection>
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-              Who You&apos;ll Meet
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-            </span>
-            <h2 className="relative mt-4 inline-block text-[38px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[46px]">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
               Experts &amp; Speakers
-              <span
-                className="absolute inset-x-1 -bottom-1.5 h-2.5 rounded-full bg-linear-to-r from-brand-300 via-accent-300 to-secondary-300 opacity-50"
-                aria-hidden="true"
-              />
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+            <p className="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]">
               Throughout the day, participants will interact directly with:
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {categories.map((category, i) => {
             const theme = themeClasses[category.theme];
             return (

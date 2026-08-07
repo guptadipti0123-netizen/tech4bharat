@@ -18,11 +18,7 @@ export default function FundingHero() {
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-              Funding
-            </span>
-            <h1 className="mt-4 text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[44px]">
+            <h1 className="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[34px] lg:text-[40px]">
               Funding Opportunities
             </h1>
             <p className="mt-3 max-w-lg text-lg leading-relaxed text-slate-600">

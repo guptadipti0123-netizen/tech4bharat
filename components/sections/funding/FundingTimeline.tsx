@@ -23,10 +23,14 @@ export default function FundingTimeline() {
     <section className="relative overflow-hidden bg-brand-50 py-8 sm:py-12">
       <Container className="relative">
         <AnimatedSection>
-          <SectionTitle eyebrow="Process" title="How It Works" description="From discovery to a connected investor, in four steps." />
+          <SectionTitle
+            title="How It Works"
+            description="From discovery to a connected investor, in four steps."
+            titleClassName="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[34px] lg:text-[40px]"
+          />
         </AnimatedSection>
 
-        <div className="relative mt-10">
+        <div className="relative mt-7">
           <span aria-hidden="true" className="absolute inset-x-0 top-6 hidden h-px bg-brand-200 lg:block" />
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => {

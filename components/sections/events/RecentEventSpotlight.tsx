@@ -28,18 +28,14 @@ export default function RecentEventSpotlight() {
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-              Recent Event
-            </span>
-            <h1 className="mt-4 text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[44px]">
+            <h1 className="text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]">
               Digital &amp; Tech Policy Workshop
             </h1>
-            <p className="mt-3 max-w-lg text-lg leading-relaxed text-slate-600">
+            <p className="mt-3 max-w-lg text-[18px] font-medium leading-relaxed text-[#5F6B68]">
               Technology, Governance &amp; Strategic Decision-Making.
             </p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+            <div className="mt-9 grid gap-3 sm:grid-cols-2">
               {infoCards.map(({ icon: Icon, label, value }) => (
                 <div
                   key={label}

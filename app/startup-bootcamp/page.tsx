@@ -3,12 +3,8 @@ import BootcampHero from "@/components/sections/bootcamp/BootcampHero";
 import BootcampOverview from "@/components/sections/bootcamp/BootcampOverview";
 import BootcampHighlights from "@/components/sections/bootcamp/BootcampHighlights";
 import WhoShouldAttend from "@/components/sections/bootcamp/WhoShouldAttend";
-import MinimumParticipation from "@/components/sections/bootcamp/MinimumParticipation";
 import ExpertsSpeakers from "@/components/sections/bootcamp/ExpertsSpeakers";
 import BootcampSchedule from "@/components/sections/bootcamp/BootcampSchedule";
-import BootcampTestimonials from "@/components/sections/bootcamp/BootcampTestimonials";
-import BootcampFAQ from "@/components/sections/bootcamp/BootcampFAQ";
-import BootcampRegistrationCTA from "@/components/sections/bootcamp/BootcampRegistrationCTA";
 import { events } from "@/lib/events";
 
 export const metadata: Metadata = {
@@ -32,12 +28,8 @@ export default function StartupBootcampPage() {
       <BootcampOverview />
       <BootcampHighlights />
       <WhoShouldAttend />
-      <MinimumParticipation />
       <ExpertsSpeakers />
       {bootcamp?.agenda && <BootcampSchedule agenda={bootcamp.agenda} />}
-      <BootcampTestimonials />
-      <BootcampFAQ />
-      <BootcampRegistrationCTA />
     </>
   );
 }

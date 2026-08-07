@@ -26,16 +26,15 @@ const photos: MomentPhoto[] = [
  *  standing in for generic "networking" stock photography. */
 export default function PartnersLegacyMoments() {
   return (
-    <section className="bg-sand-50 py-8 sm:py-12">
+    <section className="bg-sand-50 pb-8 pt-6 sm:pb-12 sm:pt-9">
       <Container>
         <AnimatedSection>
           <SectionTitle
-            eyebrow="In Partnership"
             title="Real moments from the field"
             description="Real moments from workshops, field visits, and collaborative innovation."
             className="max-w-187.5"
-            titleClassName="text-balance"
-            descriptionClassName="font-medium line-clamp-2 text-balance"
+            titleClassName="text-balance text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            descriptionClassName="mt-3 text-[17px] sm:text-[17px] font-medium text-[#667085] line-clamp-2 text-balance"
           />
         </AnimatedSection>
 

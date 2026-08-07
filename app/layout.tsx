@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Poppins } from "next/font/google";
 import { Toaster } from "sonner";
 import SiteChrome from "@/components/layout/SiteChrome";
 import { AuthProvider } from "@/contexts/AuthContext";
@@ -9,6 +9,15 @@ const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-manrope",
+  display: "swap",
+});
+
+// Used only by the Partners ticket-stub cards (700) and the About page's Core Values
+// heading (800) — the site's default heading/body font is Manrope everywhere else.
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -40,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={manrope.variable}>
+    <html lang="en" className={`${manrope.variable} ${poppins.variable}`}>
       <body className="font-body antialiased">
         <a
           href="#main-content"

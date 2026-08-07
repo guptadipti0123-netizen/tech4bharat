@@ -7,16 +7,18 @@ import { partnerCategories } from "@/lib/partners";
 
 export default function PartnerCategoryGrid() {
   return (
-    <section className="relative overflow-hidden bg-sand-50 py-8 sm:py-12">
+    <section className="relative overflow-hidden bg-sand-50 pb-8 pt-6 sm:pb-8 sm:pt-9">
       <Blob tone="secondary" className="-right-32 top-1/4 h-96 w-96" />
       <Blob tone="brand" className="-left-24 bottom-0 h-72 w-72" animate={false} />
 
       <Container className="relative">
         <AnimatedSection>
           <SectionTitle
-            eyebrow="Ecosystem"
             title="A network spanning every corner of Bharat"
             description="From academia to government to industry, our partners help us extend founder support across every corner of India."
+            className="max-w-240"
+            titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px] lg:whitespace-nowrap"
+            descriptionClassName="mt-3 text-[17px] sm:text-[17px] leading-relaxed text-[#667085]"
           />
         </AnimatedSection>
 

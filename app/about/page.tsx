@@ -1,23 +1,18 @@
 import type { Metadata } from "next";
-import { Compass } from "lucide-react";
-import PageHero from "@/components/ui/PageHero";
+import AboutHero from "@/components/sections/about/AboutHero";
 import OurStory from "@/components/sections/about/OurStory";
-import AboutStats from "@/components/sections/about/AboutStats";
-import VisionMission from "@/components/sections/about/VisionMission";
-import Objectives from "@/components/sections/about/Objectives";
+import VisionMissionObjectives from "@/components/sections/about/VisionMissionObjectives";
 import CoreValues from "@/components/sections/about/CoreValues";
 import WhereWeFocus from "@/components/sections/about/WhereWeFocus";
-import AboutLegacyMoments from "@/components/sections/about/AboutLegacyMoments";
-import { aboutImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About Us | Tech4Bharat",
   description:
-    "Learn about Tech4Bharat's story, vision, mission, and the values driving India's next generation of founder-first startup incubation.",
+    "Tech4Bharat is being established as a national platform to support social entrepreneurship, innovation, and startup development across Bharat.",
   openGraph: {
     title: "About Tech4Bharat",
     description:
-      "Our story, vision, mission, and the values driving India's next generation of startup incubation.",
+      "A national platform to support social entrepreneurship, innovation, and startup development across Bharat.",
     type: "website",
     locale: "en_IN",
   },
@@ -26,17 +21,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        title="About Tech4Bharat"
-        description="A startup incubator helping ambitious founders build category-defining companies across India."
-        image={aboutImages.innovationCenter}
-        icon={Compass}
-      />
+      <AboutHero />
       <OurStory />
-      <AboutStats />
-      <VisionMission />
-      <Objectives />
-      <AboutLegacyMoments />
+      <VisionMissionObjectives />
       <CoreValues />
       <WhereWeFocus />
     </>

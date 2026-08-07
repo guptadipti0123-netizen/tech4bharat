@@ -39,30 +39,21 @@ const highlights = [
  *  parts on the right, and four compact highlight chips along the bottom. */
 export default function BootcampOverview() {
   return (
-    <section className="relative overflow-hidden bg-brand-50 py-8 sm:py-12">
+    <section className="relative overflow-hidden bg-brand-50 py-10 sm:py-11">
       <DotGrid className="left-0 top-0 h-full w-full text-brand-700/4" />
       <Blob tone="brand" className="-left-24 top-0 h-72 w-72" />
       <Blob tone="secondary" className="-right-20 bottom-0 h-64 w-64" animate={false} />
 
       <Container className="relative">
         <AnimatedSection>
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-              Overview
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-            </span>
-            <h2 className="relative mt-4 inline-block text-[40px] font-extrabold leading-[1.05] tracking-tight text-ink-900 sm:text-[52px]">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
               Bootcamp Overview
-              <span
-                className="absolute inset-x-1 -bottom-1.5 h-2.5 rounded-full bg-linear-to-r from-brand-300 via-secondary-300 to-accent-300 opacity-50"
-                aria-hidden="true"
-              />
             </h2>
           </div>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-8">
+        <AnimatedSection delay={0.1} className="mt-9">
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
             <div className="grid gap-8 lg:grid-cols-5 lg:gap-10">
               <div className="group relative aspect-4/3 overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(22,58,58,0.1)] lg:col-span-2">

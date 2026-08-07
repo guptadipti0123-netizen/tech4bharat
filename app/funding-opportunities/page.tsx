@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import FundingHero from "@/components/sections/funding/FundingHero";
 import FundingCategories from "@/components/sections/funding/FundingCategories";
 import FundingTimeline from "@/components/sections/funding/FundingTimeline";
-import WhoCanApply from "@/components/sections/funding/WhoCanApply";
 import SupportProvided from "@/components/sections/funding/SupportProvided";
 import FundingCTA from "@/components/sections/funding/FundingCTA";
 
@@ -25,7 +24,6 @@ export default function FundingOpportunitiesPage() {
       <FundingHero />
       <FundingCategories />
       <FundingTimeline />
-      <WhoCanApply />
       <SupportProvided />
       <FundingCTA />
     </>

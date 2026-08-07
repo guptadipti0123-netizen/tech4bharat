@@ -27,15 +27,11 @@ export default function AboutPreview() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-700">
-                <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-                About Tech4Bharat
-              </span>
-              <h2 className="mt-4 text-balance text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-[40px]">
+              <h2 className="max-w-2xl text-balance text-3xl font-bold leading-tight text-ink-900 md:text-4xl lg:text-4xl">
                 A startup incubator built for Indian founders
               </h2>
 
-              <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Tech4Bharat is a startup incubator helping ambitious founders build
                 category-defining companies across India.
               </p>

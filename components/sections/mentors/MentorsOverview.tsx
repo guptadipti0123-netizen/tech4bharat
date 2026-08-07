@@ -115,14 +115,10 @@ export default function MentorsOverview() {
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[35fr_65fr] lg:gap-12">
           <AnimatedSection className="lg:sticky lg:top-28 lg:self-start">
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-              <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-              Network
-            </span>
-            <h1 className="mt-4 text-[40px] font-extrabold leading-[1.05] tracking-tight text-ink-900 sm:text-[48px] lg:text-[56px]">
+            <h1 className="text-[30px] font-bold leading-[1.1] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
               Mentors &amp; Advisors
             </h1>
-            <p className="mt-4 max-w-sm text-lg leading-relaxed text-slate-600">
+            <p className="mt-4 max-w-sm text-lg leading-relaxed text-[#667085]">
               Operators, investors, and academics who give Tech4Bharat founders an unfair
               advantage.
             </p>

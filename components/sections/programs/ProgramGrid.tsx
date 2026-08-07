@@ -1,15 +1,18 @@
-import Image from "next/image";
-import { ArrowUpRight, Handshake, Presentation, Sprout, Users, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Calendar, Handshake, Rocket, Users, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { cn } from "@/lib/utils";
 
 interface ProgramItem {
   id: string;
   icon: LucideIcon;
   title: string;
   description: string;
-  image: string;
+  badge: string;
+  cardBg: string;
+  iconBg: string;
+  border: string;
 }
 
 // `id` gives each card a real anchor target — the Navbar's Programs dropdown links to
@@ -17,65 +20,82 @@ interface ProgramItem {
 const programs: ProgramItem[] = [
   {
     id: "incubation",
-    icon: Sprout,
+    icon: Rocket,
     title: "Startup Incubation",
     description: "Structured, cohort-based support from first idea to a working, fundable company.",
-    image: "/images/programs/incubation.jpg",
+    badge: "Cohort-Based",
+    cardBg: "#EAF6EE",
+    iconBg: "#1F4E3D",
+    border: "border border-[#1F4E3D]/15",
   },
   {
     id: "mentorship",
     icon: Users,
     title: "Mentorship",
     description: "One-on-one guidance from experienced operators and industry mentors.",
-    image: "/images/programs/mentoring.jpg",
+    badge: "1:1 Guidance",
+    cardBg: "#FFFFFF",
+    iconBg: "#1F4E3D",
+    border: "border border-slate-200 border-l-4 border-l-[#1F4E3D]",
   },
   {
     id: "workshops",
-    icon: Presentation,
+    icon: Calendar,
     title: "Workshops & Training",
     description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
-    image: "/images/gallery/hackathons-1.jpg",
+    badge: "Weekly Sessions",
+    cardBg: "#FFF7EC",
+    iconBg: "#D4A017",
+    border: "border border-[#D4A017]/20",
   },
   {
     id: "funding-networking",
     icon: Handshake,
-    title: "Funding & Networking Support",
+    title: "Funding & Networking",
     description: "Grant facilitation and curated introductions to our investor and partner network.",
-    image: "/images/gallery/gallery-3.jpg",
+    badge: "Investor Connect",
+    cardBg: "#EEF6FF",
+    iconBg: "#1B2E4A",
+    border: "border border-[#1B2E4A]/15",
   },
 ];
 
 const learnMoreHref = "/contact";
 
-/** One consistent premium card, repeated for every program — replaces four previously
- *  bespoke one-off layouts so every card reads the same and stretches to equal height. */
-function ProgramCard({ id, icon: Icon, title, description, image }: ProgramItem) {
+/** One editorial program card — a small icon badge, a category tag, and a compact CTA,
+ *  each card carrying its own background/border/icon-color treatment so the four cards
+ *  read as distinct entries rather than four repeats of the same template. */
+function ProgramCard({ id, icon: Icon, title, description, badge, cardBg, iconBg, border }: ProgramItem) {
   return (
     <div
       id={id}
-      className="group flex h-full scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(22,58,58,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_18px_44px_rgba(22,58,58,0.14)]"
+      style={{ backgroundColor: cardBg }}
+      className={cn(
+        "group flex h-64 scroll-mt-28 flex-col rounded-[18px] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1",
+        border
+      )}
     >
-      <div className="relative aspect-video w-full overflow-hidden">
-        <Image
-          src={image}
-          alt={`${title} at Tech4Bharat`}
-          fill
-          loading="lazy"
-          sizes="(max-width: 640px) 100vw, 50vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-ink-900/50 via-transparent to-transparent" />
-        <span className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-white bg-brand-700 text-white shadow-md">
-          <Icon size={22} />
+      <div className="flex items-start justify-between">
+        <span
+          className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-white"
+          style={{ backgroundColor: iconBg }}
+        >
+          <Icon size={32} />
+        </span>
+        <span
+          className="rounded-full bg-white/70 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide"
+          style={{ color: iconBg }}
+        >
+          {badge}
         </span>
       </div>
-      <div className="flex flex-1 flex-col p-7">
-        <h3 className="text-xl font-bold text-ink-900">{title}</h3>
-        <p className="mt-2.5 flex-1 leading-relaxed text-slate-600">{description}</p>
-        <Button href={learnMoreHref} variant="outline" size="sm" className="mt-5 w-fit">
-          Learn More <ArrowUpRight size={16} />
-        </Button>
-      </div>
+
+      <h3 className="mt-4 text-[26px] font-bold leading-tight text-ink-900">{title}</h3>
+      <p className="mt-1.5 flex-1 text-[15px] leading-relaxed text-slate-600">{description}</p>
+
+      <Button href={learnMoreHref} variant="outline" size="sm" className="mt-3 w-fit">
+        Learn More <ArrowUpRight size={16} />
+      </Button>
     </div>
   );
 }
@@ -86,7 +106,7 @@ export default function ProgramGrid() {
       <Container className="relative">
         <div className="grid gap-6 sm:grid-cols-2">
           {programs.map((program, i) => (
-            <AnimatedSection key={program.title} delay={i * 0.08} animation="scale" className="h-full">
+            <AnimatedSection key={program.title} delay={i * 0.08} animation="scale">
               <ProgramCard {...program} />
             </AnimatedSection>
           ))}

@@ -279,27 +279,6 @@ export const partners: Partner[] = [
   { name: "SIDBI" },
 ];
 
-export interface ImpactStat {
-  label: string;
-  value: number;
-  suffix: string;
-  /** lucide-react icon name, rendered via the icon map in ImpactStats.tsx. */
-  icon: string;
-}
-
-// "Our Impact" homepage snapshot — reach/scale, distinct from the
-// outcomes-focused stats on the About page (150+ startups, funding raised, etc.).
-export const impactStats: ImpactStat[] = [
-  { label: "Startups Supported", value: 150, suffix: "+", icon: "Sprout" },
-  { label: "Women Entrepreneurs", value: 60, suffix: "+", icon: "Venus" },
-  { label: "Students Trained", value: 50000, suffix: "+", icon: "GraduationCap" },
-  { label: "Mentors", value: 100, suffix: "+", icon: "Users" },
-  { label: "Investors", value: 40, suffix: "+", icon: "Landmark" },
-  { label: "Partner Organizations", value: 25, suffix: "+", icon: "Handshake" },
-  { label: "States Reached", value: 10, suffix: "+", icon: "MapPin" },
-  { label: "Innovation Programs", value: 15, suffix: "+", icon: "Lightbulb" },
-];
-
 export type BlogCategory = "Ecosystem" | "Fundraising" | "Mentorship" | "Policy" | "Product";
 
 export interface BlogPost {

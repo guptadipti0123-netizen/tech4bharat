@@ -27,11 +27,13 @@ export default function UpcomingEventsMarquee({ events }: UpcomingEventsMarqueeP
             title="Upcoming Events"
             align="left"
             description="Discover workshops, bootcamps, networking sessions and innovation programs happening across India."
+            titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            descriptionClassName="mt-3 text-[18px] sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
           />
         </AnimatedSection>
       </Container>
 
-      <div className="relative mt-8">
+      <div className="relative mt-9">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-sand-50 to-transparent sm:w-24" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-sand-50 to-transparent sm:w-24" />
 

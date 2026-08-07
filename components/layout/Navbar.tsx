@@ -10,7 +10,6 @@ import {
   Briefcase,
   ChevronDown,
   Flame,
-  Handshake,
   Menu,
   Users,
   Wallet,
@@ -28,7 +27,9 @@ interface NavChild {
 
 interface NavItem {
   label: string;
-  href: string;
+  /** Omitted for items that should act as a dropdown trigger only (e.g. Resources) —
+   *  no page of their own, clicking/tapping just opens the submenu. */
+  href?: string;
   children?: NavChild[];
 }
 
@@ -48,15 +49,11 @@ const navLinks: NavItem[] = [
   {
     label: "Network",
     href: "/partners",
-    children: [
-      { label: "Mentors", href: "/mentors", icon: Users },
-      { label: "Partners", href: "/partners", icon: Handshake },
-    ],
+    children: [{ label: "Mentors", href: "/mentors", icon: Users }],
   },
   { label: "Events", href: "/events" },
   {
     label: "Resources",
-    href: "/funding-opportunities",
     children: [
       { label: "Funding Opportunities", href: "/funding-opportunities", icon: Wallet },
       { label: "Success Stories", href: "/success-stories", icon: Award },
@@ -99,7 +96,9 @@ export default function Navbar() {
   }
 
   function isActive(item: NavItem) {
-    const hrefs = [item.href, ...(item.children?.map((c) => c.href.split("#")[0]) ?? [])];
+    const hrefs = [item.href, ...(item.children?.map((c) => c.href.split("#")[0]) ?? [])].filter(
+      (href): href is string => Boolean(href)
+    );
     return hrefs.some((href) => (href === "/" ? pathname === "/" : pathname?.startsWith(href)));
   }
 
@@ -118,19 +117,13 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-1 xl:flex">
-            {navLinks.map((link) => (
-              <div
-                key={link.href}
-                className="relative"
-                onMouseEnter={() => link.children && openWithHover(link.label)}
-              >
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "relative flex items-center gap-1 rounded-full px-4 py-2 font-heading text-sm font-medium transition-colors",
-                    isActive(link) ? "text-white" : "text-slate-700 hover:text-brand-700"
-                  )}
-                >
+            {navLinks.map((link) => {
+              const triggerClassName = cn(
+                "relative flex items-center gap-1 rounded-full px-4 py-2 font-heading text-sm font-medium transition-colors",
+                isActive(link) ? "text-white" : "text-slate-700 hover:text-brand-700"
+              );
+              const triggerContent = (
+                <>
                   {isActive(link) && (
                     <motion.span
                       layoutId="navbar-active-pill"
@@ -147,36 +140,60 @@ export default function Navbar() {
                       />
                     )}
                   </span>
-                </Link>
+                </>
+              );
 
-                {link.children && (
-                  <AnimatePresence>
-                    {openMenu === link.label && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -6, scale: 0.98 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -6, scale: 0.98 }}
-                        transition={{ duration: 0.18, ease: "easeOut" }}
-                        className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-2xl border border-slate-100 bg-white py-3 shadow-[0_20px_50px_rgba(22,58,58,0.18)]"
-                      >
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className="group/item flex items-center gap-3 px-4 py-3 font-heading text-sm text-slate-700 transition-all duration-200 hover:translate-x-0.5 hover:bg-brand-50 hover:text-brand-700"
-                          >
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-200 group-hover/item:bg-brand-700 group-hover/item:text-white">
-                              <child.icon size={16} />
-                            </span>
-                            {child.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                )}
-              </div>
-            ))}
+              return (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => link.children && openWithHover(link.label)}
+                >
+                  {link.href ? (
+                    <Link href={link.href} className={triggerClassName}>
+                      {triggerContent}
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className={triggerClassName}
+                      aria-haspopup="menu"
+                      aria-expanded={openMenu === link.label}
+                      onClick={() => setOpenMenu((current) => (current === link.label ? null : link.label))}
+                    >
+                      {triggerContent}
+                    </button>
+                  )}
+
+                  {link.children && (
+                    <AnimatePresence>
+                      {openMenu === link.label && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                          transition={{ duration: 0.18, ease: "easeOut" }}
+                          className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-2xl border border-slate-100 bg-white py-3 shadow-[0_20px_50px_rgba(22,58,58,0.18)]"
+                        >
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="group/item flex items-center gap-3 px-4 py-3 font-heading text-sm text-slate-700 transition-all duration-200 hover:translate-x-0.5 hover:bg-brand-50 hover:text-brand-700"
+                            >
+                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-200 group-hover/item:bg-brand-700 group-hover/item:text-white">
+                                <child.icon size={16} />
+                              </span>
+                              {child.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-1 xl:hidden">
@@ -203,58 +220,74 @@ export default function Navbar() {
               className="glass-surface overflow-hidden rounded-b-3xl border-t border-slate-100 xl:hidden"
             >
               <nav className="flex flex-col gap-1 px-4 pb-6 pt-2">
-                {navLinks.map((link) => (
-                  <div key={link.href}>
-                    <div className="flex items-center">
-                      <Link
-                        href={link.href}
-                        onClick={() => !link.children && setMobileOpen(false)}
-                        className={cn(
-                          "flex-1 rounded-lg px-3 py-3 font-heading text-base font-medium",
-                          isActive(link)
-                            ? "bg-brand-50 text-brand-700"
-                            : "text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+                {navLinks.map((link) => {
+                  const toggleMobileSubmenu = () =>
+                    setMobileExpanded((current) => (current === link.label ? null : link.label));
+                  const labelClassName = cn(
+                    "flex-1 rounded-lg px-3 py-3 font-heading text-base font-medium",
+                    isActive(link)
+                      ? "bg-brand-50 text-brand-700"
+                      : "text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+                  );
+
+                  return (
+                    <div key={link.label}>
+                      <div className="flex items-center">
+                        {link.href ? (
+                          <Link
+                            href={link.href}
+                            onClick={() => !link.children && setMobileOpen(false)}
+                            className={labelClassName}
+                          >
+                            {link.label}
+                          </Link>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={toggleMobileSubmenu}
+                            aria-haspopup="menu"
+                            aria-expanded={mobileExpanded === link.label}
+                            className={cn(labelClassName, "text-left")}
+                          >
+                            {link.label}
+                          </button>
                         )}
-                      >
-                        {link.label}
-                      </Link>
-                      {link.children && (
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setMobileExpanded((current) => (current === link.label ? null : link.label))
-                          }
-                          aria-label={`Toggle ${link.label} submenu`}
-                          aria-expanded={mobileExpanded === link.label}
-                          className="p-3 text-slate-600"
-                        >
-                          <ChevronDown
-                            size={16}
-                            className={cn(
-                              "transition-transform duration-200",
-                              mobileExpanded === link.label && "rotate-180"
-                            )}
-                          />
-                        </button>
+                        {link.children && (
+                          <button
+                            type="button"
+                            onClick={toggleMobileSubmenu}
+                            aria-label={`Toggle ${link.label} submenu`}
+                            aria-expanded={mobileExpanded === link.label}
+                            className="p-3 text-slate-600"
+                          >
+                            <ChevronDown
+                              size={16}
+                              className={cn(
+                                "transition-transform duration-200",
+                                mobileExpanded === link.label && "rotate-180"
+                              )}
+                            />
+                          </button>
+                        )}
+                      </div>
+                      {link.children && mobileExpanded === link.label && (
+                        <div className="ml-3 flex flex-col gap-1 border-l border-slate-100 pl-3">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-brand-50 hover:text-brand-700"
+                            >
+                              <child.icon size={15} className="shrink-0 text-brand-500" />
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
                       )}
                     </div>
-                    {link.children && mobileExpanded === link.label && (
-                      <div className="ml-3 flex flex-col gap-1 border-l border-slate-100 pl-3">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-brand-50 hover:text-brand-700"
-                          >
-                            <child.icon size={15} className="shrink-0 text-brand-500" />
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  );
+                })}
               </nav>
             </motion.div>
           )}

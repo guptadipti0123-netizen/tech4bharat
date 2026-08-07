@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PartnersHero from "@/components/sections/partners/PartnersHero";
 import TrustedByMarquee from "@/components/sections/partners/TrustedByMarquee";
 import PartnerCategoryGrid from "@/components/sections/partners/PartnerCategoryGrid";
-import PartnershipMetrics from "@/components/sections/partners/PartnershipMetrics";
 import IndiaReachMap from "@/components/sections/partners/IndiaReachMap";
 import PartnersLegacyMoments from "@/components/sections/partners/PartnersLegacyMoments";
 import PartnershipProcess from "@/components/sections/partners/PartnershipProcess";
@@ -25,7 +24,6 @@ export default function PartnersPage() {
       <PartnersHero />
       <TrustedByMarquee />
       <PartnerCategoryGrid />
-      <PartnershipMetrics />
       <IndiaReachMap />
       <PartnersLegacyMoments />
       <PartnershipProcess />

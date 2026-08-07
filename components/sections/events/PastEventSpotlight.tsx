@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Building2, Calendar, MapPin, Target } from "lucide-react";
+import { Bot, BrainCircuit, Briefcase, Building2, Calendar, MapPin, Target, Workflow, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Badge from "@/components/ui/Badge";
 import { getEventImage } from "@/lib/images";
+import { cn } from "@/lib/utils";
 
 const metaCards = [
   { icon: Calendar, label: "Date", value: "March 21, 2025" },
@@ -12,35 +13,111 @@ const metaCards = [
   { icon: Building2, label: "Organizer", value: "BharatGen" },
 ];
 
-const agendaTopics = [
-  { title: "LangChain", description: "Building AI applications with the LangChain framework." },
-  { title: "Hugging Face Transformers", description: "Working hands-on with pretrained transformer models." },
-  { title: "Neural Networks & LLMs", description: "Core concepts behind neural networks and large language models." },
-  { title: "AI Career Pathways", description: "A look at career opportunities in applied AI." },
+interface AgendaTopic {
+  title: string;
+  description: string;
+  duration: string;
+  icon: LucideIcon;
+}
+
+const agendaTopics: AgendaTopic[] = [
+  {
+    title: "LangChain",
+    description: "Building AI applications with the LangChain framework.",
+    duration: "45 mins",
+    icon: Workflow,
+  },
+  {
+    title: "Hugging Face Transformers",
+    description: "Hands-on with pretrained transformer models.",
+    duration: "60 mins",
+    icon: Bot,
+  },
+  {
+    title: "Neural Networks & LLMs",
+    description: "Core concepts behind modern language models.",
+    duration: "45 mins",
+    icon: BrainCircuit,
+  },
+  {
+    title: "AI Career Pathways",
+    description: "Careers, startups, and industry opportunities.",
+    duration: "30 mins",
+    icon: Briefcase,
+  },
 ];
 
-/** A single curated past-event spotlight (deliberately mirrored — image left instead of
- *  right — from the Recent Event section above) instead of a generic marquee of every past
- *  event; the AI Workshop by BharatGen is the one past event with rich enough real content
- *  (a named agenda's worth of topics) to support this treatment. */
+// Only one real photo is mapped specifically to the BharatGen workshop in this project's
+// data (getEventImage), so it anchors the collage as the large image; the remaining three
+// cells use other real, honestly-captioned Tech4Bharat program photos rather than invented
+// or misattributed BharatGen-specific shots.
+const collagePhotos = [
+  { src: getEventImage("ai-workshop-bharatgen-2025"), alt: "AI Workshop by BharatGen session at Cognizant Lab, COEP" },
+  { src: "/images/gallery/mentorship-2.jpg", alt: "Mentors and founders at a Tech4Bharat program" },
+  { src: "/images/gallery/gallery-3.jpg", alt: "Founders collaborating at a Tech4Bharat program" },
+  { src: "/images/gallery/hackathons-1.jpg", alt: "Founders building during a Tech4Bharat hackathon session" },
+];
+
+/** A single curated past-event spotlight — a magazine-style split instead of one dominant
+ *  photo: a four-image collage (35% width) beside the event's content (65% width), so the
+ *  agenda and details stay the primary focus. The AI Workshop by BharatGen is the one past
+ *  event with rich enough real content (a named agenda's worth of topics) to support this
+ *  treatment. */
 export default function PastEventSpotlight() {
   return (
-    <section className="bg-sand-50 py-8 sm:py-12">
+    <section className="bg-sand-50 py-6 sm:py-9">
       <Container>
         <AnimatedSection>
-          <SectionTitle eyebrow="Past Event" title="Past Event" align="left" />
+          <SectionTitle
+            title="Past Event"
+            align="left"
+            titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+          />
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-8">
-          <div className="grid overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl lg:grid-cols-2">
-            <div className="relative h-64 lg:h-full">
-              <Image
-                src={getEventImage("ai-workshop-bharatgen-2025")}
-                alt="AI Workshop by BharatGen session at Cognizant Lab, COEP"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+        <AnimatedSection delay={0.1} className="mt-9">
+          <div className="grid overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl lg:grid-cols-[35fr_65fr]">
+            <div className="flex h-full flex-col gap-2 bg-slate-50 p-3">
+              <div className="grid flex-1 grid-cols-2 gap-2">
+                <div className="relative min-h-40 overflow-hidden rounded-xl">
+                  <Image
+                    src={collagePhotos[0].src}
+                    alt={collagePhotos[0].alt}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 20vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="grid grid-rows-2 gap-2">
+                  <div className="relative overflow-hidden rounded-xl">
+                    <Image
+                      src={collagePhotos[1].src}
+                      alt={collagePhotos[1].alt}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 20vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative overflow-hidden rounded-xl">
+                    <Image
+                      src={collagePhotos[2].src}
+                      alt={collagePhotos[2].alt}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 20vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="relative h-24 overflow-hidden rounded-xl">
+                <Image
+                  src={collagePhotos[3].src}
+                  alt={collagePhotos[3].alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             <div className="p-6 sm:p-8">
@@ -67,13 +144,32 @@ export default function PastEventSpotlight() {
               </div>
 
               <h4 className="mt-6 text-sm font-bold uppercase tracking-wide text-slate-500">Agenda</h4>
-              <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                {agendaTopics.map((topic) => (
-                  <div key={topic.title} className="rounded-xl border border-slate-200 p-3.5">
-                    <p className="text-sm font-bold text-ink-900">{topic.title}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-600">{topic.description}</p>
-                  </div>
-                ))}
+              <div className="mt-3 flex flex-col">
+                {agendaTopics.map((topic, i) => {
+                  const Icon = topic.icon;
+                  return (
+                    <div
+                      key={topic.title}
+                      className={cn(
+                        "group flex items-start gap-3.5 border-l-2 border-[#1F4E3D] py-4 pl-4 transition-all duration-200 hover:border-l-[3px] hover:bg-[#F7FBF9]",
+                        i < agendaTopics.length - 1 && "border-b border-slate-100"
+                      )}
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1F4E3D] text-white">
+                        <Icon size={16} />
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                          <h5 className="text-[20px] font-semibold leading-snug text-ink-900">{topic.title}</h5>
+                          <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-500">
+                            {topic.duration}
+                          </span>
+                        </div>
+                        <p className="mt-1 text-[15px] leading-relaxed text-slate-500">{topic.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -47,7 +47,8 @@ export default function SectionTitle({
       )}
       <h2
         className={cn(
-          "mt-4 text-[36px] font-extrabold leading-[1.1] tracking-tight sm:text-[48px] lg:text-[56px]",
+          eyebrow && "mt-4",
+          "text-[36px] font-extrabold leading-[1.1] tracking-tight sm:text-[48px] lg:text-[56px]",
           isDark ? "text-white" : "text-ink-900",
           titleClassName
         )}

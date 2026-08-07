@@ -4,7 +4,6 @@ import UpcomingEventsMarquee from "@/components/sections/events/UpcomingEventsMa
 import EventHighlightsGrid from "@/components/sections/events/EventHighlightsGrid";
 import EventJourney from "@/components/sections/events/EventJourney";
 import PastEventSpotlight from "@/components/sections/events/PastEventSpotlight";
-import KeyTakeaways from "@/components/sections/events/KeyTakeaways";
 import EventGalleryMarquee from "@/components/sections/events/EventGalleryMarquee";
 import ImpactOutcomes from "@/components/sections/events/ImpactOutcomes";
 import { events } from "@/lib/events";
@@ -34,7 +33,6 @@ export default function EventsPage() {
       <EventHighlightsGrid />
       <EventJourney />
       <PastEventSpotlight />
-      <KeyTakeaways />
       <EventGalleryMarquee />
       <ImpactOutcomes />
     </>

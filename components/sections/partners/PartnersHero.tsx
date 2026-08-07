@@ -11,7 +11,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
  *  keeps the photo's subjects (two founders collaborating) anchored toward the top of frame. */
 export default function PartnersHero() {
   return (
-    <section className="relative flex aspect-21/9 min-h-80 items-end pb-10 pt-24 sm:pb-12">
+    <section className="relative flex aspect-21/9 min-h-80 items-end pb-10 pt-18 sm:pb-12">
       <Image
         src="/images/gallery/gallery-15.jpg"
         alt=""
@@ -25,10 +25,10 @@ export default function PartnersHero() {
 
       <Container className="relative">
         <AnimatedSection className="max-w-2xl">
-          <h1 className="text-[32px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-[44px]">
+          <h1 className="text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-white sm:text-[38px] lg:text-[44px]">
             Partners
           </h1>
-          <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/80">
+          <p className="mt-3 max-w-xl text-lg leading-relaxed text-white/80">
             Trusted by institutions across Bharat.
           </p>
         </AnimatedSection>

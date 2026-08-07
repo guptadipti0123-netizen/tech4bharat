@@ -19,10 +19,14 @@ export default function SupportProvided() {
     <section className="bg-brand-50 py-8 sm:py-12">
       <Container>
         <AnimatedSection>
-          <SectionTitle eyebrow="Support" title="Support Provided" description="What founders get alongside every funding path." />
+          <SectionTitle
+            title="Support Provided"
+            description="What founders get alongside every funding path."
+            titleClassName="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[34px] lg:text-[40px]"
+          />
         </AnimatedSection>
 
-        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-3">
+        <div className="mx-auto mt-7 flex max-w-3xl flex-wrap justify-center gap-3">
           {support.map((label, i) => (
             <AnimatedSection key={label} delay={i * 0.05}>
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-4 py-2.5 text-sm font-semibold text-ink-900 shadow-sm">
