@@ -8,8 +8,6 @@ import Blob from "@/components/ui/Blob";
 import DotGrid from "@/components/ui/DotGrid";
 import { advisors, mentors } from "@/lib/data";
 
-const badgeStyles = ["solid", "outline", "gradient", "dot"] as const;
-
 export const metadata: Metadata = {
   title: "Mentors & Advisors | Tech4Bharat",
   description:
@@ -27,7 +25,10 @@ export default function MentorsPage() {
     <>
       <MentorsOverview />
 
-      <section className="relative overflow-hidden bg-white pb-8 pt-4 sm:pb-10 sm:pt-6">
+      <section
+        className="relative overflow-hidden pb-12 pt-6 sm:pb-16 sm:pt-10"
+        style={{ background: "linear-gradient(180deg, #F8FCFA 0%, #EEF8F3 100%)" }}
+      >
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
 
         <Container className="relative">
@@ -35,12 +36,13 @@ export default function MentorsPage() {
             <SectionTitle
               title="Operators who've built at scale"
               description="Hands-on guidance from founders and operators who've done it before."
-              titleClassName="text-[30px] font-bold leading-[1.1] text-[#163B2D] sm:text-[36px] lg:text-[42px]"
-              descriptionClassName="mx-auto mt-4 max-w-2xl text-center text-lg sm:text-lg text-[#667085]"
+              className="max-w-225"
+              titleClassName="text-[28px] font-bold leading-[1.1] text-[#163B2D] sm:text-[40px] lg:text-[48px]"
+              descriptionClassName="mx-auto mt-3 max-w-2xl text-center text-sm sm:text-base text-[#4B5563]"
             />
           </AnimatedSection>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {mentors.map((mentor, i) => (
               <AnimatedSection key={mentor.name} delay={i * 0.08} animation="scale">
                 <MentorCard
@@ -51,7 +53,6 @@ export default function MentorsPage() {
                   expertise={mentor.expertise}
                   bio={mentor.bio}
                   linkedinUrl={mentor.linkedinUrl}
-                  badgeStyle={badgeStyles[i % badgeStyles.length]}
                 />
               </AnimatedSection>
             ))}
@@ -74,7 +75,7 @@ export default function MentorsPage() {
             />
           </AnimatedSection>
 
-          <div className="mx-auto mt-8 grid max-w-2xl gap-5 sm:grid-cols-2">
+          <div className="mx-auto mt-8 grid max-w-2xl gap-8 sm:grid-cols-2">
             {advisors.map((advisor, i) => (
               <AnimatedSection key={advisor.name} delay={i * 0.08} animation="scale">
                 <MentorCard
@@ -85,7 +86,6 @@ export default function MentorsPage() {
                   expertise={advisor.expertise}
                   bio={advisor.bio}
                   linkedinUrl={advisor.linkedinUrl}
-                  badgeStyle={badgeStyles[(i + 2) % badgeStyles.length]}
                 />
               </AnimatedSection>
             ))}

@@ -5,35 +5,31 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Container from "@/components/ui/Container";
-import { useDragMarquee } from "@/lib/hooks/useDragMarquee";
-import { cn } from "@/lib/utils";
 
 interface GalleryPhoto {
   src: string;
   alt: string;
-  width: "w-56" | "w-72" | "w-80";
 }
 
 const photos: GalleryPhoto[] = [
-  { src: "/images/legacy/policy-workshop-1.png", alt: "Day 3 — Innovation Management & Policy at the Digital & Tech Policy Workshop", width: "w-72" },
-  { src: "/images/legacy/policy-workshop-2.png", alt: "Dr. Chaitanya Giri of Observer Research Foundation speaking at the Digital & Tech Policy Workshop", width: "w-56" },
-  { src: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png", alt: "Day 1 — Introduction to Technology Policy: a speaker addresses the cohort at the podium", width: "w-80" },
-  { src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png", alt: "Day 2 — Digital Narratives & Blockchain: the full cohort and faculty in the auditorium", width: "w-72" },
-  { src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png", alt: "Day 2 — Digital Public Infrastructure & AI: faculty and students at the session close", width: "w-56" },
-  { src: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png", alt: "Day 3 — Strategic Innovation Frameworks: a candid group photo with the cohort", width: "w-80" },
-  { src: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg", alt: "Day 4 — Clean Energy & Cyber-Physical Systems: a memento exchange between speakers", width: "w-72" },
-  { src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png", alt: "Day 4 — UAV Simulation & Security Analysis: the cohort in the lecture hall", width: "w-56" },
-  { src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png", alt: "Day 5 — Earth Observation & Strategic Technologies: the cohort on their field visit to C-DAC", width: "w-80" },
-  { src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png", alt: "Day 5 — Field Visit & Advanced Computing: the cohort back in session", width: "w-72" },
-  { src: "/images/legacy/policy-workshop-3.jpg", alt: "Students and faculty at the closing session of the Digital & Tech Policy Workshop, COEP", width: "w-56" },
+  { src: "/images/legacy/policy-workshop-1.png", alt: "Day 3 — Innovation Management & Policy at the Digital & Tech Policy Workshop" },
+  { src: "/images/legacy/policy-workshop-2.png", alt: "Dr. Chaitanya Giri of Observer Research Foundation speaking at the Digital & Tech Policy Workshop" },
+  { src: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png", alt: "Day 1 — Introduction to Technology Policy: a speaker addresses the cohort at the podium" },
+  { src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png", alt: "Day 2 — Digital Narratives & Blockchain: the full cohort and faculty in the auditorium" },
+  { src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png", alt: "Day 2 — Digital Public Infrastructure & AI: faculty and students at the session close" },
+  { src: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png", alt: "Day 3 — Strategic Innovation Frameworks: a candid group photo with the cohort" },
+  { src: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg", alt: "Day 4 — Clean Energy & Cyber-Physical Systems: a memento exchange between speakers" },
+  { src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png", alt: "Day 4 — UAV Simulation & Security Analysis: the cohort in the lecture hall" },
+  { src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png", alt: "Day 5 — Earth Observation & Strategic Technologies: the cohort on their field visit to C-DAC" },
+  { src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png", alt: "Day 5 — Field Visit & Advanced Computing: the cohort back in session" },
+  { src: "/images/legacy/policy-workshop-3.jpg", alt: "Students and faculty at the closing session of the Digital & Tech Policy Workshop, COEP" },
 ];
 
-/** Premium horizontal marquee for the full legacy workshop photo set — mixed card widths,
- *  hover zoom, and a self-contained click-to-open lightbox (no shared Lightbox component
- *  exists yet in the codebase, so the pattern from MasonryGallery is reimplemented here). */
+/** Event Gallery — a premium featured-image-plus-grid layout: one large photo on the left
+ *  (60%) and four uniform square tiles on the right (40%), all drawn from the same real
+ *  legacy workshop photo set. A photo-count badge and click-to-open lightbox (with full
+ *  keyboard navigation) give access to every remaining photo beyond the five shown. */
 export default function EventGalleryMarquee() {
-  const { trackProps } = useDragMarquee({ itemCount: photos.length });
-  const loopPhotos = [...photos, ...photos];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -48,6 +44,8 @@ export default function EventGalleryMarquee() {
   }, [openIndex]);
 
   const active = openIndex !== null ? photos[openIndex] : null;
+  const featured = photos[0];
+  const gridPhotos = photos.slice(1, 5);
 
   return (
     <section className="relative overflow-hidden bg-ink-900 py-8 sm:py-12">
@@ -58,37 +56,45 @@ export default function EventGalleryMarquee() {
         <p className="mt-3 max-w-xl text-[18px] font-medium leading-relaxed text-white/70">
           Moments from Tech4Bharat&apos;s programs and workshops.
         </p>
-      </Container>
 
-      <div className="relative mt-9">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-ink-900 to-transparent sm:w-24" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-ink-900 to-transparent sm:w-24" />
+        <div className="mt-9 grid gap-5 lg:grid-cols-[3fr_2fr]">
+          <button
+            type="button"
+            onClick={() => setOpenIndex(0)}
+            className="group relative h-80 w-full overflow-hidden rounded-3xl shadow-lg lg:h-135"
+          >
+            <Image
+              src={featured.src}
+              alt={featured.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <span className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3.5 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+              📷 {photos.length} Photos
+            </span>
+          </button>
 
-        <div
-          {...trackProps}
-          className="flex cursor-grab gap-4 overflow-x-auto scroll-smooth px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing sm:px-6 lg:px-8 [&::-webkit-scrollbar]:hidden"
-        >
-          {loopPhotos.map((photo, i) => (
-            <button
-              key={`${photo.src}-${i}`}
-              type="button"
-              onClick={() => setOpenIndex(i % photos.length)}
-              className={cn(
-                "group relative aspect-4/3 shrink-0 overflow-hidden rounded-2xl shadow-lg",
-                photo.width
-              )}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="320px"
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </button>
-          ))}
+          <div className="grid grid-cols-2 gap-4">
+            {gridPhotos.map((photo, i) => (
+              <button
+                key={photo.src}
+                type="button"
+                onClick={() => setOpenIndex(i + 1)}
+                className="group relative aspect-square w-full overflow-hidden rounded-xl border-2 border-white shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 20vw"
+                  className="object-cover"
+                />
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      </Container>
 
       <AnimatePresence>
         {active && (

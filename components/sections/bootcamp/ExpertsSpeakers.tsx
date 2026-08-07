@@ -85,8 +85,37 @@ const themeClasses: Record<string, { gradient: string; badge: string; border: st
  *  standing in for that kind of person (no lineup announced yet, so no fabricated names). */
 export default function ExpertsSpeakers() {
   return (
-    <section className="bg-white py-10 sm:py-11">
-      <Container>
+    <section className="relative overflow-hidden pt-22.5 pb-22.5">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-30"
+        style={{ background: "linear-gradient(180deg, #F3FCF9 0%, #F8FCFF 45%, #FFF9F2 100%)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -left-20 -top-20 -z-20 h-100 w-100 rounded-full opacity-[0.18] blur-[200px]"
+        style={{ backgroundColor: "#DDF7EC" }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -right-20 -top-20 -z-20 h-100 w-100 rounded-full opacity-[0.18] blur-[200px]"
+        style={{ backgroundColor: "#E8F4FF" }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-24 left-1/2 -z-20 h-100 w-100 -translate-x-1/2 rounded-full opacity-15 blur-[200px]"
+        style={{ backgroundColor: "#FFF4DD" }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 opacity-5"
+        style={{
+          backgroundImage: "radial-gradient(circle, #123C33 1px, transparent 1px)",
+          backgroundSize: "18px 18px",
+        }}
+      />
+
+      <Container className="relative px-10 sm:px-10 lg:px-10">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
@@ -104,7 +133,7 @@ export default function ExpertsSpeakers() {
             return (
               <AnimatedSection key={category.title} delay={i * 0.06} animation="scale">
                 <div
-                  className={`group relative flex h-full flex-col items-center overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 text-center shadow-[0_4px_20px_rgba(22,58,58,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,58,58,0.14)] ${theme.border}`}
+                  className={`group relative flex h-full flex-col items-center overflow-hidden rounded-3xl border-[1.5px] border-[rgba(46,125,94,.12)] bg-white/85 p-5 text-center shadow-[0_12px_30px_rgba(0,0,0,.06)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,58,58,0.14)] ${theme.border}`}
                 >
                   <span
                     className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${theme.gradient} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface AccordionItemData {
@@ -15,39 +15,52 @@ interface AccordionProps {
   className?: string;
 }
 
+const closedBorder = "#DCEFE8";
+const closedHoverBorder = "#A8D5C2";
+const openBorder = "#1F5E4B";
+const openHoverBorder = "#163F33";
+
 export default function Accordion({ items, className }: AccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className={cn("space-y-3", className)}>
+    <div className={cn("flex flex-col gap-5", className)}>
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
           <div
             key={item.question}
+            style={
+              {
+                backgroundColor: isOpen ? "#F4FBF8" : "#FFFFFF",
+                borderColor: isOpen ? openBorder : closedBorder,
+                "--hover-border": isOpen ? openHoverBorder : closedHoverBorder,
+              } as React.CSSProperties
+            }
             className={cn(
-              "overflow-hidden rounded-2xl border bg-white transition-colors duration-300",
-              isOpen ? "border-brand-200 shadow-sm" : "border-slate-200"
+              "overflow-hidden rounded-3xl border transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border) hover:shadow-lg",
+              isOpen ? "shadow-md" : "shadow-sm"
             )}
           >
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+              className="flex w-full items-center justify-between gap-4 p-6 text-left"
               aria-expanded={isOpen}
             >
               <span className="font-semibold text-ink-900">{item.question}</span>
-              <span
-                className={cn(
-                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
-                  isOpen ? "bg-brand-700 text-white" : "bg-brand-50 text-brand-600"
-                )}
+              <motion.span
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                style={{ backgroundColor: "#E8F6F1" }}
               >
-                <ChevronDown
-                  size={16}
-                  className={cn("transition-transform duration-300", isOpen && "rotate-180")}
-                />
-              </span>
+                {isOpen ? (
+                  <Minus size={18} className="text-[#1F5E4B]" />
+                ) : (
+                  <Plus size={18} className="text-[#1F5E4B]" />
+                )}
+              </motion.span>
             </button>
             <AnimatePresence initial={false}>
               {isOpen && (
@@ -58,7 +71,7 @@ export default function Accordion({ items, className }: AccordionProps) {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 pb-5 text-slate-600">{item.answer}</p>
+                  <p className="px-6 pb-6 text-slate-600">{item.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>

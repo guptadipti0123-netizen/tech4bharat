@@ -59,10 +59,10 @@ const collagePhotos = [
 ];
 
 /** A single curated past-event spotlight — a magazine-style split instead of one dominant
- *  photo: a four-image collage (35% width) beside the event's content (65% width), so the
- *  agenda and details stay the primary focus. The AI Workshop by BharatGen is the one past
- *  event with rich enough real content (a named agenda's worth of topics) to support this
- *  treatment. */
+ *  photo: a uniform 2x2 image collage (45% width) beside the event's content (55% width),
+ *  so the agenda and details stay the primary focus. The AI Workshop by BharatGen is the
+ *  one past event with rich enough real content (a named agenda's worth of topics) to
+ *  support this treatment. */
 export default function PastEventSpotlight() {
   return (
     <section className="bg-sand-50 py-6 sm:py-9">
@@ -76,48 +76,19 @@ export default function PastEventSpotlight() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="mt-9">
-          <div className="grid overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl lg:grid-cols-[35fr_65fr]">
-            <div className="flex h-full flex-col gap-2 bg-slate-50 p-3">
-              <div className="grid flex-1 grid-cols-2 gap-2">
-                <div className="relative min-h-40 overflow-hidden rounded-xl">
+          <div className="grid overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl lg:grid-cols-[45fr_55fr]">
+            <div className="grid h-full grid-cols-2 grid-rows-2 gap-3 bg-slate-50 p-3">
+              {collagePhotos.map((photo) => (
+                <div key={photo.src} className="relative min-h-40 overflow-hidden rounded-xl shadow-sm">
                   <Image
-                    src={collagePhotos[0].src}
-                    alt={collagePhotos[0].alt}
+                    src={photo.src}
+                    alt={photo.alt}
                     fill
-                    sizes="(max-width: 1024px) 50vw, 20vw"
+                    sizes="(max-width: 1024px) 50vw, 22vw"
                     className="object-cover"
                   />
                 </div>
-                <div className="grid grid-rows-2 gap-2">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <Image
-                      src={collagePhotos[1].src}
-                      alt={collagePhotos[1].alt}
-                      fill
-                      sizes="(max-width: 1024px) 50vw, 20vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative overflow-hidden rounded-xl">
-                    <Image
-                      src={collagePhotos[2].src}
-                      alt={collagePhotos[2].alt}
-                      fill
-                      sizes="(max-width: 1024px) 50vw, 20vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="relative h-24 overflow-hidden rounded-xl">
-                <Image
-                  src={collagePhotos[3].src}
-                  alt={collagePhotos[3].alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
-                />
-              </div>
+              ))}
             </div>
 
             <div className="p-6 sm:p-8">

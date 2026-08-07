@@ -2,17 +2,17 @@ import { ArrowUpRight, Calendar, Handshake, Rocket, Users, type LucideIcon } fro
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { cn } from "@/lib/utils";
 
 interface ProgramItem {
   id: string;
   icon: LucideIcon;
   title: string;
   description: string;
-  badge: string;
+  chips: [string, string, string];
+  accent: string;
   cardBg: string;
-  iconBg: string;
-  border: string;
+  chipBg: string;
+  shadow: string;
 }
 
 // `id` gives each card a real anchor target — the Navbar's Programs dropdown links to
@@ -23,88 +23,98 @@ const programs: ProgramItem[] = [
     icon: Rocket,
     title: "Startup Incubation",
     description: "Structured, cohort-based support from first idea to a working, fundable company.",
-    badge: "Cohort-Based",
+    chips: ["Idea Validation", "Product Development", "Demo Day"],
+    accent: "#1F4E3D",
     cardBg: "#EAF6EE",
-    iconBg: "#1F4E3D",
-    border: "border border-[#1F4E3D]/15",
+    chipBg: "rgba(31,78,61,.08)",
+    shadow: "0 10px 26px rgba(31,78,61,.12)",
   },
   {
     id: "mentorship",
     icon: Users,
     title: "Mentorship",
     description: "One-on-one guidance from experienced operators and industry mentors.",
-    badge: "1:1 Guidance",
-    cardBg: "#FFFFFF",
-    iconBg: "#1F4E3D",
-    border: "border border-slate-200 border-l-4 border-l-[#1F4E3D]",
+    chips: ["1:1 Sessions", "Industry Experts", "Career Guidance"],
+    accent: "#2563EB",
+    cardBg: "#EEF6FF",
+    chipBg: "rgba(37,99,235,.08)",
+    shadow: "0 10px 26px rgba(37,99,235,.12)",
   },
   {
     id: "workshops",
     icon: Calendar,
     title: "Workshops & Training",
     description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
-    badge: "Weekly Sessions",
+    chips: ["Hands-on Learning", "Live Workshops", "Skill Building"],
+    accent: "#D4A017",
     cardBg: "#FFF7EC",
-    iconBg: "#D4A017",
-    border: "border border-[#D4A017]/20",
+    chipBg: "rgba(212,160,23,.10)",
+    shadow: "0 10px 26px rgba(212,160,23,.12)",
   },
   {
     id: "funding-networking",
     icon: Handshake,
     title: "Funding & Networking",
     description: "Grant facilitation and curated introductions to our investor and partner network.",
-    badge: "Investor Connect",
-    cardBg: "#EEF6FF",
-    iconBg: "#1B2E4A",
-    border: "border border-[#1B2E4A]/15",
+    chips: ["Investor Connect", "Grant Support", "Partner Network"],
+    accent: "#6D4FC7",
+    cardBg: "#F3EEFF",
+    chipBg: "rgba(109,79,199,.08)",
+    shadow: "0 10px 26px rgba(109,79,199,.12)",
   },
 ];
 
 const learnMoreHref = "/contact";
 
-/** One editorial program card — a small icon badge, a category tag, and a compact CTA,
- *  each card carrying its own background/border/icon-color treatment so the four cards
- *  read as distinct entries rather than four repeats of the same template. */
-function ProgramCard({ id, icon: Icon, title, description, badge, cardBg, iconBg, border }: ProgramItem) {
+// One shared card template rendered four times — only the accent color, tint, icon, and
+// copy change per card, so every card reads as the same design system.
+function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg, chipBg, shadow }: ProgramItem) {
   return (
     <div
       id={id}
-      style={{ backgroundColor: cardBg }}
-      className={cn(
-        "group flex h-64 scroll-mt-28 flex-col rounded-[18px] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1",
-        border
-      )}
+      style={{ backgroundColor: cardBg, borderColor: accent, boxShadow: shadow }}
+      className="group flex h-85 scroll-mt-28 flex-col rounded-[20px] border-2 p-6 transition-all duration-300 hover:-translate-y-1"
     >
-      <div className="flex items-start justify-between">
-        <span
-          className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-white"
-          style={{ backgroundColor: iconBg }}
-        >
-          <Icon size={32} />
-        </span>
-        <span
-          className="rounded-full bg-white/70 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide"
-          style={{ color: iconBg }}
-        >
-          {badge}
-        </span>
+      <span
+        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
+        style={{ backgroundColor: chipBg }}
+      >
+        <Icon size={24} style={{ color: accent }} strokeWidth={1.75} />
+      </span>
+
+      <h3 className="mt-4 text-[20px] font-bold leading-tight text-ink-900">{title}</h3>
+      <p className="mt-2 line-clamp-3 text-[14px] leading-relaxed text-slate-600">{description}</p>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {chips.map((chip) => (
+          <span
+            key={chip}
+            className="rounded-full px-3 py-1 text-[12px] font-semibold"
+            style={{ backgroundColor: chipBg, color: accent }}
+          >
+            {chip}
+          </span>
+        ))}
       </div>
 
-      <h3 className="mt-4 text-[26px] font-bold leading-tight text-ink-900">{title}</h3>
-      <p className="mt-1.5 flex-1 text-[15px] leading-relaxed text-slate-600">{description}</p>
-
-      <Button href={learnMoreHref} variant="outline" size="sm" className="mt-3 w-fit">
-        Learn More <ArrowUpRight size={16} />
-      </Button>
+      <div className="mt-auto">
+        <div className="mt-5 h-px w-10" style={{ backgroundColor: accent, opacity: 0.3 }} />
+        <Button href={learnMoreHref} variant="outline" size="sm" className="mt-4 w-fit">
+          Learn More <ArrowUpRight size={16} />
+        </Button>
+      </div>
     </div>
   );
 }
 
+/** Programs — four cards sharing one consistent design system (same size, structure,
+ *  spacing, and button style), distinguished only by each program's accent color, pastel
+ *  tint, and icon. */
 export default function ProgramGrid() {
   return (
     <section className="relative overflow-hidden bg-brand-50 pb-8 pt-4 sm:pb-12 sm:pt-6">
       <Container className="relative">
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {programs.map((program, i) => (
             <AnimatedSection key={program.title} delay={i * 0.08} animation="scale">
               <ProgramCard {...program} />

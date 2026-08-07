@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ExternalLink, Handshake, Lightbulb, Mail, MapPin, Megaphone, Phone, Users } from "lucide-react";
-import PageHero from "@/components/ui/PageHero";
+import { ExternalLink, Handshake, Lightbulb, Mail, MapPin, Megaphone, Phone, Users, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 import ContactForm from "@/components/ui/ContactForm";
 import Accordion from "@/components/ui/Accordion";
 import Blob from "@/components/ui/Blob";
@@ -37,73 +36,148 @@ const socials = [
   { icon: YoutubeIcon, href: "#", label: "YouTube" },
 ];
 
-const quickContacts = [
+interface QuickContact {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  email: string;
+  cardBg: string;
+  border: string;
+  hoverBorder: string;
+  iconBg: string;
+}
+
+const quickContacts: QuickContact[] = [
   {
     icon: Lightbulb,
     title: "For Founders",
     description: "Applying to a program or have a startup idea to discuss.",
     email: "programs@tech4bharat.org",
+    cardBg: "#F4FBF8",
+    border: "#A8D5C2",
+    hoverBorder: "#4CAF82",
+    iconBg: "#2E8B57",
   },
   {
     icon: Handshake,
     title: "For Partners & Investors",
     description: "Exploring institutional, government, or funding partnerships.",
     email: "partnerships@tech4bharat.org",
+    cardBg: "#F8FAFF",
+    border: "#BFD6FF",
+    hoverBorder: "#5B9EF5",
+    iconBg: "#2563EB",
   },
   {
     icon: Users,
     title: "For Mentors",
     description: "Interested in joining our mentor and advisor network.",
     email: "mentors@tech4bharat.org",
+    cardBg: "#FFF8EC",
+    border: "#FFD68A",
+    hoverBorder: "#E0A83D",
+    iconBg: "#D4A017",
   },
   {
     icon: Megaphone,
     title: "For Media & Press",
     description: "Press inquiries, interviews, or event coverage requests.",
     email: "media@tech4bharat.org",
+    cardBg: "#F8F5FF",
+    border: "#D9C8FF",
+    hoverBorder: "#9B7EF0",
+    iconBg: "#7C5CFC",
   },
 ];
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        title="Let's start a conversation"
-        description="Whether you're a founder, mentor, or partner, our team would love to hear from you."
-        image="/images/gallery/gallery-3.jpg"
-        icon={MapPin}
-      />
+      <section className="relative h-105 overflow-hidden rounded-b-[48px] sm:h-120">
+        <Image
+          src="/images/gallery/gallery-3.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(18,52,43,0.55)" }} />
+        <div className="relative flex h-full items-center justify-center">
+          <Container>
+            <AnimatedSection className="mx-auto max-w-2xl text-center">
+              <h1 className="text-[32px] font-extrabold leading-tight tracking-tight text-white sm:text-[44px]">
+                Let&apos;s Start a Conversation
+              </h1>
+              <p className="mx-auto mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
+                Whether you&apos;re a founder, mentor or partner, our team would love to hear from you.
+              </p>
+              <div className="mt-8">
+                <Button href="#contact-form" variant="secondary" size="lg">
+                  Contact Us
+                </Button>
+              </div>
+            </AnimatedSection>
+          </Container>
+        </div>
+      </section>
 
-      <section className="relative overflow-hidden bg-white py-8 sm:py-12">
+      <section
+        className="relative overflow-hidden py-8 sm:py-12"
+        style={{ background: "linear-gradient(180deg, #F7FFFD, #FFFFFF, #F8FBFF)" }}
+      >
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
 
         <Container className="relative">
           <AnimatedSection>
-            <SectionTitle eyebrow="Quick Contacts" title="Reach the right team, faster" align="center" />
+            <SectionTitle
+              title="Reach the Right Team Faster"
+              align="center"
+              className="max-w-225"
+              titleClassName="text-[30px] font-bold leading-[1.1] text-[#163B2D] sm:text-[42px] lg:text-[52px]"
+            />
           </AnimatedSection>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {quickContacts.map(({ icon: Icon, title, description, email }, i) => (
-              <AnimatedSection key={title} delay={i * 0.08} animation="scale">
-                <Card className="text-center">
-                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-600">
-                    <Icon size={22} />
-                  </span>
-                  <h3 className="mt-4 text-base font-bold text-ink-900">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
-                  <a
-                    href={`mailto:${email}`}
-                    className="-mb-2 mt-4 inline-block py-2 text-sm font-semibold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2"
+          <div className="mt-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {quickContacts.map((contact, i) => {
+              const Icon = contact.icon;
+              return (
+                <AnimatedSection key={contact.title} delay={i * 0.08} animation="scale">
+                  <div
+                    style={
+                      {
+                        backgroundColor: contact.cardBg,
+                        borderColor: contact.border,
+                        "--hover-border": contact.hoverBorder,
+                      } as React.CSSProperties
+                    }
+                    className="group flex h-67.5 flex-col items-center rounded-[28px] border p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg"
                   >
-                    {email}
-                  </a>
-                </Card>
-              </AnimatedSection>
-            ))}
+                    <span
+                      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110"
+                      style={{ backgroundColor: contact.iconBg }}
+                    >
+                      <Icon size={26} />
+                    </span>
+                    <h3 className="mt-3 text-base font-bold text-ink-900">{contact.title}</h3>
+                    <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-slate-600">
+                      {contact.description}
+                    </p>
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="mt-3 inline-flex items-center justify-center rounded-full border-2 bg-white px-5 py-3 text-[13px] font-bold text-ink-900 shadow-sm transition-colors duration-200 hover:text-brand-700"
+                      style={{ borderColor: "#D7E9E2" }}
+                    >
+                      {contact.email}
+                    </a>
+                  </div>
+                </AnimatedSection>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      <section className="bg-secondary-50 py-8 sm:py-12">
+      <section id="contact-form" className="scroll-mt-24 bg-secondary-50 py-8 sm:py-12">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
             <AnimatedSection>
@@ -190,14 +264,24 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-8 sm:py-12">
+      <section
+        className="relative overflow-hidden py-12 sm:py-16"
+        style={{ background: "linear-gradient(180deg, #F8FFFD 0%, #FFFFFF 55%, #F7FBFF 100%)" }}
+      >
+        <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
         <Blob tone="secondary" className="-right-24 top-10 h-72 w-72" animate={false} />
 
         <Container className="relative">
           <AnimatedSection>
-            <SectionTitle eyebrow="FAQ" title="Frequently asked questions" />
+            <SectionTitle
+              title="Frequently Asked Questions"
+              description="Find quick answers to the most common questions about our programs, partnerships, mentorship, and application process."
+              align="center"
+              titleClassName="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight"
+              descriptionClassName="mx-auto mt-4 max-w-175 text-gray-600"
+            />
           </AnimatedSection>
-          <div className="mx-auto mt-10 max-w-2xl">
+          <div className="mx-auto mt-12 max-w-225">
             <Accordion items={contactFaqs} />
           </div>
         </Container>

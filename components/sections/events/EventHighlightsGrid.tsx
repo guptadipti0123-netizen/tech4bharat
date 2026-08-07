@@ -5,7 +5,17 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import DotGrid from "@/components/ui/DotGrid";
 import { cn } from "@/lib/utils";
 
-const landscapePhotos = [
+interface HighlightPhoto {
+  src: string;
+  alt: string;
+  badge: string;
+}
+
+// Every card in this uniform grid is a real photo — the "Visit" and "Networking" entries
+// previously had no photo of their own (text-only cards), so they now use real, unused
+// photos from the same Digital & Tech Policy Workshop shoot rather than staying text-only,
+// which would have broken the uniform image-grid this redesign calls for.
+const highlightPhotos: HighlightPhoto[] = [
   {
     src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
     alt: "Faculty and students at the close of the Digital Public Infrastructure & AI session",
@@ -16,20 +26,35 @@ const landscapePhotos = [
     alt: "The cohort during the Introduction to Technology Policy session on Day 1",
     badge: "Mentoring",
   },
-];
-
-const portraitPhoto = {
-  src: "/images/legacy/policy-workshop-2.png",
-  alt: "Dr. Chaitanya Giri of Observer Research Foundation speaking at the workshop",
-  badge: "Panel",
-};
-
-const highlightCards = [
-  { badge: "Visit", title: "Institutional Visit", description: "Field visit to C-DAC." },
   {
+    src: "/images/legacy/policy-workshop-2.png",
+    alt: "Dr. Chaitanya Giri of Observer Research Foundation speaking at the workshop",
+    badge: "Panel",
+  },
+  {
+    src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",
+    alt: "The cohort on their field visit to C-DAC",
+    badge: "Visit",
+  },
+  {
+    src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png",
+    alt: "Students and faculty gathered together in the lecture hall",
     badge: "Networking",
-    title: "Cross-Institutional Network",
-    description: "Students and faculty connected across sessions, building a policy network.",
+  },
+  {
+    src: "/images/legacy/workshops/day1-i1-inaugural-session.png",
+    alt: "Dr. Chaitanya Giri opening the workshop with a talk on science & technology policy",
+    badge: "Panel",
+  },
+  {
+    src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
+    alt: "The cohort and faculty during the Digital Narratives & Blockchain session on Day 2",
+    badge: "Workshop",
+  },
+  {
+    src: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png",
+    alt: "Participants and organizers in a candid group photo during the Strategic Innovation Frameworks session",
+    badge: "Networking",
   },
 ];
 
@@ -41,10 +66,10 @@ const badgeTone: Record<string, string> = {
   Networking: "bg-orange-600",
 };
 
-/** Event Highlights — a compact asymmetric gallery instead of one oversized hero photo:
- *  two stacked landscape photos on the left, a portrait photo plus two small highlight
- *  cards on the right. Every photo carries a small category badge; no element dominates
- *  the section. */
+/** Event Highlights — a uniform, premium photo grid. Every card is the same size (280px
+ *  tall), same border/radius/shadow treatment, with only a bottom-left category badge
+ *  distinguishing them — 4 columns on desktop (two full rows of four), 2 on tablet, 1 on
+ *  mobile. */
 export default function EventHighlightsGrid() {
   return (
     <section className="relative overflow-hidden bg-secondary-50 py-6 sm:py-9">
@@ -60,73 +85,30 @@ export default function EventHighlightsGrid() {
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-9 grid gap-4 lg:grid-cols-2 lg:items-stretch">
-          <div className="grid grid-rows-2 gap-4">
-            {landscapePhotos.map((photo) => (
-              <div
-                key={photo.src}
-                className="group relative h-51 w-full overflow-hidden rounded-[18px] border border-slate-200 shadow-sm"
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-ink-900/55 via-transparent to-transparent" />
-                <span
-                  className={cn(
-                    "absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[11px] font-bold text-white",
-                    badgeTone[photo.badge]
-                  )}
-                >
-                  {photo.badge}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <div className="group relative w-full flex-1 overflow-hidden rounded-[18px] border border-slate-200 shadow-sm">
+        <AnimatedSection delay={0.1} className="mt-9 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {highlightPhotos.map((photo) => (
+            <div
+              key={photo.src}
+              className="group relative h-70 w-full overflow-hidden rounded-2xl border border-emerald-100 shadow-md transition-shadow duration-300 hover:shadow-lg"
+            >
               <Image
-                src={portraitPhoto.src}
-                alt={portraitPhoto.alt}
+                src={photo.src}
+                alt={photo.alt}
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-linear-to-t from-ink-900/55 via-transparent to-transparent" />
               <span
                 className={cn(
                   "absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[11px] font-bold text-white",
-                  badgeTone[portraitPhoto.badge]
+                  badgeTone[photo.badge]
                 )}
               >
-                {portraitPhoto.badge}
+                {photo.badge}
               </span>
             </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {highlightCards.map((card) => (
-                <div
-                  key={card.title}
-                  className="flex h-25 flex-col justify-center rounded-[18px] border border-slate-200 bg-white p-3 shadow-sm"
-                >
-                  <span
-                    className={cn(
-                      "w-fit rounded-full px-2 py-0.5 text-[10px] font-bold text-white",
-                      badgeTone[card.badge]
-                    )}
-                  >
-                    {card.badge}
-                  </span>
-                  <h3 className="mt-1.5 text-[13px] font-bold leading-snug text-ink-900">{card.title}</h3>
-                  <p className="mt-0.5 line-clamp-2 text-[11px] leading-snug text-slate-600">{card.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </AnimatedSection>
       </Container>
     </section>

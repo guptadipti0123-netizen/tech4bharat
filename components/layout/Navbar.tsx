@@ -10,6 +10,7 @@ import {
   Briefcase,
   ChevronDown,
   Flame,
+  Handshake,
   Menu,
   Users,
   Wallet,
@@ -48,8 +49,10 @@ const navLinks: NavItem[] = [
   },
   {
     label: "Network",
-    href: "/partners",
-    children: [{ label: "Mentors", href: "/mentors", icon: Users }],
+    children: [
+      { label: "Partners", href: "/partners", icon: Handshake },
+      { label: "Advisors & Mentors", href: "/mentors", icon: Users },
+    ],
   },
   { label: "Events", href: "/events" },
   {
@@ -172,8 +175,8 @@ export default function Navbar() {
                           initial={{ opacity: 0, y: -6, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -6, scale: 0.98 }}
-                          transition={{ duration: 0.18, ease: "easeOut" }}
-                          className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-2xl border border-slate-100 bg-white py-3 shadow-[0_20px_50px_rgba(22,58,58,0.18)]"
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                          className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-xl border border-slate-100 bg-white py-3 shadow-[0_20px_50px_rgba(22,58,58,0.18)]"
                         >
                           {link.children.map((child) => (
                             <Link
