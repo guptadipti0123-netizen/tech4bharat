@@ -46,10 +46,10 @@ export default function IndiaReachMap() {
   return (
     <section className="relative overflow-hidden bg-white pb-8 pt-6 sm:pb-12 sm:pt-6">
       <Container className="relative">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
           <AnimatedSection animation="scale">
-            <div className="mx-auto w-full max-w-md rounded-[32px] bg-[#FBFAF6] p-6 sm:p-8">
-              <svg viewBox="0 0 666.66669 777.33331" className="mx-auto h-auto w-full max-w-[280px]" role="img" aria-label="Map of India showing Tech4Bharat's partner cities">
+            <div className="mx-auto w-full max-w-2xl rounded-[32px] bg-[#FBFAF6] p-4 sm:p-5 lg:p-5">
+              <svg viewBox="0 0 666.66669 777.33331" className="mx-auto h-auto w-full" role="img" aria-label="Map of India showing Tech4Bharat's partner cities">
                 <path d={INDIA_OUTLINE_PATH} fill="#FFFFFF" stroke="#D8DCD6" strokeWidth="3" />
 
                 {cities.map((city) => {
@@ -72,17 +72,17 @@ export default function IndiaReachMap() {
                     <circle
                       cx={city.x}
                       cy={city.y}
-                      r="9"
+                      r="12"
                       fill="#1F4E3D"
                       opacity="0"
                       className="origin-center group-hover:animate-ping group-hover:opacity-40"
                     />
-                    <circle cx={city.x} cy={city.y} r="5" fill="#1F4E3D" stroke="#FFFFFF" strokeWidth="1.5" />
+                    <circle cx={city.x} cy={city.y} r="7" fill="#1F4E3D" stroke="#FFFFFF" strokeWidth="2" />
                     <text
                       x={city.x}
-                      y={city.y - 10}
+                      y={city.y - 13}
                       textAnchor="middle"
-                      className="fill-[#173B2D] text-[13px] font-semibold"
+                      className="fill-[#173B2D] text-[17px] font-semibold"
                     >
                       {city.name}
                     </text>
@@ -93,28 +93,28 @@ export default function IndiaReachMap() {
                   <circle
                     cx={hub.x}
                     cy={hub.y}
-                    r="13"
+                    r="17"
                     fill="#1F4E3D"
                     opacity="0"
                     className="origin-center group-hover:animate-ping group-hover:opacity-40"
                   />
-                  <circle cx={hub.x} cy={hub.y} r="8" fill="#1F4E3D" stroke="#FFFFFF" strokeWidth="2" />
-                  <text x={hub.x} y={hub.y - 15} textAnchor="middle" className="fill-[#173B2D] text-[14px] font-bold">
+                  <circle cx={hub.x} cy={hub.y} r="11" fill="#1F4E3D" stroke="#FFFFFF" strokeWidth="2.5" />
+                  <text x={hub.x} y={hub.y - 19} textAnchor="middle" className="fill-[#173B2D] text-[18px] font-bold">
                     Mumbai
                   </text>
-                  <rect x={hub.x + 12} y={hub.y - 6} width="26" height="15" rx="7.5" fill="#1F4E3D" />
-                  <text x={hub.x + 25} y={hub.y + 4.5} textAnchor="middle" className="fill-white text-[9px] font-bold">
+                  <rect x={hub.x + 14} y={hub.y - 10} width="34" height="20" rx="10" fill="#1F4E3D" />
+                  <text x={hub.x + 31} y={hub.y + 4.5} textAnchor="middle" className="fill-white text-[12px] font-bold">
                     HQ
                   </text>
                 </g>
               </svg>
 
-              <div className="mt-6 flex items-center justify-center gap-6 border-t border-[#E5E7EB] pt-4">
-                <span className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#1F4E3D]" /> Headquarters
+              <div className="mt-5 flex items-center justify-center gap-8 border-t border-[#E5E7EB] pt-4">
+                <span className="flex items-center gap-2 text-sm font-semibold text-slate-600">
+                  <span className="h-3 w-3 rounded-full bg-[#1F4E3D]" /> Headquarters
                 </span>
-                <span className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-                  <span className="h-2 w-2 rounded-full bg-[#1F4E3D] opacity-70" /> Partner City
+                <span className="flex items-center gap-2 text-sm font-semibold text-slate-600">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#1F4E3D] opacity-70" /> Partner City
                 </span>
               </div>
             </div>

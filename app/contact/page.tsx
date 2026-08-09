@@ -53,47 +53,59 @@ const quickContacts: QuickContact[] = [
     title: "For Founders",
     description: "Applying to a program or have a startup idea to discuss.",
     email: "programs@tech4bharat.org",
-    cardBg: "#F4FBF8",
-    border: "#A8D5C2",
-    hoverBorder: "#4CAF82",
-    iconBg: "#2E8B57",
+    cardBg: "#EAF6EE",
+    border: "#1F5E4B66",
+    hoverBorder: "#1F5E4B",
+    iconBg: "#1F5E4B",
   },
   {
     icon: Handshake,
     title: "For Partners & Investors",
     description: "Exploring institutional, government, or funding partnerships.",
     email: "partnerships@tech4bharat.org",
-    cardBg: "#F8FAFF",
-    border: "#BFD6FF",
-    hoverBorder: "#5B9EF5",
-    iconBg: "#2563EB",
+    cardBg: "#F0F7F1",
+    border: "#3B7A5766",
+    hoverBorder: "#3B7A57",
+    iconBg: "#3B7A57",
   },
   {
     icon: Users,
     title: "For Mentors",
     description: "Interested in joining our mentor and advisor network.",
     email: "mentors@tech4bharat.org",
-    cardBg: "#FFF8EC",
-    border: "#FFD68A",
-    hoverBorder: "#E0A83D",
-    iconBg: "#D4A017",
+    cardBg: "#FFF7E8",
+    border: "#B8860B66",
+    hoverBorder: "#B8860B",
+    iconBg: "#B8860B",
   },
   {
     icon: Megaphone,
     title: "For Media & Press",
     description: "Press inquiries, interviews, or event coverage requests.",
     email: "media@tech4bharat.org",
-    cardBg: "#F8F5FF",
-    border: "#D9C8FF",
-    hoverBorder: "#9B7EF0",
-    iconBg: "#7C5CFC",
+    cardBg: "#F7F2E7",
+    border: "#163B2D66",
+    hoverBorder: "#163B2D",
+    iconBg: "#163B2D",
   },
 ];
 
 export default function ContactPage() {
   return (
     <>
-      <section className="relative h-105 overflow-hidden rounded-b-[48px] sm:h-120">
+      {/* `aspect-2/1` (or any ratio other than the photo's own) forces `object-contain` to
+          letterbox — visible bars — at every width, and forces `object-cover` to crop at
+          every width. The only way to show the complete, uncropped photo edge-to-edge with
+          no bars is to make the container's own ratio match the photo's native ratio
+          (1600x1067 = 3:2), so cover/contain become identical no-ops. `max-h` is set high
+          enough (1280px) that it only engages on ultrawide monitors, never on normal desktop
+          widths — the earlier bug was this cap kicking in around 840px and re-cropping the
+          top/bottom on ordinary screens. `min-h` is a floor purely so the centered text/button
+          still clears the fixed navbar on short/narrow phones. */}
+      <section
+        className="relative w-full aspect-3/2 min-h-88 max-h-320 overflow-hidden rounded-b-[48px]"
+        style={{ backgroundColor: "#12342B" }}
+      >
         <Image
           src="/images/gallery/gallery-3.jpg"
           alt=""
@@ -102,18 +114,23 @@ export default function ContactPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(18,52,43,0.55)" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(18,52,43,0.35)" }} />
         <div className="relative flex h-full items-center justify-center">
           <Container>
             <AnimatedSection className="mx-auto max-w-2xl text-center">
-              <h1 className="text-[32px] font-extrabold leading-tight tracking-tight text-white sm:text-[44px]">
+              <h1 className="text-[22px] font-extrabold leading-tight tracking-tight text-white sm:text-[30px] lg:text-[34px]">
                 Let&apos;s Start a Conversation
               </h1>
-              <p className="mx-auto mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
+              <p className="mx-auto mt-3 max-w-2xl text-sm text-white/85 sm:mt-4 sm:text-base">
                 Whether you&apos;re a founder, mentor or partner, our team would love to hear from you.
               </p>
-              <div className="mt-8">
-                <Button href="#contact-form" variant="secondary" size="lg">
+              <div className="mt-6 sm:mt-8">
+                <Button
+                  href="#contact-form"
+                  variant="secondary"
+                  size="lg"
+                  className="px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
+                >
                   Contact Us
                 </Button>
               </div>
@@ -134,7 +151,7 @@ export default function ContactPage() {
               title="Reach the Right Team Faster"
               align="center"
               className="max-w-225"
-              titleClassName="text-[30px] font-bold leading-[1.1] text-[#163B2D] sm:text-[42px] lg:text-[52px]"
+              titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
             />
           </AnimatedSection>
           <div className="mt-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -150,7 +167,7 @@ export default function ContactPage() {
                         "--hover-border": contact.hoverBorder,
                       } as React.CSSProperties
                     }
-                    className="group flex h-67.5 flex-col items-center rounded-[28px] border p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg"
+                    className="group flex h-67.5 flex-col items-center rounded-[28px] border-2 p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg"
                   >
                     <span
                       className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110"

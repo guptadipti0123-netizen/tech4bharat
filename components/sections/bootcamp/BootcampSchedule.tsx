@@ -138,8 +138,8 @@ export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
               const isRight = i % 2 === 1;
 
               const mainCard = (
-                <div className="ml-12 rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_4px_16px_rgba(22,58,58,0.06)] sm:ml-0">
-                  <span className="inline-flex items-center rounded-full bg-[#1F5E4B]/8 px-2.5 py-1 text-xs font-bold text-[#1F5E4B]">
+                <div className="ml-12 flex h-full min-h-38 flex-col justify-center rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_4px_16px_rgba(22,58,58,0.06)] sm:ml-0">
+                  <span className="inline-flex w-fit items-center rounded-full bg-[#1F5E4B]/8 px-2.5 py-1 text-xs font-bold text-[#1F5E4B]">
                     {session.time}
                   </span>
                   <h3 className="mt-2 text-base font-bold leading-tight text-ink-900">{session.title}</h3>
@@ -149,7 +149,7 @@ export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
               const sideCard = info && (
                 <div
                   style={{ backgroundColor: info.bg, borderColor: `${info.border}55` }}
-                  className="ml-12 rounded-2xl border p-4.5 shadow-[0_4px_14px_rgba(0,0,0,0.06)] sm:ml-0"
+                  className="ml-12 flex h-full min-h-38 flex-col justify-center rounded-2xl border p-4.5 shadow-[0_4px_14px_rgba(0,0,0,0.06)] sm:ml-0"
                 >
                   <span
                     className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
@@ -174,8 +174,8 @@ export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
 
               return (
                 <AnimatedSection key={session.title} delay={i * 0.04}>
-                  <div className="relative flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-8 lg:gap-10">
-                    <span className="absolute left-4 top-1 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2 border-[#1F5E4B] bg-white text-[#1F5E4B] sm:left-1/2">
+                  <div className="relative flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-8 lg:gap-10">
+                    <span className="absolute left-4 top-4 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2 border-[#1F5E4B] bg-white text-[#1F5E4B] sm:left-1/2 sm:top-1/2 sm:-translate-y-1/2">
                       <Icon size={15} strokeWidth={1.75} />
                     </span>
 
