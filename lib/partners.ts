@@ -60,7 +60,7 @@ export const partnerCategories: PartnerCategoryGroup[] = [
       { name: "NSRCEL", description: "IIM Bangalore's incubation cell — co-hosted accelerator cohorts." },
       { name: "SINE, IIT Bombay", description: "Shared incubation infrastructure and lab access." },
       { name: "CIIE.CO", description: "Early-stage capital and sector-focused accelerator tracks." },
-      { name: "T-Hub", description: "Corporate innovation partnerships and investor connects." },
+      { name: "T-Hub", description: "Corporate innovation partnerships and investor connects.", logo: "/images/partners/t-hub.png" },
       { name: "GSF Accelerator", description: "Seed-stage mentorship and follow-on funding pathways." },
     ],
   },
@@ -83,7 +83,7 @@ export const partnerCategories: PartnerCategoryGroup[] = [
       { name: "C-DAC", description: "Advanced computing research and technology transfer.", logo: "/images/partners/cdac.png" },
       { name: "TIFR", description: "Fundamental research partnerships for deep-tech founders.", logo: "/images/partners/tifr.png" },
       { name: "CSIR", description: "National lab access for applied science ventures.", logo: "/images/partners/csir.png" },
-      { name: "BIRAC", description: "Biotech innovation funding and regulatory guidance." },
+      { name: "BIRAC", description: "Biotech innovation funding and regulatory guidance.", logo: "/images/partners/birac.png" },
       { name: "Observer Research Foundation", description: "Policy research collaboration on technology and governance.", logo: "/images/partners/observer-research-foundation.png" },
     ],
   },
@@ -94,7 +94,7 @@ export const partnerCategories: PartnerCategoryGroup[] = [
     partners: [
       { name: "UK–India Tech Hub", description: "Bilateral market access for UK-bound Indian startups." },
       { name: "USISPF", description: "US–India strategic partnership on innovation policy." },
-      { name: "Startup Genome", description: "Global ecosystem benchmarking and best-practice exchange." },
+      { name: "Startup Genome", description: "Global ecosystem benchmarking and best-practice exchange.", logo: "/images/partners/startup-genome.svg" },
     ],
   },
 ];
