@@ -73,7 +73,7 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
     <div
       id={id}
       style={{ backgroundColor: cardBg, borderColor: accent, boxShadow: shadow }}
-      className="group flex h-85 scroll-mt-28 flex-col rounded-[20px] border-2 p-6 transition-all duration-300 hover:-translate-y-1"
+      className="group flex h-full min-h-85 scroll-mt-28 flex-col rounded-[20px] border-2 p-6 transition-all duration-300 hover:-translate-y-1"
     >
       <span
         className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
