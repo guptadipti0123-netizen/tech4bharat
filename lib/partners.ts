@@ -57,11 +57,11 @@ export const partnerCategories: PartnerCategoryGroup[] = [
     badge: "Investor",
     tagline: "Seed capital, follow-on funding, and incubation infrastructure.",
     partners: [
-      { name: "NSRCEL", description: "IIM Bangalore's incubation cell — co-hosted accelerator cohorts." },
-      { name: "SINE, IIT Bombay", description: "Shared incubation infrastructure and lab access." },
-      { name: "CIIE.CO", description: "Early-stage capital and sector-focused accelerator tracks." },
+      { name: "NSRCEL", description: "IIM Bangalore's incubation cell — co-hosted accelerator cohorts.", logo: "/images/partners/nsrcel.webp" },
+      { name: "SINE, IIT Bombay", description: "Shared incubation infrastructure and lab access.", logo: "/images/partners/sine-iitb.png" },
+      { name: "CIIE.CO", description: "Early-stage capital and sector-focused accelerator tracks.", logo: "/images/partners/ciie-co.png" },
       { name: "T-Hub", description: "Corporate innovation partnerships and investor connects.", logo: "/images/partners/t-hub.png" },
-      { name: "GSF Accelerator", description: "Seed-stage mentorship and follow-on funding pathways." },
+      { name: "GSF Accelerator", description: "Seed-stage mentorship and follow-on funding pathways.", logo: "/images/partners/gsf-accelerator.png" },
     ],
   },
   {
@@ -69,10 +69,10 @@ export const partnerCategories: PartnerCategoryGroup[] = [
     badge: "CSR",
     tagline: "Social-impact ventures and grassroots distribution networks.",
     partners: [
-      { name: "Tata Trusts", description: "CSR-backed grants for social-impact founders." },
-      { name: "Villgro", description: "Rural and social enterprise incubation partnership." },
-      { name: "Piramal Foundation", description: "Healthcare and education venture co-development." },
-      { name: "Digital Empowerment Foundation", description: "Last-mile digital access and rural distribution." },
+      { name: "Tata Trusts", description: "CSR-backed grants for social-impact founders.", logo: "/images/partners/tata-trusts.png" },
+      { name: "Villgro", description: "Rural and social enterprise incubation partnership.", logo: "/images/partners/villgro.png" },
+      { name: "Piramal Foundation", description: "Healthcare and education venture co-development.", logo: "/images/partners/piramal-foundation.png" },
+      { name: "Digital Empowerment Foundation", description: "Last-mile digital access and rural distribution.", logo: "/images/partners/digital-empowerment-foundation.png" },
     ],
   },
   {
@@ -93,7 +93,7 @@ export const partnerCategories: PartnerCategoryGroup[] = [
     tagline: "Cross-border market access and bilateral innovation exchange.",
     partners: [
       { name: "UK–India Tech Hub", description: "Bilateral market access for UK-bound Indian startups." },
-      { name: "USISPF", description: "US–India strategic partnership on innovation policy." },
+      { name: "USISPF", description: "US–India strategic partnership on innovation policy.", logo: "/images/partners/usispf.png" },
       { name: "Startup Genome", description: "Global ecosystem benchmarking and best-practice exchange.", logo: "/images/partners/startup-genome.svg" },
     ],
   },
