@@ -10,25 +10,25 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
  *  immediately after a single scroll. */
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-white pb-10 pt-24 sm:pb-14 sm:pt-28">
+    <section id="top" className="relative overflow-hidden bg-white pb-6 pt-20 sm:pb-14 sm:pt-28">
       <Container className="relative">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-14">
           <div className="text-center lg:text-left">
             <AnimatedSection>
-              <h1 className="mx-auto max-w-2xl text-balance text-[clamp(1.625rem,7vw,2.25rem)] font-bold leading-tight text-ink-900 md:text-5xl lg:mx-0 lg:text-5xl xl:text-5xl">
+              <h1 className="mx-auto max-w-2xl text-balance text-[clamp(1.625rem,7vw,2.25rem)] font-bold leading-[1.2] text-ink-900 md:text-5xl lg:mx-0 lg:text-5xl xl:text-5xl">
                 Empowering Founders to Build Bharat&apos;s Future
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={0.15}>
-              <p className="mx-auto mt-4 max-w-2xl text-balance text-lg leading-relaxed text-slate-600 md:text-xl lg:mx-0">
+              <p className="mx-auto mt-2.5 max-w-2xl text-balance text-sm leading-relaxed text-slate-600 sm:mt-4 sm:text-lg md:text-xl lg:mx-0">
                 A startup incubator supporting founders through mentorship, capital access,
                 and community.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.25}>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+              <div className="mt-4 flex flex-col items-center justify-center gap-2.5 sm:mt-8 sm:flex-row sm:gap-4 lg:justify-start">
                 <Button href="/programs" size="lg">
                   Explore Programs <ArrowRight size={18} />
                 </Button>

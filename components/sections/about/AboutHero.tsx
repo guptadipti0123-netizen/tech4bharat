@@ -29,11 +29,11 @@ export default function AboutHero() {
             <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl lg:text-4xl">
               About Tech4Bharat
             </h1>
-            <p className="mt-5 max-w-lg text-balance text-lg leading-relaxed text-white/85 sm:text-xl">
+            <p className="mt-3 max-w-lg text-balance text-sm leading-relaxed text-white/85 sm:mt-5 sm:text-lg lg:text-xl">
               Tech4Bharat is being established as a national platform to support social
               entrepreneurship, innovation, and startup development across Bharat.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-8 sm:gap-4">
               <Button href="/programs" size="lg">
                 Explore Programs <ArrowRight size={18} />
               </Button>
