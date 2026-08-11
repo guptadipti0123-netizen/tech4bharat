@@ -49,8 +49,8 @@ export default function FocusAreas() {
       <Container>
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <HomeSectionHeading
-            title="The sectors we back"
-            description="We focus on the areas where India needs strong builders, thoughtful operators, and durable companies."
+            title="Domains we're doubling down on"
+            description="We back founders building in sectors critical to India's growth."
             align="center"
           />
         </AnimatedSection>

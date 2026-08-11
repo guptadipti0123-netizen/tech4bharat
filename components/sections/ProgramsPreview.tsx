@@ -33,10 +33,7 @@ export default function ProgramsPreview() {
     <section id="programs" className="bg-white py-14 sm:py-16 lg:py-24">
       <Container>
         <AnimatedSection>
-          <HomeSectionHeading
-            title="A founder journey shaped by momentum"
-            description="Every founder moves through Tech4Bharat through mentorship, capital access, and community — beginning with programs that make the next step visible."
-          />
+          <HomeSectionHeading title="How founders work with us" />
         </AnimatedSection>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:gap-5">

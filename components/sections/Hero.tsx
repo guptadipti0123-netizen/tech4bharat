@@ -19,14 +19,15 @@ export default function Hero() {
           <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
             <AnimatedSection>
               <h1 className="text-balance text-[clamp(1.8rem,3.2vw,2.7rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-ink-900 lg:text-[clamp(2rem,2.8vw,2.9rem)]">
-                Empowering founders to build{" "}
-                <span className="text-[#D4A017]">India&apos;s next wave</span>
+                Empowering Founders to Build{" "}
+                <span className="text-[#D4A017]">Bharat&apos;s Future</span>
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={0.12}>
               <p className="mx-auto mt-3 max-w-xl text-[14px] leading-6 text-slate-600 sm:mt-4 sm:text-[15px] lg:mx-0 lg:max-w-2xl">
-                Tech4Bharat helps ambitious founders turn early-stage ideas into resilient companies through mentorship, capital access, and a connected community.
+                A startup incubator supporting founders through mentorship, capital access, and
+                community.
               </p>
             </AnimatedSection>
 

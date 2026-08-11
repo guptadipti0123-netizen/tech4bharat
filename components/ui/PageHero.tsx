@@ -40,7 +40,7 @@ export default function PageHero({
   descriptionClassName,
 }: PageHeroProps) {
   return (
-    <section className="relative bg-linear-to-b from-brand-50 via-white to-white pb-8 pt-20 sm:pb-10 sm:pt-24">
+    <section className="relative bg-linear-to-b from-brand-50 via-white to-white pb-7 pt-20 sm:pb-10 sm:pt-24">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/5" />
         <Blob tone="secondary" className="-left-24 -top-24 h-72 w-72" />
@@ -58,7 +58,7 @@ export default function PageHero({
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <h1
             className={cn(
-              "text-[1.4rem] font-semibold leading-tight tracking-[-0.01em] text-ink-900 sm:text-[1.9rem] lg:text-[2.2rem]",
+              "text-[32px] font-extrabold leading-tight tracking-tight text-ink-900 sm:text-[44px]",
               titleClassName
             )}
           >
@@ -66,7 +66,7 @@ export default function PageHero({
           </h1>
           <p
             className={cn(
-              "mx-auto mt-3 max-w-2xl text-[14px] leading-6 text-slate-600 sm:text-[15px]",
+              "mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg",
               descriptionClassName
             )}
           >
@@ -77,7 +77,7 @@ export default function PageHero({
         {image && (
           <AnimatedSection
             delay={0.15}
-            className="relative mx-auto mt-6 aspect-video max-w-4xl overflow-hidden rounded-[20px] border border-slate-200 bg-white shadow-sm sm:mt-8 sm:rounded-3xl"
+            className="relative mx-auto mt-10 aspect-video max-w-4xl overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-xl"
           >
             <Image
               src={image}

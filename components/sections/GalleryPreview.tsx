@@ -17,6 +17,7 @@ const tiles: GalleryTile[] = [
   { src: "/images/gallery/gallery-10.jpg", alt: "A Tech4Bharat cohort in session" },
   { src: "/images/gallery/agriculture-2.jpg", alt: "An AgriTech founder in the field", className: "sm:row-span-2" },
   { src: "/images/gallery/gallery-13.jpg", alt: "A Tech4Bharat networking moment" },
+  { src: "/images/gallery/gallery-5.jpg", alt: "A Tech4Bharat mentoring session" },
 ];
 
 export default function GalleryPreview() {
@@ -24,11 +25,7 @@ export default function GalleryPreview() {
     <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f7fcf9_100%)] py-14 sm:py-16 lg:py-24">
       <Container>
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <HomeSectionHeading
-            title="Moments from the ecosystem"
-            description="A glimpse into the programs, partnerships, and community experiences that shape the Tech4Bharat journey."
-            align="center"
-          />
+          <HomeSectionHeading title="Moments from the ecosystem" align="center" />
         </AnimatedSection>
 
         <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
