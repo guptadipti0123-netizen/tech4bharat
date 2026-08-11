@@ -106,10 +106,9 @@ const sideInfoByTitle: Record<string, SideInfo> = {
   },
 };
 
-/** Bootcamp schedule — a two-column vertical timeline. Each session's main card sits on
- *  one side of the spine as before; the empty space on the other side now holds a compact,
- *  pastel-tinted side card with quick-reference detail instead of blank space. Collapses to
- *  a single stacked column (main card, then its side card) on mobile. */
+/** Bootcamp schedule — a compact responsive card grid (one card per session, merging what
+ *  used to be a separate "main" card and "side" detail card into a single card) instead of
+ *  a tall two-card-per-session vertical timeline. 2 columns on mobile/tablet, 4 on desktop. */
 export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
   return (
     <section id="schedule" className="bg-secondary-50 py-10 sm:py-11">
@@ -124,68 +123,46 @@ export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
           />
         </AnimatedSection>
 
-        <div className="relative mx-auto mt-9 max-w-5xl">
-          <div
-            aria-hidden="true"
-            className="absolute left-4 top-0 h-full w-px bg-[#1F5E4B]/15 sm:left-1/2 sm:-translate-x-1/2"
-          />
+        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          {agenda.map((session, i) => {
+            const Icon = iconByTitle[session.title] ?? ClipboardCheck;
+            const info = sideInfoByTitle[session.title];
 
-          <div className="flex flex-col gap-10 sm:gap-8">
-            {agenda.map((session, i) => {
-              const Icon = iconByTitle[session.title] ?? ClipboardCheck;
-              const info = sideInfoByTitle[session.title];
-              const SideIcon = info?.icon ?? ClipboardCheck;
-              const isRight = i % 2 === 1;
-
-              const mainCard = (
-                <div className="ml-12 flex h-full min-h-38 flex-col justify-center rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_4px_16px_rgba(22,58,58,0.06)] sm:ml-0">
-                  <span className="inline-flex w-fit items-center rounded-full bg-[#1F5E4B]/8 px-2.5 py-1 text-xs font-bold text-[#1F5E4B]">
-                    {session.time}
-                  </span>
-                  <h3 className="mt-2 text-base font-bold leading-tight text-ink-900">{session.title}</h3>
-                </div>
-              );
-
-              const sideCard = info && (
+            return (
+              <AnimatedSection key={session.title} delay={i * 0.04} className="h-full">
                 <div
-                  style={{ backgroundColor: info.bg, borderColor: `${info.border}55` }}
-                  className="ml-12 flex h-full min-h-38 flex-col justify-center rounded-2xl border p-4.5 shadow-[0_4px_14px_rgba(0,0,0,0.06)] sm:ml-0"
+                  style={{ backgroundColor: info?.bg, borderColor: info ? `${info.border}40` : undefined }}
+                  className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-3 shadow-[0_4px_14px_rgba(22,58,58,0.05)] sm:p-4"
                 >
                   <span
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
-                    style={{ backgroundColor: "rgba(255,255,255,.65)" }}
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-[#1F5E4B] bg-white text-[#1F5E4B]"
                   >
-                    <SideIcon size={14} strokeWidth={1.75} style={{ color: info.accent }} />
+                    <Icon size={14} strokeWidth={1.75} />
                   </span>
-                  <ul className="mt-2.5 flex flex-col gap-1.5">
-                    {info.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-1.5 text-[12.5px] font-medium leading-snug text-slate-600">
-                        <span
-                          aria-hidden="true"
-                          className="h-1 w-1 shrink-0 rounded-full"
-                          style={{ backgroundColor: info.accent }}
-                        />
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+
+                  <span className="mt-2 inline-flex w-fit items-center rounded-full bg-[#1F5E4B]/8 px-2 py-0.5 text-[11px] font-bold text-[#1F5E4B]">
+                    {session.time}
+                  </span>
+                  <h3 className="mt-1.5 text-[13px] font-bold leading-tight text-ink-900 sm:text-sm">{session.title}</h3>
+
+                  {info && (
+                    <ul className="mt-2 flex flex-col gap-1">
+                      {info.bullets.slice(0, 2).map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-1.5 text-[11px] leading-snug text-slate-600">
+                          <span
+                            aria-hidden="true"
+                            className="mt-1.5 h-1 w-1 shrink-0 rounded-full"
+                            style={{ backgroundColor: info.accent }}
+                          />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-              );
-
-              return (
-                <AnimatedSection key={session.title} delay={i * 0.04}>
-                  <div className="relative flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-8 lg:gap-10">
-                    <span className="absolute left-4 top-4 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2 border-[#1F5E4B] bg-white text-[#1F5E4B] sm:left-1/2 sm:top-1/2 sm:-translate-y-1/2">
-                      <Icon size={15} strokeWidth={1.75} />
-                    </span>
-
-                    <div className={`sm:flex-1 ${isRight ? "sm:order-2" : "sm:order-1"}`}>{mainCard}</div>
-                    <div className={`sm:flex-1 ${isRight ? "sm:order-1" : "sm:order-2"}`}>{sideCard}</div>
-                  </div>
-                </AnimatedSection>
-              );
-            })}
-          </div>
+              </AnimatedSection>
+            );
+          })}
         </div>
       </Container>
     </section>

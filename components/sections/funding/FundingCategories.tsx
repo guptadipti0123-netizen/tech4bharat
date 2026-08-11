@@ -98,7 +98,7 @@ export default function FundingCategories() {
                       "--hover-border": source.borderHover,
                     } as React.CSSProperties
                   }
-                  className="group relative flex h-44 flex-col overflow-hidden rounded-2xl border-2 p-5.5 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border)"
+                  className="group relative flex min-h-44 flex-col overflow-hidden rounded-2xl border-2 p-5.5 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border)"
                 >
                   <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: source.border }} />
 
@@ -109,7 +109,7 @@ export default function FundingCategories() {
                     >
                       <Icon size={15} />
                     </span>
-                    <h3 className="min-w-0 flex-1 whitespace-nowrap break-normal text-[16px] font-bold leading-tight text-[#173D35]">
+                    <h3 className="min-w-0 flex-1 text-[16px] font-bold leading-tight text-[#173D35]">
                       {source.title}
                     </h3>
                   </div>
