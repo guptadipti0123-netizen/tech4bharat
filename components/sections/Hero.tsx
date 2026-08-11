@@ -15,13 +15,17 @@ export default function Hero() {
         <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-14">
           <div className="text-center lg:text-left">
             <AnimatedSection>
-              <h1 className="mx-auto max-w-2xl text-balance text-[clamp(1.625rem,7vw,2.25rem)] font-bold leading-[1.2] text-ink-900 md:text-5xl lg:mx-0 lg:text-5xl xl:text-5xl">
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#B8860B]">
+                <span className="h-px w-8 bg-current opacity-60" aria-hidden="true" />
+                Startup Incubator
+              </span>
+              <h1 className="mx-auto mt-3 max-w-2xl text-balance text-[clamp(1.875rem,7vw,2.25rem)] font-bold leading-[1.2] text-ink-900 sm:mt-4 md:text-5xl lg:mx-0 lg:text-5xl xl:text-5xl">
                 Empowering Founders to Build Bharat&apos;s Future
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={0.15}>
-              <p className="mx-auto mt-2.5 max-w-2xl text-balance text-sm leading-relaxed text-slate-600 sm:mt-4 sm:text-lg md:text-xl lg:mx-0">
+              <p className="mx-auto mt-2.5 max-w-2xl text-balance text-[15px] leading-relaxed text-slate-600 sm:mt-4 sm:text-lg md:text-xl lg:mx-0">
                 A startup incubator supporting founders through mentorship, capital access,
                 and community.
               </p>

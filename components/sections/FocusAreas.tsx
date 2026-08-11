@@ -50,7 +50,7 @@ export default function FocusAreas() {
     <section className="bg-white py-6 sm:py-8">
       <Container>
         <AnimatedSection className="mx-auto max-w-162.5 text-center">
-          <h2 className="text-balance text-3xl font-bold leading-tight text-ink-900 md:text-4xl">
+          <h2 className="text-balance text-[27px] font-bold leading-[1.2] text-ink-900 md:text-4xl">
             Domains we&apos;re doubling down on
           </h2>
           <p className="mt-3 text-balance text-base leading-relaxed text-slate-600">

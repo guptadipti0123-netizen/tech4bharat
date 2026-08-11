@@ -54,7 +54,7 @@ export default function PartnersPreview() {
     <section id="partners" className="bg-[#F8FAF9] py-6 sm:py-8">
       <Container>
         <AnimatedSection className="text-center">
-          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-bold leading-tight text-ink-900 md:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-balance text-[27px] font-bold leading-[1.2] text-ink-900 md:text-4xl">
             Partners
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-balance text-base leading-relaxed text-slate-600">

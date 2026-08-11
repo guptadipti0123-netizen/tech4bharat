@@ -27,7 +27,7 @@ export default function GalleryPreview() {
     <section className="bg-slate-50 py-8 sm:py-12">
       <Container>
         <AnimatedSection className="text-center">
-          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-bold leading-tight text-ink-900 md:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-balance text-[27px] font-bold leading-[1.2] text-ink-900 md:text-4xl">
             Moments from the ecosystem
           </h2>
         </AnimatedSection>
