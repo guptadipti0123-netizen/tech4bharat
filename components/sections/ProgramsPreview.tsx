@@ -33,16 +33,16 @@ export default function ProgramsPreview() {
     <section id="programs" className="bg-slate-50 py-8 sm:py-12">
       <Container>
         <AnimatedSection className="text-center">
-          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-bold leading-tight text-ink-900 md:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-balance text-[26px] font-bold leading-tight text-ink-900 md:text-4xl">
             How founders work with us
           </h2>
         </AnimatedSection>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:mt-10 sm:gap-6 lg:grid-cols-2">
           {homePrograms.map((program, i) => (
             <AnimatedSection key={program.title} delay={i * 0.08}>
-              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm sm:flex-row">
-                <div className="relative h-48 w-full shrink-0 sm:h-auto sm:w-2/5">
+              <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:flex-row sm:rounded-3xl">
+                <div className="relative h-36 w-full shrink-0 sm:h-auto sm:w-2/5">
                   <Image
                     src={program.image}
                     alt={program.title}
@@ -51,10 +51,10 @@ export default function ProgramsPreview() {
                     className="object-cover"
                   />
                 </div>
-                <div className="flex flex-1 flex-col justify-center p-6 sm:p-7">
-                  <h3 className="text-2xl font-bold text-ink-900">{program.title}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-slate-600">{program.description}</p>
-                  <div className="mt-5">
+                <div className="flex flex-1 flex-col justify-center p-4 sm:p-7">
+                  <h3 className="text-lg font-bold text-ink-900 sm:text-2xl">{program.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-600 sm:mt-2 sm:text-base">{program.description}</p>
+                  <div className="mt-3 sm:mt-5">
                     <Button href={program.href} variant="outline" size="sm">
                       Learn More <ArrowRight size={16} />
                     </Button>

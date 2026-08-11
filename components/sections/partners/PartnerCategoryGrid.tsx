@@ -17,8 +17,8 @@ export default function PartnerCategoryGrid() {
             title="A network spanning every corner of Bharat"
             description="From academia to government to industry, our partners help us extend founder support across every corner of India."
             className="max-w-240"
-            titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px] lg:whitespace-nowrap"
-            descriptionClassName="mt-3 text-[17px] sm:text-[17px] leading-relaxed text-[#667085]"
+            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px] lg:whitespace-nowrap"
+            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[17px] leading-relaxed text-[#667085]"
           />
         </AnimatedSection>
 

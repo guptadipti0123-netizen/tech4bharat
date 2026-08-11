@@ -58,22 +58,23 @@ export default function FocusAreas() {
           </p>
         </AnimatedSection>
 
-        <div className="mt-7 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-5 grid grid-cols-1 gap-3 sm:mt-7 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {domains.map((domain, i) => {
             const Icon = domain.icon;
             return (
               <AnimatedSection key={domain.title} delay={i * 0.06} className="h-full">
                 <div
                   style={{ backgroundColor: domain.cardBg, borderColor: domain.border }}
-                  className="group flex h-full min-h-25 items-center gap-3 rounded-[18px] border-2 p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
+                  className="group flex h-full min-h-0 items-center gap-2.5 rounded-2xl border-2 p-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] sm:min-h-25 sm:gap-3 sm:rounded-[18px] sm:p-5"
                 >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1F4E3D] text-white">
-                    <Icon size={22} />
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1F4E3D] text-white sm:h-12 sm:w-12">
+                    <Icon size={18} className="sm:hidden" />
+                    <Icon size={22} className="hidden sm:block" />
                   </span>
 
                   <div className="min-w-0">
-                    <h3 className="text-[18px] font-bold leading-tight text-[#123D32]">{domain.title}</h3>
-                    <p className="mt-0.5 line-clamp-none text-[14px] leading-relaxed text-[#5F6B73] sm:line-clamp-2">
+                    <h3 className="text-[15px] font-bold leading-tight text-[#123D32] sm:text-[18px]">{domain.title}</h3>
+                    <p className="mt-0.5 line-clamp-none text-[13px] leading-snug text-[#5F6B73] sm:text-[14px] sm:leading-relaxed sm:line-clamp-2">
                       {domain.description}
                     </p>
                   </div>

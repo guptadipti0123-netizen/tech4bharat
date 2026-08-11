@@ -91,7 +91,7 @@ export default function WhoShouldAttend() {
             title="Who Should Attend"
             description="This bootcamp is built for founders at every early stage of the journey."
             className="max-w-3xl"
-            titleClassName="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]"
+            titleClassName="text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]"
             descriptionClassName="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]"
           />
         </AnimatedSection>

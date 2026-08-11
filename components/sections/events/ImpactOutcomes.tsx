@@ -58,8 +58,8 @@ export default function ImpactOutcomes() {
           <SectionTitle
             title="Impact & Outcomes"
             description="Key outcomes and learnings from Tech4Bharat programs and workshops."
-            titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
-            descriptionClassName="mt-3 text-[18px] sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
+            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
           />
         </AnimatedSection>
 
@@ -92,7 +92,7 @@ export default function ImpactOutcomes() {
                         Featured Outcome
                       </span>
                     </div>
-                    <h3 className="mt-3 text-[28px] font-bold leading-tight text-ink-900">{featured.title}</h3>
+                    <h3 className="mt-3 text-[19px] font-bold leading-tight text-ink-900">{featured.title}</h3>
                     <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">
                       {featured.description}
                     </p>
@@ -108,7 +108,7 @@ export default function ImpactOutcomes() {
                     >
                       <MediumIcon0 size={16} />
                     </span>
-                    <h3 className="mt-3 text-[24px] font-bold leading-tight text-ink-900">{mediumCards[0].title}</h3>
+                    <h3 className="mt-3 text-[17px] font-bold leading-tight text-ink-900">{mediumCards[0].title}</h3>
                     <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">{mediumCards[0].description}</p>
                   </div>
                   <div className="rounded-[18px] p-5" style={{ backgroundColor: "#EEF6FF" }}>
@@ -120,7 +120,7 @@ export default function ImpactOutcomes() {
                         <MediumIcon1 size={16} />
                       </span>
                     </div>
-                    <h3 className="mt-3 text-[24px] font-bold leading-tight text-ink-900">{mediumCards[1].title}</h3>
+                    <h3 className="mt-3 text-[17px] font-bold leading-tight text-ink-900">{mediumCards[1].title}</h3>
                     <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">{mediumCards[1].description}</p>
                   </div>
                 </div>

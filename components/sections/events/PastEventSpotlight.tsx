@@ -71,7 +71,7 @@ export default function PastEventSpotlight() {
           <SectionTitle
             title="Past Event"
             align="left"
-            titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
           />
         </AnimatedSection>
 

@@ -27,8 +27,8 @@ export default function UpcomingEventsMarquee({ events }: UpcomingEventsMarqueeP
             title="Upcoming Events"
             align="left"
             description="Discover workshops, bootcamps, networking sessions and innovation programs happening across India."
-            titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
-            descriptionClassName="mt-3 text-[18px] sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
+            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
           />
         </AnimatedSection>
       </Container>

@@ -151,10 +151,10 @@ export default function ContactPage() {
               title="Reach the Right Team Faster"
               align="center"
               className="max-w-225"
-              titleClassName="text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+              titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
             />
           </AnimatedSection>
-          <div className="mt-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {quickContacts.map((contact, i) => {
               const Icon = contact.icon;
               return (
@@ -167,21 +167,22 @@ export default function ContactPage() {
                         "--hover-border": contact.hoverBorder,
                       } as React.CSSProperties
                     }
-                    className="group flex h-full min-h-67.5 flex-col items-center rounded-[28px] border-2 p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg"
+                    className="group flex h-full min-h-0 flex-col items-center rounded-2xl border-2 p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg sm:min-h-67.5 sm:rounded-[28px] sm:p-8"
                   >
                     <span
-                      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16"
                       style={{ backgroundColor: contact.iconBg }}
                     >
-                      <Icon size={26} />
+                      <Icon size={19} className="sm:hidden" />
+                      <Icon size={26} className="hidden sm:block" />
                     </span>
-                    <h3 className="mt-3 text-base font-bold text-ink-900">{contact.title}</h3>
-                    <p className="mt-1.5 line-clamp-none text-sm leading-relaxed text-slate-600 sm:line-clamp-2">
+                    <h3 className="mt-2 text-[15px] font-bold text-ink-900 sm:mt-3 sm:text-base">{contact.title}</h3>
+                    <p className="mt-1 line-clamp-none text-[13px] leading-snug text-slate-600 sm:mt-1.5 sm:text-sm sm:leading-relaxed sm:line-clamp-2">
                       {contact.description}
                     </p>
                     <a
                       href={`mailto:${contact.email}`}
-                      className="mt-3 inline-flex items-center justify-center rounded-full border-2 bg-white px-5 py-3 text-[13px] font-bold text-ink-900 shadow-sm transition-colors duration-200 hover:text-brand-700"
+                      className="mt-2 inline-flex items-center justify-center rounded-full border-2 bg-white px-3.5 py-2 text-[11px] font-bold text-ink-900 shadow-sm transition-colors duration-200 hover:text-brand-700 sm:mt-3 sm:px-5 sm:py-3 sm:text-[13px]"
                       style={{ borderColor: "#D7E9E2" }}
                     >
                       {contact.email}

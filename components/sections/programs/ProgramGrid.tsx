@@ -73,23 +73,24 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
     <div
       id={id}
       style={{ backgroundColor: cardBg, borderColor: accent, boxShadow: shadow }}
-      className="group flex h-full min-h-85 scroll-mt-28 flex-col rounded-[20px] border-2 p-6 transition-all duration-300 hover:-translate-y-1"
+      className="group flex h-full min-h-0 scroll-mt-28 flex-col rounded-2xl border-2 p-4 transition-all duration-300 hover:-translate-y-1 sm:min-h-85 sm:rounded-[20px] sm:p-6"
     >
       <span
-        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl sm:h-14 sm:w-14 sm:rounded-2xl"
         style={{ backgroundColor: chipBg }}
       >
-        <Icon size={24} style={{ color: accent }} strokeWidth={1.75} />
+        <Icon size={19} className="sm:hidden" style={{ color: accent }} strokeWidth={1.75} />
+        <Icon size={24} className="hidden sm:block" style={{ color: accent }} strokeWidth={1.75} />
       </span>
 
-      <h3 className="mt-4 text-[20px] font-bold leading-tight text-ink-900">{title}</h3>
-      <p className="mt-2 line-clamp-3 text-[14px] leading-relaxed text-slate-600">{description}</p>
+      <h3 className="mt-3 text-[17px] font-bold leading-tight text-ink-900 sm:mt-4 sm:text-[20px]">{title}</h3>
+      <p className="mt-1.5 line-clamp-3 text-[13px] leading-snug text-slate-600 sm:mt-2 sm:text-[14px] sm:leading-relaxed">{description}</p>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
         {chips.map((chip) => (
           <span
             key={chip}
-            className="rounded-full px-3 py-1 text-[12px] font-semibold"
+            className="rounded-full px-2.5 py-1 text-[11px] font-semibold sm:px-3 sm:text-[12px]"
             style={{ backgroundColor: chipBg, color: accent }}
           >
             {chip}
@@ -98,8 +99,8 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
       </div>
 
       <div className="mt-auto">
-        <div className="mt-5 h-px w-10" style={{ backgroundColor: accent, opacity: 0.3 }} />
-        <Button href={learnMoreHref} variant="outline" size="sm" className="mt-4 w-fit">
+        <div className="mt-4 h-px w-10 sm:mt-5" style={{ backgroundColor: accent, opacity: 0.3 }} />
+        <Button href={learnMoreHref} variant="outline" size="sm" className="mt-3 w-fit sm:mt-4">
           Learn More <ArrowUpRight size={16} />
         </Button>
       </div>

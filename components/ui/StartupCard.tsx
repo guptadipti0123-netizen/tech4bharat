@@ -40,12 +40,12 @@ export default function StartupCard({ startup }: { startup: Startup }) {
           "--hover-border": accent.borderHover,
         } as React.CSSProperties
       }
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border-[1.5px] px-9 py-4.75 shadow-[0_2px_14px_rgba(18,60,51,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-[0_20px_40px_rgba(18,60,51,0.14)]"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border-[1.5px] px-5 py-4 shadow-[0_2px_14px_rgba(18,60,51,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-[0_20px_40px_rgba(18,60,51,0.14)] sm:rounded-3xl sm:px-9 sm:py-4.75"
     >
       <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: accent.border }} />
 
-      <div className="flex items-start gap-3">
-        <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl border border-slate-100 shadow-[0_2px_10px_rgba(18,60,51,0.1)]">
+      <div className="flex items-start gap-2.5 sm:gap-3">
+        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-slate-100 shadow-[0_2px_10px_rgba(18,60,51,0.1)] sm:h-18 sm:w-18">
           <Image
             src={getDomainImage(startup.domain)}
             alt={`${startup.domain} industry`}
@@ -54,31 +54,32 @@ export default function StartupCard({ startup }: { startup: Startup }) {
             className="object-cover object-top"
           />
         </div>
-        <h3 className="mt-1 text-[18px] font-bold leading-tight text-[#123C33]">{startup.name}</h3>
+        <h3 className="mt-1 text-[16px] font-bold leading-tight text-[#123C33] sm:text-[18px]">{startup.name}</h3>
       </div>
 
-      <div className="mt-2 flex flex-wrap gap-2">
+      <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
         <Badge className="bg-secondary-50 px-2.5 py-0.5 text-[11px] text-secondary-700">{startup.domain}</Badge>
         <Badge className="bg-secondary-50 px-2.5 py-0.5 text-[11px] text-secondary-700">{startup.stage}</Badge>
       </div>
 
-      <p className="mt-2 line-clamp-none flex-1 text-[14px] font-medium leading-[1.4] text-slate-600 md:line-clamp-2">
+      <p className="mt-2 line-clamp-none flex-1 text-[13px] font-medium leading-snug text-slate-600 sm:text-[14px] sm:leading-[1.4] md:line-clamp-2">
         {startup.tagline}
       </p>
 
       <div className="mt-3 flex items-center justify-between border-t border-secondary-100 pt-2.5">
         <Link
           href={href}
-          className="text-base font-semibold uppercase tracking-wide text-brand-700 transition-colors hover:underline"
+          className="text-sm font-semibold uppercase tracking-wide text-brand-700 transition-colors hover:underline sm:text-base"
         >
           Read More
         </Link>
         <Link
           href={href}
           aria-label={`Read more about ${startup.name}`}
-          className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-full border-2 border-brand-600 text-brand-600 transition-all duration-300 group-hover:bg-brand-600 group-hover:text-white"
+          className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full border-2 border-brand-600 text-brand-600 transition-all duration-300 group-hover:bg-brand-600 group-hover:text-white sm:h-8.5 sm:w-8.5"
         >
-          <ArrowUpRight size={15} />
+          <ArrowUpRight size={14} className="sm:hidden" />
+          <ArrowUpRight size={15} className="hidden sm:block" />
         </Link>
       </div>
     </div>
