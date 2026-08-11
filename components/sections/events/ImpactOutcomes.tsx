@@ -93,7 +93,7 @@ export default function ImpactOutcomes() {
                       </span>
                     </div>
                     <h3 className="mt-3 text-[28px] font-bold leading-tight text-ink-900">{featured.title}</h3>
-                    <p className="mt-1.5 line-clamp-2 text-[15px] leading-relaxed text-slate-600">
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">
                       {featured.description}
                     </p>
                   </div>

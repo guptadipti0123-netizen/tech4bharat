@@ -156,7 +156,7 @@ export default function ExpertsSpeakers() {
                     {category.badge}
                   </span>
                   <h3 className="mt-1.5 text-base font-bold leading-tight text-ink-900">{category.title}</h3>
-                  <p className="mt-1 line-clamp-2 text-sm leading-snug text-slate-600">{category.description}</p>
+                  <p className="mt-1 line-clamp-none text-sm leading-snug text-slate-600 sm:line-clamp-2">{category.description}</p>
 
                   <ArrowRight
                     size={15}

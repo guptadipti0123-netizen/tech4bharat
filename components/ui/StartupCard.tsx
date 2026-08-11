@@ -62,7 +62,7 @@ export default function StartupCard({ startup }: { startup: Startup }) {
         <Badge className="bg-secondary-50 px-2.5 py-0.5 text-[11px] text-secondary-700">{startup.stage}</Badge>
       </div>
 
-      <p className="mt-2 line-clamp-2 flex-1 text-[14px] font-medium leading-[1.4] text-slate-600">
+      <p className="mt-2 line-clamp-none flex-1 text-[14px] font-medium leading-[1.4] text-slate-600 md:line-clamp-2">
         {startup.tagline}
       </p>
 

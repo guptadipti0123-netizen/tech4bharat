@@ -167,7 +167,7 @@ export default function ContactPage() {
                         "--hover-border": contact.hoverBorder,
                       } as React.CSSProperties
                     }
-                    className="group flex h-67.5 flex-col items-center rounded-[28px] border-2 p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg"
+                    className="group flex h-full min-h-67.5 flex-col items-center rounded-[28px] border-2 p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg"
                   >
                     <span
                       className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110"
@@ -176,7 +176,7 @@ export default function ContactPage() {
                       <Icon size={26} />
                     </span>
                     <h3 className="mt-3 text-base font-bold text-ink-900">{contact.title}</h3>
-                    <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-1.5 line-clamp-none text-sm leading-relaxed text-slate-600 sm:line-clamp-2">
                       {contact.description}
                     </p>
                     <a

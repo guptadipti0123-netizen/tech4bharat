@@ -4,18 +4,32 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-/** About page hero — content left, one real legacy photo right (never cropped, never
- *  zoomed). Compact: padding + content only, no viewport-height lock. */
+/** About page hero — the workshop photo is now a full-bleed background behind the intro
+ *  copy, instead of a small framed card beside it. The section's own aspect ratio matches
+ *  the photo's real ratio (1280x960 = 4:3) exactly, so `object-contain` never needs to
+ *  crop or letterbox — the section simply gets taller on narrower screens instead. `min-h`
+ *  is only a floor so the overlaid text/buttons never collide with the fixed navbar on
+ *  short phones; it does not crop the image (contain, not cover). */
 export default function AboutHero() {
   return (
-    <section className="bg-white pb-10 pt-24 sm:pb-14 sm:pt-28">
-      <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <AnimatedSection>
-            <h1 className="text-balance text-3xl sm:text-3xl font-bold leading-tight tracking-tight text-ink-900 md:text-4xl lg:text-4xl">
+    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#12342B] sm:min-h-115">
+      <Image
+        src="/images/legacy/policy-workshop-1.png"
+        alt="A Tech4Bharat workshop session at COEP Technological University"
+        fill
+        priority
+        sizes="100vw"
+        className="object-contain"
+      />
+      <div className="absolute inset-0 bg-linear-to-t from-[#12342B]/80 via-[#12342B]/45 to-[#12342B]/25" />
+
+      <div className="relative flex h-full items-end pb-10 pt-20 sm:items-center sm:pb-0 sm:pt-0">
+        <Container>
+          <AnimatedSection className="max-w-xl">
+            <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl lg:text-4xl">
               About Tech4Bharat
             </h1>
-            <p className="mt-5 max-w-lg text-balance text-lg leading-relaxed text-slate-600 sm:text-xl">
+            <p className="mt-5 max-w-lg text-balance text-lg leading-relaxed text-white/85 sm:text-xl">
               Tech4Bharat is being established as a national platform to support social
               entrepreneurship, innovation, and startup development across Bharat.
             </p>
@@ -28,21 +42,8 @@ export default function AboutHero() {
               </Button>
             </div>
           </AnimatedSection>
-
-          <AnimatedSection delay={0.15}>
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-[28px] border-4 border-white shadow-2xl">
-              <Image
-                src="/images/legacy/policy-workshop-1.png"
-                alt="A Tech4Bharat workshop session at COEP Technological University"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </AnimatedSection>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 }

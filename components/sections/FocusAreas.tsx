@@ -73,7 +73,7 @@ export default function FocusAreas() {
 
                   <div className="min-w-0">
                     <h3 className="text-[18px] font-bold leading-tight text-[#123D32]">{domain.title}</h3>
-                    <p className="mt-0.5 line-clamp-2 text-[14px] leading-relaxed text-[#5F6B73]">
+                    <p className="mt-0.5 line-clamp-none text-[14px] leading-relaxed text-[#5F6B73] sm:line-clamp-2">
                       {domain.description}
                     </p>
                   </div>
