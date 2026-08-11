@@ -85,11 +85,11 @@ export default function EventHighlightsGrid() {
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-9 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection delay={0.1} className="mt-6 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {highlightPhotos.map((photo) => (
             <div
               key={photo.src}
-              className="group relative h-70 w-full overflow-hidden rounded-2xl border border-emerald-100 shadow-md transition-shadow duration-300 hover:shadow-lg"
+              className="group relative h-60 w-full overflow-hidden rounded-2xl border border-emerald-100 shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-70"
             >
               <Image
                 src={photo.src}

@@ -95,7 +95,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
         />
       ) : (
         <>
-          <div className="mt-8 columns-2 gap-4 sm:columns-3 lg:columns-4">
+          <div className="mt-6 columns-1 gap-3 sm:mt-8 sm:columns-2 sm:gap-4 lg:columns-3 xl:columns-4">
             <AnimatePresence initial={false} mode="popLayout">
               {visible.map((photo, i) => (
                 <motion.button
@@ -108,7 +108,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
                   onClick={() => openLightbox(i)}
                   aria-label={`View ${photo.alt}`}
                   className={cn(
-                    "group relative mb-4 block w-full overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all duration-300 ease-out hover:z-10 hover:-translate-y-2 hover:shadow-[0_20px_36px_rgba(31,78,61,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F4E3D] focus-visible:ring-offset-2",
+                    "group relative mb-3 block w-full overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all duration-300 ease-out hover:z-10 hover:-translate-y-2 hover:shadow-[0_20px_36px_rgba(31,78,61,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F4E3D] focus-visible:ring-offset-2 sm:mb-4",
                     masonryHeight(i)
                   )}
                 >

@@ -26,16 +26,16 @@ export default function RecentEventSpotlight() {
       <Blob tone="accent" className="-right-24 bottom-0 h-80 w-80" animate={false} />
 
       <Container className="relative">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <h1 className="text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]">
+            <h1 className="text-[28px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]">
               Digital &amp; Tech Policy Workshop
             </h1>
-            <p className="mt-3 max-w-lg text-[18px] font-medium leading-relaxed text-[#5F6B68]">
+            <p className="mt-3 max-w-lg text-[15px] font-medium leading-relaxed text-[#5F6B68] sm:text-[18px]">
               Technology, Governance &amp; Strategic Decision-Making.
             </p>
 
-            <div className="mt-9 grid gap-3 sm:grid-cols-2">
+            <div className="mt-7 grid gap-2.5 sm:mt-9 sm:grid-cols-2 sm:gap-3">
               {infoCards.map(({ icon: Icon, label, value }) => (
                 <div
                   key={label}

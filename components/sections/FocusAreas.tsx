@@ -2,13 +2,13 @@ import { ArrowRight, BrainCircuit, CloudSun, HeartPulse, Sprout, type LucideIcon
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import HomeSectionHeading from "@/components/sections/HomeSectionHeading";
 
 interface Domain {
   icon: LucideIcon;
   title: string;
   description: string;
-  cardBg: string;
-  border: string;
+  accent: "brand" | "gold";
 }
 
 const domains: Domain[] = [
@@ -16,75 +16,74 @@ const domains: Domain[] = [
     icon: BrainCircuit,
     title: "AI & Data Science",
     description: "Backing founders building applied AI with real-world impact.",
-    cardBg: "#F5F7FF",
-    border: "#6366F1",
+    accent: "brand",
   },
   {
     icon: HeartPulse,
     title: "Healthcare",
     description: "Expanding access to quality, affordable care across India.",
-    cardBg: "#F3FBF7",
-    border: "#10B981",
+    accent: "gold",
   },
   {
     icon: Sprout,
     title: "Agriculture",
     description: "Strengthening farmer incomes and rural supply chains.",
-    cardBg: "#FFF8F0",
-    border: "#F59E0B",
+    accent: "brand",
   },
   {
     icon: CloudSun,
     title: "ClimateTech",
     description: "Building climate and environmental resilience.",
-    cardBg: "#F4FBFA",
-    border: "#0F766E",
+    accent: "gold",
   },
 ];
 
-/** Focus Areas preview — four compact horizontal cards (icon left, title + description
- *  right), each with its own subtle background tint and matching accent border, arranged
- *  in a single row on desktop. */
+const accentStyles = {
+  brand: { icon: "#1F4E3D", iconBg: "#EAF6EE" },
+  gold: { icon: "#D4A017", iconBg: "#FFF7E8" },
+};
+
 export default function FocusAreas() {
   return (
-    <section className="bg-white py-6 sm:py-8">
+    <section className="bg-[linear-gradient(180deg,#f9fcfa_0%,#f7fbf8_100%)] py-14 sm:py-16 lg:py-24">
       <Container>
-        <AnimatedSection className="mx-auto max-w-162.5 text-center">
-          <h2 className="text-balance text-[27px] font-bold leading-[1.2] text-ink-900 md:text-4xl">
-            Domains we&apos;re doubling down on
-          </h2>
-          <p className="mt-3 text-balance text-base leading-relaxed text-slate-600">
-            We back founders building in sectors critical to India&apos;s growth.
-          </p>
+        <AnimatedSection className="mx-auto max-w-3xl text-center">
+          <HomeSectionHeading
+            title="The sectors we back"
+            description="We focus on the areas where India needs strong builders, thoughtful operators, and durable companies."
+            align="center"
+          />
         </AnimatedSection>
 
-        <div className="mt-5 grid grid-cols-1 gap-3 sm:mt-7 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {domains.map((domain, i) => {
             const Icon = domain.icon;
+            const { icon, iconBg } = accentStyles[domain.accent];
+            const cardClasses =
+              domain.accent === "brand"
+                ? "border-[#1F4E3D]/12 bg-[#F5FAF7] shadow-[0_8px_18px_rgba(31,78,61,0.05)]"
+                : "border-[#D4A017]/14 bg-[#FCF7EA] shadow-[0_8px_18px_rgba(212,160,23,0.05)]";
             return (
-              <AnimatedSection key={domain.title} delay={i * 0.06} className="h-full">
-                <div
-                  style={{ backgroundColor: domain.cardBg, borderColor: domain.border }}
-                  className="group flex h-full min-h-0 items-center gap-2.5 rounded-2xl border-2 p-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] sm:min-h-25 sm:gap-3 sm:rounded-[18px] sm:p-5"
-                >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1F4E3D] text-white sm:h-12 sm:w-12">
-                    <Icon size={18} className="sm:hidden" />
-                    <Icon size={22} className="hidden sm:block" />
+              <AnimatedSection key={domain.title} delay={i * 0.05} className="h-full">
+                <div className={`flex h-full flex-col rounded-[24px] border p-5 sm:p-6 ${cardClasses}`}>
+                  <span
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl sm:h-13 sm:w-13"
+                    style={{ backgroundColor: iconBg, color: icon }}
+                  >
+                    <Icon size={22} />
                   </span>
 
-                  <div className="min-w-0">
-                    <h3 className="text-[15px] font-bold leading-tight text-[#123D32] sm:text-[18px]">{domain.title}</h3>
-                    <p className="mt-0.5 line-clamp-none text-[13px] leading-snug text-[#5F6B73] sm:text-[14px] sm:leading-relaxed sm:line-clamp-2">
-                      {domain.description}
-                    </p>
-                  </div>
+                  <h3 className="mt-4 text-[1rem] font-semibold leading-tight text-ink-900 sm:text-[1.05rem]">
+                    {domain.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{domain.description}</p>
                 </div>
               </AnimatedSection>
             );
           })}
         </div>
 
-        <AnimatedSection delay={0.32} className="mt-7 text-center">
+        <AnimatedSection delay={0.22} className="mt-8 text-center">
           <Button href="/about" variant="outline">
             View All <ArrowRight size={16} />
           </Button>

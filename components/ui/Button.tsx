@@ -31,22 +31,22 @@ interface Ripple {
 let rippleSeed = 0;
 
 const baseStyles =
-  "relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:hover:translate-y-0";
+  "relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:hover:translate-y-0 whitespace-nowrap";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-700 text-white shadow-lg shadow-brand-700/25 hover:bg-brand-800 hover:shadow-xl hover:shadow-brand-700/30",
+    "bg-[#1F4E3D] text-white shadow-lg shadow-[#1F4E3D]/15 hover:bg-[#163B2D] hover:shadow-xl hover:shadow-[#1F4E3D]/20",
   secondary:
-    "bg-accent-500 text-ink-900 shadow-lg shadow-accent-500/25 hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/30",
+    "bg-[#D4A017] text-ink-900 shadow-lg shadow-[#D4A017]/20 hover:bg-[#b88310] hover:shadow-xl hover:shadow-[#D4A017]/25",
   outline:
-    "border-2 border-brand-500 bg-white text-brand-700 hover:border-brand-700 hover:bg-brand-700 hover:text-white hover:shadow-lg hover:shadow-brand-500/25",
-  ghost: "text-brand-700 hover:bg-brand-50",
+    "border-2 border-[#1F4E3D] bg-white text-[#1F4E3D] hover:border-[#163B2D] hover:bg-[#1F4E3D] hover:text-white hover:shadow-lg hover:shadow-[#1F4E3D]/15",
+  ghost: "text-[#1F4E3D] hover:bg-brand-50",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-3.5 py-2 text-xs sm:px-4 sm:py-2 sm:text-sm",
-  md: "px-5 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base",
-  lg: "px-6 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg",
+  sm: "px-3.5 py-2 text-[13px] sm:px-4 sm:py-2 sm:text-sm",
+  md: "px-4.5 py-2.25 text-sm sm:px-6 sm:py-3 sm:text-base",
+  lg: "px-5.5 py-2.75 text-sm sm:px-8 sm:py-4 sm:text-lg",
 };
 
 export default function Button({

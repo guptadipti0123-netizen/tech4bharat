@@ -25,8 +25,8 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-4xl border border-slate-200 bg-white p-12 text-center">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-brand-500">
+      <div className="flex flex-col items-center justify-center rounded-4xl border border-slate-200 bg-white p-8 text-center sm:p-12">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-50 text-brand-500 sm:h-16 sm:w-16">
           <CheckCircle2 size={32} />
         </div>
         <h3 className="mt-6 text-2xl font-bold text-ink-900">Message sent!</h3>
@@ -50,9 +50,9 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-4xl border border-slate-200 bg-white p-8 shadow-[0_4px_20px_rgba(22,58,58,0.06)] sm:p-10"
+      className="rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(22,58,58,0.06)] sm:p-10"
     >
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
         <div>
           <label htmlFor="name" className="text-sm font-medium text-slate-700">
             Full Name

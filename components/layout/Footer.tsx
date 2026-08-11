@@ -41,14 +41,14 @@ const legalLinks = [
 export default function Footer() {
   return (
     <footer className="relative rounded-t-[36px] bg-[#124734] text-white/70">
-      <Container className="relative pb-10 pt-14 sm:pt-16">
+      <Container className="relative pb-10 pt-12 sm:pt-16">
         {/* CTA */}
-        <div className="grid gap-8 border-b border-white/10 pb-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-6">
+        <div className="grid gap-6 border-b border-white/10 pb-8 sm:gap-8 sm:pb-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-6">
           <div>
-            <h2 className="text-2xl font-extrabold leading-snug tracking-tight text-white sm:text-3xl">
+            <h2 className="text-[1.35rem] font-extrabold leading-snug tracking-tight text-white sm:text-3xl">
               Ready to Build the Future with Tech4Bharat?
             </h2>
-            <p className="mt-3 max-w-xl leading-relaxed text-white/70">
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
               Join India&apos;s growing innovation ecosystem. Connect with mentors, investors,
               incubators and fellow founders to turn your ideas into impactful startups.
             </p>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         {/* Columns */}
-        <div className="grid gap-10 pt-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-8 pt-8 sm:grid-cols-2 sm:pt-10 lg:grid-cols-5 lg:gap-10">
           <div>
             <Link href="/" className="flex items-center gap-2.5">
               <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="rounded-xl" />
@@ -148,7 +148,7 @@ export default function Footer() {
       </Container>
 
       <div className="relative border-t border-white/10 py-5">
-        <Container className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+        <Container className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
           <p className="text-sm text-white/60">
             © {new Date().getFullYear()} Tech4Bharat. All Rights Reserved.
           </p>

@@ -26,18 +26,18 @@ export default function AboutHero() {
       <div className="relative flex h-full items-end pb-10 pt-20 sm:items-center sm:pb-0 sm:pt-0">
         <Container>
           <AnimatedSection className="max-w-xl">
-            <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl lg:text-4xl">
+            <h1 className="text-balance text-[1.45rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
               About Tech4Bharat
             </h1>
-            <p className="mt-3 max-w-lg text-balance text-sm leading-relaxed text-white/85 sm:mt-5 sm:text-lg lg:text-xl">
+            <p className="mt-3 max-w-lg text-balance text-[13px] leading-6 text-white/85 sm:mt-4 sm:text-[14px]">
               Tech4Bharat is being established as a national platform to support social
               entrepreneurship, innovation, and startup development across Bharat.
             </p>
-            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-8 sm:gap-4">
-              <Button href="/programs" size="lg">
+            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-3">
+              <Button href="/programs" size="sm">
                 Explore Programs <ArrowRight size={18} />
               </Button>
-              <Button href="/contact" size="lg" variant="outline">
+              <Button href="/contact" size="sm" variant="outline">
                 Contact Us
               </Button>
             </div>

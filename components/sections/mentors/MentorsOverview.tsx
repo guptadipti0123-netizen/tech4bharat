@@ -113,17 +113,17 @@ export default function MentorsOverview() {
       <Blob tone="brand" className="-left-20 bottom-0 h-64 w-64" animate={false} />
 
       <Container className="relative">
-        <div className="grid gap-10 lg:grid-cols-[35fr_65fr] lg:gap-12">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-[35fr_65fr] lg:gap-12">
           <AnimatedSection className="lg:sticky lg:top-28 lg:self-start">
-            <h1 className="text-[30px] font-bold leading-[1.1] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
+            <h1 className="text-[26px] font-bold leading-[1.1] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
               Mentors &amp; Advisors
             </h1>
-            <p className="mt-4 max-w-sm text-lg leading-relaxed text-[#667085]">
+            <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-[#667085] sm:text-lg">
               Operators, investors, and academics who give Tech4Bharat founders an unfair
               advantage.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-2.5 sm:gap-3">
               {statBadges.map(({ icon: Icon, label }) => (
                 <span
                   key={label}
@@ -143,7 +143,7 @@ export default function MentorsOverview() {
                 <AnimatedSection key={category.title} delay={(i % 6) * 0.06}>
                   <div
                     className={cn(
-                      "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-linear-to-b to-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg",
+                      "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-linear-to-b to-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg sm:p-5",
                       theme.wash,
                       theme.border
                     )}
@@ -156,8 +156,8 @@ export default function MentorsOverview() {
                     >
                       <Icon size={20} />
                     </span>
-                    <h3 className="mt-4 text-[22px] font-bold leading-snug text-ink-900">{category.title}</h3>
-                    <p className="mt-1.5 flex-1 text-base leading-relaxed text-slate-600">
+                    <h3 className="mt-4 text-[18px] font-bold leading-snug text-ink-900 sm:text-[22px]">{category.title}</h3>
+                    <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">
                       {category.description}
                     </p>
                     <span

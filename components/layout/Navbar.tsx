@@ -111,10 +111,10 @@ export default function Navbar() {
         onMouseLeave={closeWithDelay}
         className="glass-surface fixed inset-x-0 top-0 z-50 rounded-b-3xl shadow-[0_8px_30px_rgba(22,58,58,0.08)]"
       >
-        <Container className="flex h-17.5 items-center justify-between">
-          <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-            <Image src="/logo1.png" alt="Tech4Bharat" width={44} height={44} className="rounded-xl" />
-            <span className="font-heading text-xl font-extrabold leading-none text-ink-900">
+        <Container className="flex h-16 items-center justify-between sm:h-17.5">
+          <Link href="/" className="group flex min-w-0 shrink items-center gap-2.5">
+            <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="h-9 w-9 rounded-xl sm:h-10 sm:w-10" />
+            <span className="font-heading text-base font-semibold leading-none text-ink-900 sm:text-xl">
               Tech<span className="text-brand-500">4</span>Bharat
             </span>
           </Link>
@@ -220,9 +220,9 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="glass-surface overflow-hidden rounded-b-3xl border-t border-slate-100 xl:hidden"
+              className="glass-surface max-h-[calc(100vh-4rem)] overflow-y-auto rounded-b-3xl border-t border-slate-100 xl:hidden"
             >
-              <nav className="flex flex-col gap-1 px-4 pb-6 pt-2">
+              <nav className="flex flex-col gap-1 px-3 pb-6 pt-2 sm:px-4">
                 {navLinks.map((link) => {
                   const toggleMobileSubmenu = () =>
                     setMobileExpanded((current) => (current === link.label ? null : link.label));
