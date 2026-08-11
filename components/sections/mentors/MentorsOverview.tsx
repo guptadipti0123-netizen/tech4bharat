@@ -148,16 +148,18 @@ export default function MentorsOverview() {
                       theme.border
                     )}
                   >
-                    <span
-                      className={cn(
-                        "flex h-11 w-11 items-center justify-center rounded-xl text-white shadow-sm",
-                        theme.iconBg
-                      )}
-                    >
-                      <Icon size={20} />
-                    </span>
-                    <h3 className="mt-4 text-[18px] font-bold leading-snug text-ink-900 sm:text-[22px]">{category.title}</h3>
-                    <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={cn(
+                          "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white shadow-sm",
+                          theme.iconBg
+                        )}
+                      >
+                        <Icon size={18} />
+                      </span>
+                      <h3 className="text-[16px] font-bold leading-snug text-ink-900 sm:text-[19px]">{category.title}</h3>
+                    </div>
+                    <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">
                       {category.description}
                     </p>
                     <span
