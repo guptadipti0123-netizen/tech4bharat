@@ -40,14 +40,15 @@ export default function Hero() {
           </div>
 
           <AnimatedSection delay={0.15}>
-            <div className="relative mx-auto aspect-4/3 w-full max-w-lg overflow-hidden rounded-[28px] border-4 border-white shadow-2xl lg:max-w-none">
+            <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[28px] border-4 border-white shadow-2xl lg:max-w-none">
               <Image
                 src="/images/gallery/gallery-1.jpg"
                 alt="Founders at a Tech4Bharat workshop session"
-                fill
+                width={1600}
+                height={1067}
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="h-auto w-full object-contain"
               />
             </div>
           </AnimatedSection>
