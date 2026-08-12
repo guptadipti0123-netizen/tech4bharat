@@ -1,20 +1,22 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { cn } from "@/lib/utils";
 
 // The 7 real Knowledge Partners already established for the site (same list used on the
-// About page) — no fabricated names or logos.
-const partnerNames = [
-  "COEP Tech",
-  "IIT Bombay",
-  "VJTI Mumbai",
-  "Startup India",
-  "MSME",
-  "NITI Aayog",
-  "Atal Innovation Mission",
+// About page), each paired with its real official logo asset — no initials, no generic
+// icons, no fabricated names.
+const partners = [
+  { name: "COEP Tech", logo: "/images/partners/coep.jpg" },
+  { name: "IIT Bombay", logo: "/images/partners/iit-bombay.png" },
+  { name: "VJTI Mumbai", logo: "/images/partners/vjti.jpg" },
+  { name: "Startup India", logo: "/images/partners/startup-india.png" },
+  { name: "MSME", logo: "/images/partners/msme.png" },
+  { name: "NITI Aayog", logo: "/images/partners/niti-aayog.png" },
+  { name: "Atal Innovation Mission", logo: "/images/partners/atal-innovation-mission.png" },
 ];
 
-const loopedPartners = [...partnerNames, ...partnerNames];
+const loopedPartners = [...partners, ...partners];
 
 // Four soft premium gradients, cycled by index (not Math.random, so server and client
 // render identically and there's no hydration mismatch).
@@ -54,7 +56,7 @@ export default function PartnersPreview() {
     <section id="partners" className="bg-[#F8FAF9] py-6 sm:py-8">
       <Container>
         <AnimatedSection className="text-center">
-          <h2 className="mx-auto max-w-2xl text-balance text-[27px] font-bold leading-[1.2] text-ink-900 md:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-balance text-[24px] font-bold leading-[1.2] text-ink-900 sm:text-[30px] lg:text-[34px]">
             Partners
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-balance text-base leading-relaxed text-slate-600">
@@ -72,12 +74,12 @@ export default function PartnersPreview() {
           }}
         >
           <div className="flex w-max animate-marquee gap-5.5 hover:[animation-play-state:paused]">
-            {loopedPartners.map((name, i) => (
+            {loopedPartners.map((partner, i) => (
               <div
-                key={name + i}
+                key={partner.name + i}
                 style={{ ...ticketNotchStyle, background: gradients[i % gradients.length] }}
                 className={cn(
-                  "group relative flex h-20 w-40 shrink-0 items-center justify-center overflow-hidden rounded-[18px] border-[1.5px] border-[rgba(22,59,45,0.15)] px-4 text-center shadow-[0_10px_28px_rgba(15,23,42,0.10)] transition-all duration-250 hover:-translate-y-1.5 hover:border-[#1F4E3D] hover:shadow-[0_18px_40px_rgba(15,23,42,0.18)] hover:brightness-105 sm:h-22.5 sm:w-43.75 lg:h-25 lg:w-47.5"
+                  "group relative flex min-h-20 w-44 shrink-0 items-center gap-2 overflow-hidden rounded-[18px] border-[1.5px] border-[rgba(22,59,45,0.15)] px-4 py-2.5 shadow-[0_10px_28px_rgba(15,23,42,0.10)] transition-all duration-250 hover:-translate-y-1.5 hover:border-[#1F4E3D] hover:shadow-[0_18px_40px_rgba(15,23,42,0.18)] hover:brightness-105 sm:min-h-22.5 sm:w-47.75 lg:min-h-25 lg:w-51.5"
                 )}
               >
                 <span
@@ -85,8 +87,17 @@ export default function PartnersPreview() {
                   className="absolute inset-y-0 left-0 w-1"
                   style={{ backgroundColor: accentColors[i % accentColors.length] }}
                 />
-                <span className="font-(family-name:--font-poppins) text-[16px] font-bold leading-tight tracking-[0.2px] text-[#163B2D]">
-                  {name}
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white ring-1 ring-[rgba(22,59,45,0.15)] sm:h-9 sm:w-9">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    width={26}
+                    height={26}
+                    className="h-5.5 w-5.5 object-contain sm:h-6.5 sm:w-6.5"
+                  />
+                </span>
+                <span className="font-(family-name:--font-poppins) min-w-0 flex-1 text-[13px] font-bold leading-tight tracking-[0.2px] text-[#163B2D] sm:text-[14px]">
+                  {partner.name}
                 </span>
               </div>
             ))}

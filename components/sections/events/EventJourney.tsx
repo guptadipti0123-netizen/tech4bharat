@@ -68,7 +68,7 @@ export default function EventJourney() {
           <SectionTitle
             title="Event Journey"
             description="Six days, six themes — from foundations to policy drafting."
-            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
             descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
           />
         </AnimatedSection>
@@ -106,11 +106,11 @@ export default function EventJourney() {
                     <span className="inline-block rounded-full bg-emerald-100/70 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">
                       Day {i + 1}
                     </span>
-                    <div className="mt-1 flex items-center gap-1.5">
+                    <div className="mt-1 flex min-w-0 items-center gap-1.5">
                       <TopicIcon size={14} className="shrink-0 text-emerald-600" />
-                      <h3 className="truncate text-[17px] font-semibold text-ink-900">{day.title}</h3>
+                      <h3 className="min-w-0 text-[17px] font-semibold leading-snug text-ink-900">{day.title}</h3>
                     </div>
-                    <p className="mt-0.5 truncate text-[14px] text-[#667085]">{day.description}</p>
+                    <p className="mt-0.5 line-clamp-2 text-[14px] leading-snug text-[#667085]">{day.description}</p>
                   </div>
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-50 transition-colors duration-200 group-hover:bg-emerald-600">
                     <ArrowRight size={14} className="text-emerald-600 transition-colors duration-200 group-hover:text-white" />

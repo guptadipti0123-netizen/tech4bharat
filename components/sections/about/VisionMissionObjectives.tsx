@@ -25,13 +25,13 @@ const cards: PrincipleCard[] = [
       "Access to mentorship and capital",
       "A community for category-defining companies",
     ],
-    gradient: "linear-gradient(135deg,#EAF4FF,#F8FBFF)",
-    border: "#8CC6FF",
-    hoverBorder: "#5BA8F0",
-    shadow: "0 12px 30px rgba(59,130,246,.10)",
-    shadowHover: "0 16px 34px rgba(59,130,246,.18)",
-    iconColor: "#3B82F6",
-    iconBg: "rgba(59,130,246,.15)",
+    gradient: "linear-gradient(135deg,#F3F8F5,#FAFDFB)",
+    border: "#8FC2AE",
+    hoverBorder: "#5FA688",
+    shadow: "0 12px 30px rgba(31,78,61,.10)",
+    shadowHover: "0 16px 34px rgba(31,78,61,.18)",
+    iconColor: "#1F4E3D",
+    iconBg: "rgba(31,78,61,.15)",
   },
   {
     icon: Compass,
@@ -41,25 +41,25 @@ const cards: PrincipleCard[] = [
       "Structured mentorship and funding access",
       "Ecosystem partnerships that drive impact",
     ],
-    gradient: "linear-gradient(135deg,#F3EDFF,#FCFAFF)",
-    border: "#B8A2FF",
-    hoverBorder: "#9678F5",
-    shadow: "0 12px 30px rgba(139,92,246,.10)",
-    shadowHover: "0 16px 34px rgba(139,92,246,.18)",
-    iconColor: "#8B5CF6",
-    iconBg: "rgba(139,92,246,.15)",
+    gradient: "linear-gradient(135deg,#FCF8EE,#FFFDF8)",
+    border: "#E4C468",
+    hoverBorder: "#D4A017",
+    shadow: "0 12px 30px rgba(212,160,23,.10)",
+    shadowHover: "0 16px 34px rgba(212,160,23,.18)",
+    iconColor: "#B8860B",
+    iconBg: "rgba(212,160,23,.15)",
   },
   {
     icon: Target,
     title: "Objectives",
     bullets: ["Support Innovation", "Startup Incubation", "Industry Collaboration"],
-    gradient: "linear-gradient(135deg,#FFF7EB,#FFFCF6)",
-    border: "#F5BE63",
-    hoverBorder: "#E8A23A",
-    shadow: "0 12px 30px rgba(245,158,11,.10)",
-    shadowHover: "0 16px 34px rgba(245,158,11,.18)",
-    iconColor: "#F59E0B",
-    iconBg: "rgba(245,158,11,.15)",
+    gradient: "linear-gradient(135deg,#FCF8EE,#FFFDF8)",
+    border: "#E4C468",
+    hoverBorder: "#D4A017",
+    shadow: "0 12px 30px rgba(212,160,23,.10)",
+    shadowHover: "0 16px 34px rgba(212,160,23,.18)",
+    iconColor: "#B8860B",
+    iconBg: "rgba(212,160,23,.15)",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function VisionMissionObjectives() {
           <SectionTitle
             title="Vision, Mission & Objectives"
             className="max-w-3xl"
-            titleClassName="text-balance text-3xl sm:text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-4xl"
+            titleClassName="text-balance text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight lg:text-[34px]"
           />
         </AnimatedSection>
 
@@ -94,7 +94,7 @@ export default function VisionMissionObjectives() {
                       "--shadow-hover": card.shadowHover,
                     } as React.CSSProperties
                   }
-                  className="flex h-full flex-col rounded-[20px] border-2 px-5 pb-5 pt-4.5 transition-all duration-300 hover:-translate-y-1 hover:border-(--hover-border) hover:shadow-(--shadow-hover)"
+                  className="flex flex-col rounded-[20px] border-2 px-5 pb-5 pt-4.5 transition-all duration-300 hover:-translate-y-1 hover:border-(--hover-border) hover:shadow-(--shadow-hover)"
                 >
                   <div className="flex items-center gap-3">
                     <span

@@ -71,7 +71,7 @@ export default function PastEventSpotlight() {
           <SectionTitle
             title="Past Event"
             align="left"
-            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
           />
         </AnimatedSection>
 
@@ -131,12 +131,12 @@ export default function PastEventSpotlight() {
                       </span>
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                          <h5 className="text-[20px] font-semibold leading-snug text-ink-900">{topic.title}</h5>
-                          <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-500">
+                          <h5 className="min-w-0 text-[17px] font-semibold leading-snug text-ink-900 sm:text-[19px]">{topic.title}</h5>
+                          <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-500 sm:text-xs">
                             {topic.duration}
                           </span>
                         </div>
-                        <p className="mt-1 text-[15px] leading-relaxed text-slate-500">{topic.description}</p>
+                        <p className="mt-1 text-[13.5px] leading-relaxed text-slate-500 sm:text-[15px]">{topic.description}</p>
                       </div>
                     </div>
                   );

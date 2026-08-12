@@ -39,11 +39,11 @@ export default function PartnershipProcess() {
           <SectionTitle
             title="From first conversation to shared impact"
             className="max-w-250"
-            titleClassName="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163A39] sm:text-[34px] lg:text-[40px] lg:whitespace-nowrap"
+            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163A39] sm:text-[30px] lg:text-[34px]"
           />
         </AnimatedSection>
 
-        <div className="relative mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-7 grid grid-cols-2 gap-x-4 gap-y-6 sm:mt-10 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-4 lg:gap-8">
           <span
             aria-hidden="true"
             className="absolute left-0 right-0 top-6 hidden h-px bg-linear-to-r from-transparent via-brand-200 to-transparent lg:block"
@@ -52,14 +52,15 @@ export default function PartnershipProcess() {
             const Icon = step.icon;
             return (
               <AnimatedSection key={step.title} delay={i * 0.1} className="relative text-center">
-                <div className="relative mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-700 text-white shadow-md shadow-brand-700/25">
-                  <Icon size={20} />
-                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent-500 text-[10px] font-bold text-ink-900">
+                <div className="relative mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-brand-700 text-white shadow-md shadow-brand-700/25 sm:h-12 sm:w-12">
+                  <Icon size={17} className="sm:hidden" />
+                  <Icon size={20} className="hidden sm:block" />
+                  <span className="absolute -right-1 -top-1 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-accent-500 text-[9px] font-bold text-ink-900 sm:h-5 sm:w-5 sm:text-[10px]">
                     {i + 1}
                   </span>
                 </div>
-                <h3 className="mt-4 text-base font-bold text-ink-900">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.description}</p>
+                <h3 className="mt-2.5 text-[14px] font-bold text-ink-900 sm:mt-4 sm:text-base">{step.title}</h3>
+                <p className="mt-1 text-[12.5px] leading-snug text-slate-600 sm:mt-2 sm:text-sm sm:leading-relaxed">{step.description}</p>
               </AnimatedSection>
             );
           })}

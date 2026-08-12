@@ -22,7 +22,7 @@ export default function SupportProvided() {
           <SectionTitle
             title="Support Provided"
             description="What founders get alongside every funding path."
-            titleClassName="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[34px] lg:text-[40px]"
+            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
           />
         </AnimatedSection>
 

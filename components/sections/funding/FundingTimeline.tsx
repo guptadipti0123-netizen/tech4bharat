@@ -26,7 +26,7 @@ export default function FundingTimeline() {
           <SectionTitle
             title="How It Works"
             description="From discovery to a connected investor, in four steps."
-            titleClassName="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[34px] lg:text-[40px]"
+            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
           />
         </AnimatedSection>
 

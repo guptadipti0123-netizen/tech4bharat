@@ -27,7 +27,7 @@ interface NetworkCategory {
   icon: LucideIcon;
   title: string;
   description: string;
-  tone: "brand" | "sky" | "accent" | "violet" | "orange" | "secondary";
+  tone: "brand" | "accent" | "secondary";
 }
 
 const categories: NetworkCategory[] = [
@@ -41,7 +41,7 @@ const categories: NetworkCategory[] = [
     icon: TrendingUp,
     title: "Operators",
     description: "Experienced professionals with execution expertise.",
-    tone: "sky",
+    tone: "brand",
   },
   {
     icon: Wallet,
@@ -53,13 +53,13 @@ const categories: NetworkCategory[] = [
     icon: GraduationCap,
     title: "Academics",
     description: "Researchers and professors driving innovation.",
-    tone: "violet",
+    tone: "accent",
   },
   {
     icon: Building2,
     title: "Industry Experts",
     description: "Leaders from corporate and technology sectors.",
-    tone: "orange",
+    tone: "secondary",
   },
   {
     icon: Handshake,
@@ -69,36 +69,21 @@ const categories: NetworkCategory[] = [
   },
 ];
 
-const cardThemes: Record<NetworkCategory["tone"], { iconBg: string; border: string; wash: string }> = {
+const cardThemes: Record<NetworkCategory["tone"], { iconBg: string; bg: string; border: string }> = {
   brand: {
     iconBg: "bg-linear-to-br from-brand-400 to-brand-600",
-    border: "hover:border-brand-300",
-    wash: "from-brand-50/60",
-  },
-  sky: {
-    iconBg: "bg-linear-to-br from-sky-400 to-sky-600",
-    border: "hover:border-sky-300",
-    wash: "from-sky-50/60",
+    bg: "bg-brand-100/70",
+    border: "border-brand-200 hover:border-brand-400",
   },
   accent: {
     iconBg: "bg-linear-to-br from-accent-400 to-accent-600",
-    border: "hover:border-accent-300",
-    wash: "from-accent-50/60",
-  },
-  violet: {
-    iconBg: "bg-linear-to-br from-violet-400 to-violet-600",
-    border: "hover:border-violet-300",
-    wash: "from-violet-50/60",
-  },
-  orange: {
-    iconBg: "bg-linear-to-br from-orange-400 to-orange-600",
-    border: "hover:border-orange-300",
-    wash: "from-orange-50/60",
+    bg: "bg-accent-100/70",
+    border: "border-accent-200 hover:border-accent-400",
   },
   secondary: {
     iconBg: "bg-linear-to-br from-secondary-400 to-secondary-600",
-    border: "hover:border-secondary-300",
-    wash: "from-secondary-50/60",
+    bg: "bg-secondary-100/70",
+    border: "border-secondary-200 hover:border-secondary-400",
   },
 };
 
@@ -143,27 +128,27 @@ export default function MentorsOverview() {
                 <AnimatedSection key={category.title} delay={(i % 6) * 0.06}>
                   <div
                     className={cn(
-                      "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-linear-to-b to-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg sm:p-5",
-                      theme.wash,
+                      "group relative flex flex-col overflow-hidden rounded-3xl border shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg p-4.5 sm:p-5",
+                      theme.bg,
                       theme.border
                     )}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5">
                       <span
                         className={cn(
-                          "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white shadow-sm",
+                          "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white shadow-sm",
                           theme.iconBg
                         )}
                       >
-                        <Icon size={18} />
+                        <Icon size={16} />
                       </span>
-                      <h3 className="text-[16px] font-bold leading-snug text-ink-900 sm:text-[19px]">{category.title}</h3>
+                      <h3 className="text-[15px] font-bold leading-snug text-ink-900 sm:text-[18px]">{category.title}</h3>
                     </div>
-                    <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
                       {category.description}
                     </p>
                     <span
-                      className="mt-3 flex h-7 w-7 items-center justify-center self-end rounded-full bg-slate-50 text-slate-400 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-ink-900 group-hover:text-white"
+                      className="mt-2.5 flex h-7 w-7 items-center justify-center self-end rounded-full bg-slate-50 text-slate-400 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-ink-900 group-hover:text-white"
                       aria-hidden="true"
                     >
                       <ArrowRight size={13} />

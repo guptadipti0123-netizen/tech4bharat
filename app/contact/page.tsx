@@ -151,7 +151,7 @@ export default function ContactPage() {
               title="Reach the Right Team Faster"
               align="center"
               className="max-w-225"
-              titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+              titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
             />
           </AnimatedSection>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
@@ -295,7 +295,7 @@ export default function ContactPage() {
               title="Frequently Asked Questions"
               description="Find quick answers to the most common questions about our programs, partnerships, mentorship, and application process."
               align="center"
-              titleClassName="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight"
+              titleClassName="text-[24px] sm:text-[30px] lg:text-[34px] font-extrabold leading-tight tracking-tight"
               descriptionClassName="mx-auto mt-4 max-w-175 text-gray-600"
             />
           </AnimatedSection>

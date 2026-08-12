@@ -25,8 +25,8 @@ const defaultAccent: DomainAccent = { border: "#2E8B57", borderHover: "#256E46" 
 /** Directory-style portfolio card — same photo + Badge-pill + dual Read More footer
  *  structure as the original design. Only the spacing was tightened, and a subtle
  *  off-white background plus a domain-colored border/left accent strip were layered on
- *  top; nothing was repositioned or redesigned. Equal height across the grid via
- *  `h-full flex flex-col`. */
+ *  top; nothing was repositioned or redesigned. Height follows content — cards with a
+ *  shorter tagline are shorter, not stretched to match their row's tallest sibling. */
 export default function StartupCard({ startup }: { startup: Startup }) {
   const href = startup.website ?? "/contact";
   const accent = domainAccents[startup.domain] ?? defaultAccent;
@@ -40,7 +40,7 @@ export default function StartupCard({ startup }: { startup: Startup }) {
           "--hover-border": accent.borderHover,
         } as React.CSSProperties
       }
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border-[1.5px] px-5 py-4 shadow-[0_2px_14px_rgba(18,60,51,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-[0_20px_40px_rgba(18,60,51,0.14)] sm:rounded-3xl sm:px-9 sm:py-4.75"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border-[1.5px] px-5 py-4 shadow-[0_2px_14px_rgba(18,60,51,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-[0_20px_40px_rgba(18,60,51,0.14)] sm:rounded-3xl sm:px-9 sm:py-4.75"
     >
       <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: accent.border }} />
 
@@ -62,7 +62,7 @@ export default function StartupCard({ startup }: { startup: Startup }) {
         <Badge className="bg-secondary-50 px-2.5 py-0.5 text-[11px] text-secondary-700">{startup.stage}</Badge>
       </div>
 
-      <p className="mt-2 line-clamp-none flex-1 text-[13px] font-medium leading-snug text-slate-600 sm:text-[14px] sm:leading-[1.4] md:line-clamp-2">
+      <p className="mt-2 line-clamp-none text-[13px] font-medium leading-snug text-slate-600 sm:text-[14px] sm:leading-[1.4] md:line-clamp-2">
         {startup.tagline}
       </p>
 

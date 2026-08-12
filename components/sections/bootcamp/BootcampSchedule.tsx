@@ -65,9 +65,9 @@ const sideInfoByTitle: Record<string, SideInfo> = {
   "Expert Talks": {
     icon: Lightbulb,
     bullets: ["Startup Journey", "Product Strategy", "Market Insights"],
-    bg: "#EAF3FF",
-    border: "#60A5FA",
-    accent: "#2563EB",
+    bg: "#EAF6EE",
+    border: "#1F5E4B",
+    accent: "#1F5E4B",
   },
   "Business Workshops": {
     icon: Puzzle,
@@ -86,9 +86,9 @@ const sideInfoByTitle: Record<string, SideInfo> = {
   "Investor Readiness Session": {
     icon: PieChart,
     bullets: ["Pitch Deck Essentials", "Cap Table Basics", "Investor Q&A"],
-    bg: "#EAF3FF",
-    border: "#60A5FA",
-    accent: "#2563EB",
+    bg: "#EAF6EE",
+    border: "#1F5E4B",
+    accent: "#1F5E4B",
   },
   "Startup Pitching": {
     icon: MessageSquare,
@@ -118,7 +118,7 @@ export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
             title="Bootcamp Schedule"
             description="A simple, single-day flow from registration to closing."
             className="max-w-3xl"
-            titleClassName="text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]"
+            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
             descriptionClassName="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]"
           />
         </AnimatedSection>

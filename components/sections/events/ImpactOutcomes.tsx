@@ -58,7 +58,7 @@ export default function ImpactOutcomes() {
           <SectionTitle
             title="Impact & Outcomes"
             description="Key outcomes and learnings from Tech4Bharat programs and workshops."
-            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
             descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
           />
         </AnimatedSection>
@@ -101,7 +101,7 @@ export default function ImpactOutcomes() {
 
                 {/* Medium cards — pastel backgrounds, alternating icon position */}
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[18px] p-5" style={{ backgroundColor: "#EEF6F1" }}>
+                  <div className="rounded-[18px] border border-slate-200 p-5" style={{ backgroundColor: "#EEF6F1" }}>
                     <span
                       className="flex h-9 w-9 items-center justify-center rounded-full text-white"
                       style={{ backgroundColor: mediumCards[0].iconBg }}
@@ -111,7 +111,7 @@ export default function ImpactOutcomes() {
                     <h3 className="mt-3 text-[17px] font-bold leading-tight text-ink-900">{mediumCards[0].title}</h3>
                     <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">{mediumCards[0].description}</p>
                   </div>
-                  <div className="rounded-[18px] p-5" style={{ backgroundColor: "#EEF6FF" }}>
+                  <div className="rounded-[18px] border border-slate-200 p-5" style={{ backgroundColor: "#EEF6FF" }}>
                     <div className="flex justify-end">
                       <span
                         className="flex h-9 w-9 items-center justify-center rounded-full text-white"

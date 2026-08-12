@@ -40,12 +40,12 @@ export default function ProgramsPreview() {
           <AnimatedSection delay={0.08}>
             <Link
               href={homePrograms[0].href}
-              className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200/80 bg-[linear-gradient(135deg,#f8fcf9_0%,#f1f7f2_100%)] shadow-[0_12px_30px_rgba(22,58,58,0.05)] transition-all duration-300 hover:-translate-y-1"
+              className="group flex flex-col overflow-hidden rounded-[30px] border border-slate-200/80 bg-[linear-gradient(135deg,#f8fcf9_0%,#f1f7f2_100%)] shadow-[0_12px_30px_rgba(22,58,58,0.05)] transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative h-56 overflow-hidden sm:h-64">
                 <Image src={homePrograms[0].image} alt={homePrograms[0].title} fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-contain transition-transform duration-500 group-hover:scale-105" />
               </div>
-              <div className="flex flex-1 flex-col p-6 sm:p-7">
+              <div className="flex flex-col p-6 sm:p-7">
                 <h3 className="text-[1.15rem] font-semibold text-ink-900 sm:text-[1.25rem]">{homePrograms[0].title}</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-600">{homePrograms[0].description}</p>
                 <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-semibold text-[#1F4E3D]">

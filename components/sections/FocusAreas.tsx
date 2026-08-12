@@ -61,8 +61,8 @@ export default function FocusAreas() {
             const { icon, iconBg } = accentStyles[domain.accent];
             const cardClasses =
               domain.accent === "brand"
-                ? "border-[#1F4E3D]/12 bg-[#F5FAF7] shadow-[0_8px_18px_rgba(31,78,61,0.05)]"
-                : "border-[#D4A017]/14 bg-[#FCF7EA] shadow-[0_8px_18px_rgba(212,160,23,0.05)]";
+                ? "border-[#1F4E3D]/30 bg-[#F5FAF7] shadow-[0_8px_18px_rgba(31,78,61,0.05)]"
+                : "border-[#D4A017]/35 bg-[#FCF7EA] shadow-[0_8px_18px_rgba(212,160,23,0.05)]";
             return (
               <AnimatedSection key={domain.title} delay={i * 0.05} className="h-full">
                 <div className={`flex h-full flex-col rounded-[24px] border p-5 sm:p-6 ${cardClasses}`}>

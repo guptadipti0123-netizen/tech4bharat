@@ -62,8 +62,8 @@ const badgeTone: Record<string, string> = {
   Workshop: "bg-brand-700",
   Mentoring: "bg-accent-600",
   Panel: "bg-secondary-700",
-  Visit: "bg-violet-600",
-  Networking: "bg-orange-600",
+  Visit: "bg-brand-800",
+  Networking: "bg-accent-700",
 };
 
 /** Event Highlights — a uniform, premium photo grid. Every card is the same size (280px
@@ -80,7 +80,7 @@ export default function EventHighlightsGrid() {
           <SectionTitle
             title="Event Highlights"
             description="Key moments from the program."
-            titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
             descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
           />
         </AnimatedSection>

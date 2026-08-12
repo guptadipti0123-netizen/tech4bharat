@@ -16,7 +16,7 @@ export default function FundingCTA() {
               style={{ background: "radial-gradient(ellipse 60% 60% at 80% 0%, rgba(212,160,23,0.25), transparent 60%)" }}
               aria-hidden="true"
             />
-            <h2 className="relative text-[28px] font-extrabold text-white sm:text-[36px]">
+            <h2 className="relative text-[24px] font-extrabold text-white sm:text-[30px] lg:text-[34px]">
               Ready to Raise Funding?
             </h2>
             <p className="relative mx-auto mt-3 max-w-lg text-lg leading-relaxed text-white/80">

@@ -50,7 +50,7 @@ export default function WhereWeFocus() {
             title="Focus Areas"
             description="The sectors where Tech4Bharat supports innovation, technology, and social impact."
             className="max-w-4xl"
-            titleClassName="text-balance text-3xl sm:text-3xl font-bold leading-tight tracking-tight text-ink-900 md:text-4xl lg:text-4xl"
+            titleClassName="text-balance text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-ink-900 lg:text-[34px]"
             descriptionClassName="mx-auto mt-3 max-w-4xl text-balance text-[17px] leading-relaxed text-slate-600 sm:text-[18px]"
           />
         </AnimatedSection>
@@ -81,7 +81,7 @@ export default function WhereWeFocus() {
                 <AnimatedSection key={area.title} delay={i * 0.05}>
                   <div
                     className={cn(
-                      "group flex min-h-22 items-center gap-4 rounded-[18px] border border-[#1F4E3D]/[0.08] px-5 py-4.5 shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:border-[#1F4E3D] hover:shadow-md",
+                      "group flex min-h-22 items-center gap-4 rounded-[18px] border border-[#1F4E3D]/25 px-5 py-4.5 shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:border-[#1F4E3D] hover:shadow-md",
                       cardBg
                     )}
                   >

@@ -31,7 +31,7 @@ export default function MentorCard({
           "--shadow-hover": "0 20px 45px rgba(31,78,61,0.16)",
         } as React.CSSProperties
       }
-      className="group flex h-full flex-col items-center rounded-2xl border p-4 text-center transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-(--shadow-hover) sm:rounded-[20px] sm:p-6"
+      className="group flex flex-col items-center rounded-2xl border p-4 text-center transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-(--shadow-hover) sm:rounded-[20px] sm:p-6"
     >
       <div
         className="relative h-18 w-18 shrink-0 overflow-hidden rounded-full border-4 border-white sm:h-26 sm:w-26"
@@ -45,7 +45,7 @@ export default function MentorCard({
           className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
         />
       </div>
-      <h3 className="mt-3 text-[19px] font-bold leading-tight text-[#163B2D] sm:mt-5 sm:text-[30px]">{name}</h3>
+      <h3 className="mt-3 text-[17px] font-bold leading-tight text-[#163B2D] sm:mt-5 sm:text-[21px]">{name}</h3>
       <p className="mt-1 text-xs font-medium text-brand-700 sm:text-sm">{designation}</p>
       <p className="text-[11px] text-slate-500 sm:text-xs">{institution}</p>
 
@@ -56,7 +56,7 @@ export default function MentorCard({
         {expertise}
       </span>
 
-      <p className="mx-auto mt-2.5 line-clamp-3 max-w-65 flex-1 text-[13px] leading-relaxed text-slate-600 sm:mt-4 sm:text-sm sm:leading-[1.7]">{bio}</p>
+      <p className="mx-auto mt-2.5 line-clamp-3 max-w-65 text-[13px] leading-relaxed text-slate-600 sm:mt-4 sm:text-sm sm:leading-[1.7]">{bio}</p>
 
       {linkedinUrl && (
         <a

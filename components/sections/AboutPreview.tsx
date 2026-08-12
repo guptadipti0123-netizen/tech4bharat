@@ -7,14 +7,14 @@ import { aboutImages } from "@/lib/images";
 
 export default function AboutPreview() {
   return (
-    <section id="about" className="bg-white py-14 sm:py-16 lg:py-24">
+    <section id="about" className="bg-white py-6 sm:py-8 lg:py-24">
       <Container>
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8 xl:gap-10">
           <AnimatedSection>
             {/* aspect-3/2 matches the source photo's real 612x408 ratio exactly, so
                 object-contain fills the frame with no letterboxing. */}
-            <div className="relative overflow-hidden rounded-[32px] border border-[#1F4E3D]/12 bg-[#F5FAF7] p-2 shadow-[0_8px_24px_rgba(31,78,61,0.06)]">
-              <div className="relative aspect-3/2 overflow-hidden rounded-[24px] border border-[#1F4E3D]/10 bg-[#FCF7EA]">
+            <div className="relative overflow-hidden rounded-[32px] border border-[#1F4E3D]/30 bg-[#F5FAF7] p-2 shadow-[0_8px_24px_rgba(31,78,61,0.06)]">
+              <div className="relative aspect-3/2 overflow-hidden rounded-[24px] border border-[#1F4E3D]/25 bg-[#FCF7EA]">
                 <Image
                   src={aboutImages.team}
                   alt="The Tech4Bharat team"
@@ -27,7 +27,7 @@ export default function AboutPreview() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.08}>
-            <div className="flex h-full flex-col rounded-[32px] border border-[#1F4E3D]/12 bg-[#F7FBF8] p-6 shadow-[0_8px_24px_rgba(31,78,61,0.05)] sm:p-8">
+            <div className="flex h-full flex-col rounded-[32px] border border-[#1F4E3D]/30 bg-[#F7FBF8] p-6 shadow-[0_8px_24px_rgba(31,78,61,0.05)] sm:p-8">
               <h2 className="max-w-2xl text-balance text-[clamp(1.45rem,2.4vw,2rem)] font-semibold leading-tight text-ink-900">
                 A startup incubator built for Indian founders
               </h2>

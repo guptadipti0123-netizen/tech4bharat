@@ -100,7 +100,7 @@ export default function BootcampHighlights() {
       <Container>
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
+            <h2 className="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]">
               Bootcamp Highlights
             </h2>
             <p className="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]">

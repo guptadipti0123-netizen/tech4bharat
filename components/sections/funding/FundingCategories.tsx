@@ -31,37 +31,37 @@ const sources: FundingSource[] = [
     title: "Investors",
     description: "Angel investors and venture capital.",
     fundingType: "Private",
-    cardBg: "#FFF8F0",
-    border: "#F59E0B",
-    borderHover: "#C17F09",
-    iconBg: "#FDECC8",
+    cardBg: "#FCF8EE",
+    border: "#D4A017",
+    borderHover: "#B8860B",
+    iconBg: "#FBEFCF",
   },
   {
     icon: Rocket,
     title: "Accelerators",
     description: "Startup accelerator and incubation support.",
     fundingType: "Hybrid",
-    cardBg: "#F5F8FF",
-    border: "#2563EB",
-    borderHover: "#1E4FC2",
-    iconBg: "#DCE8FF",
+    cardBg: "#F3F8F5",
+    border: "#1B7A72",
+    borderHover: "#165F59",
+    iconBg: "#DCEEEC",
   },
   {
     icon: Handshake,
     title: "CSR Programs",
     description: "Corporate social responsibility initiatives.",
     fundingType: "CSR",
-    cardBg: "#FFF5F7",
-    border: "#DB2777",
-    borderHover: "#B31F63",
-    iconBg: "#FCE0EA",
+    cardBg: "#F3F8F5",
+    border: "#1F4E3D",
+    borderHover: "#163A2D",
+    iconBg: "#E3EEE8",
   },
   {
     icon: Landmark,
     title: "Government Schemes",
     description: "Public sector startup support.",
     fundingType: "Public",
-    cardBg: "#F4F8FB",
+    cardBg: "#FCF8EE",
     border: "#0F766E",
     borderHover: "#0C5F59",
     iconBg: "#DCEEEC",
@@ -81,7 +81,7 @@ export default function FundingCategories() {
           <SectionTitle
             title="Funding Sources"
             description="Where founders find capital and support."
-            titleClassName="text-[28px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[34px] lg:text-[40px]"
+            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
           />
         </AnimatedSection>
 
@@ -98,7 +98,7 @@ export default function FundingCategories() {
                       "--hover-border": source.borderHover,
                     } as React.CSSProperties
                   }
-                  className="group relative flex min-h-44 flex-col overflow-hidden rounded-2xl border-2 p-5.5 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border)"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border-2 p-5 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border)"
                 >
                   <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: source.border }} />
 
@@ -114,7 +114,7 @@ export default function FundingCategories() {
                     </h3>
                   </div>
 
-                  <p className="mt-2 line-clamp-2 flex-1 text-[14px] leading-snug text-[#5B6470]">
+                  <p className="mt-2 line-clamp-2 text-[14px] leading-snug text-[#5B6470]">
                     {source.description}
                   </p>
 

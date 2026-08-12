@@ -35,14 +35,14 @@ const categories: ExpertCategory[] = [
     badge: "Industry Leader",
     title: "Industry Experts",
     description: "Specialists across product, growth, and go-to-market.",
-    theme: "orange",
+    theme: "secondary",
   },
   {
     image: "/images/gallery/students-1.jpg",
     badge: "Researcher",
     title: "Academic Institutions",
     description: "Researchers and faculty supporting deep-tech translation.",
-    theme: "violet",
+    theme: "brand",
   },
   {
     image: "/images/gallery/gallery-2.jpg",
@@ -63,16 +63,6 @@ const themeClasses: Record<string, { gradient: string; badge: string; border: st
     gradient: "from-accent-400 to-accent-600",
     badge: "bg-accent-50 text-accent-700",
     border: "group-hover:border-accent-300",
-  },
-  orange: {
-    gradient: "from-orange-400 to-orange-600",
-    badge: "bg-orange-50 text-orange-700",
-    border: "group-hover:border-orange-300",
-  },
-  violet: {
-    gradient: "from-violet-400 to-violet-600",
-    badge: "bg-violet-50 text-violet-700",
-    border: "group-hover:border-violet-300",
   },
   secondary: {
     gradient: "from-secondary-400 to-secondary-600",
@@ -118,7 +108,7 @@ export default function ExpertsSpeakers() {
       <Container className="relative px-10 sm:px-10 lg:px-10">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
+            <h2 className="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]">
               Experts &amp; Speakers
             </h2>
             <p className="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]">
@@ -133,7 +123,7 @@ export default function ExpertsSpeakers() {
             return (
               <AnimatedSection key={category.title} delay={i * 0.06} animation="scale">
                 <div
-                  className={`group relative flex h-full flex-col items-center overflow-hidden rounded-3xl border-[1.5px] border-[rgba(46,125,94,.12)] bg-white/85 p-5 text-center shadow-[0_12px_30px_rgba(0,0,0,.06)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,58,58,0.14)] ${theme.border}`}
+                  className={`group relative flex flex-col items-center overflow-hidden rounded-3xl border-[1.5px] border-[rgba(46,125,94,.3)] bg-slate-50 p-5 text-center shadow-[0_12px_30px_rgba(0,0,0,.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,58,58,0.14)] ${theme.border}`}
                 >
                   <span
                     className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${theme.gradient} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}

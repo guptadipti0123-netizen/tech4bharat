@@ -35,10 +35,10 @@ const programs: ProgramItem[] = [
     title: "Mentorship",
     description: "One-on-one guidance from experienced operators and industry mentors.",
     chips: ["1:1 Sessions", "Industry Experts", "Career Guidance"],
-    accent: "#2563EB",
-    cardBg: "#EEF6FF",
-    chipBg: "rgba(37,99,235,.08)",
-    shadow: "0 10px 26px rgba(37,99,235,.12)",
+    accent: "#1B7A72",
+    cardBg: "#F3F8F5",
+    chipBg: "rgba(27,122,114,.08)",
+    shadow: "0 10px 26px rgba(27,122,114,.12)",
   },
   {
     id: "workshops",
@@ -57,10 +57,10 @@ const programs: ProgramItem[] = [
     title: "Funding & Networking",
     description: "Grant facilitation and curated introductions to our investor and partner network.",
     chips: ["Investor Connect", "Grant Support", "Partner Network"],
-    accent: "#6D4FC7",
-    cardBg: "#F3EEFF",
-    chipBg: "rgba(109,79,199,.08)",
-    shadow: "0 10px 26px rgba(109,79,199,.12)",
+    accent: "#1F4E3D",
+    cardBg: "#F3F8F5",
+    chipBg: "rgba(31,78,61,.08)",
+    shadow: "0 10px 26px rgba(31,78,61,.12)",
   },
 ];
 
@@ -73,7 +73,7 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
     <div
       id={id}
       style={{ backgroundColor: cardBg, borderColor: accent, boxShadow: shadow }}
-      className="group flex h-full min-h-0 scroll-mt-28 flex-col rounded-2xl border-2 p-4 transition-all duration-300 hover:-translate-y-1 sm:min-h-85 sm:rounded-[20px] sm:p-6"
+      className="group flex scroll-mt-28 flex-col rounded-2xl border-2 p-4 transition-all duration-300 hover:-translate-y-1 sm:rounded-[20px] sm:p-6"
     >
       <span
         className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl sm:h-14 sm:w-14 sm:rounded-2xl"

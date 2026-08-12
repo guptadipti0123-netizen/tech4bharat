@@ -33,7 +33,7 @@ export default function PartnersLegacyMoments() {
             title="Real moments from the field"
             description="Real moments from workshops, field visits, and collaborative innovation."
             className="max-w-187.5"
-            titleClassName="text-balance text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+            titleClassName="text-balance text-[24px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
             descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[17px] font-medium text-[#667085] line-clamp-2 text-balance"
           />
         </AnimatedSection>

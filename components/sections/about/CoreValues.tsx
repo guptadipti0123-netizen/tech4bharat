@@ -21,27 +21,27 @@ const values: Value[] = [
     icon: Rocket,
     title: "Innovation",
     description: "Encouraging bold ideas and creative solutions.",
-    cardBg: "#EEF7FF",
-    border: "#A9D8FF",
-    hoverBorder: "#5AA9F5",
-    iconBg: "#DCEEFF",
-    iconColor: "#2F80ED",
-    strip: "linear-gradient(90deg,#6EC1FF,#A9D8FF)",
-    shadow: "0 10px 26px rgba(47,128,237,.12)",
-    shadowHover: "0 16px 34px rgba(47,128,237,.20)",
+    cardBg: "#FCF8EE",
+    border: "#E8CD82",
+    hoverBorder: "#D4A017",
+    iconBg: "#F7E9C4",
+    iconColor: "#B8860B",
+    strip: "linear-gradient(90deg,#D4A017,#E8CD82)",
+    shadow: "0 10px 26px rgba(212,160,23,.12)",
+    shadowHover: "0 16px 34px rgba(212,160,23,.20)",
   },
   {
     icon: Shield,
     title: "Integrity",
     description: "Operating with honesty and transparency.",
-    cardBg: "#F5F1FF",
-    border: "#D9C9FF",
-    hoverBorder: "#A78BFA",
-    iconBg: "#EAE0FF",
-    iconColor: "#7C5CFC",
-    strip: "linear-gradient(90deg,#B79CFF,#D9C9FF)",
-    shadow: "0 10px 26px rgba(124,92,252,.12)",
-    shadowHover: "0 16px 34px rgba(124,92,252,.20)",
+    cardBg: "#F3F8F5",
+    border: "#A8CCBB",
+    hoverBorder: "#1F4E3D",
+    iconBg: "#DCEEE5",
+    iconColor: "#1F4E3D",
+    strip: "linear-gradient(90deg,#1F4E3D,#A8CCBB)",
+    shadow: "0 10px 26px rgba(31,78,61,.12)",
+    shadowHover: "0 16px 34px rgba(31,78,61,.20)",
   },
   {
     icon: Handshake,
@@ -60,19 +60,19 @@ const values: Value[] = [
     icon: TrendingUp,
     title: "Impact",
     description: "Creating outcomes that benefit society at large.",
-    cardBg: "#FFF4EA",
-    border: "#FCD9AE",
-    hoverBorder: "#E0A344",
-    iconBg: "#FDE7C8",
-    iconColor: "#D97706",
-    strip: "linear-gradient(90deg,#F5A855,#FCD9AE)",
-    shadow: "0 10px 26px rgba(217,119,6,.12)",
-    shadowHover: "0 16px 34px rgba(217,119,6,.20)",
+    cardBg: "#FCF8EE",
+    border: "#E8CD82",
+    hoverBorder: "#D4A017",
+    iconBg: "#F7E9C4",
+    iconColor: "#B8860B",
+    strip: "linear-gradient(90deg,#D4A017,#E8CD82)",
+    shadow: "0 10px 26px rgba(212,160,23,.12)",
+    shadowHover: "0 16px 34px rgba(212,160,23,.20)",
   },
 ];
 
-/** Core Values — four compact, individually pastel-tinted cards (sky blue, lavender, mint,
- *  peach), each with a matching border, a colored top gradient strip, and its own icon
+/** Core Values — four compact, individually pastel-tinted cards (gold, green, green, gold),
+ *  each with a matching border, a colored top gradient strip, and its own icon
  *  tone — deliberately distinct from the neutral/white card language used elsewhere. */
 export default function CoreValues() {
   return (
@@ -98,7 +98,7 @@ export default function CoreValues() {
 
       <Container>
         <AnimatedSection className="mx-auto max-w-155 text-center">
-          <h2 className="font-(family-name:--font-poppins) text-[28px] font-extrabold leading-tight tracking-tight text-[#163B2D] sm:text-[34px] lg:text-[40px]">
+          <h2 className="font-(family-name:--font-poppins) text-[24px] font-extrabold leading-tight tracking-tight text-[#163B2D] sm:text-[30px] lg:text-[34px]">
             Core Values
           </h2>
           <p className="mx-auto mt-4 max-w-155 text-balance text-lg leading-relaxed text-slate-600">
@@ -121,7 +121,7 @@ export default function CoreValues() {
                       "--shadow-hover": value.shadowHover,
                     } as React.CSSProperties
                   }
-                  className="group relative flex h-full min-h-46 flex-col overflow-hidden rounded-[20px] border-2 p-6 transition-all duration-250 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-(--shadow-hover)"
+                  className="group relative flex flex-col overflow-hidden rounded-[20px] border-2 p-5 transition-all duration-250 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-(--shadow-hover)"
                 >
                   <span
                     aria-hidden="true"

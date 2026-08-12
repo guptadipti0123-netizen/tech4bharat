@@ -5,7 +5,6 @@ import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Blob from "@/components/ui/Blob";
 import DotGrid from "@/components/ui/DotGrid";
-import { getEventImage } from "@/lib/images";
 
 const infoChips = [
   { icon: Calendar, label: "October 2026" },
@@ -63,8 +62,8 @@ export default function BootcampHero() {
               />
               <div className="relative h-95 w-full animate-float overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-2xl sm:h-115 lg:h-140">
                 <Image
-                  src={getEventImage("tech4bharat-startup-bootcamp-2026")}
-                  alt="Founders at the Tech4Bharat Startup Bootcamp"
+                  src="/images/gallery/hackathons-3.jpg"
+                  alt="Founders collaborating around a laptop at the Tech4Bharat Startup Bootcamp"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"

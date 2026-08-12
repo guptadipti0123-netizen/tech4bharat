@@ -125,7 +125,7 @@ export default function IndiaReachMap() {
               align="left"
               title="Partnerships spanning every corner of Bharat"
               description="From our founding campus in Mumbai to institutions across the country, our partner network reaches founders well beyond the metros."
-              titleClassName="text-[27px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[38px] lg:text-[44px]"
+              titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
               descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[17px] text-[#667085]"
             />
           </AnimatedSection>

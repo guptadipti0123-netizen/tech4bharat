@@ -47,7 +47,7 @@ export default function BootcampOverview() {
       <Container className="relative">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
+            <h2 className="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]">
               Bootcamp Overview
             </h2>
           </div>

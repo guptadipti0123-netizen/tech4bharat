@@ -26,33 +26,33 @@ const personas: Persona[] = [
     icon: GraduationCap,
     label: "Student Founders",
     supportingLine: "Turning ideas into ventures",
-    cardBg: "#EFF6FF",
-    border: "#60A5FA",
-    hoverBorder: "#2563EB",
+    cardBg: "#F3F8F5",
+    border: "#1B7A72",
+    hoverBorder: "#165F59",
   },
   {
     icon: Venus,
     label: "Women Entrepreneurs",
     supportingLine: "Empowering diverse leadership",
-    cardBg: "#FFF1F2",
-    border: "#FB7185",
-    hoverBorder: "#E11D48",
+    cardBg: "#FCF8EE",
+    border: "#D4A017",
+    hoverBorder: "#B8860B",
   },
   {
     icon: Heart,
     label: "Social Impact Startups",
     supportingLine: "Solving real-world problems",
-    cardBg: "#F5F3FF",
-    border: "#A78BFA",
-    hoverBorder: "#7C3AED",
+    cardBg: "#F3F8F5",
+    border: "#1F4E3D",
+    hoverBorder: "#163A2D",
   },
   {
     icon: Cpu,
     label: "Technology Innovators",
     supportingLine: "Creating the next breakthrough",
-    cardBg: "#FFF7ED",
-    border: "#F59E0B",
-    hoverBorder: "#D97706",
+    cardBg: "#FCF8EE",
+    border: "#D4A017",
+    hoverBorder: "#B8860B",
   },
   {
     icon: Sparkles,
@@ -91,7 +91,7 @@ export default function WhoShouldAttend() {
             title="Who Should Attend"
             description="This bootcamp is built for founders at every early stage of the journey."
             className="max-w-3xl"
-            titleClassName="text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]"
+            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
             descriptionClassName="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]"
           />
         </AnimatedSection>
@@ -122,7 +122,7 @@ export default function WhoShouldAttend() {
                         "--shadow-hover": "0 14px 32px rgba(0,0,0,.10)",
                       } as React.CSSProperties
                     }
-                    className="flex h-full flex-col items-start justify-center rounded-[18px] border-2 p-4 transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-(--shadow-hover)"
+                    className="flex flex-col items-start rounded-[18px] border-2 p-4 transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-(--shadow-hover)"
                   >
                     <span
                       className="flex h-10.5 w-10.5 shrink-0 items-center justify-center rounded-full"

@@ -27,12 +27,7 @@ export default async function GalleryPage() {
     <section className="bg-white pb-10 pt-20 sm:pt-24">
       <Container>
         <AnimatedSection className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-            <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-            Explore
-            <span className="h-px w-8 bg-current opacity-50" aria-hidden="true" />
-          </span>
-          <h1 className="mt-4 text-[32px] font-extrabold tracking-tight text-ink-900 sm:text-[44px]">
+          <h1 className="text-[32px] font-extrabold tracking-tight text-ink-900 sm:text-[44px]">
             Gallery
           </h1>
           <p className="mx-auto mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">

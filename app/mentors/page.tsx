@@ -37,7 +37,7 @@ export default function MentorsPage() {
               title="Operators who've built at scale"
               description="Hands-on guidance from founders and operators who've done it before."
               className="max-w-225"
-              titleClassName="text-[28px] font-bold leading-[1.1] text-[#163B2D] sm:text-[40px] lg:text-[48px]"
+              titleClassName="text-[24px] font-bold leading-[1.1] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
               descriptionClassName="mx-auto mt-3 max-w-2xl text-center text-sm sm:text-base text-[#4B5563]"
             />
           </AnimatedSection>

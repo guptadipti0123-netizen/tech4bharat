@@ -32,7 +32,7 @@ function FeaturedBlogCard({ post }: { post: BlogPost }) {
       </div>
       <div className="flex flex-col justify-center p-8 sm:col-span-2 sm:p-10">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Featured</span>
-        <h3 className="mt-3 text-2xl font-extrabold leading-tight text-ink-900 sm:text-3xl">{post.title}</h3>
+        <h3 className="mt-3 text-[19px] font-extrabold leading-tight text-ink-900 sm:text-[22px]">{post.title}</h3>
         <p className="mt-4 leading-relaxed text-slate-600">{post.excerpt}</p>
         <div className="mt-6 flex items-center gap-4 border-t border-slate-100 pt-5 text-xs font-medium text-slate-600">
           <span className="flex items-center gap-1.5">
@@ -53,7 +53,7 @@ function FeaturedBlogCard({ post }: { post: BlogPost }) {
 /** Mid-weight card — standard image-top magazine tile, two per row. */
 function MediumBlogCard({ post }: { post: BlogPost }) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(22,58,58,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(22,58,58,0.12)]">
+    <div className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(22,58,58,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(22,58,58,0.12)]">
       <div className="relative h-52 w-full overflow-hidden">
         <Image
           src={post.image}
@@ -66,9 +66,9 @@ function MediumBlogCard({ post }: { post: BlogPost }) {
           {post.category}
         </Badge>
       </div>
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-col p-6">
         <h3 className="text-lg font-bold leading-snug text-ink-900">{post.title}</h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{post.excerpt}</p>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600">{post.excerpt}</p>
         <div className="mt-5 flex items-center gap-4 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
           <span className="flex items-center gap-1.5">
             <Calendar size={13} /> {post.date}

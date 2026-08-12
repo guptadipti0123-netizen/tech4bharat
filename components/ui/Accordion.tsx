@@ -15,51 +15,35 @@ interface AccordionProps {
   className?: string;
 }
 
-const closedBorder = "#DCEFE8";
-const closedHoverBorder = "#A8D5C2";
-const openBorder = "#1F5E4B";
-const openHoverBorder = "#163F33";
-
+/** Compact FAQ list — a plain divider-separated row per item (question left, small +/-
+ *  toggle right) instead of a full bordered card per question. */
 export default function Accordion({ items, className }: AccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className={cn("flex flex-col gap-5", className)}>
+    <div className={cn("divide-y divide-slate-200 border-t border-b border-slate-200", className)}>
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
-          <div
-            key={item.question}
-            style={
-              {
-                backgroundColor: isOpen ? "#F4FBF8" : "#FFFFFF",
-                borderColor: isOpen ? openBorder : closedBorder,
-                "--hover-border": isOpen ? openHoverBorder : closedHoverBorder,
-              } as React.CSSProperties
-            }
-            className={cn(
-              "overflow-hidden rounded-3xl border transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border) hover:shadow-lg",
-              isOpen ? "shadow-md" : "shadow-sm"
-            )}
-          >
+          <div key={item.question}>
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between gap-4 p-6 text-left"
+              className="flex w-full items-center justify-between gap-4 py-4 text-left sm:py-4.5"
               aria-expanded={isOpen}
             >
-              <span className="font-semibold text-ink-900">{item.question}</span>
+              <span className="text-[15px] font-semibold leading-snug text-ink-900 sm:text-[17px]">
+                {item.question}
+              </span>
               <motion.span
                 animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                style={{ backgroundColor: "#E8F6F1" }}
-              >
-                {isOpen ? (
-                  <Minus size={18} className="text-[#1F5E4B]" />
-                ) : (
-                  <Plus size={18} className="text-[#1F5E4B]" />
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className={cn(
+                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-200 sm:h-9 sm:w-9",
+                  isOpen ? "bg-[#1F5E4B] text-white" : "bg-[#E8F6F1] text-[#1F5E4B]"
                 )}
+              >
+                {isOpen ? <Minus size={15} /> : <Plus size={15} />}
               </motion.span>
             </button>
             <AnimatePresence initial={false}>
@@ -68,10 +52,12 @@ export default function Accordion({ items, className }: AccordionProps) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 pb-6 text-slate-600">{item.answer}</p>
+                  <p className="pb-4 text-[14px] leading-relaxed text-slate-600 sm:pb-4.5 sm:text-[15px]">
+                    {item.answer}
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>

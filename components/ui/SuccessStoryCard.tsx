@@ -7,7 +7,7 @@ import type { SuccessStory } from "@/lib/data";
 
 export default function SuccessStoryCard({ story }: { story: SuccessStory }) {
   return (
-    <Card className="flex h-full flex-col overflow-hidden p-0">
+    <Card className="flex flex-col overflow-hidden p-0">
       <div className="relative h-52 w-full overflow-hidden">
         <Image
           src={story.photo}
@@ -25,11 +25,11 @@ export default function SuccessStoryCard({ story }: { story: SuccessStory }) {
           <p className="text-sm text-white/80">{story.founder}</p>
         </div>
       </div>
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-col p-6">
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">The Challenge</p>
         <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{story.challenge}</p>
         <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400">The Impact</p>
-        <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-600">{story.impact}</p>
+        <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{story.impact}</p>
         <Button href={`/success-stories/${story.slug}`} variant="ghost" size="sm" className="-ml-4 mt-5 w-fit">
           Read Story <ArrowUpRight size={16} />
         </Button>
