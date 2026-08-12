@@ -64,19 +64,20 @@ export default function FocusAreas() {
                 ? "border-[#1F4E3D]/30 bg-[#F5FAF7] shadow-[0_8px_18px_rgba(31,78,61,0.05)]"
                 : "border-[#D4A017]/35 bg-[#FCF7EA] shadow-[0_8px_18px_rgba(212,160,23,0.05)]";
             return (
-              <AnimatedSection key={domain.title} delay={i * 0.05} className="h-full">
-                <div className={`flex h-full flex-col rounded-[24px] border p-5 sm:p-6 ${cardClasses}`}>
-                  <span
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl sm:h-13 sm:w-13"
-                    style={{ backgroundColor: iconBg, color: icon }}
-                  >
-                    <Icon size={22} />
-                  </span>
-
-                  <h3 className="mt-4 text-[1rem] font-semibold leading-tight text-ink-900 sm:text-[1.05rem]">
-                    {domain.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">{domain.description}</p>
+              <AnimatedSection key={domain.title} delay={i * 0.05}>
+                <div className={`flex flex-col rounded-[24px] border p-5 sm:p-6 ${cardClasses}`}>
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl sm:h-13 sm:w-13"
+                      style={{ backgroundColor: iconBg, color: icon }}
+                    >
+                      <Icon size={22} />
+                    </span>
+                    <h3 className="min-w-0 text-[1rem] font-semibold leading-tight text-ink-900 sm:text-[1.05rem]">
+                      {domain.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{domain.description}</p>
                 </div>
               </AnimatedSection>
             );
