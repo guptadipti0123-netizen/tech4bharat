@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -58,10 +58,10 @@ export default async function SuccessStoryDetailPage({ params }: PageProps) {
               <Badge variant="success">{story.domain}</Badge>
               <span className="text-sm font-medium text-slate-600">Success Story</span>
             </div>
-            <h1 className="mt-4 max-w-3xl text-[32px] font-extrabold text-ink-900 sm:text-[44px]">
+            <h1 className="mt-4 max-w-3xl text-[26px] font-extrabold text-ink-900 sm:text-[34px]">
               {story.startup}
             </h1>
-            <p className="mt-3 text-lg text-slate-600">Founded by {story.founder}</p>
+            <p className="mt-3 text-base text-slate-600">Founded by {story.founder}</p>
           </AnimatedSection>
         </Container>
       </section>

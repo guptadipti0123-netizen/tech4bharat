@@ -12,7 +12,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
  *  short phones; it does not crop the image (contain, not cover). */
 export default function AboutHero() {
   return (
-    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#12342B] sm:min-h-115">
+    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-115">
       <Image
         src="/images/legacy/policy-workshop-1.png"
         alt="A Tech4Bharat workshop session at COEP Technological University"
@@ -21,7 +21,7 @@ export default function AboutHero() {
         sizes="100vw"
         className="object-contain"
       />
-      <div className="absolute inset-0 bg-linear-to-t from-[#12342B]/80 via-[#12342B]/45 to-[#12342B]/25" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/80 via-[#0B2A4A]/45 to-[#0B2A4A]/25" />
 
       <div className="relative flex h-full items-end pb-10 pt-20 sm:items-center sm:pb-0 sm:pt-0">
         <Container>
@@ -30,8 +30,8 @@ export default function AboutHero() {
               About Tech4Bharat
             </h1>
             <p className="mt-3 max-w-lg text-balance text-[13px] leading-6 text-white/85 sm:mt-4 sm:text-[14px]">
-              Tech4Bharat is being established as a national platform to support social
-              entrepreneurship, innovation, and startup development across Bharat.
+              Tech4Bharat is proposed to be established as a Section 8 Company — a national
+              platform for social entrepreneurship and innovation.
             </p>
             <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-3">
               <Button href="/programs" size="sm">

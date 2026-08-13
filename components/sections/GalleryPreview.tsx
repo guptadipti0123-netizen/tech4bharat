@@ -19,36 +19,40 @@ const tiles: GalleryTile[] = [
   { src: "/images/gallery/gallery-5.jpg", alt: "A Tech4Bharat mentoring session" },
 ];
 
+/** Gallery preview — a uniform image-tile grid (every tile the same size, radius, and
+ *  border), held inside a soft panel to match the rest of the Home page's visual rhythm. */
 export default function GalleryPreview() {
   return (
-    <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f7fcf9_100%)] py-14 sm:py-16 lg:py-24">
+    <section className="bg-white py-10 sm:py-14 lg:py-20">
       <Container>
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <HomeSectionHeading title="Moments from the ecosystem" align="center" />
-        </AnimatedSection>
+        <div className="rounded-[36px] bg-[linear-gradient(160deg,#F5FAFE_0%,#FFFFFF_100%)] p-4 sm:p-6 lg:p-8">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <HomeSectionHeading title="Moments from the ecosystem" align="center" />
+          </AnimatedSection>
 
-        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-          {tiles.map((tile, i) => (
-            <AnimatedSection key={tile.src} delay={i * 0.06}>
-              <div className="group relative h-48 overflow-hidden rounded-[24px] border border-slate-200/80 bg-[linear-gradient(135deg,#f7fcf9_0%,#eef6f1_100%)] shadow-[0_8px_24px_rgba(22,58,58,0.05)] sm:h-52 lg:h-56">
-                <Image
-                  src={tile.src}
-                  alt={tile.alt}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 1024px) 50vw, 33vw"
-                  className="object-contain transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-            </AnimatedSection>
-          ))}
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+            {tiles.map((tile, i) => (
+              <AnimatedSection key={tile.src} delay={i * 0.06}>
+                <div className="group relative h-44 overflow-hidden rounded-2xl border border-brand-500/15 bg-[linear-gradient(135deg,#F5FAFE_0%,#F5FAFE_100%)] shadow-[0_2px_10px_rgba(21,94,154,0.05)] sm:h-48 lg:h-52">
+                  <Image
+                    src={tile.src}
+                    alt={tile.alt}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1024px) 50vw, 33vw"
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={0.3} className="mt-6 text-center">
+            <Button href="/gallery" variant="outline">
+              View Gallery <ArrowRight size={16} />
+            </Button>
+          </AnimatedSection>
         </div>
-
-        <AnimatedSection delay={0.3} className="mt-8 text-center sm:mt-10">
-          <Button href="/gallery" variant="outline">
-            View Gallery <ArrowRight size={16} />
-          </Button>
-        </AnimatedSection>
       </Container>
     </section>
   );

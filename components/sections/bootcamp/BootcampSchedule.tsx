@@ -1,4 +1,4 @@
-import {
+﻿import {
   Award,
   ClipboardCheck,
   Coffee,
@@ -45,68 +45,68 @@ interface SideInfo {
   accent: string;
 }
 
-// Compact, complementary detail for each session — what the main card's title implies in
-// practice — cycling through the brand's green/gold palette with one blue accent per spec.
+// Compact, complementary detail for each session â€” what the main card's title implies in
+// practice â€” cycling through the brand's green/gold palette with one blue accent per spec.
 const sideInfoByTitle: Record<string, SideInfo> = {
   Registration: {
     icon: UserCheck,
     bullets: ["Registration Desk Open", "ID Verification", "Welcome Kit Distribution"],
-    bg: "#EAF6EE",
-    border: "#1F5E4B",
-    accent: "#1F5E4B",
+    bg: "#EAF4FB",
+    border: "#155E9A",
+    accent: "#155E9A",
   },
   "Welcome Session": {
     icon: Megaphone,
     bullets: ["Opening Address", "Introduction to Tech4Bharat", "Event Overview"],
-    bg: "#FFF7E8",
-    border: "#D4A017",
-    accent: "#B8860B",
+    bg: "#EAF4FB",
+    border: "#2F80ED",
+    accent: "#2F80ED",
   },
   "Expert Talks": {
     icon: Lightbulb,
     bullets: ["Startup Journey", "Product Strategy", "Market Insights"],
-    bg: "#EAF6EE",
-    border: "#1F5E4B",
-    accent: "#1F5E4B",
+    bg: "#EAF4FB",
+    border: "#155E9A",
+    accent: "#155E9A",
   },
   "Business Workshops": {
     icon: Puzzle,
     bullets: ["Hands-on Exercises", "Group Activities", "Practical Frameworks"],
-    bg: "#EAF6EE",
-    border: "#1F5E4B",
-    accent: "#1F5E4B",
+    bg: "#EAF4FB",
+    border: "#155E9A",
+    accent: "#155E9A",
   },
   "Lunch & Networking": {
     icon: Utensils,
     bullets: ["Networking Lunch", "Founder Discussions"],
-    bg: "#FFF7E8",
-    border: "#D4A017",
-    accent: "#B8860B",
+    bg: "#EAF4FB",
+    border: "#2F80ED",
+    accent: "#2F80ED",
   },
   "Investor Readiness Session": {
     icon: PieChart,
     bullets: ["Pitch Deck Essentials", "Cap Table Basics", "Investor Q&A"],
-    bg: "#EAF6EE",
-    border: "#1F5E4B",
-    accent: "#1F5E4B",
+    bg: "#EAF4FB",
+    border: "#155E9A",
+    accent: "#155E9A",
   },
   "Startup Pitching": {
     icon: MessageSquare,
     bullets: ["Pitch Preparation", "Mentor Feedback", "Presentation Tips"],
-    bg: "#EAF6EE",
-    border: "#1F5E4B",
-    accent: "#1F5E4B",
+    bg: "#EAF4FB",
+    border: "#155E9A",
+    accent: "#155E9A",
   },
   "Closing & Networking": {
     icon: Award,
     bullets: ["Certificate Distribution", "Closing Remarks", "Group Photo"],
-    bg: "#FFF7E8",
-    border: "#D4A017",
-    accent: "#B8860B",
+    bg: "#EAF4FB",
+    border: "#2F80ED",
+    accent: "#2F80ED",
   },
 };
 
-/** Bootcamp schedule — a compact responsive card grid (one card per session, merging what
+/** Bootcamp schedule â€” a compact responsive card grid (one card per session, merging what
  *  used to be a separate "main" card and "side" detail card into a single card) instead of
  *  a tall two-card-per-session vertical timeline. 2 columns on mobile/tablet, 4 on desktop. */
 export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
@@ -118,7 +118,7 @@ export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
             title="Bootcamp Schedule"
             description="A simple, single-day flow from registration to closing."
             className="max-w-3xl"
-            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
+            titleClassName="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
             descriptionClassName="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]"
           />
         </AnimatedSection>
@@ -132,15 +132,15 @@ export default function BootcampSchedule({ agenda }: BootcampScheduleProps) {
               <AnimatedSection key={session.title} delay={i * 0.04} className="h-full">
                 <div
                   style={{ backgroundColor: info?.bg, borderColor: info ? `${info.border}40` : undefined }}
-                  className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-3 shadow-[0_4px_14px_rgba(22,58,58,0.05)] sm:p-4"
+                  className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-3 shadow-[0_4px_14px_rgba(6,26,44,0.05)] sm:p-4"
                 >
                   <span
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-[#1F5E4B] bg-white text-[#1F5E4B]"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-[#155E9A] bg-white text-[#155E9A]"
                   >
                     <Icon size={14} strokeWidth={1.75} />
                   </span>
 
-                  <span className="mt-2 inline-flex w-fit items-center rounded-full bg-[#1F5E4B]/8 px-2 py-0.5 text-[11px] font-bold text-[#1F5E4B]">
+                  <span className="mt-2 inline-flex w-fit items-center rounded-full bg-[#155E9A]/8 px-2 py-0.5 text-[11px] font-bold text-[#155E9A]">
                     {session.time}
                   </span>
                   <h3 className="mt-1.5 text-[13px] font-bold leading-tight text-ink-900 sm:text-sm">{session.title}</h3>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Handshake, Layers, Network, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -16,7 +16,7 @@ const featured: OutcomeCard = {
   icon: Network,
   title: "Strong Startup Ecosystem",
   description: "Connecting founders with mentors, investors, and experts across the network.",
-  iconBg: "#1F4E3D",
+  iconBg: "#155E9A",
 };
 
 const mediumCards: OutcomeCard[] = [
@@ -24,25 +24,25 @@ const mediumCards: OutcomeCard[] = [
     icon: Layers,
     title: "Practical Learning",
     description: "Hands-on workshops and real-world startup guidance.",
-    iconBg: "#1B2E4A",
+    iconBg: "#0B2A4A",
   },
   {
     icon: Handshake,
     title: "Strategic Networking",
     description: "Meaningful connections across academia, industry, and government.",
-    iconBg: "#D4A017",
+    iconBg: "#2F80ED",
   },
 ];
 
 // Real counts, computed from this project's own data (lib/data.ts startups/mentors/advisors,
-// lib/events.ts Workshop-type events) — not invented figures.
+// lib/events.ts Workshop-type events) â€” not invented figures.
 const kpis = [
-  { value: "8+", label: "Startups", accent: "#1F4E3D" },
-  { value: "6+", label: "Mentors", accent: "#D4A017" },
-  { value: "4+", label: "Workshops", accent: "#1F4E3D" },
+  { value: "8+", label: "Startups", accent: "#155E9A" },
+  { value: "6+", label: "Mentors", accent: "#2F80ED" },
+  { value: "4+", label: "Workshops", accent: "#155E9A" },
 ];
 
-/** Compact "Impact & Outcomes" closer for the Events page — an editorial dashboard instead
+/** Compact "Impact & Outcomes" closer for the Events page â€” an editorial dashboard instead
  *  of six identical cards: a real workshop photo on the left, and on the right one wide
  *  featured card, two pastel medium cards, and three compact KPI tiles, each styled
  *  differently so nothing reads as a repeated template. */
@@ -58,15 +58,15 @@ export default function ImpactOutcomes() {
           <SectionTitle
             title="Impact & Outcomes"
             description="Key outcomes and learnings from Tech4Bharat programs and workshops."
-            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
-            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
+            titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
+            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#526777]"
           />
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="mt-9">
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
             <div className="grid gap-8 lg:grid-cols-[42fr_58fr] lg:gap-10">
-              <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(22,58,58,0.1)] lg:aspect-auto lg:h-full">
+              <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(6,26,44,0.1)] lg:aspect-auto lg:h-full">
                 <Image
                   src="/images/legacy/policy-workshop-3.jpg"
                   alt="Students and faculty at the closing session of a Tech4Bharat workshop"
@@ -77,9 +77,9 @@ export default function ImpactOutcomes() {
               </div>
 
               <div className="flex flex-col gap-4">
-                {/* Featured outcome — full width */}
-                <div className="relative overflow-hidden rounded-[18px] border-[1.5px] border-[#D9E7DF] bg-[#FBFAF6] p-5">
-                  <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-[#1F4E3D]" />
+                {/* Featured outcome â€” full width */}
+                <div className="relative overflow-hidden rounded-[18px] border-[1.5px] border-[#EAF4FB] bg-[#F5FAFE] p-5">
+                  <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-[#155E9A]" />
                   <div className="pl-3">
                     <div className="flex items-center justify-between gap-3">
                       <span
@@ -88,7 +88,7 @@ export default function ImpactOutcomes() {
                       >
                         <FeaturedIcon size={17} />
                       </span>
-                      <span className="rounded-full bg-[#1F4E3D]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#1F4E3D]">
+                      <span className="rounded-full bg-[#155E9A]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#155E9A]">
                         Featured Outcome
                       </span>
                     </div>
@@ -99,9 +99,9 @@ export default function ImpactOutcomes() {
                   </div>
                 </div>
 
-                {/* Medium cards — pastel backgrounds, alternating icon position */}
+                {/* Medium cards â€” pastel backgrounds, alternating icon position */}
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[18px] border border-slate-200 p-5" style={{ backgroundColor: "#EEF6F1" }}>
+                  <div className="rounded-[18px] border border-slate-200 p-5" style={{ backgroundColor: "#F5FAFE" }}>
                     <span
                       className="flex h-9 w-9 items-center justify-center rounded-full text-white"
                       style={{ backgroundColor: mediumCards[0].iconBg }}
@@ -125,7 +125,7 @@ export default function ImpactOutcomes() {
                   </div>
                 </div>
 
-                {/* KPI tiles — no icons, compact, colored top border only */}
+                {/* KPI tiles â€” no icons, compact, colored top border only */}
                 <div className="grid grid-cols-3 gap-4">
                   {kpis.map((kpi) => (
                     <div
@@ -133,7 +133,7 @@ export default function ImpactOutcomes() {
                       className="rounded-[14px] border-t-[3px] bg-white px-3 py-4 text-center shadow-sm"
                       style={{ borderTopColor: kpi.accent }}
                     >
-                      <p className="text-[28px] font-extrabold leading-none text-ink-900">{kpi.value}</p>
+                      <p className="text-[22px] font-extrabold leading-none text-ink-900">{kpi.value}</p>
                       <p className="mt-1.5 text-[12px] font-semibold text-slate-500">{kpi.label}</p>
                     </div>
                   ))}

@@ -18,7 +18,7 @@ export default function EventCard({ event }: { event: EventItem }) {
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-linear-to-t from-brand-900/70 via-brand-900/20 to-transparent" />
-        <span className="absolute bottom-3 left-4 text-lg font-bold text-white">{event.type}</span>
+        <span className="absolute bottom-3 left-4 text-base font-bold text-white">{event.type}</span>
         <Badge
           variant={event.status === "Upcoming" ? "success" : "neutral"}
           className="absolute right-4 top-4"

@@ -25,7 +25,7 @@ export default function PartnerCard({ name, description, badge, logo, delay = 0 
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -6 }}
-      className="group h-full rounded-3xl bg-linear-to-br from-brand-200 via-secondary-200 to-accent-200 p-px shadow-[0_4px_16px_rgba(22,58,58,0.06)] transition-all duration-300 hover:from-brand-500 hover:via-secondary-500 hover:to-accent-500 hover:shadow-[0_18px_40px_rgba(31,78,61,0.18)]"
+      className="group h-full rounded-3xl bg-linear-to-br from-brand-200 via-secondary-200 to-accent-200 p-px shadow-[0_4px_16px_rgba(6,26,44,0.06)] transition-all duration-300 hover:from-brand-500 hover:via-secondary-500 hover:to-accent-500 hover:shadow-[0_18px_40px_rgba(21,94,154,0.18)]"
     >
       <div className="glass-surface flex h-full flex-col gap-2 rounded-[19px] p-3.5 sm:gap-2.5 sm:rounded-[23px] sm:p-4">
         <div className="flex items-center gap-2.5">

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Wrench } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Blob from "@/components/ui/Blob";
@@ -17,7 +17,7 @@ export default function MaintenancePage() {
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-100 text-accent-600">
           <Wrench size={32} />
         </div>
-        <h1 className="mt-6 text-[32px] font-extrabold text-ink-900 sm:text-[44px]">We&apos;ll be right back</h1>
+        <h1 className="mt-6 text-[26px] font-extrabold text-ink-900 sm:text-[34px]">We&apos;ll be right back</h1>
         <p className="mx-auto mt-4 max-w-md text-slate-600">
           Tech4Bharat is undergoing scheduled maintenance to bring you a better experience.
           Please check back shortly.

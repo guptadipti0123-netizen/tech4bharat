@@ -15,11 +15,11 @@ export default function HomeSectionHeading({
 
   return (
     <div className={`${alignment} ${className}`}>
-      <h2 className="text-balance text-[clamp(1.4rem,2.4vw,1.9rem)] font-semibold leading-tight text-ink-900">
+      <h2 className="text-balance text-[clamp(1.25rem,2vw,1.6rem)] font-semibold leading-tight text-ink-900">
         {title}
       </h2>
       {description ? (
-        <p className="mx-auto mt-2 max-w-2xl text-[14px] leading-6 text-slate-600 sm:text-[15px]">
+        <p className="mx-auto mt-2 max-w-2xl text-[13px] leading-6 text-slate-600 sm:text-[14px]">
           {description}
         </p>
       ) : null}

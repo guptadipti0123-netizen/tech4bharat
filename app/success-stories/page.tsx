@@ -25,7 +25,7 @@ export default function SuccessStoriesPage() {
         title="From idea to real-world impact"
         description="The founders who turned an early idea into a company changing how India works, learns, and heals."
         icon={Trophy}
-        titleClassName="text-[28px] font-extrabold leading-tight tracking-tight text-ink-900 sm:text-[36px] lg:text-[44px]"
+        titleClassName="text-[26px] font-extrabold leading-tight tracking-tight text-ink-900 sm:text-[32px] lg:text-[36px]"
       />
 
       <section className="bg-white py-8 sm:py-12">

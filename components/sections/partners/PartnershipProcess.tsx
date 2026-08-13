@@ -1,4 +1,4 @@
-import { Handshake, MessageSquare, Search, TrendingUp } from "lucide-react";
+﻿import { Handshake, MessageSquare, Search, TrendingUp } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -27,7 +27,7 @@ const steps = [
   },
 ];
 
-/** Horizontal numbered-step process — a distinct visual identity from the page's other
+/** Horizontal numbered-step process â€” a distinct visual identity from the page's other
  *  timeline-style sections (no left-label/right-image split, just a connected step row). */
 export default function PartnershipProcess() {
   return (
@@ -39,7 +39,7 @@ export default function PartnershipProcess() {
           <SectionTitle
             title="From first conversation to shared impact"
             className="max-w-250"
-            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163A39] sm:text-[30px] lg:text-[34px]"
+            titleClassName="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
           />
         </AnimatedSection>
 

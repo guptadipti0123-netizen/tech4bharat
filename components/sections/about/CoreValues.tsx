@@ -1,4 +1,4 @@
-import { Handshake, Rocket, Shield, TrendingUp, type LucideIcon } from "lucide-react";
+﻿import { Handshake, Rocket, Shield, TrendingUp, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
@@ -21,59 +21,59 @@ const values: Value[] = [
     icon: Rocket,
     title: "Innovation",
     description: "Encouraging bold ideas and creative solutions.",
-    cardBg: "#FCF8EE",
-    border: "#E8CD82",
-    hoverBorder: "#D4A017",
-    iconBg: "#F7E9C4",
-    iconColor: "#B8860B",
-    strip: "linear-gradient(90deg,#D4A017,#E8CD82)",
-    shadow: "0 10px 26px rgba(212,160,23,.12)",
-    shadowHover: "0 16px 34px rgba(212,160,23,.20)",
+    cardBg: "#F5FAFE",
+    border: "#EAF4FB",
+    hoverBorder: "#2F80ED",
+    iconBg: "#EAF4FB",
+    iconColor: "#2F80ED",
+    strip: "linear-gradient(90deg,#2F80ED,#EAF4FB)",
+    shadow: "0 10px 26px rgba(47,128,237,.12)",
+    shadowHover: "0 16px 34px rgba(47,128,237,.20)",
   },
   {
     icon: Shield,
     title: "Integrity",
     description: "Operating with honesty and transparency.",
-    cardBg: "#F3F8F5",
-    border: "#A8CCBB",
-    hoverBorder: "#1F4E3D",
-    iconBg: "#DCEEE5",
-    iconColor: "#1F4E3D",
-    strip: "linear-gradient(90deg,#1F4E3D,#A8CCBB)",
-    shadow: "0 10px 26px rgba(31,78,61,.12)",
-    shadowHover: "0 16px 34px rgba(31,78,61,.20)",
+    cardBg: "#F5FAFE",
+    border: "#EAF4FB",
+    hoverBorder: "#155E9A",
+    iconBg: "#EAF4FB",
+    iconColor: "#155E9A",
+    strip: "linear-gradient(90deg,#155E9A,#EAF4FB)",
+    shadow: "0 10px 26px rgba(21,94,154,.12)",
+    shadowHover: "0 16px 34px rgba(21,94,154,.20)",
   },
   {
     icon: Handshake,
     title: "Collaboration",
     description: "Building progress through partnership and teamwork.",
-    cardBg: "#EEF9F3",
-    border: "#B9E8CE",
-    hoverBorder: "#34A870",
-    iconBg: "#DCF3E6",
-    iconColor: "#1F9563",
-    strip: "linear-gradient(90deg,#5FCB94,#B9E8CE)",
-    shadow: "0 10px 26px rgba(31,149,99,.12)",
-    shadowHover: "0 16px 34px rgba(31,149,99,.20)",
+    cardBg: "#F5FAFE",
+    border: "#EAF4FB",
+    hoverBorder: "#155E9A",
+    iconBg: "#EAF4FB",
+    iconColor: "#155E9A",
+    strip: "linear-gradient(90deg,#1976D2,#EAF4FB)",
+    shadow: "0 10px 26px rgba(21,94,154,.12)",
+    shadowHover: "0 16px 34px rgba(21,94,154,.20)",
   },
   {
     icon: TrendingUp,
     title: "Impact",
     description: "Creating outcomes that benefit society at large.",
-    cardBg: "#FCF8EE",
-    border: "#E8CD82",
-    hoverBorder: "#D4A017",
-    iconBg: "#F7E9C4",
-    iconColor: "#B8860B",
-    strip: "linear-gradient(90deg,#D4A017,#E8CD82)",
-    shadow: "0 10px 26px rgba(212,160,23,.12)",
-    shadowHover: "0 16px 34px rgba(212,160,23,.20)",
+    cardBg: "#F5FAFE",
+    border: "#EAF4FB",
+    hoverBorder: "#2F80ED",
+    iconBg: "#EAF4FB",
+    iconColor: "#2F80ED",
+    strip: "linear-gradient(90deg,#2F80ED,#EAF4FB)",
+    shadow: "0 10px 26px rgba(47,128,237,.12)",
+    shadowHover: "0 16px 34px rgba(47,128,237,.20)",
   },
 ];
 
-/** Core Values — four compact, individually pastel-tinted cards (gold, green, green, gold),
+/** Core Values â€” four compact, individually pastel-tinted cards (gold, green, green, gold),
  *  each with a matching border, a colored top gradient strip, and its own icon
- *  tone — deliberately distinct from the neutral/white card language used elsewhere. */
+ *  tone â€” deliberately distinct from the neutral/white card language used elsewhere. */
 export default function CoreValues() {
   return (
     <section id="core-values" className="relative overflow-hidden py-8 sm:py-12">
@@ -82,26 +82,26 @@ export default function CoreValues() {
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "linear-gradient(135deg, #F4FAF7 0%, #EDF7F2 35%, #F8FDFB 70%, #FFFFFF 100%)",
+            "linear-gradient(135deg, #F5FAFE 0%, #F5FAFE 35%, #F5FAFE 70%, #FFFFFF 100%)",
         }}
       />
       <div
         aria-hidden="true"
         className="absolute -left-24 -top-24 -z-10 h-96 w-96 rounded-full opacity-20 blur-3xl"
-        style={{ backgroundColor: "#DFF2E8" }}
+        style={{ backgroundColor: "#EAF4FB" }}
       />
       <div
         aria-hidden="true"
         className="absolute -bottom-24 -right-24 -z-10 h-96 w-96 rounded-full opacity-20 blur-3xl"
-        style={{ backgroundColor: "#FFF5DD" }}
+        style={{ backgroundColor: "#EAF4FB" }}
       />
 
       <Container>
         <AnimatedSection className="mx-auto max-w-155 text-center">
-          <h2 className="font-(family-name:--font-poppins) text-[24px] font-extrabold leading-tight tracking-tight text-[#163B2D] sm:text-[30px] lg:text-[34px]">
+          <h2 className="font-(family-name:--font-poppins) text-[22px] font-extrabold leading-tight tracking-tight text-[#0B2A4A] sm:text-[26px] lg:text-[30px]">
             Core Values
           </h2>
-          <p className="mx-auto mt-4 max-w-155 text-balance text-lg leading-relaxed text-slate-600">
+          <p className="mx-auto mt-4 max-w-155 text-balance text-[15px] leading-relaxed text-slate-600">
             The principles that guide every initiative at Tech4Bharat.
           </p>
         </AnimatedSection>
@@ -136,7 +136,7 @@ export default function CoreValues() {
                     >
                       <Icon size={21} strokeWidth={1.75} style={{ color: value.iconColor }} />
                     </span>
-                    <h3 className="text-[22px] font-bold text-[#173D35]">{value.title}</h3>
+                    <h3 className="text-[18px] font-bold text-[#0B2A4A]">{value.title}</h3>
                   </div>
 
                   <p className="mt-3 line-clamp-2 text-[15px] leading-relaxed text-slate-500">

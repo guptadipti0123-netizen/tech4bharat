@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import MentorsOverview from "@/components/sections/mentors/MentorsOverview";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -11,7 +11,7 @@ import { advisors, mentors } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Mentors & Advisors | Tech4Bharat",
   description:
-    "Meet the operators, investors, and academics guiding Tech4Bharat founders — from product strategy to fundraising and deep-tech research.",
+    "Meet the operators, investors, and academics guiding Tech4Bharat founders â€” from product strategy to fundraising and deep-tech research.",
   openGraph: {
     title: "Mentors & Advisors | Tech4Bharat",
     description: "The mentors and advisors guiding Tech4Bharat founders across every stage.",
@@ -27,7 +27,7 @@ export default function MentorsPage() {
 
       <section
         className="relative overflow-hidden pb-12 pt-6 sm:pb-16 sm:pt-10"
-        style={{ background: "linear-gradient(180deg, #F8FCFA 0%, #EEF8F3 100%)" }}
+        style={{ background: "linear-gradient(180deg, #F5FAFE 0%, #F5FAFE 100%)" }}
       >
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
 
@@ -37,8 +37,8 @@ export default function MentorsPage() {
               title="Operators who've built at scale"
               description="Hands-on guidance from founders and operators who've done it before."
               className="max-w-225"
-              titleClassName="text-[24px] font-bold leading-[1.1] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
-              descriptionClassName="mx-auto mt-3 max-w-2xl text-center text-sm sm:text-base text-[#4B5563]"
+              titleClassName="text-[22px] font-bold leading-[1.1] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
+              descriptionClassName="mx-auto mt-3 max-w-2xl text-center text-sm sm:text-base text-[#526777]"
             />
           </AnimatedSection>
 
@@ -70,8 +70,8 @@ export default function MentorsPage() {
               title="Strategic counsel from across the ecosystem"
               description="Academic and industry advisors shaping Tech4Bharat's programs and partnerships."
               className="max-w-225"
-              titleClassName="text-[20px] font-semibold leading-[1.5] text-[#163B2D] sm:text-[22px] lg:text-[24px] lg:whitespace-nowrap"
-              descriptionClassName="mx-auto mt-4 max-w-2xl text-center text-lg sm:text-lg text-[#667085]"
+              titleClassName="text-[18px] font-semibold leading-[1.5] text-[#0B2A4A] sm:text-[20px] lg:text-[22px] lg:whitespace-nowrap"
+              descriptionClassName="mx-auto mt-4 max-w-2xl text-center text-[14px] sm:text-[15px] text-[#526777]"
             />
           </AnimatedSection>
 

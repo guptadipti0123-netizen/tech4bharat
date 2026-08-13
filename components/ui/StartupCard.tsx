@@ -35,17 +35,17 @@ export default function StartupCard({ startup }: { startup: Startup }) {
     <div
       style={
         {
-          backgroundColor: "#FCFCFA",
+          backgroundColor: "#F5FAFE",
           borderColor: accent.border,
           "--hover-border": accent.borderHover,
         } as React.CSSProperties
       }
-      className="group relative flex flex-col overflow-hidden rounded-2xl border-[1.5px] px-5 py-4 shadow-[0_2px_14px_rgba(18,60,51,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-[0_20px_40px_rgba(18,60,51,0.14)] sm:rounded-3xl sm:px-9 sm:py-4.75"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border-[1.5px] px-5 py-4 shadow-[0_2px_14px_rgba(11,42,74,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-[0_20px_40px_rgba(11,42,74,0.14)] sm:rounded-3xl sm:px-9 sm:py-4.75"
     >
       <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: accent.border }} />
 
       <div className="flex items-start gap-2.5 sm:gap-3">
-        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-slate-100 shadow-[0_2px_10px_rgba(18,60,51,0.1)] sm:h-18 sm:w-18">
+        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-slate-100 shadow-[0_2px_10px_rgba(11,42,74,0.1)] sm:h-18 sm:w-18">
           <Image
             src={getDomainImage(startup.domain)}
             alt={`${startup.domain} industry`}
@@ -54,7 +54,7 @@ export default function StartupCard({ startup }: { startup: Startup }) {
             className="object-cover object-top"
           />
         </div>
-        <h3 className="mt-1 text-[16px] font-bold leading-tight text-[#123C33] sm:text-[18px]">{startup.name}</h3>
+        <h3 className="mt-1 text-[16px] font-bold leading-tight text-[#102A43] sm:text-[18px]">{startup.name}</h3>
       </div>
 
       <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">

@@ -1,4 +1,4 @@
-import { Check, Compass, Eye, Target, type LucideIcon } from "lucide-react";
+﻿import { Check, Compass, Eye, Target, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -25,13 +25,13 @@ const cards: PrincipleCard[] = [
       "Access to mentorship and capital",
       "A community for category-defining companies",
     ],
-    gradient: "linear-gradient(135deg,#F3F8F5,#FAFDFB)",
-    border: "#8FC2AE",
-    hoverBorder: "#5FA688",
-    shadow: "0 12px 30px rgba(31,78,61,.10)",
-    shadowHover: "0 16px 34px rgba(31,78,61,.18)",
-    iconColor: "#1F4E3D",
-    iconBg: "rgba(31,78,61,.15)",
+    gradient: "linear-gradient(135deg,#F5FAFE,#F5FAFE)",
+    border: "#EAF4FB",
+    hoverBorder: "#1976D2",
+    shadow: "0 12px 30px rgba(21,94,154,.10)",
+    shadowHover: "0 16px 34px rgba(21,94,154,.18)",
+    iconColor: "#155E9A",
+    iconBg: "rgba(21,94,154,.15)",
   },
   {
     icon: Compass,
@@ -41,29 +41,29 @@ const cards: PrincipleCard[] = [
       "Structured mentorship and funding access",
       "Ecosystem partnerships that drive impact",
     ],
-    gradient: "linear-gradient(135deg,#FCF8EE,#FFFDF8)",
-    border: "#E4C468",
-    hoverBorder: "#D4A017",
-    shadow: "0 12px 30px rgba(212,160,23,.10)",
-    shadowHover: "0 16px 34px rgba(212,160,23,.18)",
-    iconColor: "#B8860B",
-    iconBg: "rgba(212,160,23,.15)",
+    gradient: "linear-gradient(135deg,#F5FAFE,#F5FAFE)",
+    border: "#EAF4FB",
+    hoverBorder: "#2F80ED",
+    shadow: "0 12px 30px rgba(47,128,237,.10)",
+    shadowHover: "0 16px 34px rgba(47,128,237,.18)",
+    iconColor: "#2F80ED",
+    iconBg: "rgba(47,128,237,.15)",
   },
   {
     icon: Target,
     title: "Objectives",
     bullets: ["Support Innovation", "Startup Incubation", "Industry Collaboration"],
-    gradient: "linear-gradient(135deg,#FCF8EE,#FFFDF8)",
-    border: "#E4C468",
-    hoverBorder: "#D4A017",
-    shadow: "0 12px 30px rgba(212,160,23,.10)",
-    shadowHover: "0 16px 34px rgba(212,160,23,.18)",
-    iconColor: "#B8860B",
-    iconBg: "rgba(212,160,23,.15)",
+    gradient: "linear-gradient(135deg,#F5FAFE,#F5FAFE)",
+    border: "#EAF4FB",
+    hoverBorder: "#2F80ED",
+    shadow: "0 12px 30px rgba(47,128,237,.10)",
+    shadowHover: "0 16px 34px rgba(47,128,237,.18)",
+    iconColor: "#2F80ED",
+    iconBg: "rgba(47,128,237,.15)",
   },
 ];
 
-/** Vision, Mission, and Objectives — a deliberately distinct treatment from every other
+/** Vision, Mission, and Objectives â€” a deliberately distinct treatment from every other
  *  card pattern on the site: compact pastel-gradient cards, a colored border keyed to
  *  each card's theme, a translucent icon roundel paired with the heading, and pill-shaped
  *  points instead of a bulleted checklist. */
@@ -75,7 +75,7 @@ export default function VisionMissionObjectives() {
           <SectionTitle
             title="Vision, Mission & Objectives"
             className="max-w-3xl"
-            titleClassName="text-balance text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight lg:text-[34px]"
+            titleClassName="text-balance text-[22px] sm:text-[26px] font-bold leading-tight tracking-tight lg:text-[30px]"
           />
         </AnimatedSection>
 
@@ -103,14 +103,14 @@ export default function VisionMissionObjectives() {
                     >
                       <Icon size={19} style={{ color: card.iconColor }} strokeWidth={1.75} />
                     </span>
-                    <h3 className="text-[20px] font-bold text-[#16324A]">{card.title}</h3>
+                    <h3 className="text-[20px] font-bold text-[#0B2A4A]">{card.title}</h3>
                   </div>
 
                   <div className="mt-2.5 flex flex-col gap-1.5">
                     {card.bullets.map((bullet) => (
                       <span
                         key={bullet}
-                        className="inline-flex w-fit items-center gap-2.5 rounded-full px-3.5 py-2 text-[14px] leading-snug text-[#3A4256]"
+                        className="inline-flex w-fit items-center gap-2.5 rounded-full px-3.5 py-2 text-[14px] leading-snug text-[#526777]"
                         style={{ backgroundColor: "rgba(255,255,255,.65)", border: "1px solid rgba(255,255,255,.7)" }}
                       >
                         <Check size={13} className="shrink-0" strokeWidth={3} style={{ color: card.iconColor }} />

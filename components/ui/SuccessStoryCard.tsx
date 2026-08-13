@@ -21,7 +21,7 @@ export default function SuccessStoryCard({ story }: { story: SuccessStory }) {
           {story.domain}
         </Badge>
         <div className="absolute bottom-4 left-5">
-          <p className="text-lg font-bold text-white">{story.startup}</p>
+          <p className="text-base font-bold text-white">{story.startup}</p>
           <p className="text-sm text-white/80">{story.founder}</p>
         </div>
       </div>

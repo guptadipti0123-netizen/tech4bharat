@@ -1,4 +1,4 @@
-import { Handshake, Landmark, Building2, Rocket, Wallet, type LucideIcon } from "lucide-react";
+﻿import { Handshake, Landmark, Building2, Rocket, Wallet, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -21,54 +21,54 @@ const sources: FundingSource[] = [
     title: "Grants",
     description: "Government and institutional funding.",
     fundingType: "Government",
-    cardBg: "#F4FBF6",
-    border: "#2E8B57",
-    borderHover: "#256E46",
-    iconBg: "#DCF3E3",
+    cardBg: "#F5FAFE",
+    border: "#155E9A",
+    borderHover: "#124F82",
+    iconBg: "#EAF4FB",
   },
   {
     icon: Building2,
     title: "Investors",
     description: "Angel investors and venture capital.",
     fundingType: "Private",
-    cardBg: "#FCF8EE",
-    border: "#D4A017",
-    borderHover: "#B8860B",
-    iconBg: "#FBEFCF",
+    cardBg: "#F5FAFE",
+    border: "#2F80ED",
+    borderHover: "#1565AE",
+    iconBg: "#EAF4FB",
   },
   {
     icon: Rocket,
     title: "Accelerators",
     description: "Startup accelerator and incubation support.",
     fundingType: "Hybrid",
-    cardBg: "#F3F8F5",
-    border: "#1B7A72",
-    borderHover: "#165F59",
-    iconBg: "#DCEEEC",
+    cardBg: "#F5FAFE",
+    border: "#1976D2",
+    borderHover: "#1565AE",
+    iconBg: "#EAF4FB",
   },
   {
     icon: Handshake,
     title: "CSR Programs",
     description: "Corporate social responsibility initiatives.",
     fundingType: "CSR",
-    cardBg: "#F3F8F5",
-    border: "#1F4E3D",
-    borderHover: "#163A2D",
-    iconBg: "#E3EEE8",
+    cardBg: "#F5FAFE",
+    border: "#0B2A4A",
+    borderHover: "#082038",
+    iconBg: "#EAF4FB",
   },
   {
     icon: Landmark,
     title: "Government Schemes",
     description: "Public sector startup support.",
     fundingType: "Public",
-    cardBg: "#FCF8EE",
-    border: "#0F766E",
-    borderHover: "#0C5F59",
-    iconBg: "#DCEEEC",
+    cardBg: "#F5FAFE",
+    border: "#124F82",
+    borderHover: "#0B2A4A",
+    iconBg: "#EAF4FB",
   },
 ];
 
-/** Funding Sources — five handcrafted cards, each with its own pastel background, accent
+/** Funding Sources â€” five handcrafted cards, each with its own pastel background, accent
  *  border, icon tint, and a funding-type badge, so the row reads as five distinct funding
  *  categories rather than five repeats of the same white card. */
 export default function FundingCategories() {
@@ -81,7 +81,7 @@ export default function FundingCategories() {
           <SectionTitle
             title="Funding Sources"
             description="Where founders find capital and support."
-            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
+            titleClassName="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
           />
         </AnimatedSection>
 
@@ -109,12 +109,12 @@ export default function FundingCategories() {
                     >
                       <Icon size={15} />
                     </span>
-                    <h3 className="min-w-0 flex-1 text-[16px] font-bold leading-tight text-[#173D35]">
+                    <h3 className="min-w-0 flex-1 text-[16px] font-bold leading-tight text-[#102A43]">
                       {source.title}
                     </h3>
                   </div>
 
-                  <p className="mt-2 line-clamp-2 text-[14px] leading-snug text-[#5B6470]">
+                  <p className="mt-2 line-clamp-2 text-[14px] leading-snug text-[#526777]">
                     {source.description}
                   </p>
 

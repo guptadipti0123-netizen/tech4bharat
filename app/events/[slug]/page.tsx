@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Calendar, Clock, Images, ListChecks, MapPin, Tag, Users } from "lucide-react";
@@ -59,7 +59,7 @@ export default async function EventDetailPage({ params }: PageProps) {
               </Badge>
               <span className="text-sm font-medium text-slate-600">{event.type}</span>
             </div>
-            <h1 className="mt-4 max-w-3xl text-[32px] font-extrabold text-ink-900 sm:text-[44px]">{event.title}</h1>
+            <h1 className="mt-4 max-w-3xl text-[26px] font-extrabold text-ink-900 sm:text-[34px]">{event.title}</h1>
             <div className="mt-6 flex flex-wrap gap-6 text-sm text-slate-600">
               <span className="flex items-center gap-2">
                 <Calendar size={16} className="text-brand-600" /> {event.date}
@@ -85,8 +85,8 @@ export default async function EventDetailPage({ params }: PageProps) {
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-brand-600">
                   <BookOpen size={18} />
                 </span>
-                <h2 className="mt-4 text-2xl font-bold text-ink-900">About this Event</h2>
-                <p className="mt-3 max-w-2xl text-lg leading-relaxed text-slate-600">{event.longDescription}</p>
+                <h2 className="mt-4 text-[20px] font-bold text-ink-900">About this Event</h2>
+                <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-slate-600">{event.longDescription}</p>
 
                 <div className="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-6">
                   {event.agenda && event.agenda.length > 0 && (
@@ -111,7 +111,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                   <div className="relative mt-5 space-y-5 border-l-2 border-brand-100 pl-6">
                     {event.agenda.map((session) => (
                       <div key={session.time + session.title} className="relative">
-                        <span className="absolute -left-7.25 top-1 h-3 w-3 rounded-full border-2 border-white bg-brand-500 shadow-[0_0_0_3px_rgba(76,175,141,0.2)]" />
+                        <span className="absolute -left-7.25 top-1 h-3 w-3 rounded-full border-2 border-white bg-brand-500 shadow-[0_0_0_3px_rgba(21,94,154,0.2)]" />
                         <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-brand-700">
                           <Clock size={12} /> {session.time}
                         </span>

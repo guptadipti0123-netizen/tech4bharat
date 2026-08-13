@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink, Handshake, Lightbulb, Mail, MapPin, Megaphone, Phone, Users, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -20,7 +20,7 @@ import { contactFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "Contact Us | Tech4Bharat",
   description:
-    "Get in touch with Tech4Bharat — reach our team about programs, partnerships, mentorship, or media inquiries.",
+    "Get in touch with Tech4Bharat â€” reach our team about programs, partnerships, mentorship, or media inquiries.",
   openGraph: {
     title: "Contact Us | Tech4Bharat",
     description: "Get in touch with the Tech4Bharat team.",
@@ -53,40 +53,40 @@ const quickContacts: QuickContact[] = [
     title: "For Founders",
     description: "Applying to a program or have a startup idea to discuss.",
     email: "programs@tech4bharat.org",
-    cardBg: "#EAF6EE",
-    border: "#1F5E4B66",
-    hoverBorder: "#1F5E4B",
-    iconBg: "#1F5E4B",
+    cardBg: "#EAF4FB",
+    border: "#155E9A66",
+    hoverBorder: "#155E9A",
+    iconBg: "#155E9A",
   },
   {
     icon: Handshake,
     title: "For Partners & Investors",
     description: "Exploring institutional, government, or funding partnerships.",
     email: "partnerships@tech4bharat.org",
-    cardBg: "#F0F7F1",
-    border: "#3B7A5766",
-    hoverBorder: "#3B7A57",
-    iconBg: "#3B7A57",
+    cardBg: "#F5FAFE",
+    border: "#1976D266",
+    hoverBorder: "#1976D2",
+    iconBg: "#1976D2",
   },
   {
     icon: Users,
     title: "For Mentors",
     description: "Interested in joining our mentor and advisor network.",
     email: "mentors@tech4bharat.org",
-    cardBg: "#FFF7E8",
-    border: "#B8860B66",
-    hoverBorder: "#B8860B",
-    iconBg: "#B8860B",
+    cardBg: "#EAF4FB",
+    border: "#2F80ED66",
+    hoverBorder: "#2F80ED",
+    iconBg: "#2F80ED",
   },
   {
     icon: Megaphone,
     title: "For Media & Press",
     description: "Press inquiries, interviews, or event coverage requests.",
     email: "media@tech4bharat.org",
-    cardBg: "#F7F2E7",
-    border: "#163B2D66",
-    hoverBorder: "#163B2D",
-    iconBg: "#163B2D",
+    cardBg: "#EAF4FB",
+    border: "#0B2A4A66",
+    hoverBorder: "#0B2A4A",
+    iconBg: "#0B2A4A",
   },
 ];
 
@@ -94,17 +94,17 @@ export default function ContactPage() {
   return (
     <>
       {/* `aspect-2/1` (or any ratio other than the photo's own) forces `object-contain` to
-          letterbox — visible bars — at every width, and forces `object-cover` to crop at
+          letterbox â€” visible bars â€” at every width, and forces `object-cover` to crop at
           every width. The only way to show the complete, uncropped photo edge-to-edge with
           no bars is to make the container's own ratio match the photo's native ratio
           (1600x1067 = 3:2), so cover/contain become identical no-ops. `max-h` is set high
           enough (1280px) that it only engages on ultrawide monitors, never on normal desktop
-          widths — the earlier bug was this cap kicking in around 840px and re-cropping the
+          widths â€” the earlier bug was this cap kicking in around 840px and re-cropping the
           top/bottom on ordinary screens. `min-h` is a floor purely so the centered text/button
           still clears the fixed navbar on short/narrow phones. */}
       <section
         className="relative w-full aspect-3/2 min-h-88 max-h-320 overflow-hidden rounded-b-[48px]"
-        style={{ backgroundColor: "#12342B" }}
+        style={{ backgroundColor: "#0B2A4A" }}
       >
         <Image
           src="/images/gallery/gallery-3.jpg"
@@ -114,11 +114,11 @@ export default function ContactPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(18,52,43,0.35)" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(11,42,74,0.35)" }} />
         <div className="relative flex h-full items-center justify-center">
           <Container>
             <AnimatedSection className="mx-auto max-w-2xl text-center">
-              <h1 className="text-[22px] font-extrabold leading-tight tracking-tight text-white sm:text-[30px] lg:text-[34px]">
+              <h1 className="text-[22px] font-extrabold leading-tight tracking-tight text-white sm:text-[26px] lg:text-[30px]">
                 Let&apos;s Start a Conversation
               </h1>
               <p className="mx-auto mt-3 max-w-2xl text-sm text-white/85 sm:mt-4 sm:text-base">
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   href="#contact-form"
                   variant="secondary"
                   size="lg"
-                  className="px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg"
+                  className="px-6 py-3 text-[13px] sm:px-8 sm:py-4 sm:text-[14px]"
                 >
                   Contact Us
                 </Button>
@@ -141,7 +141,7 @@ export default function ContactPage() {
 
       <section
         className="relative overflow-hidden py-8 sm:py-12"
-        style={{ background: "linear-gradient(180deg, #F7FFFD, #FFFFFF, #F8FBFF)" }}
+        style={{ background: "linear-gradient(180deg, #F5FAFE, #FFFFFF, #F5FAFE)" }}
       >
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
 
@@ -151,7 +151,7 @@ export default function ContactPage() {
               title="Reach the Right Team Faster"
               align="center"
               className="max-w-225"
-              titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
+              titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.01em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
             />
           </AnimatedSection>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
@@ -183,7 +183,7 @@ export default function ContactPage() {
                     <a
                       href={`mailto:${contact.email}`}
                       className="mt-2 inline-flex items-center justify-center rounded-full border-2 bg-white px-3.5 py-2 text-[11px] font-bold text-ink-900 shadow-sm transition-colors duration-200 hover:text-brand-700 sm:mt-3 sm:px-5 sm:py-3 sm:text-[13px]"
-                      style={{ borderColor: "#D7E9E2" }}
+                      style={{ borderColor: "#EAF4FB" }}
                     >
                       {contact.email}
                     </a>
@@ -261,7 +261,7 @@ export default function ContactPage() {
 
                 <div className="relative h-64 overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
                   <iframe
-                    title="Tech4Bharat office location — IIT Bombay, Powai, Mumbai"
+                    title="Tech4Bharat office location â€” IIT Bombay, Powai, Mumbai"
                     src="https://www.google.com/maps?q=IIT+Bombay,+Powai,+Mumbai,+Maharashtra+400076&output=embed"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -284,7 +284,7 @@ export default function ContactPage() {
 
       <section
         className="relative overflow-hidden py-12 sm:py-16"
-        style={{ background: "linear-gradient(180deg, #F8FFFD 0%, #FFFFFF 55%, #F7FBFF 100%)" }}
+        style={{ background: "linear-gradient(180deg, #F5FAFE 0%, #FFFFFF 55%, #F5FAFE 100%)" }}
       >
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
         <Blob tone="secondary" className="-right-24 top-10 h-72 w-72" animate={false} />
@@ -295,7 +295,7 @@ export default function ContactPage() {
               title="Frequently Asked Questions"
               description="Find quick answers to the most common questions about our programs, partnerships, mentorship, and application process."
               align="center"
-              titleClassName="text-[24px] sm:text-[30px] lg:text-[34px] font-extrabold leading-tight tracking-tight"
+              titleClassName="text-[22px] sm:text-[26px] lg:text-[30px] font-extrabold leading-tight tracking-tight"
               descriptionClassName="mx-auto mt-4 max-w-175 text-gray-600"
             />
           </AnimatedSection>

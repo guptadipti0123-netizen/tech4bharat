@@ -25,11 +25,12 @@ export default function PartnersHero() {
 
       <Container className="relative">
         <AnimatedSection className="max-w-2xl">
-          <h1 className="text-[1.7rem] font-semibold leading-[1.1] tracking-[-0.01em] text-white sm:text-[2.15rem] lg:text-[2.75rem]">
-            Partners
+          <h1 className="text-[1.6rem] font-semibold leading-[1.1] tracking-[-0.01em] text-white sm:text-[2rem] lg:text-[2.25rem]">
+            Partners &amp; Collaborators
           </h1>
           <p className="mt-2 max-w-xl text-[14px] leading-6 text-white/80 sm:text-[15px]">
-            Trusted by institutions across Bharat.
+            Building a network of academic, government, industry, and NGO partners from
+            August 2026.
           </p>
         </AnimatedSection>
       </Container>

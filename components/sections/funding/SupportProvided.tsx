@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+﻿import { Check } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -12,7 +12,7 @@ const support = [
   "Networking",
 ];
 
-/** Support Provided — small checkmark chips instead of cards, the most compact treatment
+/** Support Provided â€” small checkmark chips instead of cards, the most compact treatment
  *  on the page. */
 export default function SupportProvided() {
   return (
@@ -22,7 +22,7 @@ export default function SupportProvided() {
           <SectionTitle
             title="Support Provided"
             description="What founders get alongside every funding path."
-            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
+            titleClassName="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
           />
         </AnimatedSection>
 

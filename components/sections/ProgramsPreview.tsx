@@ -11,6 +11,7 @@ interface HomeProgram {
   description: string;
   image: string;
   href: string;
+  linkLabel: string;
 }
 
 const homePrograms: HomeProgram[] = [
@@ -19,73 +20,66 @@ const homePrograms: HomeProgram[] = [
     description: "The startups Tech4Bharat has backed and incubated.",
     image: "/images/programs/incubation.jpg",
     href: "/portfolio",
+    linkLabel: "Discover the portfolio",
   },
   {
     title: "Startup Bootcamp",
     description: "A one-day intensive program for early-stage founders.",
     image: "/images/gallery/hackathons-1.jpg",
     href: "/startup-bootcamp",
+    linkLabel: "Explore the bootcamp",
   },
 ];
 
+/** How founders work with us — two uniform program cards (identical image height, padding,
+ *  border, radius, and typography), held inside a soft panel to match the rest of the Home
+ *  page's visual rhythm. */
 export default function ProgramsPreview() {
   return (
-    <section id="programs" className="bg-white py-14 sm:py-16 lg:py-24">
+    <section id="programs" className="bg-white py-10 sm:py-14 lg:py-20">
       <Container>
-        <AnimatedSection>
-          <HomeSectionHeading title="How founders work with us" />
-        </AnimatedSection>
-
-        <div className="mt-8 grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:gap-5">
-          <AnimatedSection delay={0.08}>
-            <Link
-              href={homePrograms[0].href}
-              className="group flex flex-col overflow-hidden rounded-[30px] border border-slate-200/80 bg-[linear-gradient(135deg,#f8fcf9_0%,#f1f7f2_100%)] shadow-[0_12px_30px_rgba(22,58,58,0.05)] transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="relative h-56 overflow-hidden sm:h-64">
-                <Image src={homePrograms[0].image} alt={homePrograms[0].title} fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-contain transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <div className="flex flex-col p-6 sm:p-7">
-                <h3 className="text-[1.15rem] font-semibold text-ink-900 sm:text-[1.25rem]">{homePrograms[0].title}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-600">{homePrograms[0].description}</p>
-                <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-semibold text-[#1F4E3D]">
-                  Discover the portfolio <ArrowRight size={16} />
-                </div>
-              </div>
-            </Link>
+        <div className="rounded-[36px] bg-[linear-gradient(160deg,#F5FAFE_0%,#F5FAFE_100%)] p-4 sm:p-6 lg:p-8">
+          <AnimatedSection>
+            <HomeSectionHeading title="How founders work with us" />
           </AnimatedSection>
 
-          <div className="flex flex-col gap-4">
-            <AnimatedSection delay={0.12}>
-              <Link
-                href={homePrograms[1].href}
-                className="group flex items-center gap-4 rounded-[24px] border border-slate-200/80 bg-[linear-gradient(135deg,#fcfdfc_0%,#f7fbf8_100%)] p-4 shadow-[0_10px_26px_rgba(22,58,58,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#1F4E3D]/25"
-              >
-                <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-[18px] sm:h-20 sm:w-20">
-                  <Image src={homePrograms[1].image} alt={homePrograms[1].title} fill sizes="80px" className="object-contain" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-[1rem] font-semibold text-ink-900 sm:text-lg">{homePrograms[1].title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">{homePrograms[1].description}</p>
-                </div>
-                <ArrowRight size={18} className="shrink-0 text-[#1F4E3D] transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.16}>
-              <div className="rounded-[24px] border border-slate-200/80 bg-[linear-gradient(135deg,#fffdf8_0%,#fff7e7_100%)] p-5 shadow-[0_10px_24px_rgba(22,58,58,0.04)] sm:p-6">
-                <p className="text-sm leading-7 text-slate-600">
-                  Practical support from mentors and operators, access to capital pathways, and a national network that compounds over time.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <Button href="/programs" variant="outline" size="sm" className="w-fit">
-                View All Programs <ArrowRight size={14} />
-              </Button>
-            </AnimatedSection>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5">
+            {homePrograms.map((program, i) => (
+              <AnimatedSection key={program.title} delay={0.08 + i * 0.04}>
+                <Link
+                  href={program.href}
+                  className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-white bg-white shadow-[0_8px_24px_rgba(6,26,44,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(6,26,44,0.12)]"
+                >
+                  <div className="relative h-44 shrink-0 overflow-hidden bg-[linear-gradient(135deg,#F5FAFE_0%,#F5FAFE_100%)] sm:h-52">
+                    <Image
+                      src={program.image}
+                      alt={program.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <h3 className="text-[17px] font-semibold text-ink-900 sm:text-[18px]">{program.title}</h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-slate-600">{program.description}</p>
+                    <div className="mt-auto flex items-center gap-2 pt-4 text-[13px] font-semibold text-brand-500">
+                      {program.linkLabel} <ArrowRight size={15} />
+                    </div>
+                  </div>
+                </Link>
+              </AnimatedSection>
+            ))}
           </div>
+
+          <AnimatedSection delay={0.18} className="mt-5 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-xl text-[14px] leading-relaxed text-slate-600">
+              Practical support from mentors and operators, access to capital pathways, and a
+              national network that compounds over time.
+            </p>
+            <Button href="/programs" variant="outline" size="sm" className="w-fit shrink-0">
+              View All Programs <ArrowRight size={14} />
+            </Button>
+          </AnimatedSection>
         </div>
       </Container>
     </section>

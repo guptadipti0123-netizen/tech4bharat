@@ -11,6 +11,8 @@ interface MentorCardProps {
   linkedinUrl?: string;
 }
 
+/** Compact profile card — photo sits beside the name/role/institution block instead of
+ *  above it, so identity reads in one glance rather than requiring a scan down the card. */
 export default function MentorCard({
   photo,
   name,
@@ -21,54 +23,35 @@ export default function MentorCard({
   linkedinUrl,
 }: MentorCardProps) {
   return (
-    <div
-      style={
-        {
-          background: "linear-gradient(135deg, #F4FBF8 0%, #ECF8F3 100%)",
-          borderColor: "#D6ECE2",
-          boxShadow: "0 10px 30px rgba(31,78,61,0.08)",
-          "--hover-border": "#A8D5C2",
-          "--shadow-hover": "0 20px 45px rgba(31,78,61,0.16)",
-        } as React.CSSProperties
-      }
-      className="group flex flex-col items-center rounded-2xl border p-4 text-center transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-(--shadow-hover) sm:rounded-[20px] sm:p-6"
-    >
-      <div
-        className="relative h-18 w-18 shrink-0 overflow-hidden rounded-full border-4 border-white sm:h-26 sm:w-26"
-        style={{ boxShadow: "0 0 24px rgba(31,78,61,0.18), 0 4px 14px rgba(0,0,0,0.08)" }}
-      >
-        <Image
-          src={photo}
-          alt={name}
-          fill
-          sizes="104px"
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-        />
+    <div className="flex flex-col gap-3 rounded-2xl border border-brand-500/15 bg-white p-4 shadow-[0_4px_14px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-5">
+      <div className="flex items-center gap-3">
+        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-white shadow-sm">
+          <Image src={photo} alt={name} fill sizes="56px" className="object-cover object-top" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <h3 className="truncate text-[15px] font-bold leading-tight text-ink-900">{name}</h3>
+          <p className="mt-0.5 truncate text-[12.5px] text-slate-500">
+            {designation} · {institution}
+          </p>
+        </div>
+        {linkedinUrl && (
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${name} on LinkedIn`}
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-200 hover:bg-brand-600 hover:text-white"
+          >
+            <LinkedinIcon className="h-3.5 w-3.5" />
+          </a>
+        )}
       </div>
-      <h3 className="mt-3 text-[17px] font-bold leading-tight text-[#163B2D] sm:mt-5 sm:text-[21px]">{name}</h3>
-      <p className="mt-1 text-xs font-medium text-brand-700 sm:text-sm">{designation}</p>
-      <p className="text-[11px] text-slate-500 sm:text-xs">{institution}</p>
 
-      <span
-        className="mt-2.5 inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold text-white shadow-[0_4px_12px_rgba(31,78,61,0.25)] sm:mt-4 sm:px-3.5 sm:py-1.5 sm:text-xs"
-        style={{ background: "linear-gradient(135deg, #2E8B57 0%, #1F5E4B 100%)" }}
-      >
+      <span className="inline-flex w-fit items-center rounded-full bg-accent-50 px-2.5 py-1 text-[11px] font-semibold text-accent-700">
         {expertise}
       </span>
 
-      <p className="mx-auto mt-2.5 line-clamp-3 max-w-65 text-[13px] leading-relaxed text-slate-600 sm:mt-4 sm:text-sm sm:leading-[1.7]">{bio}</p>
-
-      {linkedinUrl && (
-        <a
-          href={linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${name} on LinkedIn`}
-          className="mt-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 text-white transition-all duration-300 hover:scale-110 hover:bg-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 sm:mt-5 sm:h-9 sm:w-9"
-        >
-          <LinkedinIcon className="h-4 w-4" />
-        </a>
-      )}
+      <p className="line-clamp-2 text-[13px] leading-relaxed text-slate-600">{bio}</p>
     </div>
   );
 }

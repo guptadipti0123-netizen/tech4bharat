@@ -100,10 +100,10 @@ export default function BootcampHighlights() {
       <Container>
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]">
+            <h2 className="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]">
               Bootcamp Highlights
             </h2>
-            <p className="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]">
+            <p className="mx-auto mt-3 max-w-175 text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
               Everything packed into one intensive day—from founder learning and investor
               interactions to mentorship and startup networking.
             </p>
@@ -111,12 +111,12 @@ export default function BootcampHighlights() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="mt-9">
-          <div className="rounded-4xl border border-brand-100 bg-white p-4 shadow-[0_20px_60px_rgba(22,58,58,0.1)] sm:p-6">
+          <div className="rounded-4xl border border-brand-100 bg-white p-4 shadow-[0_20px_60px_rgba(6,26,44,0.1)] sm:p-6">
             <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-1 sm:gap-5">
               {highlightPhotos.map((photo) => (
                 <div
                   key={photo.src}
-                  className={`group relative h-72 shrink-0 snap-start overflow-hidden rounded-[20px] transition-shadow duration-300 hover:shadow-[0_18px_40px_rgba(22,58,58,0.22)] sm:h-80 ${photo.width}`}
+                  className={`group relative h-72 shrink-0 snap-start overflow-hidden rounded-[20px] transition-shadow duration-300 hover:shadow-[0_18px_40px_rgba(6,26,44,0.22)] sm:h-80 ${photo.width}`}
                 >
                   <Image
                     src={photo.src}
@@ -127,7 +127,7 @@ export default function BootcampHighlights() {
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 flex items-end bg-linear-to-t from-black/70 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <span className="p-4 text-[15px] font-semibold text-white">{photo.group}</span>
+                    <span className="p-4 text-[13px] font-semibold text-white">{photo.group}</span>
                   </div>
                 </div>
               ))}
@@ -136,7 +136,7 @@ export default function BootcampHighlights() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-lg leading-relaxed text-slate-600">
+          <p className="mx-auto mt-8 max-w-2xl text-center text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
             A glimpse into the Startup Bootcamp experience featuring founder sessions, expert
             mentoring, investor interactions, networking opportunities and collaborative
             learning.

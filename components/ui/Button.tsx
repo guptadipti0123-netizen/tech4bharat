@@ -35,18 +35,18 @@ const baseStyles =
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#1F4E3D] text-white shadow-lg shadow-[#1F4E3D]/15 hover:bg-[#163B2D] hover:shadow-xl hover:shadow-[#1F4E3D]/20",
+    "bg-[#155E9A] text-white shadow-lg shadow-[#155E9A]/15 hover:bg-[#0B2A4A] hover:shadow-xl hover:shadow-[#155E9A]/20",
   secondary:
-    "bg-[#D4A017] text-ink-900 shadow-lg shadow-[#D4A017]/20 hover:bg-[#b88310] hover:shadow-xl hover:shadow-[#D4A017]/25",
+    "bg-[#2F80ED] text-white shadow-lg shadow-[#2F80ED]/20 hover:bg-[#1565AE] hover:shadow-xl hover:shadow-[#2F80ED]/25",
   outline:
-    "border-2 border-[#1F4E3D] bg-white text-[#1F4E3D] hover:border-[#163B2D] hover:bg-[#1F4E3D] hover:text-white hover:shadow-lg hover:shadow-[#1F4E3D]/15",
-  ghost: "text-[#1F4E3D] hover:bg-brand-50",
+    "border-2 border-[#155E9A] bg-white text-[#155E9A] hover:border-[#0B2A4A] hover:bg-[#155E9A] hover:text-white hover:shadow-lg hover:shadow-[#155E9A]/15",
+  ghost: "text-[#155E9A] hover:bg-brand-50",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-3.5 py-2 text-[13px] sm:px-4 sm:py-2 sm:text-sm",
-  md: "px-4.5 py-2.25 text-sm sm:px-6 sm:py-3 sm:text-base",
-  lg: "px-5.5 py-2.75 text-sm sm:px-8 sm:py-4 sm:text-lg",
+  sm: "px-3.5 py-2 text-[13px] sm:px-4 sm:py-2 sm:text-[13px]",
+  md: "px-4.5 py-2.25 text-[13px] sm:px-6 sm:py-3 sm:text-[14px]",
+  lg: "px-5.5 py-2.75 text-[13px] sm:px-8 sm:py-4 sm:text-[14px]",
 };
 
 export default function Button({

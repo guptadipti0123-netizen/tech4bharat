@@ -28,10 +28,10 @@ export default function RecentEventSpotlight() {
       <Container className="relative">
         <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <h1 className="text-[28px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[38px] lg:text-[44px]">
+            <h1 className="text-[26px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
               Digital &amp; Tech Policy Workshop
             </h1>
-            <p className="mt-3 max-w-lg text-[15px] font-medium leading-relaxed text-[#5F6B68] sm:text-[18px]">
+            <p className="mt-3 max-w-lg text-[15px] font-medium leading-relaxed text-[#526777] sm:text-[18px]">
               Technology, Governance &amp; Strategic Decision-Making.
             </p>
 

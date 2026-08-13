@@ -109,12 +109,12 @@ export default function Navbar() {
     <>
       <header
         onMouseLeave={closeWithDelay}
-        className="glass-surface fixed inset-x-0 top-0 z-50 rounded-b-3xl shadow-[0_8px_30px_rgba(22,58,58,0.08)]"
+        className="glass-surface fixed inset-x-0 top-0 z-50 rounded-b-3xl shadow-[0_8px_30px_rgba(6,26,44,0.08)]"
       >
         <Container className="flex h-16 items-center justify-between sm:h-17.5">
           <Link href="/" className="group flex min-w-0 shrink items-center gap-2.5">
             <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="h-9 w-9 rounded-xl sm:h-10 sm:w-10" />
-            <span className="font-heading text-base font-semibold leading-none text-ink-900 sm:text-xl">
+            <span className="font-heading text-[15px] font-semibold leading-none text-ink-900 sm:text-lg">
               Tech<span className="text-brand-500">4</span>Bharat
             </span>
           </Link>
@@ -176,7 +176,7 @@ export default function Navbar() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -6, scale: 0.98 }}
                           transition={{ duration: 0.2, ease: "easeOut" }}
-                          className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-xl border border-slate-100 bg-white py-3 shadow-[0_20px_50px_rgba(22,58,58,0.18)]"
+                          className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-xl border border-slate-100 bg-white py-3 shadow-[0_20px_50px_rgba(6,26,44,0.18)]"
                         >
                           {link.children.map((child) => (
                             <Link
@@ -227,7 +227,7 @@ export default function Navbar() {
                   const toggleMobileSubmenu = () =>
                     setMobileExpanded((current) => (current === link.label ? null : link.label));
                   const labelClassName = cn(
-                    "flex-1 rounded-lg px-3 py-3 font-heading text-base font-medium",
+                    "flex-1 rounded-lg px-3 py-3 font-heading text-sm font-medium",
                     isActive(link)
                       ? "bg-brand-50 text-brand-700"
                       : "text-slate-700 hover:bg-brand-50 hover:text-brand-700"

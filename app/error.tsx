@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
 import { AlertTriangle, Home, RotateCcw } from "lucide-react";
@@ -24,7 +24,7 @@ export default function Error({
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-100 text-accent-600">
           <AlertTriangle size={32} />
         </div>
-        <h1 className="mt-6 text-[32px] font-extrabold text-ink-900 sm:text-[44px]">Something went wrong</h1>
+        <h1 className="mt-6 text-[26px] font-extrabold text-ink-900 sm:text-[34px]">Something went wrong</h1>
         <p className="mx-auto mt-4 max-w-md text-slate-600">
           An unexpected error occurred while loading this page. Please try again, or head back
           to the homepage.

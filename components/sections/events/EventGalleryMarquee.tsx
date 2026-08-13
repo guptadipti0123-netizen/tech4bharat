@@ -50,10 +50,10 @@ export default function EventGalleryMarquee() {
   return (
     <section className="relative overflow-hidden bg-ink-900 py-8 sm:py-12">
       <Container>
-        <h2 className="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-white sm:text-[30px] lg:text-[34px]">
+        <h2 className="text-[22px] font-bold leading-[1.1] tracking-[-0.02em] text-white sm:text-[26px] lg:text-[30px]">
           Event Gallery
         </h2>
-        <p className="mt-3 max-w-xl text-[18px] font-medium leading-relaxed text-white/70">
+        <p className="mt-3 max-w-xl text-[14px] font-medium leading-relaxed text-white/70 sm:text-[15px]">
           Moments from Tech4Bharat&apos;s programs and workshops.
         </p>
 

@@ -1,94 +1,68 @@
-import { ArrowRight, BrainCircuit, CloudSun, HeartPulse, Sprout, type LucideIcon } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import HomeSectionHeading from "@/components/sections/HomeSectionHeading";
+import { getDomainImage } from "@/lib/images";
 
-interface Domain {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  accent: "brand" | "gold";
-}
-
-const domains: Domain[] = [
-  {
-    icon: BrainCircuit,
-    title: "AI & Data Science",
-    description: "Backing founders building applied AI with real-world impact.",
-    accent: "brand",
-  },
-  {
-    icon: HeartPulse,
-    title: "Healthcare",
-    description: "Expanding access to quality, affordable care across India.",
-    accent: "gold",
-  },
-  {
-    icon: Sprout,
-    title: "Agriculture",
-    description: "Strengthening farmer incomes and rural supply chains.",
-    accent: "brand",
-  },
-  {
-    icon: CloudSun,
-    title: "ClimateTech",
-    description: "Building climate and environmental resilience.",
-    accent: "gold",
-  },
+// The exact 13 social impact domains named in the Tech4Bharat MoM — no additions,
+// no substitutions, no invented descriptions.
+const domains = [
+  "AgriTech",
+  "Water & Sanitation",
+  "MedTech",
+  "HealthTech",
+  "AI/ML",
+  "ClimateTech",
+  "Clean Energy",
+  "Waste Management",
+  "Education Technology",
+  "Rural Development",
+  "Women Empowerment",
+  "Livelihood Generation",
+  "Other Social Impact Innovations",
 ];
 
-const accentStyles = {
-  brand: { icon: "#1F4E3D", iconBg: "#EAF6EE" },
-  gold: { icon: "#D4A017", iconBg: "#FFF7E8" },
-};
-
+/** Social Impact Domains — a uniform photo-tile grid (every tile the same size, border,
+ *  radius, and label treatment) held inside a soft panel, so the section reads as one
+ *  distinct visual block rather than a flat, edge-to-edge grid. */
 export default function FocusAreas() {
   return (
-    <section className="bg-[linear-gradient(180deg,#f9fcfa_0%,#f7fbf8_100%)] py-14 sm:py-16 lg:py-24">
+    <section className="bg-white py-10 sm:py-14 lg:py-20">
       <Container>
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <HomeSectionHeading
-            title="Domains we're doubling down on"
-            description="We back founders building in sectors critical to India's growth."
-            align="center"
-          />
-        </AnimatedSection>
+        <div className="rounded-[36px] bg-[linear-gradient(160deg,#F5FAFE_0%,#F5FAFE_100%)] p-4 sm:p-6 lg:p-8">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <HomeSectionHeading title="Social Impact Domains" align="center" />
+          </AnimatedSection>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {domains.map((domain, i) => {
-            const Icon = domain.icon;
-            const { icon, iconBg } = accentStyles[domain.accent];
-            const cardClasses =
-              domain.accent === "brand"
-                ? "border-[#1F4E3D]/30 bg-[#F5FAF7] shadow-[0_8px_18px_rgba(31,78,61,0.05)]"
-                : "border-[#D4A017]/35 bg-[#FCF7EA] shadow-[0_8px_18px_rgba(212,160,23,0.05)]";
-            return (
-              <AnimatedSection key={domain.title} delay={i * 0.05}>
-                <div className={`flex flex-col rounded-[24px] border p-5 sm:p-6 ${cardClasses}`}>
-                  <div className="flex items-center gap-3">
-                    <span
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl sm:h-13 sm:w-13"
-                      style={{ backgroundColor: iconBg, color: icon }}
-                    >
-                      <Icon size={22} />
-                    </span>
-                    <h3 className="min-w-0 text-[1rem] font-semibold leading-tight text-ink-900 sm:text-[1.05rem]">
-                      {domain.title}
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{domain.description}</p>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-3.5 lg:grid-cols-4 xl:grid-cols-5">
+            {domains.map((domain, i) => (
+              <AnimatedSection key={domain} delay={i * 0.03}>
+                <div className="group relative aspect-4/3 overflow-hidden rounded-2xl border border-brand-500/15 shadow-[0_2px_10px_rgba(21,94,154,0.05)]">
+                  <Image
+                    src={getDomainImage(domain)}
+                    alt={domain}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-900/80 via-brand-900/10 to-transparent" />
+                  <span className="absolute inset-x-2 bottom-2 text-[12px] font-semibold leading-tight text-white sm:text-[13px]">
+                    {domain}
+                  </span>
                 </div>
               </AnimatedSection>
-            );
-          })}
-        </div>
+            ))}
+          </div>
 
-        <AnimatedSection delay={0.22} className="mt-8 text-center">
-          <Button href="/about" variant="outline">
-            View All <ArrowRight size={16} />
-          </Button>
-        </AnimatedSection>
+          <AnimatedSection delay={0.2} className="mt-6 text-center">
+            <Button href="/about" variant="outline">
+              Learn More <ArrowRight size={16} />
+            </Button>
+          </AnimatedSection>
+        </div>
       </Container>
     </section>
   );

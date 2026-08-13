@@ -40,7 +40,7 @@ export default function Accordion({ items, className }: AccordionProps) {
                 transition={{ duration: 0.25, ease: "easeInOut" }}
                 className={cn(
                   "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-200 sm:h-9 sm:w-9",
-                  isOpen ? "bg-[#1F5E4B] text-white" : "bg-[#E8F6F1] text-[#1F5E4B]"
+                  isOpen ? "bg-[#155E9A] text-white" : "bg-[#F5FAFE] text-[#155E9A]"
                 )}
               >
                 {isOpen ? <Minus size={15} /> : <Plus size={15} />}

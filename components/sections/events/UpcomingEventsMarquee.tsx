@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -11,7 +11,7 @@ interface UpcomingEventsMarqueeProps {
   events: EventItem[];
 }
 
-/** Premium horizontal marquee — a continuously auto-scrolling, infinitely looping strip of
+/** Premium horizontal marquee â€” a continuously auto-scrolling, infinitely looping strip of
  *  large landscape event cards. See `useDragMarquee` for the scroll mechanics. */
 export default function UpcomingEventsMarquee({ events }: UpcomingEventsMarqueeProps) {
   const { trackProps } = useDragMarquee({ itemCount: events.length });
@@ -27,8 +27,8 @@ export default function UpcomingEventsMarquee({ events }: UpcomingEventsMarqueeP
             title="Upcoming Events"
             align="left"
             description="Discover workshops, bootcamps, networking sessions and innovation programs happening across India."
-            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
-            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
+            titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
+            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#526777]"
           />
         </AnimatedSection>
       </Container>

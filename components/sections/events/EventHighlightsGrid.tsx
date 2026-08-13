@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -11,7 +11,7 @@ interface HighlightPhoto {
   badge: string;
 }
 
-// Every card in this uniform grid is a real photo — the "Visit" and "Networking" entries
+// Every card in this uniform grid is a real photo â€” the "Visit" and "Networking" entries
 // previously had no photo of their own (text-only cards), so they now use real, unused
 // photos from the same Digital & Tech Policy Workshop shoot rather than staying text-only,
 // which would have broken the uniform image-grid this redesign calls for.
@@ -66,9 +66,9 @@ const badgeTone: Record<string, string> = {
   Networking: "bg-accent-700",
 };
 
-/** Event Highlights — a uniform, premium photo grid. Every card is the same size (280px
+/** Event Highlights â€” a uniform, premium photo grid. Every card is the same size (280px
  *  tall), same border/radius/shadow treatment, with only a bottom-left category badge
- *  distinguishing them — 4 columns on desktop (two full rows of four), 2 on tablet, 1 on
+ *  distinguishing them â€” 4 columns on desktop (two full rows of four), 2 on tablet, 1 on
  *  mobile. */
 export default function EventHighlightsGrid() {
   return (
@@ -80,8 +80,8 @@ export default function EventHighlightsGrid() {
           <SectionTitle
             title="Event Highlights"
             description="Key moments from the program."
-            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
-            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#5F6B68]"
+            titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
+            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#526777]"
           />
         </AnimatedSection>
 
@@ -89,7 +89,7 @@ export default function EventHighlightsGrid() {
           {highlightPhotos.map((photo) => (
             <div
               key={photo.src}
-              className="group relative h-60 w-full overflow-hidden rounded-2xl border border-emerald-100 shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-70"
+              className="group relative h-60 w-full overflow-hidden rounded-2xl border border-blue-100 shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-70"
             >
               <Image
                 src={photo.src}

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -8,8 +8,8 @@ interface MomentPhoto {
   alt: string;
 }
 
-// Real photos from Tech4Bharat's earlier Digital & Tech Policy Workshop program — including
-// the cohort's field visit to partner institution C-DAC — genuine collaboration moments
+// Real photos from Tech4Bharat's earlier Digital & Tech Policy Workshop program â€” including
+// the cohort's field visit to partner institution C-DAC â€” genuine collaboration moments
 // rather than generic stock "networking" photography.
 const photos: MomentPhoto[] = [
   {
@@ -22,7 +22,7 @@ const photos: MomentPhoto[] = [
   },
 ];
 
-/** A two-photo collaboration strip — real moments from partner-institution programming,
+/** A two-photo collaboration strip â€” real moments from partner-institution programming,
  *  standing in for generic "networking" stock photography. */
 export default function PartnersLegacyMoments() {
   return (
@@ -33,8 +33,8 @@ export default function PartnersLegacyMoments() {
             title="Real moments from the field"
             description="Real moments from workshops, field visits, and collaborative innovation."
             className="max-w-187.5"
-            titleClassName="text-balance text-[24px] font-bold leading-[1.1] tracking-[-0.01em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
-            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[17px] font-medium text-[#667085] line-clamp-2 text-balance"
+            titleClassName="text-balance text-[22px] font-bold leading-[1.1] tracking-[-0.01em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
+            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[17px] font-medium text-[#526777] line-clamp-2 text-balance"
           />
         </AnimatedSection>
 
@@ -42,7 +42,7 @@ export default function PartnersLegacyMoments() {
           {photos.map((photo) => (
             <div
               key={photo.src}
-              className="group relative aspect-16/10 overflow-hidden rounded-3xl border border-white shadow-[0_8px_24px_rgba(31,78,61,0.1)]"
+              className="group relative aspect-16/10 overflow-hidden rounded-3xl border border-white shadow-[0_8px_24px_rgba(21,94,154,0.1)]"
             >
               <Image
                 src={photo.src}

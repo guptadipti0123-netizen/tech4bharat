@@ -15,7 +15,7 @@ const filterOptions = ["All", ...categories];
 /** Large lead story — full-width horizontal split, the magazine cover treatment. */
 function FeaturedBlogCard({ post }: { post: BlogPost }) {
   return (
-    <div className="group grid overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(22,58,58,0.06)] transition-all duration-300 hover:shadow-[0_20px_48px_rgba(22,58,58,0.14)] sm:grid-cols-5">
+    <div className="group grid overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(6,26,44,0.06)] transition-all duration-300 hover:shadow-[0_20px_48px_rgba(6,26,44,0.14)] sm:grid-cols-5">
       <div className="relative h-64 overflow-hidden sm:col-span-3 sm:h-full sm:min-h-90">
         <Image
           src={post.image}
@@ -32,8 +32,8 @@ function FeaturedBlogCard({ post }: { post: BlogPost }) {
       </div>
       <div className="flex flex-col justify-center p-8 sm:col-span-2 sm:p-10">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Featured</span>
-        <h3 className="mt-3 text-[19px] font-extrabold leading-tight text-ink-900 sm:text-[22px]">{post.title}</h3>
-        <p className="mt-4 leading-relaxed text-slate-600">{post.excerpt}</p>
+        <h3 className="mt-3 text-[18px] font-extrabold leading-tight text-ink-900 sm:text-[21px]">{post.title}</h3>
+        <p className="mt-4 text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">{post.excerpt}</p>
         <div className="mt-6 flex items-center gap-4 border-t border-slate-100 pt-5 text-xs font-medium text-slate-600">
           <span className="flex items-center gap-1.5">
             <Calendar size={13} /> {post.date}
@@ -53,7 +53,7 @@ function FeaturedBlogCard({ post }: { post: BlogPost }) {
 /** Mid-weight card — standard image-top magazine tile, two per row. */
 function MediumBlogCard({ post }: { post: BlogPost }) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(22,58,58,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(22,58,58,0.12)]">
+    <div className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(6,26,44,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(6,26,44,0.12)]">
       <div className="relative h-52 w-full overflow-hidden">
         <Image
           src={post.image}
@@ -85,7 +85,7 @@ function MediumBlogCard({ post }: { post: BlogPost }) {
 /** Compact stacked row — small thumbnail + text, for the long tail of the list. */
 function SmallStackedBlogCard({ post }: { post: BlogPost }) {
   return (
-    <div className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_2px_12px_rgba(22,58,58,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(22,58,58,0.1)] sm:gap-5 sm:p-4">
+    <div className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_2px_12px_rgba(6,26,44,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(6,26,44,0.1)] sm:gap-5 sm:p-4">
       <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-20">
         <Image
           src={post.image}

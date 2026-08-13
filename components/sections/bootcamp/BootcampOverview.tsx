@@ -1,14 +1,14 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Clock, ListChecks, Mic2, Sprout, Target, TrendingUp, UserCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Blob from "@/components/ui/Blob";
 import DotGrid from "@/components/ui/DotGrid";
 
-// The same real intro copy the section always had — "Tech4Bharat is organizing this
+// The same real intro copy the section always had â€” "Tech4Bharat is organizing this
 // One-Day Startup Bootcamp to support early-stage startups and social impact entrepreneurs
-// through expert-led sessions, mentoring, networking, and investor readiness — all in a
-// single, focused day" — just broken into scannable parts instead of one paragraph.
+// through expert-led sessions, mentoring, networking, and investor readiness â€” all in a
+// single, focused day" â€” just broken into scannable parts instead of one paragraph.
 const infoBlocks = [
   {
     icon: Target,
@@ -47,7 +47,7 @@ export default function BootcampOverview() {
       <Container className="relative">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]">
+            <h2 className="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]">
               Bootcamp Overview
             </h2>
           </div>
@@ -56,7 +56,7 @@ export default function BootcampOverview() {
         <AnimatedSection delay={0.1} className="mt-9">
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
             <div className="grid gap-8 lg:grid-cols-5 lg:gap-10">
-              <div className="group relative aspect-4/3 overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(22,58,58,0.1)] lg:col-span-2">
+              <div className="group relative aspect-4/3 overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(6,26,44,0.1)] lg:col-span-2">
                 <Image
                   src="/images/gallery/gallery-7.jpg"
                   alt="Founders working through a plan together with a mentor"

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -13,7 +13,7 @@ interface ExpertCategory {
 }
 
 // No specific speaker lineup has been announced yet, so these stay category cards rather
-// than named individuals — each paired with a real photo of that kind of moment from the
+// than named individuals â€” each paired with a real photo of that kind of moment from the
 // Tech4Bharat gallery, not a stock placeholder or a fabricated name.
 const categories: ExpertCategory[] = [
   {
@@ -71,7 +71,7 @@ const themeClasses: Record<string, { gradient: string; badge: string; border: st
   },
 };
 
-/** Who You'll Meet — five category cards, each with its own accent color and a real photo
+/** Who You'll Meet â€” five category cards, each with its own accent color and a real photo
  *  standing in for that kind of person (no lineup announced yet, so no fabricated names). */
 export default function ExpertsSpeakers() {
   return (
@@ -79,12 +79,12 @@ export default function ExpertsSpeakers() {
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-30"
-        style={{ background: "linear-gradient(180deg, #F3FCF9 0%, #F8FCFF 45%, #FFF9F2 100%)" }}
+        style={{ background: "linear-gradient(180deg, #F5FAFE 0%, #F5FAFE 45%, #F5FAFE 100%)" }}
       />
       <div
         aria-hidden="true"
         className="absolute -left-20 -top-20 -z-20 h-100 w-100 rounded-full opacity-[0.18] blur-[200px]"
-        style={{ backgroundColor: "#DDF7EC" }}
+        style={{ backgroundColor: "#EAF4FB" }}
       />
       <div
         aria-hidden="true"
@@ -94,13 +94,13 @@ export default function ExpertsSpeakers() {
       <div
         aria-hidden="true"
         className="absolute -bottom-24 left-1/2 -z-20 h-100 w-100 -translate-x-1/2 rounded-full opacity-15 blur-[200px]"
-        style={{ backgroundColor: "#FFF4DD" }}
+        style={{ backgroundColor: "#EAF4FB" }}
       />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 opacity-5"
         style={{
-          backgroundImage: "radial-gradient(circle, #123C33 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, #0B2A4A 1px, transparent 1px)",
           backgroundSize: "18px 18px",
         }}
       />
@@ -108,7 +108,7 @@ export default function ExpertsSpeakers() {
       <Container className="relative px-10 sm:px-10 lg:px-10">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]">
+            <h2 className="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]">
               Experts &amp; Speakers
             </h2>
             <p className="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]">
@@ -123,7 +123,7 @@ export default function ExpertsSpeakers() {
             return (
               <AnimatedSection key={category.title} delay={i * 0.06} animation="scale">
                 <div
-                  className={`group relative flex flex-col items-center overflow-hidden rounded-3xl border-[1.5px] border-[rgba(46,125,94,.3)] bg-slate-50 p-5 text-center shadow-[0_12px_30px_rgba(0,0,0,.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,58,58,0.14)] ${theme.border}`}
+                  className={`group relative flex flex-col items-center overflow-hidden rounded-3xl border-[1.5px] border-[rgba(21,94,154,.3)] bg-slate-50 p-5 text-center shadow-[0_12px_30px_rgba(0,0,0,.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(6,26,44,0.14)] ${theme.border}`}
                 >
                   <span
                     className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${theme.gradient} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}

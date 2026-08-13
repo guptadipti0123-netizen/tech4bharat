@@ -108,7 +108,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
                   onClick={() => openLightbox(i)}
                   aria-label={`View ${photo.alt}`}
                   className={cn(
-                    "group relative mb-3 block w-full overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all duration-300 ease-out hover:z-10 hover:-translate-y-2 hover:shadow-[0_20px_36px_rgba(31,78,61,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F4E3D] focus-visible:ring-offset-2 sm:mb-4",
+                    "group relative mb-3 block w-full overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all duration-300 ease-out hover:z-10 hover:-translate-y-2 hover:shadow-[0_20px_36px_rgba(21,94,154,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#155E9A] focus-visible:ring-offset-2 sm:mb-4",
                     masonryHeight(i)
                   )}
                 >
@@ -120,7 +120,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 flex items-end bg-linear-to-t from-[#1F4E3D]/0 to-transparent p-4 opacity-0 transition-all duration-300 group-hover:from-[#1F4E3D]/70 group-hover:opacity-100">
+                  <div className="absolute inset-0 flex items-end bg-linear-to-t from-[#155E9A]/0 to-transparent p-4 opacity-0 transition-all duration-300 group-hover:from-[#155E9A]/70 group-hover:opacity-100">
                     <span className="flex items-center gap-1.5 text-xs font-semibold text-white">
                       <ZoomIn size={14} /> View
                     </span>
@@ -135,7 +135,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
               <button
                 type="button"
                 onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-2.5 text-sm font-semibold text-[#1F4E3D] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1F4E3D]/30 hover:shadow-md"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-2.5 text-sm font-semibold text-[#155E9A] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#155E9A]/30 hover:shadow-md"
               >
                 Load More <ChevronDown size={16} />
               </button>
@@ -150,7 +150,7 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-100 flex items-center justify-center bg-[#1F4E3D]/90 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-[#155E9A]/90 p-4 backdrop-blur-md"
             onClick={closeLightbox}
             role="dialog"
             aria-modal="true"

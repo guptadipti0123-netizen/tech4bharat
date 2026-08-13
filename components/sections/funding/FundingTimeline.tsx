@@ -1,4 +1,4 @@
-import { ClipboardCheck, Handshake, Search, Send, type LucideIcon } from "lucide-react";
+﻿import { ClipboardCheck, Handshake, Search, Send, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -16,7 +16,7 @@ const steps: Step[] = [
   { icon: Handshake, title: "Connect with Investors" },
 ];
 
-/** How It Works — a compact 4-step horizontal roadmap connected by a single line, trimmed
+/** How It Works â€” a compact 4-step horizontal roadmap connected by a single line, trimmed
  *  down from the previous 5-stage timeline. */
 export default function FundingTimeline() {
   return (
@@ -26,7 +26,7 @@ export default function FundingTimeline() {
           <SectionTitle
             title="How It Works"
             description="From discovery to a connected investor, in four steps."
-            titleClassName="text-[24px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
+            titleClassName="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
           />
         </AnimatedSection>
 

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { BrainCircuit, CloudSun, Droplets, HeartPulse, Sprout, Stethoscope, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -22,26 +22,26 @@ const focusAreas: FocusRow[] = [
 
 // Icon-circle tint alternates row by row: green on odd rows, gold on even.
 const rowTones = [
-  { iconBg: "bg-[#EAF6EE]", iconInk: "text-[#1F4E3D]" },
-  { iconBg: "bg-[#FFF3DD]", iconInk: "text-[#D4A017]" },
+  { iconBg: "bg-[#EAF4FB]", iconInk: "text-[#155E9A]" },
+  { iconBg: "bg-[#EAF4FB]", iconInk: "text-[#2F80ED]" },
 ];
 
 // Card background cycles through four extremely soft tints, repeating every 4 rows.
-const cardBackgrounds = ["bg-[#F3FAF6]", "bg-[#FFF8EC]", "bg-[#F5FBF8]", "bg-[#FFF6E8]"];
+const cardBackgrounds = ["bg-[#F5FAFE]", "bg-[#F5FAFE]", "bg-[#F5FAFE]", "bg-[#EAF4FB]"];
 
-/** Focus Areas — a consulting-report layout: a portrait editorial photo on the left,
+/** Focus Areas â€” a consulting-report layout: a portrait editorial photo on the left,
  *  paired with a vertical stack of six borderless-feeling "focus rows" (icon, title,
  *  one-line description) on the right. No repeated card grid. */
 export default function WhereWeFocus() {
   return (
-    <section className="relative overflow-hidden bg-[#F8FAF9] pb-8 pt-6 sm:pb-12 sm:pt-8">
+    <section className="relative overflow-hidden bg-[#F5FAFE] pb-8 pt-6 sm:pb-12 sm:pt-8">
       <div
         aria-hidden="true"
-        className="absolute -left-16 -top-16 h-64 w-64 rounded-full border border-[#1F4E3D]/10 opacity-10"
+        className="absolute -left-16 -top-16 h-64 w-64 rounded-full border border-[#155E9A]/10 opacity-10"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full border border-[#D4A017]/10 opacity-10"
+        className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full border border-[#2F80ED]/10 opacity-10"
       />
 
       <Container className="relative">
@@ -50,7 +50,7 @@ export default function WhereWeFocus() {
             title="Focus Areas"
             description="The sectors where Tech4Bharat supports innovation, technology, and social impact."
             className="max-w-4xl"
-            titleClassName="text-balance text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-ink-900 lg:text-[34px]"
+            titleClassName="text-balance text-[22px] sm:text-[26px] font-bold leading-tight tracking-tight text-ink-900 lg:text-[30px]"
             descriptionClassName="mx-auto mt-3 max-w-4xl text-balance text-[17px] leading-relaxed text-slate-600 sm:text-[18px]"
           />
         </AnimatedSection>
@@ -59,7 +59,7 @@ export default function WhereWeFocus() {
           <AnimatedSection className="relative mx-auto w-full max-w-xs lg:mx-0 lg:max-w-none">
             <span
               aria-hidden="true"
-              className="absolute inset-0 -z-10 scale-110 rounded-full bg-[#EAF6EE] opacity-60 blur-2xl"
+              className="absolute inset-0 -z-10 scale-110 rounded-full bg-[#EAF4FB] opacity-60 blur-2xl"
             />
             <div className="relative h-105 w-full overflow-hidden rounded-[24px]">
               <Image
@@ -81,7 +81,7 @@ export default function WhereWeFocus() {
                 <AnimatedSection key={area.title} delay={i * 0.05}>
                   <div
                     className={cn(
-                      "group flex min-h-22 items-center gap-4 rounded-[18px] border border-[#1F4E3D]/25 px-5 py-4.5 shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:border-[#1F4E3D] hover:shadow-md",
+                      "group flex min-h-22 items-center gap-4 rounded-[18px] border border-[#155E9A]/25 px-5 py-4.5 shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:border-[#155E9A] hover:shadow-md",
                       cardBg
                     )}
                   >

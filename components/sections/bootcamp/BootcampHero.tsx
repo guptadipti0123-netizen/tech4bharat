@@ -26,10 +26,10 @@ export default function BootcampHero() {
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <h1 className="text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#163B2D] sm:text-[36px] lg:text-[42px]">
+            <h1 className="text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
               One-Day Startup Bootcamp 2026
             </h1>
-            <p className="mt-3 max-w-xl text-lg leading-relaxed text-slate-600">
+            <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-slate-600">
               A one-day intensive startup bootcamp designed to help early-stage founders
               validate ideas, build sustainable businesses, connect with experts, and prepare
               for funding opportunities.
@@ -57,7 +57,7 @@ export default function BootcampHero() {
             <div className="relative mx-auto w-full max-w-xl">
               <div
                 className="pointer-events-none absolute -inset-6 -z-10 rounded-[36px] opacity-70"
-                style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(76,175,141,0.16), transparent 70%)" }}
+                style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(21,94,154,0.16), transparent 70%)" }}
                 aria-hidden="true"
               />
               <div className="relative h-95 w-full animate-float overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-2xl sm:h-115 lg:h-140">

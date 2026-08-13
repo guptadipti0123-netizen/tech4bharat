@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Bot, BrainCircuit, Briefcase, Building2, Calendar, MapPin, Target, Workflow, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -58,7 +58,7 @@ const collagePhotos = [
   { src: "/images/gallery/hackathons-1.jpg", alt: "Founders building during a Tech4Bharat hackathon session" },
 ];
 
-/** A single curated past-event spotlight — a magazine-style split instead of one dominant
+/** A single curated past-event spotlight â€” a magazine-style split instead of one dominant
  *  photo: a uniform 2x2 image collage (45% width) beside the event's content (55% width),
  *  so the agenda and details stay the primary focus. The AI Workshop by BharatGen is the
  *  one past event with rich enough real content (a named agenda's worth of topics) to
@@ -71,7 +71,7 @@ export default function PastEventSpotlight() {
           <SectionTitle
             title="Past Event"
             align="left"
-            titleClassName="text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-[#163B2D] sm:text-[30px] lg:text-[34px]"
+            titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
           />
         </AnimatedSection>
 
@@ -92,8 +92,8 @@ export default function PastEventSpotlight() {
             </div>
 
             <div className="p-6 sm:p-8">
-              <Badge variant="neutral">Workshop • Past</Badge>
-              <h3 className="mt-4 text-2xl font-bold text-ink-900 sm:text-[28px]">AI Workshop by BharatGen</h3>
+              <Badge variant="neutral">Workshop â€¢ Past</Badge>
+              <h3 className="mt-4 text-[19px] font-bold text-ink-900 sm:text-[21px]">AI Workshop by BharatGen</h3>
 
               <div className="mt-5 grid gap-2.5 sm:grid-cols-3">
                 {metaCards.map(({ icon: Icon, label, value }) => (
@@ -109,7 +109,7 @@ export default function PastEventSpotlight() {
               <div className="mt-5 flex items-start gap-2.5 rounded-xl bg-brand-50 p-3">
                 <Target size={16} className="mt-0.5 shrink-0 text-brand-600" />
                 <p className="text-sm text-ink-900">
-                  <span className="font-semibold">Goal:</span> &ldquo;GenAI for Everyone, by Everyone&rdquo; —
+                  <span className="font-semibold">Goal:</span> &ldquo;GenAI for Everyone, by Everyone&rdquo; â€”
                   hands-on generative AI development.
                 </p>
               </div>
@@ -122,11 +122,11 @@ export default function PastEventSpotlight() {
                     <div
                       key={topic.title}
                       className={cn(
-                        "group flex items-start gap-3.5 border-l-2 border-[#1F4E3D] py-4 pl-4 transition-all duration-200 hover:border-l-[3px] hover:bg-[#F7FBF9]",
+                        "group flex items-start gap-3.5 border-l-2 border-[#155E9A] py-4 pl-4 transition-all duration-200 hover:border-l-[3px] hover:bg-[#F5FAFE]",
                         i < agendaTopics.length - 1 && "border-b border-slate-100"
                       )}
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1F4E3D] text-white">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#155E9A] text-white">
                         <Icon size={16} />
                       </span>
                       <div className="min-w-0 flex-1">

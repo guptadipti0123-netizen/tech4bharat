@@ -10,7 +10,7 @@ export default function EventMarqueeCard({ event }: { event: EventItem }) {
   return (
     <Link
       href={`/events/${event.slug}`}
-      className="group relative block aspect-video w-[86vw] shrink-0 overflow-hidden rounded-3xl border border-[#DDEEE5] bg-white shadow-[0_12px_36px_rgba(22,58,58,0.14)] transition-all duration-400 ease-out hover:-translate-y-2 hover:shadow-[0_26px_60px_rgba(22,58,58,0.28)] sm:w-120 lg:w-140"
+      className="group relative block aspect-video w-[86vw] shrink-0 overflow-hidden rounded-3xl border border-[#EAF4FB] bg-white shadow-[0_12px_36px_rgba(6,26,44,0.14)] transition-all duration-400 ease-out hover:-translate-y-2 hover:shadow-[0_26px_60px_rgba(6,26,44,0.28)] sm:w-120 lg:w-140"
     >
       <Image
         src={getEventImage(event.slug)}

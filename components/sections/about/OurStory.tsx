@@ -1,38 +1,94 @@
-import Image from "next/image";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-/** About Tech4Bharat — a compact, fixed-size photo (400x280px on desktop, well within
- *  380-420 x 260-300) beside two short paragraphs. Deliberately not a hero banner: no
- *  full-width image, minimal padding, so the whole section stays around ~400px tall. */
+/** Rounded-corner hexagon outline (six straight edges, each vertex softened by a quadratic
+ *  curve) — the same shape used by the Partners honeycomb, reused here as a flat solid-fill
+ *  tile (no border/shadow per this section's flatter, more minimal style). */
+const HEX_PATH =
+  "M8.66,20 L34.64,5 Q43.3,0 51.96,5 L77.94,20 Q86.6,25 86.6,35 L86.6,65 Q86.6,75 77.94,80 L51.96,95 Q43.3,100 34.64,95 L8.66,80 Q0,75 0,65 L0,35 Q0,25 8.66,20 Z";
+
+const DARK_BLUE = "#0B2A4A";
+const MEDIUM_BLUE = "#1976D2";
+
+const whatWeDo: { name: string; fill: string }[] = [
+  { name: "Healthcare", fill: DARK_BLUE },
+  { name: "Partners", fill: MEDIUM_BLUE },
+  { name: "Agriculture", fill: MEDIUM_BLUE },
+  { name: "FinTech", fill: MEDIUM_BLUE },
+  { name: "Education", fill: MEDIUM_BLUE },
+  { name: "Sustainability", fill: DARK_BLUE },
+];
+
+function Hexagon({ name, fill }: { name: string; fill: string }) {
+  return (
+    <div className="relative aspect-[86.6/100] w-20 shrink-0 sm:w-24 lg:w-27">
+      <svg viewBox="0 0 86.6 100" className="absolute inset-0 h-full w-full">
+        <path d={HEX_PATH} fill={fill} />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center px-2.5 text-center">
+        <span className="text-[11px] font-bold leading-tight text-white sm:text-[13px] lg:text-[14px]">
+          {name}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/** About Tech4Bharat overview — a light mint panel holding a two-column layout: a dark
+ *  "Who We Are" card on the left, and a six-hexagon honeycomb ring ("What We Do") wrapped
+ *  around a center text label on the right. Flat, borderless, shadowless hexagons per this
+ *  section's minimal style (distinct from the bordered Partners honeycomb elsewhere). */
 export default function OurStory() {
   return (
-    <section id="our-story" className="bg-slate-50 py-5 sm:py-6">
+    <section id="about-overview" className="bg-white py-5 sm:py-7">
       <Container>
-        <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:gap-8">
-            <AnimatedSection className="w-full shrink-0 sm:w-100 lg:w-100">
-              <div className="relative h-56 w-full overflow-hidden rounded-[18px] border border-slate-200 sm:h-70">
-                <Image
-                  src="/images/legacy/workshops/day1-i2-intro-to-tech-policy.png"
-                  alt="A Tech4Bharat workshop session"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 400px"
-                  className="object-cover"
-                />
+        <div className="rounded-3xl bg-[#F5FAFE] px-5 py-9 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+          <AnimatedSection className="mx-auto max-w-2xl text-center">
+            <h2 className="text-[24px] font-bold leading-tight tracking-[-0.01em] text-[#0B2A4A] sm:text-[28px] lg:text-[30px]">
+              About Tech4Bharat
+            </h2>
+            <p className="mt-2 text-[13px] leading-relaxed text-[#526777] sm:mt-3 sm:text-[14px] lg:text-[15px]">
+              Empowering India&apos;s youth with cutting-edge technology skills.
+            </p>
+          </AnimatedSection>
+
+          <div className="mt-8 flex flex-col items-center gap-8 sm:mt-10 lg:flex-row lg:items-center lg:justify-center lg:gap-8">
+            <AnimatedSection className="w-full lg:w-[48%]">
+              <div className="rounded-[18px] bg-[#0B2A4A] p-7 sm:p-8">
+                <h3 className="text-[19px] font-bold text-white sm:text-[20px]">Who We Are</h3>
+                <p className="mt-3 text-[14px] leading-[1.6] text-[#EAF4FB]">
+                  Tech4Bharat is a national initiative dedicated to empowering India&apos;s youth
+                  with cutting-edge skills in the rapidly evolving technology landscape.
+                </p>
+                <p className="mt-3 text-[14px] leading-[1.6] text-[#EAF4FB]">
+                  We believe the nation&apos;s progress rests on empowering young minds with the
+                  right knowledge, tools, and opportunities.
+                </p>
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1} className="max-w-130">
-              <p className="text-lg leading-relaxed text-slate-600">
-                Tech4Bharat started at IIT Bombay to close a gap: brilliant ideas were being
-                built across India, but the support to turn them into companies was
-                concentrated in a handful of cities.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                We back founders wherever they are with mentorship, capital access, and a
-                community that goes the distance.
-              </p>
+            <AnimatedSection delay={0.1} className="w-full lg:w-[48%]">
+              <div className="mx-auto flex w-fit flex-col items-center">
+                <Hexagon name={whatWeDo[0].name} fill={whatWeDo[0].fill} />
+                <div className="-mt-3 flex gap-3 sm:-mt-4 sm:gap-4 lg:-mt-5">
+                  <Hexagon name={whatWeDo[1].name} fill={whatWeDo[1].fill} />
+                  <Hexagon name={whatWeDo[2].name} fill={whatWeDo[2].fill} />
+                </div>
+                <div className="-mt-3 flex h-20 w-24 flex-col items-center justify-center text-center sm:-mt-4 sm:h-24 sm:w-28 lg:-mt-5 lg:h-27 lg:w-32">
+                  <span className="text-[13px] font-bold leading-tight text-[#0B2A4A] sm:text-[15px] lg:text-[16px]">
+                    What
+                    <br />
+                    We Do
+                  </span>
+                </div>
+                <div className="-mt-3 flex gap-3 sm:-mt-4 sm:gap-4 lg:-mt-5">
+                  <Hexagon name={whatWeDo[3].name} fill={whatWeDo[3].fill} />
+                  <Hexagon name={whatWeDo[4].name} fill={whatWeDo[4].fill} />
+                </div>
+                <div className="-mt-3 sm:-mt-4 lg:-mt-5">
+                  <Hexagon name={whatWeDo[5].name} fill={whatWeDo[5].fill} />
+                </div>
+              </div>
             </AnimatedSection>
           </div>
         </div>
