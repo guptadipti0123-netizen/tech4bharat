@@ -7,7 +7,9 @@ import HomeSectionHeading from "@/components/sections/HomeSectionHeading";
 import { getDomainImage } from "@/lib/images";
 
 // The exact 13 social impact domains named in the Tech4Bharat MoM — no additions,
-// no substitutions, no invented descriptions.
+// no substitutions, no invented descriptions. Only the first 8 are shown as image
+// cards in this section (to keep it from feeling crowded); the full list is kept
+// here since it's the MoM's canonical content and may be needed elsewhere.
 const domains = [
   "AgriTech",
   "Water & Sanitation",
@@ -24,6 +26,8 @@ const domains = [
   "Other Social Impact Innovations",
 ];
 
+const displayedDomains = domains.slice(0, 8);
+
 /** Social Impact Domains — a uniform photo-tile grid (every tile the same size, border,
  *  radius, and label treatment) held inside a soft panel, so the section reads as one
  *  distinct visual block rather than a flat, edge-to-edge grid. */
@@ -36,8 +40,8 @@ export default function FocusAreas() {
             <HomeSectionHeading title="Social Impact Domains" align="center" />
           </AnimatedSection>
 
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-3.5 lg:grid-cols-4 xl:grid-cols-5">
-            {domains.map((domain, i) => (
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-3.5 lg:grid-cols-4">
+            {displayedDomains.map((domain, i) => (
               <AnimatedSection key={domain} delay={i * 0.03}>
                 <div className="group relative aspect-4/3 overflow-hidden rounded-2xl border border-brand-500/15 shadow-[0_2px_10px_rgba(21,94,154,0.05)]">
                   <Image

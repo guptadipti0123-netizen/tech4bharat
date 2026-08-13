@@ -111,10 +111,10 @@ export default function Navbar() {
         onMouseLeave={closeWithDelay}
         className="glass-surface fixed inset-x-0 top-0 z-50 rounded-b-3xl shadow-[0_8px_30px_rgba(6,26,44,0.08)]"
       >
-        <Container className="flex h-16 items-center justify-between sm:h-17.5">
+        <Container className="flex h-14 items-center justify-between md:h-17.5">
           <Link href="/" className="group flex min-w-0 shrink items-center gap-2.5">
-            <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="h-9 w-9 rounded-xl sm:h-10 sm:w-10" />
-            <span className="font-heading text-[15px] font-semibold leading-none text-ink-900 sm:text-lg">
+            <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="h-9 w-9 rounded-xl md:h-10 md:w-10" />
+            <span className="font-heading text-[16px] font-semibold leading-none text-ink-900 md:text-lg">
               Tech<span className="text-brand-500">4</span>Bharat
             </span>
           </Link>

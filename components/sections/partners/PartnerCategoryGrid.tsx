@@ -20,19 +20,22 @@ const categories: { name: string; icon: LucideIcon }[] = [
 
 function Hexagon({ name, icon: Icon, delay }: { name: string; icon: LucideIcon; delay: number }) {
   return (
-    <AnimatedSection delay={delay} className="mx-auto w-36 shrink-0 sm:w-40 lg:w-44">
+    <AnimatedSection delay={delay} className="mx-auto w-25 shrink-0 min-[481px]:w-28 md:w-32 lg:w-40">
       <div className="group relative aspect-[86.6/100] w-full transition-transform duration-300 hover:-translate-y-1">
         <svg
           viewBox="-4 -4 94.6 108"
           className="absolute inset-0 h-full w-full drop-shadow-[0_6px_16px_rgba(21,94,154,0.12)]"
         >
-          <path d={HEX_PATH} fill="#F5FAFE" stroke="#155E9A" strokeOpacity={0.22} strokeWidth={2} />
+          <path d={HEX_PATH} fill="#F4F9FD" stroke="#C9DFEF" strokeWidth={2} />
         </svg>
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-center">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-500/10 text-brand-500">
-            <Icon size={17} strokeWidth={1.75} />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 px-2.5 text-center min-[481px]:gap-1.5 min-[481px]:px-3">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E1EFF9] text-brand-500 min-[481px]:h-8 min-[481px]:w-8 md:h-10 md:w-10">
+            <Icon size={14} strokeWidth={1.75} className="min-[481px]:hidden" />
+            <Icon size={16} strokeWidth={1.75} className="hidden min-[481px]:block" />
           </span>
-          <span className="text-[16px] font-semibold leading-tight text-ink-900 sm:text-[17px]">{name}</span>
+          <span className="break-words text-[9.5px] font-semibold leading-[1.2] text-ink-900 min-[481px]:text-[11px] md:text-[14px]">
+            {name}
+          </span>
         </div>
       </div>
     </AnimatedSection>
@@ -46,7 +49,7 @@ export default function PartnerCategoryGrid() {
   const [top, middle, bottom] = [categories.slice(0, 3), categories.slice(3, 5), categories.slice(5, 6)];
 
   return (
-    <section className="relative overflow-hidden bg-sand-50 pb-10 pt-5 sm:pb-14 sm:pt-9">
+    <section className="relative overflow-hidden bg-[#EAF4FB] pb-5 pt-4 min-[481px]:pb-6 min-[481px]:pt-5 md:pb-8 md:pt-6 lg:pb-10 lg:pt-6">
       <Blob tone="secondary" className="-right-32 top-1/4 h-96 w-96" />
       <Blob tone="brand" className="-left-24 bottom-0 h-72 w-72" animate={false} />
 
@@ -56,23 +59,23 @@ export default function PartnerCategoryGrid() {
             title="Building a Network Across Bharat"
             description="Following Section 8 Company registration, Tech4Bharat will initiate Memoranda of Understanding from August 2026 across the categories below."
             className="max-w-240"
-            titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.01em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
-            descriptionClassName="mt-2 text-[14px] leading-relaxed text-[#526777] sm:mt-3 sm:text-[15px]"
+            titleClassName="text-[20px] font-bold leading-[1.15] tracking-[-0.01em] text-[#0B2A4A] sm:text-[22px] md:text-[26px] lg:text-[30px]"
+            descriptionClassName="mt-2 text-[12px] leading-[1.5] text-[#526777] sm:text-[13px] md:mt-3 md:text-[15px]"
           />
         </AnimatedSection>
 
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-1 gap-5 sm:mt-12 sm:max-w-3xl sm:grid-cols-2 lg:flex lg:max-w-none lg:flex-col lg:items-center lg:gap-4">
-          <div className="contents lg:flex lg:justify-center lg:gap-4">
+        <div className="mx-auto mt-5 grid max-w-70 grid-cols-2 gap-x-3 gap-y-3.5 min-[481px]:max-w-85 min-[481px]:gap-x-3.5 min-[481px]:gap-y-4 md:mt-8 md:max-w-2xl md:gap-4 lg:flex lg:max-w-none lg:flex-col lg:items-center lg:gap-2.5">
+          <div className="contents lg:flex lg:justify-center lg:gap-2.5">
             {top.map((c, i) => (
               <Hexagon key={c.name} name={c.name} icon={c.icon} delay={i * 0.05} />
             ))}
           </div>
-          <div className="contents lg:flex lg:justify-center lg:gap-4 lg:-mt-7">
+          <div className="contents lg:flex lg:justify-center lg:gap-2.5 lg:-mt-6">
             {middle.map((c, i) => (
               <Hexagon key={c.name} name={c.name} icon={c.icon} delay={0.15 + i * 0.05} />
             ))}
           </div>
-          <div className="contents lg:flex lg:justify-center lg:-mt-7">
+          <div className="contents lg:flex lg:justify-center lg:-mt-6">
             {bottom.map((c, i) => (
               <Hexagon key={c.name} name={c.name} icon={c.icon} delay={0.25 + i * 0.05} />
             ))}

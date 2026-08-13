@@ -43,16 +43,7 @@ export default function OurStory() {
     <section id="about-overview" className="bg-white py-5 sm:py-7">
       <Container>
         <div className="rounded-3xl bg-[#F5FAFE] px-5 py-9 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-          <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <h2 className="text-[24px] font-bold leading-tight tracking-[-0.01em] text-[#0B2A4A] sm:text-[28px] lg:text-[30px]">
-              About Tech4Bharat
-            </h2>
-            <p className="mt-2 text-[13px] leading-relaxed text-[#526777] sm:mt-3 sm:text-[14px] lg:text-[15px]">
-              Empowering India&apos;s youth with cutting-edge technology skills.
-            </p>
-          </AnimatedSection>
-
-          <div className="mt-8 flex flex-col items-center gap-8 sm:mt-10 lg:flex-row lg:items-center lg:justify-center lg:gap-8">
+          <div className="flex flex-col items-center gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-8">
             <AnimatedSection className="w-full lg:w-[48%]">
               <div className="rounded-[18px] bg-[#0B2A4A] p-7 sm:p-8">
                 <h3 className="text-[19px] font-bold text-white sm:text-[20px]">Who We Are</h3>
