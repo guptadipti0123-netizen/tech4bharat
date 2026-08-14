@@ -74,7 +74,7 @@ export default function EventJourney() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="mt-9 grid gap-6 lg:grid-cols-[2fr_3fr] lg:items-stretch">
-          <div className="relative h-64 w-full overflow-hidden rounded-[18px] shadow-md lg:h-full">
+          <div className="relative h-36 w-full overflow-hidden rounded-[14px] shadow-md sm:h-64 sm:rounded-[18px] lg:h-full">
             <Image
               src={days[active].image}
               alt={`${days[active].title} at the Digital & Tech Policy Workshop`}
@@ -84,7 +84,7 @@ export default function EventJourney() {
             />
           </div>
 
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-1.5 sm:gap-2.5">
             {days.map((day, i) => {
               const TopicIcon = day.icon;
               const isActive = active === i;
@@ -95,25 +95,27 @@ export default function EventJourney() {
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
                   className={cn(
-                    "group flex items-center gap-3 rounded-2xl border bg-linear-to-br from-white to-blue-50/60 px-4 py-2.5 text-left shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg",
+                    "group flex items-center gap-2 rounded-xl border bg-linear-to-br from-white to-blue-50/60 px-2.5 py-1.5 text-left shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-2.5",
                     isActive ? "border-2 border-blue-300 from-blue-100 to-sky-100 shadow-lg" : "border-blue-200"
                   )}
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-blue-600 to-sky-500 text-xs font-bold text-white shadow-[0_0_10px_rgba(21,94,154,0.45)]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-blue-600 to-sky-500 text-[9px] font-bold text-white shadow-[0_0_10px_rgba(21,94,154,0.45)] sm:h-9 sm:w-9 sm:text-xs">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <span className="inline-block rounded-full bg-blue-100/70 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-blue-700">
+                    <span className="inline-block rounded-full bg-blue-100/70 px-1.5 py-0.5 text-[7.5px] font-bold uppercase tracking-wide text-blue-700 sm:px-2 sm:text-[10px]">
                       Day {i + 1}
                     </span>
-                    <div className="mt-1 flex min-w-0 items-center gap-1.5">
-                      <TopicIcon size={14} className="shrink-0 text-blue-600" />
-                      <h3 className="min-w-0 text-[17px] font-semibold leading-snug text-ink-900">{day.title}</h3>
+                    <div className="mt-0.5 flex min-w-0 items-center gap-1 sm:mt-1 sm:gap-1.5">
+                      <TopicIcon size={11} className="shrink-0 text-blue-600 sm:hidden" />
+                      <TopicIcon size={14} className="hidden shrink-0 text-blue-600 sm:block" />
+                      <h3 className="min-w-0 text-[12px] font-semibold leading-snug text-ink-900 sm:text-[17px]">{day.title}</h3>
                     </div>
-                    <p className="mt-0.5 line-clamp-2 text-[14px] leading-snug text-[#526777]">{day.description}</p>
+                    <p className="mt-0.5 line-clamp-2 text-[10px] leading-snug text-[#526777] sm:text-[14px]">{day.description}</p>
                   </div>
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-50 transition-colors duration-200 group-hover:bg-blue-600">
-                    <ArrowRight size={14} className="text-blue-600 transition-colors duration-200 group-hover:text-white" />
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 transition-colors duration-200 group-hover:bg-blue-600 sm:h-7 sm:w-7">
+                    <ArrowRight size={11} className="text-blue-600 transition-colors duration-200 group-hover:text-white sm:hidden" />
+                    <ArrowRight size={14} className="hidden text-blue-600 transition-colors duration-200 group-hover:text-white sm:block" />
                   </span>
                 </button>
               );

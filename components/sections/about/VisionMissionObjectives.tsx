@@ -51,7 +51,7 @@ export default function VisionMissionObjectives() {
           />
         </AnimatedSection>
 
-        <div className="mt-6 grid grid-cols-1 gap-5 sm:mt-8 sm:grid-cols-3 sm:gap-4">
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-3 sm:gap-3.5">
           {cards.map((card, i) => {
             const Icon = card.icon;
             return (
@@ -59,20 +59,20 @@ export default function VisionMissionObjectives() {
                 <div className="relative h-full">
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 translate-x-2 translate-y-2 rounded-tl-xl rounded-bl-xl rounded-tr-[42px] rounded-br-[42px]"
+                    className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-tl-lg rounded-bl-lg rounded-tr-[32px] rounded-br-[32px]"
                     style={{ background: "linear-gradient(135deg,#3156D8,#4F6FF0)" }}
                   />
-                  <div className="relative flex h-full min-h-56 flex-col rounded-tl-xl rounded-bl-xl rounded-tr-[42px] rounded-br-[42px] bg-[#F7F9FF] p-5">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#DCE8FF]">
-                      <Icon size={16} strokeWidth={1.75} className="text-[#315BEA]" />
+                  <div className="relative flex h-full flex-col rounded-tl-lg rounded-bl-lg rounded-tr-[32px] rounded-br-[32px] bg-[#F7F9FF] p-4">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#DCE8FF]">
+                      <Icon size={14} strokeWidth={1.75} className="text-[#315BEA]" />
                     </span>
-                    <h3 className="mt-3 text-[15px] font-extrabold uppercase tracking-tight text-[#082F63]">
+                    <h3 className="mt-2.5 text-[13.5px] font-extrabold uppercase tracking-tight text-[#082F63]">
                       {card.title}
                     </h3>
 
-                    <ul className="mt-3 flex flex-col gap-1.5">
+                    <ul className="mt-2 flex flex-col gap-1">
                       {card.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-2 text-[12px] font-semibold leading-snug text-[#315BEA]">
+                        <li key={bullet} className="flex items-start gap-1.5 text-[11.5px] font-semibold leading-snug text-[#315BEA]">
                           <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#315BEA]" aria-hidden="true" />
                           {bullet}
                         </li>

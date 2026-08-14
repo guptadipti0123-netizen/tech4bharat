@@ -77,9 +77,9 @@ export default function PastEventSpotlight() {
 
         <AnimatedSection delay={0.1} className="mt-9">
           <div className="grid overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl lg:grid-cols-[45fr_55fr]">
-            <div className="grid h-full grid-cols-2 grid-rows-2 gap-3 bg-slate-50 p-3">
+            <div className="grid h-full grid-cols-2 grid-rows-2 gap-1.5 bg-slate-50 p-1.5 sm:gap-3 sm:p-3">
               {collagePhotos.map((photo) => (
-                <div key={photo.src} className="relative min-h-40 overflow-hidden rounded-xl shadow-sm">
+                <div key={photo.src} className="relative min-h-20 overflow-hidden rounded-lg shadow-sm sm:min-h-40 sm:rounded-xl">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -91,52 +91,56 @@ export default function PastEventSpotlight() {
               ))}
             </div>
 
-            <div className="p-6 sm:p-8">
-              <Badge variant="neutral">Workshop â€¢ Past</Badge>
-              <h3 className="mt-4 text-[19px] font-bold text-ink-900 sm:text-[21px]">AI Workshop by BharatGen</h3>
+            <div className="p-3 sm:p-8">
+              <Badge variant="neutral">Workshop • Past</Badge>
+              <h3 className="mt-2.5 text-[14px] font-bold text-ink-900 sm:mt-4 sm:text-[21px]">AI Workshop by BharatGen</h3>
 
-              <div className="mt-5 grid gap-2.5 sm:grid-cols-3">
+              <div className="mt-3 grid gap-1.5 sm:mt-5 sm:grid-cols-3 sm:gap-2.5">
                 {metaCards.map(({ icon: Icon, label, value }) => (
-                  <div key={label} className="rounded-xl border border-slate-100 bg-slate-50 p-3">
-                    <span className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                      <Icon size={12} /> {label}
+                  <div key={label} className="rounded-lg border border-slate-100 bg-slate-50 p-2 sm:rounded-xl sm:p-3">
+                    <span className="flex items-center gap-1 text-[9px] font-semibold uppercase tracking-wide text-slate-500 sm:gap-1.5 sm:text-[11px]">
+                      <Icon size={10} className="sm:hidden" />
+                      <Icon size={12} className="hidden sm:block" />
+                      {label}
                     </span>
-                    <p className="mt-1 text-sm font-semibold text-ink-900">{value}</p>
+                    <p className="mt-0.5 text-[11px] font-semibold text-ink-900 sm:mt-1 sm:text-sm">{value}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-5 flex items-start gap-2.5 rounded-xl bg-brand-50 p-3">
-                <Target size={16} className="mt-0.5 shrink-0 text-brand-600" />
-                <p className="text-sm text-ink-900">
-                  <span className="font-semibold">Goal:</span> &ldquo;GenAI for Everyone, by Everyone&rdquo; â€”
+              <div className="mt-3 flex items-start gap-1.5 rounded-lg bg-brand-50 p-2 sm:mt-5 sm:gap-2.5 sm:rounded-xl sm:p-3">
+                <Target size={12} className="mt-0.5 shrink-0 text-brand-600 sm:hidden" />
+                <Target size={16} className="mt-0.5 hidden shrink-0 text-brand-600 sm:block" />
+                <p className="text-[11px] text-ink-900 sm:text-sm">
+                  <span className="font-semibold">Goal:</span> &ldquo;GenAI for Everyone, by Everyone&rdquo; —
                   hands-on generative AI development.
                 </p>
               </div>
 
-              <h4 className="mt-6 text-sm font-bold uppercase tracking-wide text-slate-500">Agenda</h4>
-              <div className="mt-3 flex flex-col">
+              <h4 className="mt-4 text-[10px] font-bold uppercase tracking-wide text-slate-500 sm:mt-6 sm:text-sm">Agenda</h4>
+              <div className="mt-1.5 flex flex-col sm:mt-3">
                 {agendaTopics.map((topic, i) => {
                   const Icon = topic.icon;
                   return (
                     <div
                       key={topic.title}
                       className={cn(
-                        "group flex items-start gap-3.5 border-l-2 border-[#155E9A] py-4 pl-4 transition-all duration-200 hover:border-l-[3px] hover:bg-[#F5FAFE]",
+                        "group flex items-start gap-2 border-l-2 border-[#155E9A] py-2 pl-2 transition-all duration-200 hover:border-l-[3px] hover:bg-[#F5FAFE] sm:gap-3.5 sm:py-4 sm:pl-4",
                         i < agendaTopics.length - 1 && "border-b border-slate-100"
                       )}
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#155E9A] text-white">
-                        <Icon size={16} />
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#155E9A] text-white sm:h-9 sm:w-9">
+                        <Icon size={12} className="sm:hidden" />
+                        <Icon size={16} className="hidden sm:block" />
                       </span>
                       <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                          <h5 className="min-w-0 text-[17px] font-semibold leading-snug text-ink-900 sm:text-[19px]">{topic.title}</h5>
-                          <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-500 sm:text-xs">
+                        <div className="flex flex-wrap items-baseline justify-between gap-x-2 sm:gap-x-3">
+                          <h5 className="min-w-0 text-[12.5px] font-semibold leading-snug text-ink-900 sm:text-[19px]">{topic.title}</h5>
+                          <span className="shrink-0 rounded-full bg-slate-100 px-1.5 py-0.5 text-[8.5px] font-semibold text-slate-500 sm:px-2.5 sm:text-xs">
                             {topic.duration}
                           </span>
                         </div>
-                        <p className="mt-1 text-[13.5px] leading-relaxed text-slate-500 sm:text-[15px]">{topic.description}</p>
+                        <p className="mt-0.5 text-[10px] leading-relaxed text-slate-500 sm:mt-1 sm:text-[15px]">{topic.description}</p>
                       </div>
                     </div>
                   );

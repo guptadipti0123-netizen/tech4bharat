@@ -85,23 +85,23 @@ export default function EventHighlightsGrid() {
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-6 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        <AnimatedSection delay={0.1} className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-9 sm:gap-6 lg:grid-cols-4">
           {highlightPhotos.map((photo) => (
             <div
               key={photo.src}
-              className="group relative h-60 w-full overflow-hidden rounded-2xl border border-blue-100 shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-70"
+              className="group relative h-28 w-full overflow-hidden rounded-lg border border-blue-100 shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-70 sm:rounded-2xl"
             >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-linear-to-t from-ink-900/55 via-transparent to-transparent" />
               <span
                 className={cn(
-                  "absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[11px] font-bold text-white",
+                  "absolute bottom-1.5 left-1.5 rounded-full px-1.5 py-0.5 text-[8.5px] font-bold text-white sm:bottom-3 sm:left-3 sm:px-2.5 sm:py-1 sm:text-[11px]",
                   badgeTone[photo.badge]
                 )}
               >

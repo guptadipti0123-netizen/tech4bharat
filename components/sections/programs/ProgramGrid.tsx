@@ -80,24 +80,24 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
     <div
       id={id}
       style={{ backgroundColor: cardBg, borderColor: accent, boxShadow: shadow }}
-      className="group flex scroll-mt-28 flex-col rounded-2xl border-2 p-4 transition-all duration-300 hover:-translate-y-1 sm:rounded-[20px] sm:p-6"
+      className="group flex h-full scroll-mt-28 flex-col rounded-xl border-2 p-2.5 transition-all duration-300 hover:-translate-y-1 sm:rounded-[20px] sm:p-6"
     >
       <span
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl sm:h-14 sm:w-14 sm:rounded-2xl"
+        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg sm:h-14 sm:w-14 sm:rounded-2xl"
         style={{ backgroundColor: chipBg }}
       >
-        <Icon size={19} className="sm:hidden" style={{ color: accent }} strokeWidth={1.75} />
+        <Icon size={15} className="sm:hidden" style={{ color: accent }} strokeWidth={1.75} />
         <Icon size={24} className="hidden sm:block" style={{ color: accent }} strokeWidth={1.75} />
       </span>
 
-      <h3 className="mt-3 text-[17px] font-bold leading-tight text-ink-900 sm:mt-4 sm:text-[20px]">{title}</h3>
-      <p className="mt-1.5 line-clamp-3 text-[13px] leading-snug text-slate-600 sm:mt-2 sm:text-[14px] sm:leading-relaxed">{description}</p>
+      <h3 className="mt-2 text-[12.5px] font-bold leading-tight text-ink-900 sm:mt-4 sm:text-[20px]">{title}</h3>
+      <p className="mt-1 line-clamp-3 text-[10.5px] leading-snug text-slate-600 sm:mt-2 sm:text-[14px] sm:leading-relaxed">{description}</p>
 
-      <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
+      <div className="mt-2 flex flex-wrap gap-1 sm:mt-4 sm:gap-2">
         {chips.map((chip) => (
           <span
             key={chip}
-            className="rounded-full px-2.5 py-1 text-[11px] font-semibold sm:px-3 sm:text-[12px]"
+            className="rounded-full px-1.5 py-0.5 text-[8.5px] font-semibold sm:px-3 sm:py-1 sm:text-[12px]"
             style={{ backgroundColor: chipBg, color: accent }}
           >
             {chip}
@@ -106,9 +106,9 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
       </div>
 
       <div className="mt-auto">
-        <div className="mt-4 h-px w-10 sm:mt-5" style={{ backgroundColor: accent, opacity: 0.3 }} />
-        <Button href={learnMoreHref} variant="primary" size="sm" className="mt-3 w-fit sm:mt-4">
-          Learn More <ArrowUpRight size={16} />
+        <div className="mt-2.5 h-px w-8 sm:mt-5 sm:w-10" style={{ backgroundColor: accent, opacity: 0.3 }} />
+        <Button href={learnMoreHref} variant="primary" size="sm" className="mt-2 w-fit px-2.5 py-1.5 text-[10.5px] sm:mt-4 sm:px-4.5 sm:py-2.25 sm:text-[13px]">
+          Learn More <ArrowUpRight size={12} className="sm:hidden" /><ArrowUpRight size={16} className="hidden sm:block" />
         </Button>
       </div>
     </div>
@@ -122,9 +122,9 @@ export default function ProgramGrid() {
   return (
     <section className="relative overflow-hidden bg-brand-50 pb-8 pt-3 sm:pb-12 sm:pt-6">
       <Container className="relative">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-6 lg:grid-cols-4">
           {programs.map((program, i) => (
-            <AnimatedSection key={program.title} delay={i * 0.08} animation="scale">
+            <AnimatedSection key={program.title} delay={i * 0.08} animation="scale" className="h-full">
               <ProgramCard {...program} />
             </AnimatedSection>
           ))}

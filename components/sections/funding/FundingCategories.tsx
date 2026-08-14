@@ -85,7 +85,7 @@ export default function FundingCategories() {
           />
         </AnimatedSection>
 
-        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-7 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
           {sources.map((source, i) => {
             const Icon = source.icon;
             return (
@@ -98,29 +98,30 @@ export default function FundingCategories() {
                       "--hover-border": source.borderHover,
                     } as React.CSSProperties
                   }
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border-2 p-5 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border)"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border-2 p-3 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border) sm:p-5"
                 >
                   <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: source.border }} />
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
                     <span
-                      className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:rotate-6"
+                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:rotate-6 sm:h-8.5 sm:w-8.5"
                       style={{ backgroundColor: source.iconBg, color: source.border }}
                     >
-                      <Icon size={15} />
+                      <Icon size={13} className="sm:hidden" />
+                      <Icon size={15} className="hidden sm:block" />
                     </span>
-                    <h3 className="min-w-0 flex-1 text-[16px] font-bold leading-tight text-[#102A43]">
+                    <h3 className="min-w-0 flex-1 text-[13px] font-bold leading-tight text-[#102A43] sm:text-[16px]">
                       {source.title}
                     </h3>
                   </div>
 
-                  <p className="mt-2 line-clamp-2 text-[14px] leading-snug text-[#526777]">
+                  <p className="mt-1.5 line-clamp-2 text-[11.5px] leading-snug text-[#526777] sm:mt-2 sm:text-[14px]">
                     {source.description}
                   </p>
 
-                  <div className="mt-2 border-t pt-2" style={{ borderColor: `${source.border}33` }}>
+                  <div className="mt-1.5 border-t pt-1.5 sm:mt-2 sm:pt-2" style={{ borderColor: `${source.border}33` }}>
                     <span
-                      className="inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-semibold"
+                      className="inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[9.5px] font-semibold sm:px-2.5 sm:py-1 sm:text-[11px]"
                       style={{ backgroundColor: source.iconBg, color: source.border }}
                     >
                       {source.fundingType}

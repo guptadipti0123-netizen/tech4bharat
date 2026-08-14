@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { Cpu, GraduationCap, Heart, Sparkles, Sprout, Venus, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -8,66 +8,46 @@ interface Persona {
   icon: LucideIcon;
   label: string;
   supportingLine: string;
-  cardBg: string;
-  border: string;
-  hoverBorder: string;
 }
 
-const personas: Persona[] = [
-  {
-    icon: Sprout,
-    label: "Early-Stage Startups",
-    supportingLine: "Building your first company",
-    cardBg: "#F5FAFE",
-    border: "#1976D2",
-    hoverBorder: "#155E9A",
-  },
-  {
-    icon: GraduationCap,
-    label: "Student Founders",
-    supportingLine: "Turning ideas into ventures",
-    cardBg: "#F5FAFE",
-    border: "#155E9A",
-    hoverBorder: "#0B2A4A",
-  },
-  {
-    icon: Venus,
-    label: "Women Entrepreneurs",
-    supportingLine: "Empowering diverse leadership",
-    cardBg: "#F5FAFE",
-    border: "#2F80ED",
-    hoverBorder: "#1565AE",
-  },
-  {
-    icon: Heart,
-    label: "Social Impact Startups",
-    supportingLine: "Solving real-world problems",
-    cardBg: "#F5FAFE",
-    border: "#155E9A",
-    hoverBorder: "#0B2A4A",
-  },
-  {
-    icon: Cpu,
-    label: "Technology Innovators",
-    supportingLine: "Creating the next breakthrough",
-    cardBg: "#F5FAFE",
-    border: "#2F80ED",
-    hoverBorder: "#1565AE",
-  },
-  {
-    icon: Sparkles,
-    label: "First-Time Founders",
-    supportingLine: "Starting your founder journey",
-    cardBg: "#F5FAFE",
-    border: "#1976D2",
-    hoverBorder: "#155E9A",
-  },
+const leftPersonas: Persona[] = [
+  { icon: Sprout, label: "Early-Stage Startups", supportingLine: "Building your first company" },
+  { icon: GraduationCap, label: "Student Founders", supportingLine: "Turning ideas into ventures" },
+  { icon: Venus, label: "Women Entrepreneurs", supportingLine: "Empowering diverse leadership" },
 ];
 
-/** Who should attend â€” a split layout: one real photograph on the left, and six
- *  individually pastel-tinted persona cards on the right (icon, title, subtitle, and a
- *  matching bottom accent line), on a soft tri-tone gradient field with a faint dot
- *  texture. */
+const rightPersonas: Persona[] = [
+  { icon: Heart, label: "Social Impact Startups", supportingLine: "Solving real-world problems" },
+  { icon: Cpu, label: "Technology Innovators", supportingLine: "Creating the next breakthrough" },
+  { icon: Sparkles, label: "First-Time Founders", supportingLine: "Starting your founder journey" },
+];
+
+function Spoke({ item, align }: { item: Persona; align: "left" | "right" }) {
+  const Icon = item.icon;
+  const isLeft = align === "left";
+  return (
+    <div className={`flex items-center gap-3 ${isLeft ? "flex-row-reverse text-right" : "text-left"}`}>
+      <div>
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-[#0B2A4A] sm:text-[16px]">
+          {isLeft ? null : <Icon size={14} className="shrink-0 text-[#155E9A]" />}
+          {item.label}
+          {isLeft ? <Icon size={14} className="shrink-0 text-[#155E9A]" /> : null}
+        </h3>
+        <p className="mt-0.5 max-w-48 text-[12px] leading-snug text-slate-500 sm:text-[13px]">{item.supportingLine}</p>
+      </div>
+      <span className="hidden shrink-0 items-center gap-1.5 sm:flex">
+        {isLeft && <span className="h-px w-6 bg-[#B9CFE0] lg:w-10" />}
+        <span className="h-2 w-2 shrink-0 rounded-full bg-[#155E9A]" />
+        {!isLeft && <span className="h-px w-6 bg-[#B9CFE0] lg:w-10" />}
+      </span>
+    </div>
+  );
+}
+
+/** Who should attend — a hub-and-spoke diagram: a compact dark-navy center circle holding
+ *  the section title and tagline, with the six founder personas arranged as three spokes on
+ *  each side (dot + connector line), matching the same pattern used for Mentors & Advisors.
+ *  On mobile the circle sits on top and the six personas stack in a compact 2-col grid. */
 export default function WhoShouldAttend() {
   return (
     <section className="relative overflow-hidden py-10 sm:py-11">
@@ -89,51 +69,62 @@ export default function WhoShouldAttend() {
         <AnimatedSection>
           <SectionTitle
             title="Who Should Attend"
-            description="This bootcamp is built for founders at every early stage of the journey."
             className="max-w-3xl"
             titleClassName="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
-            descriptionClassName="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]"
           />
         </AnimatedSection>
 
-        <div className="mt-9 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <AnimatedSection className="relative h-80 w-full overflow-hidden rounded-[28px] sm:h-96 lg:h-full lg:min-h-125">
+        {/* Desktop / tablet: hub-and-spoke row */}
+        <div className="mt-9 hidden items-center justify-center gap-6 sm:flex lg:gap-10">
+          <div className="flex flex-col gap-7">
+            {leftPersonas.map((item) => (
+              <Spoke key={item.label} item={item} align="left" />
+            ))}
+          </div>
+
+          <AnimatedSection className="relative aspect-3/2 w-56 shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white lg:w-64">
             <Image
               src="/images/gallery/bootcamps-1.jpg"
               alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="256px"
               className="object-cover"
             />
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-2">
-            {personas.map((persona, i) => {
-              const Icon = persona.icon;
+          <div className="flex flex-col gap-7">
+            {rightPersonas.map((item) => (
+              <Spoke key={item.label} item={item} align="right" />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: circle on top, six personas stacked in a compact 2-col grid */}
+        <div className="mt-9 flex flex-col items-center sm:hidden">
+          <AnimatedSection className="relative aspect-3/2 w-48 shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white">
+            <Image
+              src="/images/gallery/bootcamps-1.jpg"
+              alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
+              fill
+              sizes="192px"
+              className="object-cover"
+            />
+          </AnimatedSection>
+
+          <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-5">
+            {[...leftPersonas, ...rightPersonas].map((item) => {
+              const Icon = item.icon;
               return (
-                <AnimatedSection key={persona.label} delay={i * 0.05}>
-                  <div
-                    style={
-                      {
-                        backgroundColor: persona.cardBg,
-                        borderColor: persona.border,
-                        boxShadow: "0 8px 25px rgba(0,0,0,.06)",
-                        "--hover-border": persona.hoverBorder,
-                        "--shadow-hover": "0 14px 32px rgba(0,0,0,.10)",
-                      } as React.CSSProperties
-                    }
-                    className="flex flex-col items-start rounded-[18px] border-2 p-4 transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-(--hover-border) hover:shadow-(--shadow-hover)"
-                  >
-                    <span
-                      className="flex h-10.5 w-10.5 shrink-0 items-center justify-center rounded-full"
-                      style={{ backgroundColor: "rgba(255,255,255,.6)" }}
-                    >
-                      <Icon size={20} strokeWidth={1.75} style={{ color: persona.border }} />
-                    </span>
-                    <h3 className="mt-2.5 text-[18px] font-bold leading-tight text-ink-900">{persona.label}</h3>
-                    <p className="mt-1 text-[14px] font-medium leading-snug text-slate-600">
-                      {persona.supportingLine}
-                    </p>
+                <AnimatedSection key={item.label}>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#155E9A]" />
+                    <div>
+                      <h3 className="flex items-center gap-1.5 text-[13px] font-bold text-[#0B2A4A]">
+                        <Icon size={13} className="shrink-0 text-[#155E9A]" />
+                        {item.label}
+                      </h3>
+                      <p className="mt-0.5 text-[11.5px] leading-snug text-slate-500">{item.supportingLine}</p>
+                    </div>
                   </div>
                 </AnimatedSection>
               );

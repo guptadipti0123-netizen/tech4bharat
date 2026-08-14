@@ -20,7 +20,7 @@ const categories: { name: string; icon: LucideIcon }[] = [
 
 function Hexagon({ name, icon: Icon, delay }: { name: string; icon: LucideIcon; delay: number }) {
   return (
-    <AnimatedSection delay={delay} className="mx-auto w-25 shrink-0 min-[481px]:w-28 md:w-32 lg:w-40">
+    <AnimatedSection delay={delay} className="mx-auto w-22 shrink-0 min-[481px]:w-28 md:w-32 lg:w-40">
       <div className="group relative aspect-[86.6/100] w-full transition-transform duration-300 hover:-translate-y-1">
         <svg
           viewBox="-4 -4 94.6 108"
@@ -28,12 +28,12 @@ function Hexagon({ name, icon: Icon, delay }: { name: string; icon: LucideIcon; 
         >
           <path d={HEX_PATH} fill="#F4F9FD" stroke="#C9DFEF" strokeWidth={2} />
         </svg>
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 px-2.5 text-center min-[481px]:gap-1.5 min-[481px]:px-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E1EFF9] text-brand-500 min-[481px]:h-8 min-[481px]:w-8 md:h-10 md:w-10">
-            <Icon size={14} strokeWidth={1.75} className="min-[481px]:hidden" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 px-2 text-center min-[481px]:gap-1.5 min-[481px]:px-3">
+          <span className="flex h-6.5 w-6.5 items-center justify-center rounded-full bg-[#E1EFF9] text-brand-500 min-[481px]:h-8 min-[481px]:w-8 md:h-10 md:w-10">
+            <Icon size={13} strokeWidth={1.75} className="min-[481px]:hidden" />
             <Icon size={16} strokeWidth={1.75} className="hidden min-[481px]:block" />
           </span>
-          <span className="break-words text-[9.5px] font-semibold leading-[1.2] text-ink-900 min-[481px]:text-[11px] md:text-[14px]">
+          <span className="break-words text-[8.5px] font-semibold leading-[1.15] text-ink-900 min-[481px]:text-[11px] md:text-[14px]">
             {name}
           </span>
         </div>
@@ -64,7 +64,7 @@ export default function PartnerCategoryGrid() {
           />
         </AnimatedSection>
 
-        <div className="mx-auto mt-5 grid max-w-70 grid-cols-2 gap-x-3 gap-y-3.5 min-[481px]:max-w-85 min-[481px]:gap-x-3.5 min-[481px]:gap-y-4 md:mt-8 md:max-w-2xl md:gap-4 lg:flex lg:max-w-none lg:flex-col lg:items-center lg:gap-2.5">
+        <div className="mx-auto mt-5 grid max-w-90 grid-cols-3 gap-x-2 gap-y-3 min-[481px]:max-w-2xl min-[481px]:grid-cols-2 min-[481px]:gap-x-3.5 min-[481px]:gap-y-4 md:mt-8 md:gap-4 lg:flex lg:max-w-none lg:flex-col lg:items-center lg:gap-2.5">
           <div className="contents lg:flex lg:justify-center lg:gap-2.5">
             {top.map((c, i) => (
               <Hexagon key={c.name} name={c.name} icon={c.icon} delay={i * 0.05} />
