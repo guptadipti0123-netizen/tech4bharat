@@ -17,7 +17,7 @@ export default function AboutPreview() {
               {/* aspect-3/2 matches the source photo's real 612x408 ratio exactly, so
                   object-cover never letterboxes or crops. Sized by aspect ratio alone (not
                   stretched to match the sibling card's height) so that guarantee holds. */}
-              <div className="relative aspect-3/2 w-full overflow-hidden rounded-[26px] shadow-[0_8px_24px_rgba(21,94,154,0.08)]">
+              <div className="relative aspect-3/2 w-full overflow-hidden rounded-[26px] shadow-[0_10px_30px_rgba(21,94,154,0.14)] ring-4 ring-white">
                 <Image
                   src={aboutImages.team}
                   alt="The Tech4Bharat team"
@@ -29,24 +29,31 @@ export default function AboutPreview() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.08}>
-              <div className="flex h-full flex-col rounded-[26px] bg-brand-900 p-6 shadow-[0_12px_30px_rgba(6,26,44,0.25)] sm:p-8">
-                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent-400">
+              <div
+                className="relative flex h-full flex-col overflow-hidden rounded-[26px] p-6 shadow-[0_12px_30px_rgba(21,94,154,0.12)] sm:p-8"
+                style={{ background: "linear-gradient(135deg, #F1F7FF 0%, #E3F0FF 100%)" }}
+              >
+                <div className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-[#2563C7]/10 blur-3xl" />
+                <div className="pointer-events-none absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-[#FFE08A]/20 blur-3xl" />
+
+                <span className="relative text-[11px] font-bold uppercase tracking-[0.18em] text-[#2563C7]">
                   About Tech4Bharat
                 </span>
-                <h2 className="mt-2 max-w-2xl text-balance text-[clamp(1.3rem,2.2vw,1.7rem)] font-semibold leading-tight text-white">
+                <h2 className="relative mt-2 max-w-2xl text-balance text-[clamp(1.3rem,2.2vw,1.7rem)] font-semibold leading-tight text-[#0B2A4A]">
                   A startup incubator built for Indian founders
                 </h2>
+                <span className="relative mt-3 h-1 w-12 rounded-full bg-[#2563C7]/30" aria-hidden="true" />
 
-                <p className="mt-3 text-[14px] leading-6 text-white/75 sm:text-[15px]">
+                <p className="relative mt-4 text-[14px] leading-6 text-[#526777] sm:text-[15px]">
                   Tech4Bharat is a startup incubator helping ambitious founders build
                   category-defining companies across India.
                 </p>
-                <p className="mt-3 text-[14px] leading-6 text-white/75 sm:text-[15px]">
+                <p className="relative mt-3 text-[14px] leading-6 text-[#526777] sm:text-[15px]">
                   We support founders through mentorship, capital access, and a thriving
                   nationwide startup ecosystem.
                 </p>
 
-                <div className="mt-6">
+                <div className="relative mt-6 border-t border-[#2563C7]/12 pt-5">
                   <Button href="/about" variant="secondary">
                     Learn More <ArrowRight size={16} />
                   </Button>

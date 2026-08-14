@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronLeft, ChevronRight, Images, X, ZoomIn } from "lucide-react";
-import FilterTabs from "@/components/ui/FilterTabs";
-import AnimatedSection from "@/components/ui/AnimatedSection";
 import EmptyState from "@/components/ui/EmptyState";
 import { cn } from "@/lib/utils";
 import type { GalleryCategory, GalleryPhoto } from "@/lib/gallery/service";
@@ -28,20 +26,12 @@ const PAGE_SIZE = 16;
  *  presentational: the full photo library and category taxonomy both arrive as props. */
 export default function MasonryGallery({ photos, categories }: MasonryGalleryProps) {
   const categoryLabelBySlug = new Map(categories.map((c) => [c.slug, c.label]));
-  const filterOptions = ["All", ...categories.map((c) => c.label)];
-  const labelToSlug = new Map(categories.map((c) => [c.label, c.slug]));
 
-  const [activeFilter, setActiveFilter] = useState("All");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const filtered: GalleryPhoto[] =
-    activeFilter === "All"
-      ? photos
-      : photos.filter((photo) => photo.categories.includes(labelToSlug.get(activeFilter) ?? ""));
-
-  const visible = filtered.slice(0, visibleCount);
-  const hasMore = visibleCount < filtered.length;
+  const visible = photos.slice(0, visibleCount);
+  const hasMore = visibleCount < photos.length;
 
   function openLightbox(index: number) {
     setLightboxIndex(index);
@@ -75,31 +65,19 @@ export default function MasonryGallery({ photos, categories }: MasonryGalleryPro
 
   return (
     <div id="gallery-masonry" className="scroll-mt-28">
-      <AnimatedSection>
-        <FilterTabs
-          options={filterOptions}
-          active={activeFilter}
-          onChange={(value) => {
-            setActiveFilter(value);
-            setVisibleCount(PAGE_SIZE);
-            setLightboxIndex(null);
-          }}
-        />
-      </AnimatedSection>
-
-      {filtered.length === 0 ? (
+      {photos.length === 0 ? (
         <EmptyState
           icon={Images}
-          title="No photos in this category yet"
+          title="No photos yet"
           description="Check back soon — we're always adding new moments from the Tech4Bharat ecosystem."
         />
       ) : (
         <>
-          <div className="mt-6 columns-1 gap-3 sm:mt-8 sm:columns-2 sm:gap-4 lg:columns-3 xl:columns-4">
+          <div className="columns-1 gap-3 sm:columns-2 sm:gap-4 lg:columns-3 xl:columns-4">
             <AnimatePresence initial={false} mode="popLayout">
               {visible.map((photo, i) => (
                 <motion.button
-                  key={photo.id + activeFilter}
+                  key={photo.id}
                   type="button"
                   initial={{ opacity: 0, scale: 0.92, y: 16 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}

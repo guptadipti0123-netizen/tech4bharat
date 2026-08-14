@@ -1,4 +1,4 @@
-import { Check, Compass, Eye, Target, type LucideIcon } from "lucide-react";
+import { Compass, Eye, Target, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -35,40 +35,50 @@ const cards: PrincipleCard[] = [
   },
 ];
 
-/** Vision, Mission, and Objectives — three equal-width, equal-height compact boxes in a
- *  single row on desktop (icon, title, three bullet points each), stacking to one column
- *  only on narrow mobile widths. */
+/** Vision, Mission, and Objectives — a duotone accent-curve card shape (a solid blue layer
+ *  offset behind a light card, large rounded top-right/bottom-right corners) per the
+ *  reference, with an uppercase title and bold blue dot-bullets instead of checkmarks.
+ *  Three equal cards in one row on desktop, stacking on mobile. Compact typography. */
 export default function VisionMissionObjectives() {
   return (
-    <section id="vision-mission" className="bg-[#F3F7FF] py-8 sm:py-12">
+    <section id="vision-mission" className="bg-[#F3F7FF] py-7 sm:py-10">
       <Container>
         <AnimatedSection>
           <SectionTitle
             title="Vision, Mission & Objectives"
             className="max-w-3xl"
-            titleClassName="text-balance text-[20px] sm:text-[22px] font-bold leading-tight tracking-tight text-[#082F63] lg:text-[25px]"
+            titleClassName="text-balance text-[19px] sm:text-[21px] font-bold leading-tight tracking-tight text-[#082F63] lg:text-[23px]"
           />
         </AnimatedSection>
 
-        <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-5 sm:mt-8 sm:grid-cols-3 sm:gap-4">
           {cards.map((card, i) => {
             const Icon = card.icon;
             return (
               <AnimatedSection key={card.title} delay={i * 0.08} className="h-full">
-                <div className="flex h-full min-h-70 flex-col rounded-2xl border border-[#D8E5F7] bg-[#F8FAFF] p-6 shadow-[0_4px_16px_rgba(8,47,99,0.06)]">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#DCE8FF]">
-                    <Icon size={19} strokeWidth={1.75} className="text-[#315BEA]" />
-                  </span>
-                  <h3 className="mt-3 text-[22px] font-bold text-[#082F63] lg:text-[24px]">{card.title}</h3>
+                <div className="relative h-full">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 translate-x-2 translate-y-2 rounded-tl-xl rounded-bl-xl rounded-tr-[42px] rounded-br-[42px]"
+                    style={{ background: "linear-gradient(135deg,#3156D8,#4F6FF0)" }}
+                  />
+                  <div className="relative flex h-full min-h-56 flex-col rounded-tl-xl rounded-bl-xl rounded-tr-[42px] rounded-br-[42px] bg-[#F7F9FF] p-5">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#DCE8FF]">
+                      <Icon size={16} strokeWidth={1.75} className="text-[#315BEA]" />
+                    </span>
+                    <h3 className="mt-3 text-[15px] font-extrabold uppercase tracking-tight text-[#082F63]">
+                      {card.title}
+                    </h3>
 
-                  <ul className="mt-3 flex flex-col gap-2.5">
-                    {card.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-2 text-[13px] leading-snug text-[#526777] lg:text-[14px]">
-                        <Check size={14} className="mt-0.5 shrink-0 text-[#315BEA]" strokeWidth={3} />
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="mt-3 flex flex-col gap-1.5">
+                      {card.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-2 text-[12px] font-semibold leading-snug text-[#315BEA]">
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#315BEA]" aria-hidden="true" />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </AnimatedSection>
             );

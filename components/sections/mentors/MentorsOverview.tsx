@@ -1,11 +1,7 @@
 import {
-  ArrowRight,
-  Award,
-  Briefcase,
   Building2,
   GraduationCap,
   Handshake,
-  Rocket,
   TrendingUp,
   Users,
   Wallet,
@@ -13,146 +9,105 @@ import {
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import Blob from "@/components/ui/Blob";
-import DotGrid from "@/components/ui/DotGrid";
-import { cn } from "@/lib/utils";
-
-const statBadges = [
-  { icon: Award, label: "Expert Mentors" },
-  { icon: Briefcase, label: "Industry Leaders" },
-  { icon: Rocket, label: "Startup Advisors" },
-];
 
 interface NetworkCategory {
   icon: LucideIcon;
   title: string;
   description: string;
-  tone: "brand" | "accent" | "secondary";
 }
 
-const categories: NetworkCategory[] = [
-  {
-    icon: Users,
-    title: "Mentors",
-    description: "Founders who have built and scaled successful startups.",
-    tone: "brand",
-  },
-  {
-    icon: TrendingUp,
-    title: "Operators",
-    description: "Experienced professionals with execution expertise.",
-    tone: "brand",
-  },
-  {
-    icon: Wallet,
-    title: "Investors",
-    description: "Angel investors and VCs supporting early-stage ventures.",
-    tone: "accent",
-  },
-  {
-    icon: GraduationCap,
-    title: "Academics",
-    description: "Researchers and professors driving innovation.",
-    tone: "accent",
-  },
-  {
-    icon: Building2,
-    title: "Industry Experts",
-    description: "Leaders from corporate and technology sectors.",
-    tone: "secondary",
-  },
+const leftCategories: NetworkCategory[] = [
+  { icon: Users, title: "Mentors", description: "Founders who have built and scaled successful startups." },
+  { icon: TrendingUp, title: "Operators", description: "Experienced professionals with execution expertise." },
+  { icon: Wallet, title: "Investors", description: "Angel investors and VCs supporting early-stage ventures." },
+];
+
+const rightCategories: NetworkCategory[] = [
+  { icon: GraduationCap, title: "Academics", description: "Researchers and professors driving innovation." },
+  { icon: Building2, title: "Industry Experts", description: "Leaders from corporate and technology sectors." },
   {
     icon: Handshake,
     title: "Policy Advisors",
     description: "Experts connecting startups with government and ecosystem opportunities.",
-    tone: "secondary",
   },
 ];
 
-const cardThemes: Record<NetworkCategory["tone"], { iconBg: string; bg: string; border: string }> = {
-  brand: {
-    iconBg: "bg-linear-to-br from-brand-400 to-brand-600",
-    bg: "bg-brand-100/70",
-    border: "border-brand-200 hover:border-brand-400",
-  },
-  accent: {
-    iconBg: "bg-linear-to-br from-accent-400 to-accent-600",
-    bg: "bg-accent-100/70",
-    border: "border-accent-200 hover:border-accent-400",
-  },
-  secondary: {
-    iconBg: "bg-linear-to-br from-secondary-400 to-secondary-600",
-    bg: "bg-secondary-100/70",
-    border: "border-secondary-200 hover:border-secondary-400",
-  },
-};
+function Spoke({ item, align }: { item: NetworkCategory; align: "left" | "right" }) {
+  const Icon = item.icon;
+  const isLeft = align === "left";
+  return (
+    <div className={`flex items-center gap-3 ${isLeft ? "flex-row-reverse text-right" : "text-left"}`}>
+      <div className={isLeft ? "" : ""}>
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-[#0B2A4A] sm:text-[16px]">
+          {isLeft ? null : <Icon size={14} className="shrink-0 text-[#155E9A]" />}
+          {item.title}
+          {isLeft ? <Icon size={14} className="shrink-0 text-[#155E9A]" /> : null}
+        </h3>
+        <p className="mt-0.5 max-w-48 text-[12px] leading-snug text-slate-500 sm:text-[13px]">{item.description}</p>
+      </div>
+      <span className="hidden shrink-0 items-center gap-1.5 sm:flex">
+        {isLeft && <span className="h-px w-6 bg-[#B9CFE0] lg:w-10" />}
+        <span className="h-2 w-2 shrink-0 rounded-full bg-[#155E9A]" />
+        {!isLeft && <span className="h-px w-6 bg-[#B9CFE0] lg:w-10" />}
+      </span>
+    </div>
+  );
+}
 
-/** Mentors & Advisors page opener — a 35/65 split (label+heading+stat pills, sticky, beside
- *  a 6-card grid of network categories) replacing the old centered PageHero, which stacked
- *  heading-then-paragraph blocks with no visual hierarchy before the real mentor cards below. */
+/** Mentors & Advisors page opener — a hub-and-spoke diagram: a compact dark-navy center
+ *  circle holding the page title and tagline, with the six network categories arranged as
+ *  three spokes on each side (dot + connector line), matching the requested reference
+ *  design. On mobile the circle sits on top and the six spokes stack in a simple 2-col
+ *  grid below it, since the side-by-side hub layout has no room on narrow screens. */
 export default function MentorsOverview() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white pb-10 pt-24 sm:pb-14 sm:pt-28">
-      <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
-      <Blob tone="secondary" className="-right-24 top-0 h-72 w-72" />
-      <Blob tone="brand" className="-left-20 bottom-0 h-64 w-64" animate={false} />
-
+    <section className="relative overflow-hidden bg-white pb-10 pt-24 sm:pb-14 sm:pt-28">
       <Container className="relative">
-        <div className="grid gap-8 sm:gap-10 lg:grid-cols-[35fr_65fr] lg:gap-12">
-          <AnimatedSection className="lg:sticky lg:top-28 lg:self-start">
-            <h1 className="text-[26px] font-bold leading-[1.1] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
-              Mentors &amp; Advisors
-            </h1>
-            <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-[#526777] sm:text-[15px]">
-              Operators, investors, and academics who give Tech4Bharat founders an unfair
-              advantage.
-            </p>
+        {/* Desktop / tablet: hub-and-spoke row */}
+        <div className="hidden items-center justify-center gap-6 sm:flex lg:gap-10">
+          <div className="flex flex-col gap-7">
+            {leftCategories.map((item) => (
+              <Spoke key={item.title} item={item} align="left" />
+            ))}
+          </div>
 
-            <div className="mt-6 flex flex-wrap gap-2.5 sm:gap-3">
-              {statBadges.map(({ icon: Icon, label }) => (
-                <span
-                  key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-700"
-                >
-                  <Icon size={15} /> {label}
-                </span>
-              ))}
-            </div>
+          <AnimatedSection className="flex aspect-square w-56 shrink-0 flex-col items-center justify-center rounded-full bg-[#0B2A4A] p-6 text-center lg:w-64">
+            <h1 className="text-[19px] font-bold leading-[1.15] text-white lg:text-[21px]">Mentors &amp; Advisors</h1>
+            <p className="mt-2 text-[12px] leading-snug text-[#DCE8FF] lg:text-[13px]">
+              Operators, investors, and academics who give Tech4Bharat founders an unfair advantage.
+            </p>
           </AnimatedSection>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category, i) => {
-              const Icon = category.icon;
-              const theme = cardThemes[category.tone];
+          <div className="flex flex-col gap-7">
+            {rightCategories.map((item) => (
+              <Spoke key={item.title} item={item} align="right" />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: circle on top, six categories stacked in a compact 2-col grid */}
+        <div className="flex flex-col items-center sm:hidden">
+          <AnimatedSection className="flex aspect-square w-52 shrink-0 flex-col items-center justify-center rounded-full bg-[#0B2A4A] p-6 text-center">
+            <h1 className="text-[18px] font-bold leading-[1.15] text-white">Mentors &amp; Advisors</h1>
+            <p className="mt-2 text-[11.5px] leading-snug text-[#DCE8FF]">
+              Operators, investors, and academics who give Tech4Bharat founders an unfair advantage.
+            </p>
+          </AnimatedSection>
+
+          <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-5">
+            {[...leftCategories, ...rightCategories].map((item) => {
+              const Icon = item.icon;
               return (
-                <AnimatedSection key={category.title} delay={(i % 6) * 0.06}>
-                  <div
-                    className={cn(
-                      "group relative flex flex-col overflow-hidden rounded-3xl border shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg p-4.5 sm:p-5",
-                      theme.bg,
-                      theme.border
-                    )}
-                  >
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className={cn(
-                          "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white shadow-sm",
-                          theme.iconBg
-                        )}
-                      >
-                        <Icon size={16} />
-                      </span>
-                      <h3 className="text-[15px] font-bold leading-snug text-ink-900 sm:text-[18px]">{category.title}</h3>
+                <AnimatedSection key={item.title}>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#155E9A]" />
+                    <div>
+                      <h3 className="flex items-center gap-1.5 text-[13px] font-bold text-[#0B2A4A]">
+                        <Icon size={13} className="shrink-0 text-[#155E9A]" />
+                        {item.title}
+                      </h3>
+                      <p className="mt-0.5 text-[11.5px] leading-snug text-slate-500">{item.description}</p>
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
-                      {category.description}
-                    </p>
-                    <span
-                      className="mt-2.5 flex h-7 w-7 items-center justify-center self-end rounded-full bg-slate-50 text-slate-400 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-ink-900 group-hover:text-white"
-                      aria-hidden="true"
-                    >
-                      <ArrowRight size={13} />
-                    </span>
                   </div>
                 </AnimatedSection>
               );

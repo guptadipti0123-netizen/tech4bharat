@@ -21,12 +21,12 @@ const whatWeDo: { name: string; fill: string }[] = [
 
 function Hexagon({ name, fill }: { name: string; fill: string }) {
   return (
-    <div className="relative aspect-[86.6/100] w-20 shrink-0 sm:w-24 lg:w-27">
+    <div className="relative aspect-[86.6/100] w-16 shrink-0 sm:w-19 lg:w-22">
       <svg viewBox="0 0 86.6 100" className="absolute inset-0 h-full w-full">
         <path d={HEX_PATH} fill={fill} />
       </svg>
-      <div className="absolute inset-0 flex items-center justify-center px-2.5 text-center">
-        <span className="text-[11px] font-bold leading-tight text-white sm:text-[13px] lg:text-[14px]">
+      <div className="absolute inset-0 flex items-center justify-center px-2 text-center">
+        <span className="text-[11px] font-bold leading-tight text-white sm:text-[12.5px] lg:text-[14px]">
           {name}
         </span>
       </div>
@@ -34,17 +34,18 @@ function Hexagon({ name, fill }: { name: string; fill: string }) {
   );
 }
 
-/** About Tech4Bharat overview — a light mint panel holding a two-column layout: a dark
- *  "Who We Are" card on the left, and a six-hexagon honeycomb ring ("What We Do") wrapped
- *  around a center text label on the right. Flat, borderless, shadowless hexagons per this
- *  section's minimal style (distinct from the bordered Partners honeycomb elsewhere). */
+/** About Tech4Bharat overview — a light mint panel: a dark "Who We Are" card, then a single
+ *  horizontal row of six category hexagons wrapped around a larger central "What We Do"
+ *  hexagon. Spans the full panel width (rather than sharing a 48/48 column split) so all
+ *  seven items can sit in one legible row instead of squeezing into a half-width column;
+ *  falls back to horizontal scroll only where a viewport is too narrow to fit all seven. */
 export default function OurStory() {
   return (
     <section id="about-overview" className="bg-white py-5 sm:py-7">
       <Container>
         <div className="rounded-3xl bg-[#F5FAFE] px-5 py-9 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-          <div className="flex flex-col items-center gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-8">
-            <AnimatedSection className="w-full lg:w-[48%]">
+          <div className="flex flex-col items-center gap-8 sm:gap-10">
+            <AnimatedSection className="w-full max-w-2xl">
               <div className="rounded-[18px] bg-[#0B2A4A] p-7 sm:p-8">
                 <h3 className="text-[19px] font-bold text-white sm:text-[20px]">Who We Are</h3>
                 <p className="mt-3 text-[14px] leading-[1.6] text-[#EAF4FB]">
@@ -58,27 +59,28 @@ export default function OurStory() {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1} className="w-full lg:w-[48%]">
-              <div className="mx-auto flex w-fit flex-col items-center">
-                <Hexagon name={whatWeDo[0].name} fill={whatWeDo[0].fill} />
-                <div className="-mt-3 flex gap-3 sm:-mt-4 sm:gap-4 lg:-mt-5">
-                  <Hexagon name={whatWeDo[1].name} fill={whatWeDo[1].fill} />
-                  <Hexagon name={whatWeDo[2].name} fill={whatWeDo[2].fill} />
+            <AnimatedSection delay={0.1} className="w-full">
+              <div className="flex items-center justify-start gap-2.5 overflow-x-auto px-1 py-2 sm:justify-center sm:gap-3 lg:gap-5">
+                {whatWeDo.slice(0, 3).map((item) => (
+                  <Hexagon key={item.name} name={item.name} fill={item.fill} />
+                ))}
+
+                <div className="relative aspect-[86.6/100] w-20 shrink-0 sm:w-24 lg:w-28">
+                  <svg viewBox="0 0 86.6 100" className="absolute inset-0 h-full w-full">
+                    <path d={HEX_PATH} fill="#1F4E8C" />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center px-2 text-center">
+                    <span className="text-[17px] font-bold leading-[1.15] text-white sm:text-[19px] lg:text-[22px]">
+                      What
+                      <br />
+                      We Do
+                    </span>
+                  </div>
                 </div>
-                <div className="-mt-3 flex h-20 w-24 flex-col items-center justify-center text-center sm:-mt-4 sm:h-24 sm:w-28 lg:-mt-5 lg:h-27 lg:w-32">
-                  <span className="text-[13px] font-bold leading-tight text-[#0B2A4A] sm:text-[15px] lg:text-[16px]">
-                    What
-                    <br />
-                    We Do
-                  </span>
-                </div>
-                <div className="-mt-3 flex gap-3 sm:-mt-4 sm:gap-4 lg:-mt-5">
-                  <Hexagon name={whatWeDo[3].name} fill={whatWeDo[3].fill} />
-                  <Hexagon name={whatWeDo[4].name} fill={whatWeDo[4].fill} />
-                </div>
-                <div className="-mt-3 sm:-mt-4 lg:-mt-5">
-                  <Hexagon name={whatWeDo[5].name} fill={whatWeDo[5].fill} />
-                </div>
+
+                {whatWeDo.slice(3, 6).map((item) => (
+                  <Hexagon key={item.name} name={item.name} fill={item.fill} />
+                ))}
               </div>
             </AnimatedSection>
           </div>

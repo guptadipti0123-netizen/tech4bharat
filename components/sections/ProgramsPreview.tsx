@@ -43,14 +43,14 @@ export default function ProgramsPreview() {
             <HomeSectionHeading title="How founders work with us" />
           </AnimatedSection>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5">
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 sm:gap-4">
             {homePrograms.map((program, i) => (
               <AnimatedSection key={program.title} delay={0.08 + i * 0.04}>
                 <Link
                   href={program.href}
-                  className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-white bg-white shadow-[0_8px_24px_rgba(6,26,44,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(6,26,44,0.12)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#D3E4F5] bg-white shadow-[0_6px_18px_rgba(6,26,44,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(6,26,44,0.1)]"
                 >
-                  <div className="relative h-44 shrink-0 overflow-hidden bg-[linear-gradient(135deg,#F5FAFE_0%,#F5FAFE_100%)] sm:h-52">
+                  <div className="relative h-32 shrink-0 overflow-hidden bg-[linear-gradient(135deg,#F5FAFE_0%,#F5FAFE_100%)] sm:h-40">
                     <Image
                       src={program.image}
                       alt={program.title}
@@ -59,11 +59,11 @@ export default function ProgramsPreview() {
                       className="object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col p-5 sm:p-6">
-                    <h3 className="text-[17px] font-semibold text-ink-900 sm:text-[18px]">{program.title}</h3>
-                    <p className="mt-2 text-[14px] leading-relaxed text-slate-600">{program.description}</p>
-                    <div className="mt-auto flex items-center gap-2 pt-4 text-[13px] font-semibold text-brand-500">
-                      {program.linkLabel} <ArrowRight size={15} />
+                  <div className="flex flex-1 flex-col p-4 sm:p-4.5">
+                    <h3 className="text-[15px] font-semibold text-ink-900 sm:text-[16px]">{program.title}</h3>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-slate-600">{program.description}</p>
+                    <div className="mt-auto flex items-center gap-2 pt-3 text-[12px] font-semibold text-brand-500">
+                      {program.linkLabel} <ArrowRight size={13} />
                     </div>
                   </div>
                 </Link>
@@ -71,8 +71,8 @@ export default function ProgramsPreview() {
             ))}
           </div>
 
-          <AnimatedSection delay={0.18} className="mt-5 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-xl text-[14px] leading-relaxed text-slate-600">
+          <AnimatedSection delay={0.18} className="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-xl text-[13px] leading-relaxed text-slate-600">
               Practical support from mentors and operators, access to capital pathways, and a
               national network that compounds over time.
             </p>

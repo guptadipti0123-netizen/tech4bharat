@@ -38,11 +38,12 @@ export default function FocusAreas() {
         <div className="rounded-[36px] bg-[linear-gradient(160deg,#F5FAFE_0%,#F5FAFE_100%)] p-4 sm:p-6 lg:p-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <HomeSectionHeading title="Social Impact Domains" align="center" />
+            <p className="mt-2 text-[12px] font-medium text-slate-500 sm:hidden">Swipe to explore →</p>
           </AnimatedSection>
 
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-3.5 lg:grid-cols-4">
+          <div className="mt-6 grid grid-flow-col auto-cols-[42%] grid-rows-2 gap-3 overflow-x-auto scrollbar-none pb-2 snap-x snap-mandatory sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 sm:grid-rows-none sm:gap-3.5 sm:overflow-visible sm:pb-0 lg:grid-cols-4">
             {displayedDomains.map((domain, i) => (
-              <AnimatedSection key={domain} delay={i * 0.03}>
+              <AnimatedSection key={domain} delay={i * 0.03} className="snap-start">
                 <div className="group relative aspect-4/3 overflow-hidden rounded-2xl border border-brand-500/15 shadow-[0_2px_10px_rgba(21,94,154,0.05)]">
                   <Image
                     src={getDomainImage(domain)}

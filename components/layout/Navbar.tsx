@@ -38,7 +38,6 @@ interface NavItem {
 // duplicated across dropdowns.
 const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   {
     label: "Programs",
     href: "/programs",
@@ -62,6 +61,7 @@ const navLinks: NavItem[] = [
       { label: "Success Stories", href: "/success-stories", icon: Award },
     ],
   },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 

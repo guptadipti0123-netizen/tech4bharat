@@ -17,6 +17,13 @@ interface ProgramItem {
 
 // `id` gives each card a real anchor target — the Navbar's Programs dropdown links to
 // /programs#incubation and /programs#workshops directly.
+// One shared color set for every card — same accent, tint, and shadow — so the four cards
+// read as perfectly uniform, distinguished only by their icon, title, description, and chips.
+const ACCENT = "#155E9A";
+const CARD_BG = "#EAF4FB";
+const CHIP_BG = "rgba(21,94,154,.08)";
+const SHADOW = "0 10px 26px rgba(21,94,154,.10)";
+
 const programs: ProgramItem[] = [
   {
     id: "incubation",
@@ -24,10 +31,10 @@ const programs: ProgramItem[] = [
     title: "Startup Incubation",
     description: "Structured, cohort-based support from first idea to a working, fundable company.",
     chips: ["Idea Validation", "Product Development", "Demo Day"],
-    accent: "#155E9A",
-    cardBg: "#EAF4FB",
-    chipBg: "rgba(21,94,154,.08)",
-    shadow: "0 10px 26px rgba(21,94,154,.12)",
+    accent: ACCENT,
+    cardBg: CARD_BG,
+    chipBg: CHIP_BG,
+    shadow: SHADOW,
   },
   {
     id: "mentorship",
@@ -35,10 +42,10 @@ const programs: ProgramItem[] = [
     title: "Mentorship",
     description: "One-on-one guidance from experienced operators and industry mentors.",
     chips: ["1:1 Sessions", "Industry Experts", "Career Guidance"],
-    accent: "#155E9A",
-    cardBg: "#F5FAFE",
-    chipBg: "rgba(21,94,154,.08)",
-    shadow: "0 10px 26px rgba(21,94,154,.12)",
+    accent: ACCENT,
+    cardBg: CARD_BG,
+    chipBg: CHIP_BG,
+    shadow: SHADOW,
   },
   {
     id: "workshops",
@@ -46,10 +53,10 @@ const programs: ProgramItem[] = [
     title: "Workshops & Training",
     description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
     chips: ["Hands-on Learning", "Live Workshops", "Skill Building"],
-    accent: "#2F80ED",
-    cardBg: "#F5FAFE",
-    chipBg: "rgba(47,128,237,.10)",
-    shadow: "0 10px 26px rgba(47,128,237,.12)",
+    accent: ACCENT,
+    cardBg: CARD_BG,
+    chipBg: CHIP_BG,
+    shadow: SHADOW,
   },
   {
     id: "funding-networking",
@@ -57,10 +64,10 @@ const programs: ProgramItem[] = [
     title: "Funding & Networking",
     description: "Grant facilitation and curated introductions to our investor and partner network.",
     chips: ["Investor Connect", "Grant Support", "Partner Network"],
-    accent: "#155E9A",
-    cardBg: "#F5FAFE",
-    chipBg: "rgba(21,94,154,.08)",
-    shadow: "0 10px 26px rgba(21,94,154,.12)",
+    accent: ACCENT,
+    cardBg: CARD_BG,
+    chipBg: CHIP_BG,
+    shadow: SHADOW,
   },
 ];
 
@@ -100,7 +107,7 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
 
       <div className="mt-auto">
         <div className="mt-4 h-px w-10 sm:mt-5" style={{ backgroundColor: accent, opacity: 0.3 }} />
-        <Button href={learnMoreHref} variant="outline" size="sm" className="mt-3 w-fit sm:mt-4">
+        <Button href={learnMoreHref} variant="primary" size="sm" className="mt-3 w-fit sm:mt-4">
           Learn More <ArrowUpRight size={16} />
         </Button>
       </div>
