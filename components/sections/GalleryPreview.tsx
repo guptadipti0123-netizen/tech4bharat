@@ -3,53 +3,90 @@ import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import HomeSectionHeading from "@/components/sections/HomeSectionHeading";
 
 interface GalleryTile {
   src: string;
   alt: string;
+  caption: string;
 }
 
 const tiles: GalleryTile[] = [
-  { src: "/images/gallery/gallery-4.jpg", alt: "Founders at a Tech4Bharat session" },
-  { src: "/images/gallery/students-1.jpg", alt: "Students at a Tech4Bharat program" },
-  { src: "/images/gallery/gallery-10.jpg", alt: "A Tech4Bharat cohort in session" },
-  { src: "/images/gallery/agriculture-2.jpg", alt: "An AgriTech founder in the field" },
-  { src: "/images/gallery/gallery-13.jpg", alt: "A Tech4Bharat networking moment" },
-  { src: "/images/gallery/gallery-5.jpg", alt: "A Tech4Bharat mentoring session" },
+  {
+    src: "/images/legacy/workshops/day1-i1-inaugural-session.png",
+    alt: "Inaugural Session & Opening Ceremony at COEP",
+    caption: "Opening Ceremony",
+  },
+  {
+    src: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png",
+    alt: "Introduction to Technology Policy Session",
+    caption: "Policy Foundations",
+  },
+  {
+    src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
+    alt: "Digital Narratives & Blockchain Workshop",
+    caption: "Digital Narratives",
+  },
+  {
+    src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
+    alt: "Digital Public Infrastructure & AI Session",
+    caption: "DPI & AI Governance",
+  },
+  {
+    src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png",
+    alt: "UAV Simulation & Security Analysis",
+    caption: "Simulation & Security",
+  },
+  {
+    src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",
+    alt: "Cohort Field Visit to C-DAC",
+    caption: "C-DAC Field Visit",
+  },
 ];
 
-/** Gallery preview — a uniform image-tile grid (every tile the same size, radius, and
- *  border), held inside a soft panel to match the rest of the Home page's visual rhythm. */
+/** Gallery preview — authentic workshop photos, compact 2-column mobile / 3-column desktop
+ *  photo grid styled with tech4bharat.com gradients and clean responsive cards. */
 export default function GalleryPreview() {
   return (
-    <section className="bg-white py-10 sm:py-14 lg:py-20">
+    <section className="bg-white py-8 sm:py-12">
       <Container>
-        <div className="rounded-[36px] bg-[linear-gradient(160deg,#F5FAFE_0%,#FFFFFF_100%)] p-4 sm:p-6 lg:p-8">
-          <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <HomeSectionHeading title="Moments from the ecosystem" align="center" />
+        <div className="rounded-3xl bg-gradient-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-4 sm:p-7 shadow-lg border border-white/60">
+          <AnimatedSection className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
+              Workshop Highlights
+            </span>
+            <h2 className="mt-2 text-[20px] sm:text-[26px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+              Moments From the Ecosystem
+            </h2>
+            <p className="mx-auto mt-1.5 max-w-lg text-[12px] sm:text-[14px] leading-relaxed text-gray-600">
+              Glimpses from our hands-on workshops, campus cohorts, and institutional field visits.
+            </p>
           </AnimatedSection>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+          <div className="mt-5 sm:mt-7 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3.5">
             {tiles.map((tile, i) => (
-              <AnimatedSection key={tile.src} delay={i * 0.06}>
-                <div className="group relative h-44 overflow-hidden rounded-2xl border border-brand-500/15 bg-[linear-gradient(135deg,#F5FAFE_0%,#F5FAFE_100%)] shadow-[0_2px_10px_rgba(21,94,154,0.05)] sm:h-48 lg:h-52">
+              <AnimatedSection key={tile.src} delay={i * 0.04}>
+                <div className="group relative aspect-4/3 w-full overflow-hidden rounded-xl sm:rounded-2xl border border-white/80 bg-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
                   <Image
                     src={tile.src}
                     alt={tile.alt}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                    className="object-contain transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020024]/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-2.5 sm:p-3">
+                    <span className="text-[10.5px] sm:text-[12px] font-semibold text-white drop-shadow-sm">
+                      {tile.caption}
+                    </span>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
 
-          <AnimatedSection delay={0.3} className="mt-6 text-center">
-            <Button href="/gallery" variant="outline">
-              View Gallery <ArrowRight size={16} />
+          <AnimatedSection delay={0.2} className="mt-6 text-center">
+            <Button href="/gallery" variant="outline" size="sm" className="text-xs">
+              View Full Gallery <ArrowRight size={13} />
             </Button>
           </AnimatedSection>
         </div>

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import HomeSectionHeading from "@/components/sections/HomeSectionHeading";
 
 interface HomeProgram {
   title: string;
+  badge: string;
   description: string;
   image: string;
   href: string;
@@ -17,53 +17,73 @@ interface HomeProgram {
 const homePrograms: HomeProgram[] = [
   {
     title: "Startup Portfolio",
-    description: "The startups Tech4Bharat has backed and incubated.",
-    image: "/images/programs/incubation.jpg",
+    badge: "Incubation",
+    description: "Startups incubated and supported across critical sectors in India.",
+    image: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png",
     href: "/portfolio",
-    linkLabel: "Discover the portfolio",
+    linkLabel: "Discover portfolio",
   },
   {
     title: "Startup Bootcamp",
-    description: "A one-day intensive program for early-stage founders.",
-    image: "/images/gallery/hackathons-1.jpg",
+    badge: "Intensive",
+    description: "Intensive 1-day validation and investor readiness bootcamp.",
+    image: "/images/legacy/workshops/day3-i1-innovation-management-policy.png",
     href: "/startup-bootcamp",
-    linkLabel: "Explore the bootcamp",
+    linkLabel: "Explore bootcamp",
   },
 ];
 
-/** How founders work with us — two uniform program cards (identical image height, padding,
- *  border, radius, and typography), held inside a soft panel to match the rest of the Home
- *  page's visual rhythm. */
+/** How founders work with us — two compact program cards in a 2-column row on both
+ *  mobile and desktop, with tech4bharat.com styling and authentic workshop photos. */
 export default function ProgramsPreview() {
   return (
-    <section id="programs" className="bg-white py-10 sm:py-14 lg:py-20">
+    <section id="programs" className="bg-white py-8 sm:py-12">
       <Container>
-        <div className="rounded-[36px] bg-[linear-gradient(160deg,#F5FAFE_0%,#F5FAFE_100%)] p-4 sm:p-6 lg:p-8">
+        <div className="rounded-3xl bg-gradient-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-4 sm:p-7 shadow-lg border border-white/60">
           <AnimatedSection>
-            <HomeSectionHeading title="How founders work with us" />
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+              <div>
+                <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
+                  Founder Pathways
+                </span>
+                <h2 className="mt-2 text-[20px] sm:text-[26px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+                  How Founders Work With Us
+                </h2>
+              </div>
+              <Button href="/programs" variant="outline" size="sm" className="hidden sm:inline-flex text-xs">
+                View All Programs <ArrowRight size={13} />
+              </Button>
+            </div>
           </AnimatedSection>
 
-          <div className="mt-5 grid gap-3 sm:grid-cols-2 sm:gap-4">
+          <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4">
             {homePrograms.map((program, i) => (
-              <AnimatedSection key={program.title} delay={0.08 + i * 0.04}>
+              <AnimatedSection key={program.title} delay={0.05 + i * 0.04} className="h-full">
                 <Link
                   href={program.href}
-                  className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#D3E4F5] bg-white shadow-[0_6px_18px_rgba(6,26,44,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(6,26,44,0.1)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-xl sm:rounded-2xl border border-white/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#4f6ff2] hover:shadow-md"
                 >
-                  <div className="relative h-32 shrink-0 overflow-hidden bg-[linear-gradient(135deg,#F5FAFE_0%,#F5FAFE_100%)] sm:h-40">
+                  <div className="relative h-24 sm:h-36 lg:h-44 w-full shrink-0 overflow-hidden bg-slate-100">
                     <Image
                       src={program.image}
                       alt={program.title}
                       fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 50vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-105"
                     />
+                    <span className="absolute top-2 left-2 inline-flex items-center rounded-full bg-white/95 px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase text-[#1e3a8a] shadow-xs">
+                      {program.badge}
+                    </span>
                   </div>
-                  <div className="flex flex-1 flex-col p-4 sm:p-4.5">
-                    <h3 className="text-[15px] font-semibold text-ink-900 sm:text-[16px]">{program.title}</h3>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-slate-600">{program.description}</p>
-                    <div className="mt-auto flex items-center gap-2 pt-3 text-[12px] font-semibold text-brand-500">
-                      {program.linkLabel} <ArrowRight size={13} />
+                  <div className="flex flex-1 flex-col p-2.5 sm:p-4">
+                    <h3 className="text-[12.5px] sm:text-[15px] font-bold text-[#020024] leading-snug">
+                      {program.title}
+                    </h3>
+                    <p className="mt-1 line-clamp-2 text-[10.5px] sm:text-[12px] leading-snug text-gray-600">
+                      {program.description}
+                    </p>
+                    <div className="mt-auto flex items-center gap-1 pt-2.5 text-[10.5px] sm:text-[12px] font-semibold text-[#1e3a8a] group-hover:text-[#4f6ff2]">
+                      {program.linkLabel} <ArrowRight size={13} className="transition-transform group-hover:translate-x-0.5" />
                     </div>
                   </div>
                 </Link>
@@ -71,13 +91,9 @@ export default function ProgramsPreview() {
             ))}
           </div>
 
-          <AnimatedSection delay={0.18} className="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-xl text-[13px] leading-relaxed text-slate-600">
-              Practical support from mentors and operators, access to capital pathways, and a
-              national network that compounds over time.
-            </p>
-            <Button href="/programs" variant="outline" size="sm" className="w-fit shrink-0">
-              View All Programs <ArrowRight size={14} />
+          <AnimatedSection delay={0.15} className="mt-4 flex sm:hidden justify-center pt-2">
+            <Button href="/programs" variant="outline" size="sm" className="w-full text-xs">
+              View All Programs <ArrowRight size={13} />
             </Button>
           </AnimatedSection>
         </div>

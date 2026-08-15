@@ -206,7 +206,7 @@ export const mentors: Mentor[] = [
     company: "NimbusPay",
     expertise: "Fundraising",
     initials: "PN",
-    photo: "/images/domains/healthtech.jpg",
+    photo: "/images/gallery/women-entrepreneurship-2.jpg",
     bio: "Raised three rounds of capital for her own fintech venture; mentors founders on data rooms, term sheets, and investor narratives.",
     linkedinUrl: "#",
   },
@@ -226,7 +226,7 @@ export const mentors: Mentor[] = [
     company: "Zerodha",
     expertise: "Growth Marketing",
     initials: "KI",
-    photo: "/images/gallery/gallery-13.jpg",
+    photo: "/images/gallery/women-entrepreneurship-3.jpg",
     bio: "Built growth loops for one of India's largest fintech platforms; advises founders on retention and lifecycle marketing.",
     linkedinUrl: "#",
   },
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     category: "Ecosystem",
     date: "Jun 2026",
     readTime: "5 min read",
-    image: "/images/gallery/gallery-1.jpg",
+    image: "/images/gallery/startup-events-1.jpg",
     slug: "tier-2-cities-startup-wave",
   },
   {
@@ -309,7 +309,7 @@ export const blogPosts: BlogPost[] = [
     category: "Fundraising",
     date: "May 2026",
     readTime: "7 min read",
-    image: "/images/gallery/gallery-3.jpg",
+    image: "/images/gallery/gallery-13.jpg",
     slug: "raising-your-first-round",
   },
   {
@@ -319,7 +319,7 @@ export const blogPosts: BlogPost[] = [
     category: "Mentorship",
     date: "Apr 2026",
     readTime: "4 min read",
-    image: "/images/programs/mentoring.jpg",
+    image: "/images/gallery/mentorship-2.jpg",
     slug: "why-mentorship-matters",
   },
   {
@@ -329,7 +329,7 @@ export const blogPosts: BlogPost[] = [
     category: "Policy",
     date: "Mar 2026",
     readTime: "6 min read",
-    image: "/images/gallery/gallery-2.jpg",
+    image: "/images/gallery/gallery-10.jpg",
     slug: "startup-india-registration-guide",
   },
   {
@@ -349,7 +349,7 @@ export const blogPosts: BlogPost[] = [
     category: "Product",
     date: "Jan 2026",
     readTime: "5 min read",
-    image: "/images/gallery/hackathons-2.jpg",
+    image: "/images/gallery/technology-3.jpg",
     slug: "product-market-fit-before-code",
   },
 ];

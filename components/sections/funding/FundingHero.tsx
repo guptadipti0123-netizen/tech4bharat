@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -41,12 +41,12 @@ export default function FundingHero() {
               />
               <div className="relative h-80 w-full overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-2xl sm:h-96">
                 <Image
-                  src="/images/gallery/gallery-7.jpg"
+                  src="/images/events/event-fundraising.jpg"
                   alt="Founders at a Tech4Bharat fundraising session"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain object-center"
+                  className="object-cover object-center brightness-105"
                 />
               </div>
             </div>

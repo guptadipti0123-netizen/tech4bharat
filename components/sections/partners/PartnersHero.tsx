@@ -14,14 +14,14 @@ export default function PartnersHero() {
     <section className="relative flex aspect-21/9 min-h-80 items-end pb-10 pt-18 sm:pb-12">
       <Image
         src="/images/gallery/gallery-15.jpg"
-        alt=""
+        alt="Tech4Bharat partners collaborating"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-top"
+        className="object-cover object-top brightness-105"
       />
-      <div className="absolute inset-0 bg-linear-to-t from-ink-900/90 via-ink-900/50 to-ink-900/15" />
-      <div className="absolute inset-0 bg-linear-to-r from-brand-950/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-ink-900/75 via-ink-900/35 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-brand-950/40 via-transparent to-transparent" />
 
       <Container className="relative">
         <AnimatedSection className="max-w-2xl">

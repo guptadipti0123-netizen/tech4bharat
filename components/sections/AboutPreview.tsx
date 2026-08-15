@@ -5,57 +5,48 @@ import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { aboutImages } from "@/lib/images";
 
-/** About preview — a soft mint panel holding a real photo beside a bold dark card, so the
- *  copy reads with real contrast instead of blending into a pale tint. */
+/** About preview — tech4bharat.com inspired layout with authentic workshop photo,
+ *  sleek gradient container, compact typography, and responsive grid. */
 export default function AboutPreview() {
   return (
-    <section id="about" className="bg-white py-10 sm:py-14 lg:py-20">
+    <section id="about" className="bg-white py-8 sm:py-14">
       <Container>
-        <div className="rounded-[36px] bg-[linear-gradient(160deg,#F5FAFE_0%,#F5FAFE_100%)] p-3 sm:p-5 lg:p-6">
-          <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:gap-5">
+        <div className="rounded-3xl bg-gradient-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-4 sm:p-8 shadow-lg border border-white/60">
+          <div className="grid gap-6 items-center lg:grid-cols-2 lg:gap-8">
             <AnimatedSection>
-              {/* aspect-3/2 matches the source photo's real 612x408 ratio exactly, so
-                  object-cover never letterboxes or crops. Sized by aspect ratio alone (not
-                  stretched to match the sibling card's height) so that guarantee holds. */}
-              <div className="relative aspect-3/2 w-full overflow-hidden rounded-[26px] shadow-[0_10px_30px_rgba(21,94,154,0.14)] ring-4 ring-white">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-md border-2 border-white">
                 <Image
-                  src={aboutImages.team}
-                  alt="The Tech4Bharat team"
+                  src="/images/legacy/policy-workshop-1.png"
+                  alt="Tech4Bharat workshop cohort at COEP University"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover brightness-105"
                 />
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.08}>
-              <div
-                className="relative flex h-full flex-col overflow-hidden rounded-[26px] p-6 shadow-[0_12px_30px_rgba(21,94,154,0.12)] sm:p-8"
-                style={{ background: "linear-gradient(135deg, #F1F7FF 0%, #E3F0FF 100%)" }}
-              >
-                <div className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-[#2563C7]/10 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-[#FFE08A]/20 blur-3xl" />
-
-                <span className="relative text-[11px] font-bold uppercase tracking-[0.18em] text-[#2563C7]">
+              <div className="flex flex-col justify-center rounded-2xl bg-white/75 p-5 sm:p-7 shadow-sm backdrop-blur-md border border-white/70">
+                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
                   About Tech4Bharat
                 </span>
-                <h2 className="relative mt-2 max-w-2xl text-balance text-[clamp(1.3rem,2.2vw,1.7rem)] font-semibold leading-tight text-[#0B2A4A]">
-                  A startup incubator built for Indian founders
+                <h2 className="mt-2.5 text-[20px] sm:text-[26px] font-extrabold leading-tight text-[#020024] tracking-tight">
+                  National Platform for Social Entrepreneurship
                 </h2>
-                <span className="relative mt-3 h-1 w-12 rounded-full bg-[#2563C7]/30" aria-hidden="true" />
 
-                <p className="relative mt-4 text-[14px] leading-6 text-[#526777] sm:text-[15px]">
-                  Tech4Bharat is a startup incubator helping ambitious founders build
-                  category-defining companies across India.
+                <p className="mt-3 text-[12px] sm:text-[13.5px] leading-relaxed text-gray-600">
+                  Tech4Bharat is dedicated to empowering India&apos;s youth with cutting-edge skills and supporting social impact startups across critical national domains.
                 </p>
-                <p className="relative mt-3 text-[14px] leading-6 text-[#526777] sm:text-[15px]">
-                  We support founders through mentorship, capital access, and a thriving
-                  nationwide startup ecosystem.
+                <p className="mt-2 text-[12px] sm:text-[13.5px] leading-relaxed text-gray-600">
+                  Through mentorship, research translation with leading academic institutions, and ecosystem partnerships, we help founders build sustainable ventures for Bharat.
                 </p>
 
-                <div className="relative mt-6 border-t border-[#2563C7]/12 pt-5">
-                  <Button href="/about" variant="secondary">
-                    Learn More <ArrowRight size={16} />
+                <div className="mt-5 pt-4 border-t border-gray-100 flex items-center gap-3">
+                  <Button href="/about" size="sm">
+                    Learn More <ArrowRight size={14} />
+                  </Button>
+                  <Button href="/contact" variant="outline" size="sm">
+                    Contact Team
                   </Button>
                 </div>
               </div>

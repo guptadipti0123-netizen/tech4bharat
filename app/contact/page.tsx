@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink, Handshake, Lightbulb, Mail, MapPin, Megaphone, Phone, Users, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -107,14 +107,14 @@ export default function ContactPage() {
         style={{ backgroundColor: "#0B2A4A" }}
       >
         <Image
-          src="/images/gallery/gallery-3.jpg"
-          alt=""
+          src="/images/gallery/gallery-12.jpg"
+          alt="Contact Tech4Bharat team"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover brightness-105"
         />
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(11,42,74,0.35)" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(11,42,74,0.32)" }} />
         <div className="relative flex h-full items-center justify-center">
           <Container>
             <AnimatedSection className="mx-auto max-w-2xl text-center">
@@ -206,13 +206,13 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <div className="group relative aspect-video overflow-hidden rounded-3xl border-4 border-white shadow-lg">
                   <Image
-                    src="/images/programs/incubation.jpg"
+                    src="/images/gallery/innovation-labs-1.jpg"
                     alt="Founders and mentors collaborating at the Tech4Bharat office"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105 brightness-105"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-brand-900/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-900/40 via-transparent to-transparent" />
                   <p className="absolute bottom-4 left-4 text-sm font-medium text-white">
                     Visit us at IIT Bombay, Powai
                   </p>

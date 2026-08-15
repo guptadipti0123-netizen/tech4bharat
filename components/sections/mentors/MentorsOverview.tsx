@@ -14,99 +14,98 @@ interface NetworkCategory {
   icon: LucideIcon;
   title: string;
   description: string;
+  badge: string;
 }
 
-const leftCategories: NetworkCategory[] = [
-  { icon: Users, title: "Mentors", description: "Founders who have built and scaled successful startups." },
-  { icon: TrendingUp, title: "Operators", description: "Experienced professionals with execution expertise." },
-  { icon: Wallet, title: "Investors", description: "Angel investors and VCs supporting early-stage ventures." },
-];
-
-const rightCategories: NetworkCategory[] = [
-  { icon: GraduationCap, title: "Academics", description: "Researchers and professors driving innovation." },
-  { icon: Building2, title: "Industry Experts", description: "Leaders from corporate and technology sectors." },
+const categories: NetworkCategory[] = [
+  {
+    icon: Users,
+    title: "Startup Mentors",
+    description: "Experienced founders who have built and scaled tech ventures across India.",
+    badge: "Founders",
+  },
+  {
+    icon: TrendingUp,
+    title: "Operators & Leaders",
+    description: "Specialists with deep expertise in product, engineering, and growth execution.",
+    badge: "Execution",
+  },
+  {
+    icon: Wallet,
+    title: "Angel & VC Investors",
+    description: "Early-stage capital partners backing innovative social impact startups.",
+    badge: "Capital",
+  },
+  {
+    icon: GraduationCap,
+    title: "Academic Scholars",
+    description: "Faculty & researchers from IITs and premier institutions driving deep-tech IP.",
+    badge: "Research",
+  },
+  {
+    icon: Building2,
+    title: "Industry Specialists",
+    description: "Corporate and technology leaders offering real-world market access.",
+    badge: "Industry",
+  },
   {
     icon: Handshake,
-    title: "Policy Advisors",
-    description: "Experts connecting startups with government and ecosystem opportunities.",
+    title: "Policy & Ecosystem Advisors",
+    description: "Strategic advisors connecting startups with government grants and DPI.",
+    badge: "Governance",
   },
 ];
 
-function Spoke({ item, align }: { item: NetworkCategory; align: "left" | "right" }) {
-  const Icon = item.icon;
-  const isLeft = align === "left";
-  return (
-    <div className={`flex items-center gap-3 ${isLeft ? "flex-row-reverse text-right" : "text-left"}`}>
-      <div className={isLeft ? "" : ""}>
-        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-[#0B2A4A] sm:text-[16px]">
-          {isLeft ? null : <Icon size={14} className="shrink-0 text-[#155E9A]" />}
-          {item.title}
-          {isLeft ? <Icon size={14} className="shrink-0 text-[#155E9A]" /> : null}
-        </h3>
-        <p className="mt-0.5 max-w-48 text-[12px] leading-snug text-slate-500 sm:text-[13px]">{item.description}</p>
-      </div>
-      <span className="hidden shrink-0 items-center gap-1.5 sm:flex">
-        {isLeft && <span className="h-px w-6 bg-[#B9CFE0] lg:w-10" />}
-        <span className="h-2 w-2 shrink-0 rounded-full bg-[#155E9A]" />
-        {!isLeft && <span className="h-px w-6 bg-[#B9CFE0] lg:w-10" />}
-      </span>
-    </div>
-  );
-}
-
-/** Mentors & Advisors page opener — a hub-and-spoke diagram: a compact dark-navy center
- *  circle holding the page title and tagline, with the six network categories arranged as
- *  three spokes on each side (dot + connector line), matching the requested reference
- *  design. On mobile the circle sits on top and the six spokes stack in a simple 2-col
- *  grid below it, since the side-by-side hub layout has no room on narrow screens. */
 export default function MentorsOverview() {
   return (
-    <section className="relative overflow-hidden bg-white pb-10 pt-24 sm:pb-14 sm:pt-28">
+    <section className="relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-12">
+      {/* tech4bharat.com styled background gradient */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10"
+        style={{
+          background: "linear-gradient(180deg, #edeef8 0%, #f8f9ff 60%, #c5d1ff 100%)",
+        }}
+      />
+
       <Container className="relative">
-        {/* Desktop / tablet: hub-and-spoke row */}
-        <div className="hidden items-center justify-center gap-6 sm:flex lg:gap-10">
-          <div className="flex flex-col gap-7">
-            {leftCategories.map((item) => (
-              <Spoke key={item.title} item={item} align="left" />
-            ))}
-          </div>
-
-          <AnimatedSection className="flex aspect-square w-56 shrink-0 flex-col items-center justify-center rounded-full bg-[#0B2A4A] p-6 text-center lg:w-64">
-            <h1 className="text-[19px] font-bold leading-[1.15] text-white lg:text-[21px]">Mentors &amp; Advisors</h1>
-            <p className="mt-2 text-[12px] leading-snug text-[#DCE8FF] lg:text-[13px]">
-              Operators, investors, and academics who give Tech4Bharat founders an unfair advantage.
+        <div className="mx-auto max-w-6xl rounded-3xl bg-white/60 p-4 sm:p-8 lg:p-10 shadow-xl backdrop-blur-lg border border-white/50">
+          <AnimatedSection className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
+              Ecosystem Mentorship
+            </span>
+            <h1 className="mt-2.5 text-[22px] sm:text-[30px] lg:text-[34px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+              Mentors &amp; Advisors
+            </h1>
+            <p className="mx-auto mt-2 max-w-xl text-[12px] sm:text-[14px] leading-relaxed text-gray-600">
+              Operators, investors, and academics who guide Tech4Bharat founders with real-world experience and strategic insights.
             </p>
           </AnimatedSection>
 
-          <div className="flex flex-col gap-7">
-            {rightCategories.map((item) => (
-              <Spoke key={item.title} item={item} align="right" />
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile: circle on top, six categories stacked in a compact 2-col grid */}
-        <div className="flex flex-col items-center sm:hidden">
-          <AnimatedSection className="flex aspect-square w-52 shrink-0 flex-col items-center justify-center rounded-full bg-[#0B2A4A] p-6 text-center">
-            <h1 className="text-[18px] font-bold leading-[1.15] text-white">Mentors &amp; Advisors</h1>
-            <p className="mt-2 text-[11.5px] leading-snug text-[#DCE8FF]">
-              Operators, investors, and academics who give Tech4Bharat founders an unfair advantage.
-            </p>
-          </AnimatedSection>
-
-          <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-5">
-            {[...leftCategories, ...rightCategories].map((item) => {
+          {/* 6 Category Cards in a balanced compact 2-col (mobile) & 3-col (desktop) grid */}
+          <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-3">
+            {categories.map((item, i) => {
               const Icon = item.icon;
               return (
-                <AnimatedSection key={item.title}>
-                  <div className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#155E9A]" />
+                <AnimatedSection key={item.title} delay={i * 0.04} animation="scale" className="h-full">
+                  <div className="group flex h-full flex-col justify-between rounded-xl sm:rounded-2xl border border-white/60 bg-white/75 p-3 sm:p-4.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#4f6ff2] hover:shadow-md">
                     <div>
-                      <h3 className="flex items-center gap-1.5 text-[13px] font-bold text-[#0B2A4A]">
-                        <Icon size={13} className="shrink-0 text-[#155E9A]" />
+                      <div className="flex items-center justify-between">
+                        <span className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-blue-50 text-[#4f6ff2] group-hover:scale-105 transition-transform">
+                          <Icon size={16} className="sm:hidden" />
+                          <Icon size={19} className="hidden sm:block" />
+                        </span>
+                        <span className="rounded-full bg-[#1e3a8a]/5 px-2 py-0.5 text-[9px] sm:text-[10px] font-bold text-[#1e3a8a]">
+                          {item.badge}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-2.5 text-[12.5px] sm:text-[14.5px] font-bold text-[#020024] leading-snug">
                         {item.title}
                       </h3>
-                      <p className="mt-0.5 text-[11.5px] leading-snug text-slate-500">{item.description}</p>
+                      <p className="mt-1 line-clamp-3 text-[10.5px] sm:text-[12px] leading-snug text-gray-600">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </AnimatedSection>

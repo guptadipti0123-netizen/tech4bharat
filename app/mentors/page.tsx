@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import MentorsOverview from "@/components/sections/mentors/MentorsOverview";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -26,25 +26,24 @@ export default function MentorsPage() {
       <MentorsOverview />
 
       <section
-        className="relative overflow-hidden pb-12 pt-6 sm:pb-16 sm:pt-10"
-        style={{ background: "linear-gradient(180deg, #F5FAFE 0%, #F5FAFE 100%)" }}
+        className="relative overflow-hidden py-8 sm:py-12"
+        style={{ background: "linear-gradient(180deg, #edeef8 0%, #FFFFFF 60%, #edeef8 100%)" }}
       >
-        <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
-
         <Container className="relative">
           <AnimatedSection>
-            <SectionTitle
-              title="Operators who've built at scale"
-              description="Hands-on guidance from founders and operators who've done it before."
-              className="max-w-225"
-              titleClassName="text-[22px] font-bold leading-[1.1] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
-              descriptionClassName="mx-auto mt-3 max-w-2xl text-center text-sm sm:text-base text-[#526777]"
-            />
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-[20px] sm:text-[26px] font-bold text-[#020024] tracking-tight">
+                Operators Who&apos;ve Built at Scale
+              </h2>
+              <p className="mx-auto mt-1.5 max-w-xl text-[12px] sm:text-[14px] text-gray-600">
+                Hands-on guidance from founders and seasoned operators who have built impactful products.
+              </p>
+            </div>
           </AnimatedSection>
 
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4.5">
             {mentors.map((mentor, i) => (
-              <AnimatedSection key={mentor.name} delay={i * 0.08} animation="scale">
+              <AnimatedSection key={mentor.name} delay={i * 0.05} animation="scale" className="h-full">
                 <MentorCard
                   photo={mentor.photo}
                   name={mentor.name}
@@ -60,24 +59,22 @@ export default function MentorsPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-50 py-8 sm:py-10">
-        <Blob tone="secondary" className="-right-24 top-0 h-72 w-72" />
-        <Blob tone="brand" className="-left-20 bottom-0 h-64 w-64" animate={false} />
-
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#edeef8] to-[#c5d1ff] py-8 sm:py-12">
         <Container className="relative">
           <AnimatedSection>
-            <SectionTitle
-              title="Strategic counsel from across the ecosystem"
-              description="Academic and industry advisors shaping Tech4Bharat's programs and partnerships."
-              className="max-w-225"
-              titleClassName="text-[18px] font-semibold leading-[1.5] text-[#0B2A4A] sm:text-[20px] lg:text-[22px] lg:whitespace-nowrap"
-              descriptionClassName="mx-auto mt-4 max-w-2xl text-center text-[14px] sm:text-[15px] text-[#526777]"
-            />
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-[19px] sm:text-[24px] font-bold text-[#020024] tracking-tight">
+                Strategic &amp; Academic Advisors
+              </h2>
+              <p className="mx-auto mt-1.5 max-w-xl text-[12px] sm:text-[14px] text-gray-600">
+                Academic and industry leaders shaping Tech4Bharat&apos;s programs and ecosystem partnerships.
+              </p>
+            </div>
           </AnimatedSection>
 
-          <div className="mx-auto mt-8 grid max-w-2xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-6 sm:mt-8 grid max-w-3xl grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4.5">
             {advisors.map((advisor, i) => (
-              <AnimatedSection key={advisor.name} delay={i * 0.08} animation="scale">
+              <AnimatedSection key={advisor.name} delay={i * 0.05} animation="scale" className="h-full">
                 <MentorCard
                   photo={advisor.photo}
                   name={advisor.name}

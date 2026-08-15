@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { Clock, ListChecks, Mic2, Sprout, Target, TrendingUp, UserCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -58,11 +58,11 @@ export default function BootcampOverview() {
             <div className="grid gap-8 lg:grid-cols-5 lg:gap-10">
               <div className="group relative aspect-4/3 overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(6,26,44,0.1)] lg:col-span-2">
                 <Image
-                  src="/images/gallery/gallery-7.jpg"
-                  alt="Founders working through a plan together with a mentor"
+                  src="/images/gallery/bootcamps-2.jpg"
+                  alt="Founders working through a plan together at Bootcamp"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-105"
                 />
               </div>
 

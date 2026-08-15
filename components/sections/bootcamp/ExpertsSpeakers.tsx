@@ -15,111 +15,91 @@ interface ExpertCategory {
 // Tech4Bharat gallery, not a stock placeholder or a fabricated name.
 const categories: ExpertCategory[] = [
   {
-    image: "/images/gallery/gallery-12.jpg",
+    image: "/images/gallery/mentorship-1.jpg",
     badge: "Mentor",
     title: "Startup Mentors",
-    description: "Operators who've built and scaled companies of their own.",
+    description: "Operators who have built & scaled companies.",
   },
   {
-    image: "/images/gallery/gallery-3.jpg",
+    image: "/images/gallery/award-ceremonies-3.jpg",
     badge: "Investor",
     title: "Investors",
-    description: "Angels and VCs actively backing early-stage Indian founders.",
+    description: "Angels and VCs backing early-stage founders.",
   },
   {
-    image: "/images/gallery/gallery-10.jpg",
+    image: "/images/gallery/technology-2.jpg",
     badge: "Industry Leader",
     title: "Industry Experts",
-    description: "Specialists across product, growth, and go-to-market.",
+    description: "Specialists in product, growth & scale.",
   },
   {
     image: "/images/gallery/students-1.jpg",
     badge: "Researcher",
-    title: "Academic Institutions",
-    description: "Researchers and faculty supporting deep-tech translation.",
+    title: "Academic Leaders",
+    description: "Faculty supporting deep-tech translation.",
   },
   {
-    image: "/images/gallery/gallery-2.jpg",
+    image: "/images/gallery/innovation-labs-3.jpg",
     badge: "Leader",
-    title: "Incubation Leaders",
-    description: "Leaders from India's incubation and accelerator ecosystem.",
+    title: "Incubation Heads",
+    description: "Leaders from top incubation ecosystems.",
   },
 ];
 
-/** Who You'll Meet — five uniform cards (identical size, border, and accent color, so they
- *  read as one consistent set): a square photo with a badge chip overlaid on it, then title
- *  and description. Real photos standing in for each category — no lineup announced yet, so
- *  no fabricated names. */
+/** Who You'll Meet — cards where the photo is prominent (~80% height of the card)
+ *  paired with a compact, clear caption area. */
 export default function ExpertsSpeakers() {
   return (
-    <section className="relative overflow-hidden pt-22.5 pb-22.5">
+    <section className="relative overflow-hidden py-12 sm:py-16 bg-white">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-30"
-        style={{ background: "linear-gradient(180deg, #F5FAFE 0%, #F5FAFE 45%, #F5FAFE 100%)" }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -left-20 -top-20 -z-20 h-100 w-100 rounded-full opacity-[0.18] blur-[200px]"
-        style={{ backgroundColor: "#EAF4FB" }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-20 -top-20 -z-20 h-100 w-100 rounded-full opacity-[0.18] blur-[200px]"
-        style={{ backgroundColor: "#E8F4FF" }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-24 left-1/2 -z-20 h-100 w-100 -translate-x-1/2 rounded-full opacity-15 blur-[200px]"
-        style={{ backgroundColor: "#EAF4FB" }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 opacity-5"
-        style={{
-          backgroundImage: "radial-gradient(circle, #0B2A4A 1px, transparent 1px)",
-          backgroundSize: "18px 18px",
-        }}
+        style={{ background: "linear-gradient(180deg, #F5FAFE 0%, #FFFFFF 50%, #F5FAFE 100%)" }}
       />
 
-      <Container className="relative px-10 sm:px-10 lg:px-10">
+      <Container className="relative">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]">
               Experts &amp; Speakers
             </h2>
-            <p className="mx-auto mt-3 max-w-175 text-[17px] leading-relaxed text-slate-600 sm:text-[18px]">
+            <p className="mx-auto mt-2.5 max-w-175 text-[14px] leading-relaxed text-slate-600 sm:text-[16px]">
               Throughout the day, participants will interact directly with:
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:gap-4.5">
           {categories.map((category, i) => (
-            <AnimatedSection key={category.title} delay={i * 0.06} animation="scale">
-              <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#D3E4F5] bg-white shadow-[0_6px_18px_rgba(6,26,44,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#155E9A]/50 hover:shadow-[0_16px_34px_rgba(6,26,44,0.12)]">
-                <div className="relative h-28 w-full shrink-0 overflow-hidden">
+            <AnimatedSection key={category.title} delay={i * 0.05} animation="scale" className="h-full">
+              <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#D3E4F5] bg-white shadow-[0_4px_16px_rgba(6,26,44,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#155E9A] hover:shadow-[0_16px_32px_rgba(6,26,44,0.12)]">
+                {/* 80% Photo Area */}
+                <div className="relative aspect-3/4 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={category.image}
                     alt={category.title}
                     fill
-                    sizes="(max-width: 640px) 50vw, 20vw"
-                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105 brightness-105"
                   />
-                  <span className="absolute bottom-2 left-2 inline-flex items-center rounded-full bg-white/90 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#155E9A] backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                  <span className="absolute top-2.5 left-2.5 inline-flex items-center rounded-full bg-white/95 px-2.5 py-0.5 text-[9.5px] sm:text-[10.5px] font-bold uppercase tracking-wide text-[#155E9A] shadow-sm backdrop-blur-md">
                     {category.badge}
                   </span>
                 </div>
 
-                <div className="flex flex-1 flex-col p-4">
-                  <h3 className="text-[15px] font-bold leading-tight text-[#0B2A4A]">{category.title}</h3>
-                  <p className="mt-1.5 line-clamp-none text-[13px] leading-snug text-slate-600 sm:line-clamp-2">
+                {/* 20% Compact Caption Area */}
+                <div className="flex flex-1 flex-col justify-center p-2.5 sm:p-3.5 bg-white">
+                  <div className="flex items-center justify-between gap-1">
+                    <h3 className="text-[12.5px] sm:text-[14.5px] font-bold leading-tight text-[#0B2A4A]">{category.title}</h3>
+                    <ArrowUpRight
+                      size={14}
+                      className="shrink-0 text-[#155E9A] opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
+                    />
+                  </div>
+                  <p className="mt-1 line-clamp-2 text-[10.5px] sm:text-[12px] leading-snug text-slate-500">
                     {category.description}
                   </p>
-                  <ArrowUpRight
-                    size={15}
-                    className="mt-auto ml-auto pt-2 text-[#155E9A] opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
-                  />
                 </div>
               </div>
             </AnimatedSection>

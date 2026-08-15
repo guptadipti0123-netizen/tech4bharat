@@ -84,11 +84,11 @@ export default function WhoShouldAttend() {
 
           <AnimatedSection className="relative aspect-3/2 w-56 shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white lg:w-64">
             <Image
-              src="/images/gallery/bootcamps-1.jpg"
+              src="/images/gallery/bootcamps-3.jpg"
               alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
               fill
               sizes="256px"
-              className="object-cover"
+              className="object-cover brightness-105"
             />
           </AnimatedSection>
 
@@ -103,11 +103,11 @@ export default function WhoShouldAttend() {
         <div className="mt-9 flex flex-col items-center sm:hidden">
           <AnimatedSection className="relative aspect-3/2 w-48 shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white">
             <Image
-              src="/images/gallery/bootcamps-1.jpg"
+              src="/images/gallery/bootcamps-3.jpg"
               alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
               fill
               sizes="192px"
-              className="object-cover"
+              className="object-cover brightness-105"
             />
           </AnimatedSection>
 
