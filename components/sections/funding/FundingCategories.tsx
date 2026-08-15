@@ -1,4 +1,4 @@
-﻿import { Handshake, Landmark, Building2, Rocket, Wallet, type LucideIcon } from "lucide-react";
+import { Award, Building2, Handshake, Landmark, Rocket, Wallet, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -58,13 +58,23 @@ const sources: FundingSource[] = [
   },
   {
     icon: Landmark,
-    title: "Government Schemes",
-    description: "Public sector startup support.",
+    title: "Govt Schemes",
+    description: "Public sector startup support & DPIIT.",
     fundingType: "Public",
     cardBg: "#F5FAFE",
     border: "#124F82",
     borderHover: "#0B2A4A",
     iconBg: "#EAF4FB",
+  },
+  {
+    icon: Award,
+    title: "Innovation Challenges",
+    description: "Competitions & problem-statement grants.",
+    fundingType: "Prizes",
+    cardBg: "#F5FAFE",
+    border: "#7C3AED",
+    borderHover: "#6D28D9",
+    iconBg: "#F5F3FF",
   },
 ];
 
@@ -85,11 +95,11 @@ export default function FundingCategories() {
           />
         </AnimatedSection>
 
-        <div className="mt-7 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
+        <div className="mt-6 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-3">
           {sources.map((source, i) => {
             const Icon = source.icon;
             return (
-              <AnimatedSection key={source.title} delay={i * 0.06} animation="scale">
+              <AnimatedSection key={source.title} delay={i * 0.05} animation="scale" className="h-full">
                 <div
                   style={
                     {
@@ -98,30 +108,32 @@ export default function FundingCategories() {
                       "--hover-border": source.borderHover,
                     } as React.CSSProperties
                   }
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border-2 p-3 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border) sm:p-5"
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border-2 p-2.5 shadow-[0_1px_6px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.75 hover:border-(--hover-border) hover:shadow-md sm:rounded-2xl sm:p-4"
                 >
                   <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: source.border }} />
 
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <span
-                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:rotate-6 sm:h-8.5 sm:w-8.5"
-                      style={{ backgroundColor: source.iconBg, color: source.border }}
-                    >
-                      <Icon size={13} className="sm:hidden" />
-                      <Icon size={15} className="hidden sm:block" />
-                    </span>
-                    <h3 className="min-w-0 flex-1 text-[13px] font-bold leading-tight text-[#102A43] sm:text-[16px]">
-                      {source.title}
-                    </h3>
+                  <div>
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <span
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:rotate-6 sm:h-8 sm:w-8"
+                        style={{ backgroundColor: source.iconBg, color: source.border }}
+                      >
+                        <Icon size={13} className="sm:hidden" />
+                        <Icon size={15} className="hidden sm:block" />
+                      </span>
+                      <h3 className="min-w-0 flex-1 text-[12px] font-bold leading-tight text-[#102A43] sm:text-[15px]">
+                        {source.title}
+                      </h3>
+                    </div>
+
+                    <p className="mt-1 line-clamp-2 text-[10px] leading-snug text-[#526777] sm:text-[12.5px]">
+                      {source.description}
+                    </p>
                   </div>
 
-                  <p className="mt-1.5 line-clamp-2 text-[11.5px] leading-snug text-[#526777] sm:mt-2 sm:text-[14px]">
-                    {source.description}
-                  </p>
-
-                  <div className="mt-1.5 border-t pt-1.5 sm:mt-2 sm:pt-2" style={{ borderColor: `${source.border}33` }}>
+                  <div className="mt-2 border-t pt-1.5 sm:pt-2" style={{ borderColor: `${source.border}33` }}>
                     <span
-                      className="inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[9.5px] font-semibold sm:px-2.5 sm:py-1 sm:text-[11px]"
+                      className="inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[8.5px] font-semibold sm:px-2.5 sm:text-[10.5px]"
                       style={{ backgroundColor: source.iconBg, color: source.border }}
                     >
                       {source.fundingType}

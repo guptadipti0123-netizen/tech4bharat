@@ -1,86 +1,125 @@
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-/** Rounded-corner hexagon outline (six straight edges, each vertex softened by a quadratic
- *  curve) — the same shape used by the Partners honeycomb, reused here as a flat solid-fill
- *  tile (no border/shadow per this section's flatter, more minimal style). */
-const HEX_PATH =
-  "M8.66,20 L34.64,5 Q43.3,0 51.96,5 L77.94,20 Q86.6,25 86.6,35 L86.6,65 Q86.6,75 77.94,80 L51.96,95 Q43.3,100 34.64,95 L8.66,80 Q0,75 0,65 L0,35 Q0,25 8.66,20 Z";
-
-const DARK_BLUE = "#0B2A4A";
-const MEDIUM_BLUE = "#1976D2";
-
-const whatWeDo: { name: string; fill: string }[] = [
-  { name: "Healthcare", fill: DARK_BLUE },
-  { name: "Partners", fill: MEDIUM_BLUE },
-  { name: "Agriculture", fill: MEDIUM_BLUE },
-  { name: "FinTech", fill: MEDIUM_BLUE },
-  { name: "Education", fill: MEDIUM_BLUE },
-  { name: "Sustainability", fill: DARK_BLUE },
+const sectors = [
+  { name: "Healthcare", angle: -60 },
+  { name: "Agriculture", angle: 0 },
+  { name: "FinTech", angle: 60 },
+  { name: "Education", angle: 120 },
+  { name: "Sustainability", angle: 180 },
+  { name: "Partners", angle: 240 },
 ];
 
-function Hexagon({ name, fill }: { name: string; fill: string }) {
-  return (
-    <div className="relative aspect-[86.6/100] w-16 shrink-0 sm:w-19 lg:w-22">
-      <svg viewBox="0 0 86.6 100" className="absolute inset-0 h-full w-full">
-        <path d={HEX_PATH} fill={fill} />
-      </svg>
-      <div className="absolute inset-0 flex items-center justify-center px-2 text-center">
-        <span className="text-[11px] font-bold leading-tight text-white sm:text-[12.5px] lg:text-[14px]">
-          {name}
-        </span>
-      </div>
-    </div>
-  );
+function getSectorPath(centerAngleDeg: number, R = 140, r = 62, gapDeg = 2) {
+  const rad = Math.PI / 180;
+  const a1 = (centerAngleDeg - 30 + gapDeg) * rad;
+  const a2 = (centerAngleDeg + 30 - gapDeg) * rad;
+  const cx = 160;
+  const cy = 160;
+
+  const x1 = (cx + R * Math.cos(a1)).toFixed(1);
+  const y1 = (cy + R * Math.sin(a1)).toFixed(1);
+  const x2 = (cx + R * Math.cos(a2)).toFixed(1);
+  const y2 = (cy + R * Math.sin(a2)).toFixed(1);
+
+  const x3 = (cx + r * Math.cos(a2)).toFixed(1);
+  const y3 = (cy + r * Math.sin(a2)).toFixed(1);
+  const x4 = (cx + r * Math.cos(a1)).toFixed(1);
+  const y4 = (cy + r * Math.sin(a1)).toFixed(1);
+
+  return `M ${x1} ${y1} A ${R} ${R} 0 0 1 ${x2} ${y2} L ${x3} ${y3} A ${r} ${r} 0 0 0 ${x4} ${y4} Z`;
 }
 
-/** About Tech4Bharat overview — a light mint panel: a dark "Who We Are" card, then a single
- *  horizontal row of six category hexagons wrapped around a larger central "What We Do"
- *  hexagon. Spans the full panel width (rather than sharing a 48/48 column split) so all
- *  seven items can sit in one legible row instead of squeezing into a half-width column;
- *  falls back to horizontal scroll only where a viewport is too narrow to fit all seven. */
+function getTextPos(centerAngleDeg: number, rText = 101) {
+  const rad = Math.PI / 180;
+  const a = centerAngleDeg * rad;
+  return {
+    x: +(160 + rText * Math.cos(a)).toFixed(1),
+    y: +(160 + rText * Math.sin(a)).toFixed(1),
+  };
+}
+
 export default function OurStory() {
   return (
-    <section id="about-overview" className="bg-white py-5 sm:py-7">
+    <section id="about-overview" className="bg-white py-6 sm:py-10">
       <Container>
-        <div className="rounded-3xl bg-[#F5FAFE] px-5 py-9 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-          <div className="flex flex-col items-center gap-8 sm:gap-10">
-            <AnimatedSection className="w-full max-w-2xl">
-              <div className="rounded-[18px] bg-[#0B2A4A] p-7 sm:p-8">
-                <h3 className="text-[19px] font-bold text-white sm:text-[20px]">Who We Are</h3>
-                <p className="mt-3 text-[14px] leading-[1.6] text-[#EAF4FB]">
-                  Tech4Bharat is a national initiative dedicated to empowering India&apos;s youth
-                  with cutting-edge skills in the rapidly evolving technology landscape.
-                </p>
-                <p className="mt-3 text-[14px] leading-[1.6] text-[#EAF4FB]">
-                  We believe the nation&apos;s progress rests on empowering young minds with the
-                  right knowledge, tools, and opportunities.
-                </p>
-              </div>
+        <div className="mx-auto max-w-5xl rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-[#F5FAFE] p-4.5 sm:p-8 lg:p-10 shadow-xs">
+          <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-10">
+            {/* Left Column (Desktop) / Top (Mobile): Who We Are Text */}
+            <AnimatedSection className="text-center lg:text-left">
+              <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 border border-blue-100/90 px-2.5 py-0.5 text-[9.5px] sm:text-[10.5px] font-bold uppercase tracking-wider text-[#155E9A]">
+                Our Foundation
+              </span>
+              <h2 className="mt-2 text-[20px] sm:text-[26px] lg:text-[30px] font-extrabold tracking-tight text-[#0B2A4A]">
+                Who We Are
+              </h2>
+              <p className="mt-2.5 text-[12px] sm:text-[14px] lg:text-[14.5px] leading-relaxed text-slate-600">
+                Tech4Bharat is a national initiative dedicated to empowering India&apos;s youth
+                with cutting-edge skills in the rapidly evolving technology landscape.
+              </p>
+              <p className="mt-2 text-[12px] sm:text-[14px] lg:text-[14.5px] leading-relaxed text-slate-600">
+                We believe the nation&apos;s progress rests on empowering young minds with the
+                right knowledge, tools, and opportunities.
+              </p>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1} className="w-full">
-              <div className="flex items-center justify-start gap-2.5 overflow-x-auto px-1 py-2 sm:justify-center sm:gap-3 lg:gap-5">
-                {whatWeDo.slice(0, 3).map((item) => (
-                  <Hexagon key={item.name} name={item.name} fill={item.fill} />
-                ))}
+            {/* Right Column (Desktop) / Bottom (Mobile): Circular What We Do Wheel */}
+            <AnimatedSection delay={0.1} className="flex justify-center border-t border-slate-200/80 pt-5 lg:border-t-0 lg:pt-0">
+              <div className="relative w-full max-w-[250px] sm:max-w-[280px] lg:max-w-[310px] aspect-square">
+                <svg viewBox="0 0 320 320" className="w-full h-full drop-shadow-sm select-none">
+                  {/* Outer double halo rings */}
+                  <circle cx="160" cy="160" r="158" fill="none" stroke="#EBF1FE" strokeWidth="4" />
+                  <circle cx="160" cy="160" r="151" fill="none" stroke="#D3E2FD" strokeWidth="6" />
 
-                <div className="relative aspect-[86.6/100] w-20 shrink-0 sm:w-24 lg:w-28">
-                  <svg viewBox="0 0 86.6 100" className="absolute inset-0 h-full w-full">
-                    <path d={HEX_PATH} fill="#1F4E8C" />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center px-2 text-center">
-                    <span className="text-[17px] font-bold leading-[1.15] text-white sm:text-[19px] lg:text-[22px]">
-                      What
-                      <br />
-                      We Do
-                    </span>
-                  </div>
-                </div>
+                  {/* 6 Wheel Sectors */}
+                  {sectors.map((s) => {
+                    const path = getSectorPath(s.angle);
+                    const pos = getTextPos(s.angle);
+                    return (
+                      <g key={s.name} className="group/sector cursor-pointer">
+                        <path
+                          d={path}
+                          fill="#0B2A4A"
+                          className="transition-colors duration-300 group-hover/sector:fill-[#155E9A]"
+                        />
+                        <text
+                          x={pos.x}
+                          y={pos.y}
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          fill="#FFFFFF"
+                          className="text-[9.5px] sm:text-[11px] font-bold pointer-events-none"
+                        >
+                          {s.name}
+                        </text>
+                      </g>
+                    );
+                  })}
 
-                {whatWeDo.slice(3, 6).map((item) => (
-                  <Hexagon key={item.name} name={item.name} fill={item.fill} />
-                ))}
+                  {/* Center Circle & "What We Do" Labels */}
+                  <circle cx="160" cy="160" r="60" fill="#FFFFFF" stroke="#0B2A4A" strokeWidth="3" />
+                  <circle cx="160" cy="160" r="54" fill="none" stroke="#E2E8F0" strokeWidth="1.5" />
+                  <text
+                    x="160"
+                    y="151"
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fill="#0B2A4A"
+                    className="text-[13px] sm:text-[14.5px] font-extrabold tracking-tight"
+                  >
+                    What
+                  </text>
+                  <text
+                    x="160"
+                    y="169"
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fill="#0B2A4A"
+                    className="text-[13px] sm:text-[14.5px] font-extrabold tracking-tight"
+                  >
+                    We Do
+                  </text>
+                </svg>
               </div>
             </AnimatedSection>
           </div>

@@ -1,25 +1,23 @@
 import Image from "next/image";
 import { LinkedinIcon } from "@/components/ui/SocialIcons";
-import { Sparkles } from "lucide-react";
 
 interface MentorCardProps {
   photo?: string;
   name: string;
   designation: string;
   institution: string;
-  expertise: string;
+  expertise?: string;
   bio: string;
   linkedinUrl?: string;
 }
 
-/** Sleek, compact profile card inspired by tech4bharat.com design language
- *  featuring compact typography, subtle glassmorphism, and responsive padding. */
+/** Sleek, compact profile card featuring clean typography,
+ *  subtle glassmorphism, and responsive padding. */
 export default function MentorCard({
   photo,
   name,
   designation,
   institution,
-  expertise,
   bio,
   linkedinUrl,
 }: MentorCardProps) {
@@ -79,14 +77,7 @@ export default function MentorCard({
           )}
         </div>
 
-        <div className="mt-3 flex items-center gap-1.5">
-          <span className="inline-flex items-center gap-1 rounded-full bg-blue-50/90 px-2.5 py-0.5 text-[9.5px] sm:text-[10.5px] font-semibold text-[#090979]">
-            <Sparkles size={10} className="text-[#4f6ff2]" />
-            {expertise}
-          </span>
-        </div>
-
-        <p className="mt-2.5 line-clamp-3 text-[11px] sm:text-[12px] leading-relaxed text-gray-600">
+        <p className="mt-3 line-clamp-3 text-[11px] sm:text-[12px] leading-relaxed text-gray-600">
           {bio}
         </p>
       </div>

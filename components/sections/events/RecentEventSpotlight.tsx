@@ -26,27 +26,35 @@ export default function RecentEventSpotlight() {
       <Blob tone="accent" className="-right-24 bottom-0 h-80 w-80" animate={false} />
 
       <Container className="relative">
-        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
           <AnimatedSection>
-            <h1 className="text-[26px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
+            <h1 className="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[28px] lg:text-[32px]">
               Digital &amp; Tech Policy Workshop
             </h1>
-            <p className="mt-3 max-w-lg text-[15px] font-medium leading-relaxed text-[#526777] sm:text-[18px]">
+            <p className="mt-1.5 max-w-lg text-[13px] font-medium leading-relaxed text-[#526777] sm:text-[15px]">
               Technology, Governance &amp; Strategic Decision-Making.
             </p>
 
-            <div className="mt-7 grid gap-2.5 sm:mt-9 sm:grid-cols-2 sm:gap-3">
-              {infoCards.map(({ icon: Icon, label, value }) => (
+            {/* Compact 2-column info grid on mobile & desktop */}
+            <div className="mt-4 sm:mt-6 grid grid-cols-2 gap-2 sm:gap-2.5">
+              {infoCards.map(({ icon: Icon, label, value }, idx) => (
                 <div
                   key={label}
-                  className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className={`flex items-start gap-2 rounded-xl border border-slate-200/80 bg-white/95 p-2 sm:p-3 shadow-2xs transition-all hover:border-[#155E9A]/30 hover:shadow-xs sm:rounded-2xl ${
+                    idx === infoCards.length - 1 ? "col-span-2 sm:col-span-1" : ""
+                  }`}
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600">
-                    <Icon size={16} />
+                  <span className="flex h-6.5 w-6.5 shrink-0 items-center justify-center rounded-lg bg-blue-50/90 text-[#155E9A] mt-0.5 sm:h-7.5 sm:w-7.5">
+                    <Icon size={13} className="sm:hidden" />
+                    <Icon size={14} className="hidden sm:block" />
                   </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</p>
-                    <p className="mt-0.5 text-sm font-semibold text-ink-900">{value}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[8.5px] sm:text-[9.5px] font-bold uppercase tracking-wider text-slate-400">
+                      {label}
+                    </p>
+                    <p className="mt-0.5 text-[11px] sm:text-[12.5px] font-bold leading-snug text-[#0B2A4A] line-clamp-2">
+                      {value}
+                    </p>
                   </div>
                 </div>
               ))}

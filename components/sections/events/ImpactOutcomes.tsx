@@ -1,143 +1,110 @@
-﻿import Image from "next/image";
-import { Handshake, Layers, Network, type LucideIcon } from "lucide-react";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-interface OutcomeCard {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  iconBg: string;
-}
-
-// Featured + medium cards reuse three of the site's real established outcome themes.
-const featured: OutcomeCard = {
-  icon: Network,
-  title: "Strong Startup Ecosystem",
-  description: "Connecting founders with mentors, investors, and experts across the network.",
-  iconBg: "#155E9A",
-};
-
-const mediumCards: OutcomeCard[] = [
+const outcomes = [
   {
-    icon: Layers,
-    title: "Practical Learning",
-    description: "Hands-on workshops and real-world startup guidance.",
-    iconBg: "#0B2A4A",
+    num: "01",
+    tag: "Ecosystem",
+    title: "Strong Startup Ecosystem",
+    description: "Connecting founders with active mentors, investors, and industry leaders across the network.",
+    accent: "#155E9A",
   },
   {
-    icon: Handshake,
-    title: "Strategic Networking",
-    description: "Meaningful connections across academia, industry, and government.",
-    iconBg: "#2F80ED",
+    num: "02",
+    tag: "Workshops",
+    title: "Practical & Hands-on Learning",
+    description: "Intensive deep-dives, real-world case simulations, and actionable startup guidance.",
+    accent: "#2F80ED",
+  },
+  {
+    num: "03",
+    tag: "Alliances",
+    title: "Strategic Multi-Sector Networking",
+    description: "Meaningful bridges across top academia, industry partners, and government bodies.",
+    accent: "#0D9488",
   },
 ];
 
-// Real counts, computed from this project's own data (lib/data.ts startups/mentors/advisors,
-// lib/events.ts Workshop-type events) â€” not invented figures.
 const kpis = [
-  { value: "8+", label: "Startups", accent: "#155E9A" },
-  { value: "6+", label: "Mentors", accent: "#2F80ED" },
-  { value: "4+", label: "Workshops", accent: "#155E9A" },
+  { value: "8+", label: "Startups" },
+  { value: "6+", label: "Mentors" },
+  { value: "4+", label: "Workshops" },
 ];
 
-/** Compact "Impact & Outcomes" closer for the Events page â€” an editorial dashboard instead
- *  of six identical cards: a real workshop photo on the left, and on the right one wide
- *  featured card, two pastel medium cards, and three compact KPI tiles, each styled
- *  differently so nothing reads as a repeated template. */
 export default function ImpactOutcomes() {
-  const FeaturedIcon = featured.icon;
-  const MediumIcon0 = mediumCards[0].icon;
-  const MediumIcon1 = mediumCards[1].icon;
-
   return (
     <section id="impact-outcomes" className="bg-sand-50 py-6 sm:py-9">
       <Container>
         <AnimatedSection>
           <SectionTitle
             title="Impact & Outcomes"
-            description="Key outcomes and learnings from Tech4Bharat programs and workshops."
-            titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
-            descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#526777]"
+            description="Key outcomes, learnings, and ecosystem reach from Tech4Bharat programs."
+            titleClassName="text-[19px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[23px] lg:text-[27px]"
+            descriptionClassName="mt-1 text-[12px] sm:mt-1.5 sm:text-[14px] font-medium leading-relaxed text-[#526777]"
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-9">
-          <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
-            <div className="grid gap-8 lg:grid-cols-[42fr_58fr] lg:gap-10">
-              <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(6,26,44,0.1)] lg:aspect-auto lg:h-full">
+        <AnimatedSection delay={0.1} className="mt-5 sm:mt-7">
+          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm sm:rounded-3xl">
+            <div className="grid lg:grid-cols-[44fr_56fr]">
+              {/* Left Column: Workshop Photo with Embedded Stats Glass Bar */}
+              <div className="relative min-h-[220px] sm:min-h-[280px] lg:min-h-full bg-slate-900 overflow-hidden flex flex-col justify-end">
                 <Image
                   src="/images/legacy/policy-workshop-3.jpg"
                   alt="Students and faculty at the closing session of a Tech4Bharat workshop"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 44vw"
+                  className="object-cover object-center opacity-95"
                 />
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
 
-              <div className="flex flex-col gap-4">
-                {/* Featured outcome â€” full width */}
-                <div className="relative overflow-hidden rounded-[18px] border-[1.5px] border-[#EAF4FB] bg-[#F5FAFE] p-5">
-                  <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-[#155E9A]" />
-                  <div className="pl-3">
-                    <div className="flex items-center justify-between gap-3">
-                      <span
-                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
-                        style={{ backgroundColor: featured.iconBg }}
-                      >
-                        <FeaturedIcon size={17} />
-                      </span>
-                      <span className="rounded-full bg-[#155E9A]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#155E9A]">
-                        Featured Outcome
-                      </span>
-                    </div>
-                    <h3 className="mt-3 text-[19px] font-bold leading-tight text-ink-900">{featured.title}</h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">
-                      {featured.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Medium cards â€” pastel backgrounds, alternating icon position */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[18px] border border-slate-200 p-5" style={{ backgroundColor: "#F5FAFE" }}>
-                    <span
-                      className="flex h-9 w-9 items-center justify-center rounded-full text-white"
-                      style={{ backgroundColor: mediumCards[0].iconBg }}
-                    >
-                      <MediumIcon0 size={16} />
-                    </span>
-                    <h3 className="mt-3 text-[17px] font-bold leading-tight text-ink-900">{mediumCards[0].title}</h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">{mediumCards[0].description}</p>
-                  </div>
-                  <div className="rounded-[18px] border border-slate-200 p-5" style={{ backgroundColor: "#EEF6FF" }}>
-                    <div className="flex justify-end">
-                      <span
-                        className="flex h-9 w-9 items-center justify-center rounded-full text-white"
-                        style={{ backgroundColor: mediumCards[1].iconBg }}
-                      >
-                        <MediumIcon1 size={16} />
-                      </span>
-                    </div>
-                    <h3 className="mt-3 text-[17px] font-bold leading-tight text-ink-900">{mediumCards[1].title}</h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">{mediumCards[1].description}</p>
-                  </div>
-                </div>
-
-                {/* KPI tiles â€” no icons, compact, colored top border only */}
-                <div className="grid grid-cols-3 gap-4">
+                {/* Embedded Stats Bar over Photo */}
+                <div className="relative z-10 grid grid-cols-3 divide-x divide-white/15 bg-slate-950/70 p-2.5 sm:p-3.5 backdrop-blur-md border-t border-white/15">
                   {kpis.map((kpi) => (
-                    <div
-                      key={kpi.label}
-                      className="rounded-[14px] border-t-[3px] bg-white px-3 py-4 text-center shadow-sm"
-                      style={{ borderTopColor: kpi.accent }}
-                    >
-                      <p className="text-[22px] font-extrabold leading-none text-ink-900">{kpi.value}</p>
-                      <p className="mt-1.5 text-[12px] font-semibold text-slate-500">{kpi.label}</p>
+                    <div key={kpi.label} className="text-center px-1">
+                      <p className="text-[16px] sm:text-[19px] font-extrabold text-white leading-none tracking-tight">
+                        {kpi.value}
+                      </p>
+                      <p className="mt-0.5 text-[9.5px] sm:text-[11px] font-medium text-slate-300">
+                        {kpi.label}
+                      </p>
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Right Column: Clean Connected Outcomes Stream */}
+              <div className="flex flex-col justify-between p-3.5 sm:p-6 lg:p-7 divide-y divide-slate-100">
+                {outcomes.map((item) => (
+                  <div
+                    key={item.num}
+                    className="group relative flex gap-3 py-3 first:pt-0 last:pb-0 transition-all"
+                  >
+                    {/* Number index indicator */}
+                    <div className="flex flex-col items-center">
+                      <span className="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[10.5px] sm:text-[12px] font-bold text-[#155E9A] group-hover:bg-[#155E9A] group-hover:text-white transition-colors">
+                        {item.num}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-[12.5px] sm:text-[14.5px] font-bold text-[#0B2A4A] group-hover:text-[#155E9A] transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+                        <span className="rounded-full bg-slate-100 px-1.5 py-0.2 text-[8px] sm:text-[9px] font-semibold text-slate-600">
+                          {item.tag}
+                        </span>
+                      </div>
+                      <p className="mt-0.5 text-[10.5px] sm:text-[12px] leading-relaxed text-slate-500">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

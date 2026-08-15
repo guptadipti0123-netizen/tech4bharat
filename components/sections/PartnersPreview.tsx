@@ -1,79 +1,109 @@
-import { Building2, GraduationCap, Landmark, Sparkles, University } from "lucide-react";
+import { ArrowRight, Building2, GraduationCap, Landmark, University } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 
 const partners = [
   {
-    name: "COEP Tech University Pune",
-    type: "Academic & Incubation Partner",
+    name: "COEP Tech University",
+    monogram: "COEP",
+    location: "Pune",
+    type: "Academic & Incubation",
+    badge: "Academic",
     icon: University,
+    gradient: "from-[#0B2A4A] to-[#155E9A]",
+    accent: "#155E9A",
   },
   {
     name: "VJTI Mumbai",
-    type: "Technology & Research Partner",
+    monogram: "VJTI",
+    location: "Mumbai",
+    type: "Technology & Research",
+    badge: "Research",
     icon: Landmark,
+    gradient: "from-[#155E9A] to-[#2F80ED]",
+    accent: "#2F80ED",
   },
   {
     name: "CDTIES IIT Bombay",
-    type: "Deep-Tech & Policy Translation",
+    monogram: "IIT-B",
+    location: "Mumbai",
+    type: "Deep-Tech & Policy",
+    badge: "Deep-Tech",
     icon: GraduationCap,
+    gradient: "from-[#1E3A8A] to-[#4338CA]",
+    accent: "#4338CA",
   },
   {
     name: "C-DAC Pune",
+    monogram: "C-DAC",
+    location: "Pune",
     type: "Advanced Computing & HPC",
+    badge: "HPC",
     icon: Building2,
+    gradient: "from-[#0369A1] to-[#0284C7]",
+    accent: "#0284C7",
   },
 ];
 
 export default function PartnersPreview() {
   return (
-    <section id="partners" className="bg-white py-8 sm:py-12">
+    <section id="partners" className="bg-white py-6 sm:py-10">
       <Container>
-        <div className="rounded-3xl bg-gradient-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-4 sm:p-7 shadow-lg border border-white/60">
+        <div className="rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-3.5 sm:p-6 lg:p-8 shadow-md border border-white/80">
           <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50/90 border border-blue-100 px-2.5 py-0.5 text-[9.5px] sm:text-[10.5px] font-bold uppercase tracking-wider text-[#1e3a8a]">
               Collaborators
             </span>
-            <h2 className="mt-2 text-[20px] sm:text-[26px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+            <h2 className="mt-1.5 text-[19px] sm:text-[24px] lg:text-[26px] font-extrabold tracking-tight bg-linear-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
               Knowledge &amp; Ecosystem Partners
             </h2>
-            <p className="mx-auto mt-1.5 max-w-lg text-[12px] sm:text-[14px] leading-relaxed text-gray-600">
+            <p className="mx-auto mt-1 max-w-lg text-[11.5px] sm:text-[13px] leading-relaxed text-slate-600">
               Collaborating with premier technical institutes, research bodies, and industry leaders.
             </p>
           </AnimatedSection>
 
-          <div className="mt-5 sm:mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-3.5">
-            {partners.map((partner, i) => {
-              const Icon = partner.icon;
-              return (
-                <AnimatedSection key={partner.name} delay={i * 0.04} className="h-full">
-                  <div className="group flex h-full flex-col justify-between rounded-xl sm:rounded-2xl border border-white/80 bg-white/80 p-3.5 sm:p-4.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#4f6ff2] hover:shadow-md">
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#4f6ff2] group-hover:bg-[#4f6ff2] group-hover:text-white transition-all">
-                          <Icon size={18} />
-                        </span>
-                        <span className="rounded-full bg-[#1e3a8a]/5 px-2 py-0.5 text-[8.5px] sm:text-[9.5px] font-semibold text-[#1e3a8a]">
-                          Partner
-                        </span>
-                      </div>
-                      <h3 className="mt-3 text-[13px] sm:text-[14.5px] font-bold text-[#020024] leading-snug">
+          {/* Distinct Institutional Bar Cards: 1-col on mobile, 2-col on tablet, 4-col on desktop */}
+          <div className="mt-4 sm:mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-3">
+            {partners.map((partner, i) => (
+              <AnimatedSection key={partner.name} delay={i * 0.04} className="h-full">
+                <div className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-200/90 bg-white/95 p-3 shadow-2xs backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#155E9A]/40 hover:shadow-md">
+                  {/* Left accent strip */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-y-0 left-0 w-1"
+                    style={{ backgroundColor: partner.accent }}
+                  />
+
+                  {/* Institutional Crest Monogram */}
+                  <div
+                    className={`flex h-9.5 w-9.5 shrink-0 items-center justify-center rounded-lg bg-linear-to-br ${partner.gradient} text-white font-extrabold text-[10.5px] sm:text-[11px] tracking-wider shadow-xs group-hover:scale-105 transition-transform`}
+                  >
+                    {partner.monogram}
+                  </div>
+
+                  {/* Partner info */}
+                  <div className="min-w-0 flex-1 pl-0.5">
+                    <div className="flex items-center justify-between gap-1">
+                      <h3 className="truncate text-[12.5px] sm:text-[13.5px] font-bold text-[#0B2A4A] group-hover:text-[#155E9A] transition-colors">
                         {partner.name}
                       </h3>
-                      <p className="mt-1 text-[10.5px] sm:text-[11.5px] font-medium text-gray-500">
-                        {partner.type}
-                      </p>
+                      <span className="shrink-0 text-[9px] font-medium text-slate-400">
+                        {partner.location}
+                      </span>
                     </div>
+                    <p className="truncate text-[10.5px] sm:text-[11px] font-medium text-slate-500 mt-0.5">
+                      {partner.type}
+                    </p>
                   </div>
-                </AnimatedSection>
-              );
-            })}
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
 
-          <AnimatedSection delay={0.2} className="mt-6 text-center">
-            <Button href="/partners" variant="outline" size="sm" className="text-xs">
-              View All Partnerships
+          <AnimatedSection delay={0.15} className="mt-4 sm:mt-5 text-center">
+            <Button href="/partners" variant="outline" size="sm" className="text-[11.5px] sm:text-xs py-1.5 px-3">
+              View All Partnerships <ArrowRight size={13} />
             </Button>
           </AnimatedSection>
         </div>

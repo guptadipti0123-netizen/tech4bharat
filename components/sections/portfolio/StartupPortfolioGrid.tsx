@@ -17,6 +17,7 @@ export default function StartupPortfolioGrid() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.35, delay: (i % 6) * 0.05 }}
+              className="h-full flex flex-col"
             >
               <StartupCard startup={startup} />
             </motion.div>

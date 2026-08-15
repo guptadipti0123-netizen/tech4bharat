@@ -62,12 +62,12 @@ export default function BootcampHero() {
               />
               <div className="relative h-95 w-full animate-float overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-2xl sm:h-115 lg:h-140">
                 <Image
-                  src="/images/events/event-bootcamp.jpg"
+                  src="/images/gallery/startup-events-1.jpg"
                   alt="Founders collaborating at the Tech4Bharat Startup Bootcamp"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center brightness-105"
+                  className="object-cover object-center"
                 />
               </div>
             </div>

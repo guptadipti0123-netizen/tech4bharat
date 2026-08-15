@@ -14,15 +14,15 @@ export default function AboutHero() {
   return (
     <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-115">
       <Image
-        src="/images/programs/innovation-lab.jpg"
-        alt="Innovation and startup incubation at Tech4Bharat"
+        src="/images/about/team.png"
+        alt="Tech4Bharat team collaborating at the innovation centre"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center brightness-105"
+        className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/70 via-[#0B2A4A]/30 to-[#0B2A4A]/10" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#0B2A4A]/60 via-[#0B2A4A]/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/90 via-[#0B2A4A]/55 to-[#0B2A4A]/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#0B2A4A]/85 via-[#0B2A4A]/40 to-transparent" />
 
       <div className="relative flex h-full items-end pb-10 pt-20 sm:items-center sm:pb-0 sm:pt-0">
         <Container>

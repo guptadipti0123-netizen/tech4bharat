@@ -38,70 +38,56 @@ const socials = [
 
 interface QuickContact {
   icon: LucideIcon;
+  badge: string;
   title: string;
   description: string;
   email: string;
-  cardBg: string;
-  border: string;
-  hoverBorder: string;
   iconBg: string;
+  iconColor: string;
 }
 
 const quickContacts: QuickContact[] = [
   {
     icon: Lightbulb,
+    badge: "Founders",
     title: "For Founders",
-    description: "Applying to a program or have a startup idea to discuss.",
+    description: "Applying to a program or exploring startup incubation.",
     email: "programs@tech4bharat.org",
-    cardBg: "#EAF4FB",
-    border: "#155E9A66",
-    hoverBorder: "#155E9A",
-    iconBg: "#155E9A",
+    iconBg: "bg-blue-50 border-blue-100",
+    iconColor: "text-[#155E9A]",
   },
   {
     icon: Handshake,
-    title: "For Partners & Investors",
-    description: "Exploring institutional, government, or funding partnerships.",
+    badge: "Partners",
+    title: "Partners & VCs",
+    description: "Institutional, government, or capital partnerships.",
     email: "partnerships@tech4bharat.org",
-    cardBg: "#F5FAFE",
-    border: "#1976D266",
-    hoverBorder: "#1976D2",
-    iconBg: "#1976D2",
+    iconBg: "bg-emerald-50 border-emerald-100",
+    iconColor: "text-emerald-700",
   },
   {
     icon: Users,
+    badge: "Mentors",
     title: "For Mentors",
-    description: "Interested in joining our mentor and advisor network.",
+    description: "Join our distinguished mentor and advisor network.",
     email: "mentors@tech4bharat.org",
-    cardBg: "#EAF4FB",
-    border: "#2F80ED66",
-    hoverBorder: "#2F80ED",
-    iconBg: "#2F80ED",
+    iconBg: "bg-indigo-50 border-indigo-100",
+    iconColor: "text-indigo-700",
   },
   {
     icon: Megaphone,
-    title: "For Media & Press",
+    badge: "Media",
+    title: "Media & Press",
     description: "Press inquiries, interviews, or event coverage requests.",
     email: "media@tech4bharat.org",
-    cardBg: "#EAF4FB",
-    border: "#0B2A4A66",
-    hoverBorder: "#0B2A4A",
-    iconBg: "#0B2A4A",
+    iconBg: "bg-amber-50 border-amber-100",
+    iconColor: "text-amber-700",
   },
 ];
 
 export default function ContactPage() {
   return (
     <>
-      {/* `aspect-2/1` (or any ratio other than the photo's own) forces `object-contain` to
-          letterbox â€” visible bars â€” at every width, and forces `object-cover` to crop at
-          every width. The only way to show the complete, uncropped photo edge-to-edge with
-          no bars is to make the container's own ratio match the photo's native ratio
-          (1600x1067 = 3:2), so cover/contain become identical no-ops. `max-h` is set high
-          enough (1280px) that it only engages on ultrawide monitors, never on normal desktop
-          widths â€” the earlier bug was this cap kicking in around 840px and re-cropping the
-          top/bottom on ordinary screens. `min-h` is a floor purely so the centered text/button
-          still clears the fixed navbar on short/narrow phones. */}
       <section
         className="relative w-full aspect-3/2 min-h-88 max-h-320 overflow-hidden rounded-b-[48px]"
         style={{ backgroundColor: "#0B2A4A" }}
@@ -140,7 +126,7 @@ export default function ContactPage() {
       </section>
 
       <section
-        className="relative overflow-hidden py-8 sm:py-12"
+        className="relative overflow-hidden py-7 sm:py-10"
         style={{ background: "linear-gradient(180deg, #F5FAFE, #FFFFFF, #F5FAFE)" }}
       >
         <DotGrid className="left-0 top-0 h-full w-full text-brand-700/6" />
@@ -151,41 +137,49 @@ export default function ContactPage() {
               title="Reach the Right Team Faster"
               align="center"
               className="max-w-225"
-              titleClassName="text-[22px] font-bold leading-[1.1] tracking-[-0.01em] text-[#0B2A4A] sm:text-[26px] lg:text-[30px]"
+              titleClassName="text-[20px] font-bold leading-[1.1] tracking-[-0.01em] text-[#0B2A4A] sm:text-[24px] lg:text-[28px]"
             />
           </AnimatedSection>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+          
+          {/* Compact 2-column mobile & 4-column desktop directory */}
+          <div className="mt-4 sm:mt-6 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-4">
             {quickContacts.map((contact, i) => {
               const Icon = contact.icon;
               return (
-                <AnimatedSection key={contact.title} delay={i * 0.08} animation="scale">
-                  <div
-                    style={
-                      {
-                        backgroundColor: contact.cardBg,
-                        borderColor: contact.border,
-                        "--hover-border": contact.hoverBorder,
-                      } as React.CSSProperties
-                    }
-                    className="group flex h-full min-h-0 flex-col items-center rounded-2xl border-2 p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-(--hover-border) hover:shadow-lg sm:min-h-67.5 sm:rounded-[28px] sm:p-8"
-                  >
-                    <span
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16"
-                      style={{ backgroundColor: contact.iconBg }}
-                    >
-                      <Icon size={19} className="sm:hidden" />
-                      <Icon size={26} className="hidden sm:block" />
-                    </span>
-                    <h3 className="mt-2 text-[15px] font-bold text-ink-900 sm:mt-3 sm:text-base">{contact.title}</h3>
-                    <p className="mt-1 line-clamp-none text-[13px] leading-snug text-slate-600 sm:mt-1.5 sm:text-sm sm:leading-relaxed sm:line-clamp-2">
-                      {contact.description}
-                    </p>
+                <AnimatedSection key={contact.title} delay={i * 0.05} animation="scale" className="h-full">
+                  <div className="group flex h-full flex-col justify-between rounded-xl border border-slate-200/90 bg-white p-2.5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-[#155E9A]/30 hover:shadow-md sm:rounded-2xl sm:p-4">
+                    <div>
+                      {/* Top row: Icon badge & Channel tag */}
+                      <div className="flex items-center justify-between gap-1">
+                        <span
+                          className={`flex h-7.5 w-7.5 sm:h-9 sm:w-9 items-center justify-center rounded-lg sm:rounded-xl border shadow-2xs group-hover:scale-105 transition-transform ${contact.iconBg} ${contact.iconColor}`}
+                        >
+                          <Icon size={14} className="sm:hidden" />
+                          <Icon size={17} className="hidden sm:block" />
+                        </span>
+                        <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[8px] sm:text-[9.5px] font-semibold text-slate-600 group-hover:bg-blue-50 group-hover:text-[#155E9A] transition-colors">
+                          {contact.badge}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="mt-2 text-[12px] sm:text-[14px] font-bold text-[#0B2A4A] leading-snug group-hover:text-[#155E9A] transition-colors">
+                        {contact.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="mt-0.5 line-clamp-2 text-[9.5px] sm:text-[11.5px] leading-relaxed text-slate-500">
+                        {contact.description}
+                      </p>
+                    </div>
+
+                    {/* Email Action Bar */}
                     <a
                       href={`mailto:${contact.email}`}
-                      className="mt-2 inline-flex items-center justify-center rounded-full border-2 bg-white px-3.5 py-2 text-[11px] font-bold text-ink-900 shadow-sm transition-colors duration-200 hover:text-brand-700 sm:mt-3 sm:px-5 sm:py-3 sm:text-[13px]"
-                      style={{ borderColor: "#EAF4FB" }}
+                      className="mt-2.5 flex items-center justify-between rounded-lg bg-blue-50/80 px-2 py-1 text-[8.5px] font-semibold text-[#155E9A] transition-all group-hover:bg-[#155E9A] group-hover:text-white sm:px-2.5 sm:py-1.5 sm:text-[10.5px]"
                     >
-                      {contact.email}
+                      <span className="truncate">{contact.email}</span>
+                      <span className="shrink-0 ml-1 font-bold">→</span>
                     </a>
                   </div>
                 </AnimatedSection>
@@ -204,16 +198,16 @@ export default function ContactPage() {
 
             <AnimatedSection delay={0.1}>
               <div className="space-y-6">
-                <div className="group relative aspect-video overflow-hidden rounded-3xl border-4 border-white shadow-lg">
+                <div className="group relative aspect-video overflow-hidden rounded-2xl sm:rounded-3xl border-4 border-white shadow-md">
                   <Image
-                    src="/images/gallery/innovation-labs-1.jpg"
+                    src="/images/gallery/gallery-2.jpg"
                     alt="Founders and mentors collaborating at the Tech4Bharat office"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105 brightness-105"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-brand-900/40 via-transparent to-transparent" />
-                  <p className="absolute bottom-4 left-4 text-sm font-medium text-white">
+                  <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/80 via-[#0B2A4A]/20 to-transparent" />
+                  <p className="absolute bottom-3 left-3 text-xs sm:bottom-4 sm:left-4 sm:text-sm font-semibold text-white">
                     Visit us at IIT Bombay, Powai
                   </p>
                 </div>
