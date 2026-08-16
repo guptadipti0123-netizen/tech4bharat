@@ -103,15 +103,9 @@ export default function MentorsOverview() {
                   className={`group flex h-full flex-col justify-between rounded-xl border border-slate-200/90 border-l-[3.5px] ${item.cardBg} p-2.5 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:rounded-2xl sm:p-3.5`}
                 >
                   <div>
-                    {/* Top row: Badge + Number */}
-                    <div className="flex items-center justify-between">
-                      <span className={`rounded-md px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold ${item.badgeBg} transition-colors`}>
-                        {item.badge}
-                      </span>
-                      <span className="font-mono text-[9px] sm:text-[10px] font-extrabold" style={{ color: item.accent }}>
-                        /{item.num}
-                      </span>
-                    </div>
+                    <span className={`inline-block rounded-md px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold ${item.badgeBg} transition-colors`}>
+                      {item.badge}
+                    </span>
 
                     {/* Title */}
                     <h3 className="mt-1.5 text-[11.5px] sm:text-[13.5px] font-bold text-[#0B2A4A] leading-tight group-hover:text-[#155E9A] transition-colors">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PartnersHero from "@/components/sections/partners/PartnersHero";
+import TrustedByMarquee from "@/components/sections/partners/TrustedByMarquee";
 import PartnerCategoryGrid from "@/components/sections/partners/PartnerCategoryGrid";
 import PartnersLegacyMoments from "@/components/sections/partners/PartnersLegacyMoments";
 import PartnershipProcess from "@/components/sections/partners/PartnershipProcess";
@@ -21,6 +22,7 @@ export default function PartnersPage() {
   return (
     <>
       <PartnersHero />
+      <TrustedByMarquee />
       <PartnerCategoryGrid />
       <PartnersLegacyMoments />
       <PartnershipProcess />

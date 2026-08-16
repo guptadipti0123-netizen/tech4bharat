@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -35,6 +35,7 @@ const AUTO_PLAY_INTERVAL = 5000; // 5 seconds per slide
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -53,16 +54,39 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [isPaused, nextSlide]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    const SWIPE_THRESHOLD = 40;
+    if (deltaX > SWIPE_THRESHOLD) {
+      prevSlide();
+    } else if (deltaX < -SWIPE_THRESHOLD) {
+      nextSlide();
+    }
+    touchStartX.current = null;
+    setIsPaused(false);
+  };
+
   return (
     <section
       id="top"
-      className="relative flex min-h-[580px] items-center overflow-hidden pt-16 sm:min-h-[640px] sm:pt-18 lg:min-h-screen"
+      aria-label="Hero Showcase"
+      className="relative min-h-115 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-140 lg:min-h-screen"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      aria-label="Hero Showcase"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
-      {/* Background Slideshow Images */}
-      <div className="absolute inset-0 -z-30 overflow-hidden bg-[#0A1A3A]">
+      {/* Background slideshow — same treatment (gradient wash, rounded-b corners) as the
+          About page hero, so the two pages read as one visual language. Stacking is by
+          plain DOM order (image, then gradients, then content) — no z-index — matching
+          AboutHero's pattern exactly. */}
+      <div className="absolute inset-0">
         {heroSlides.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
@@ -70,9 +94,7 @@ export default function Hero() {
               key={slide.src}
               aria-hidden={!isActive}
               className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                isActive
-                  ? "scale-100 opacity-100"
-                  : "scale-105 opacity-0 pointer-events-none"
+                isActive ? "scale-100 opacity-100" : "scale-105 opacity-0 pointer-events-none"
               }`}
             >
               <Image
@@ -87,102 +109,50 @@ export default function Hero() {
           );
         })}
       </div>
+      <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/90 via-[#0B2A4A]/55 to-[#0B2A4A]/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#0B2A4A]/85 via-[#0B2A4A]/40 to-transparent" />
 
-      {/* Lightened, soft gradient wash for text legibility without darkening the photos */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-gradient-to-t from-[#050E3D]/75 via-[#050E3D]/40 to-[#050E3D]/15"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-gradient-to-r from-[#050E3D]/70 via-[#050E3D]/30 to-transparent lg:w-4/5"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-20 -top-20 -z-10 h-96 w-96 rounded-full bg-[#2F80ED]/15 blur-3xl"
-      />
-
-      {/* Content Container */}
-      <Container className="relative z-10 py-10 sm:py-16">
-        <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-          <AnimatedSection>
-            <h1 className="text-balance text-[25px] font-extrabold leading-[1.18] tracking-[-0.02em] sm:text-[32px] sm:leading-[1.15] lg:text-[42px]">
-              <span className="text-white drop-shadow-md">A National Platform for</span>{" "}
-              <span className="text-[#FFE08A] drop-shadow-md">
-                Social Entrepreneurship and Innovation
-              </span>
+      <div className="relative flex h-full min-h-115 items-end pb-6 pt-16 sm:min-h-140 sm:items-center sm:pb-0 sm:pt-0 lg:min-h-screen">
+        <Container>
+          <AnimatedSection className="max-w-xl">
+            <h1 className="text-balance text-[1.1rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.45rem] lg:text-[1.7rem]">
+              A National Platform for{" "}
+              <span className="text-[#FFE08A]">Social Entrepreneurship and Innovation</span>
             </h1>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.12}>
-            <p className="mx-auto mt-4 max-w-lg text-[14.5px] leading-relaxed text-[#DCE8FF] sm:mt-5 sm:text-[17px] lg:mx-0">
+            <p className="mt-2 max-w-lg text-balance text-[11.5px] leading-5 text-white/85 sm:mt-3 sm:text-[12.5px]">
               Tech4Bharat is proposed to be established as a Section 8 Company.
             </p>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.18}>
-            <div className="mt-7 flex flex-row flex-wrap items-center justify-center gap-3 sm:mt-8 lg:justify-start">
-              <Button
-                href="/programs"
-                size="md"
-                className="w-fit justify-center bg-white px-6 py-3 text-[14px] font-semibold text-[#0B2A4A] shadow-[0_6px_20px_rgba(0,0,0,0.25)] hover:bg-white/95 hover:text-[#0B2A4A] active:scale-[0.98]"
-              >
-                Explore Programs <ArrowRight size={16} />
+            <div className="mt-3 flex flex-wrap gap-2 sm:mt-4 sm:gap-2.5">
+              <Button href="/programs" size="sm" className="px-3 py-1.5 text-[12px]">
+                Explore Programs <ArrowRight size={14} />
               </Button>
-              <Button
-                href="/contact"
-                size="md"
-                variant="outline"
-                className="w-fit justify-center border-white/70 bg-white/10 px-6 py-3 text-[14px] font-semibold text-white backdrop-blur-sm hover:border-white hover:bg-white/25 hover:text-white active:scale-[0.98]"
-              >
+              <Button href="/contact" size="sm" variant="outline" className="px-3 py-1.5 text-[12px]">
                 Contact Us
               </Button>
             </div>
           </AnimatedSection>
-        </div>
-      </Container>
+        </Container>
+      </div>
 
-      {/* Slide Navigation Controls */}
-      <div className="absolute inset-x-0 bottom-5 z-20 flex items-center justify-between px-4 sm:bottom-8 sm:px-8">
-        {/* Indicators / Progress Dots */}
-        <div className="mx-auto flex items-center gap-2 rounded-full border border-white/15 bg-[#050E3D]/50 px-3.5 py-1.5 backdrop-blur-md sm:mx-0">
-          {heroSlides.map((_, i) => {
-            const isSelected = i === currentSlide;
-            return (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setCurrentSlide(i)}
-                aria-label={`Go to slide ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  isSelected
-                    ? "w-7 bg-[#FFE08A]"
-                    : "w-2 bg-white/40 hover:bg-white/70"
-                }`}
-              />
-            );
-          })}
-        </div>
-
-        {/* Desktop Prev/Next subtle arrow controls */}
-        <div className="hidden items-center gap-2 sm:flex">
-          <button
-            type="button"
-            onClick={prevSlide}
-            aria-label="Previous slide"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            type="button"
-            onClick={nextSlide}
-            aria-label="Next slide"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
-          >
-            <ChevronRight size={18} />
-          </button>
-        </div>
+      {/* Prev/Next slide controls — Home is the one hero with a carousel, so it keeps a
+          light-touch nav the single-image About hero doesn't need. */}
+      <div className="absolute bottom-4 right-4 z-10 flex gap-1.5 sm:bottom-6 sm:right-6">
+        <button
+          type="button"
+          onClick={prevSlide}
+          aria-label="Previous slide"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
+        >
+          <ChevronLeft size={16} />
+        </button>
+        <button
+          type="button"
+          onClick={nextSlide}
+          aria-label="Next slide"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
+        >
+          <ChevronRight size={16} />
+        </button>
       </div>
     </section>
   );
