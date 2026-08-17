@@ -29,24 +29,24 @@ export default function TrustedByMarquee() {
       <div className="relative">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-linear-to-r from-white to-transparent sm:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l from-white to-transparent sm:w-32" />
-        <div className="flex w-max items-center gap-6 animate-marquee hover:[animation-play-state:paused]">
+        <div className="flex w-max items-center gap-4 animate-marquee hover:[animation-play-state:paused] sm:gap-6">
           {[...marqueePartners, ...marqueePartners].map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
               style={ticketNotchStyle}
-              className="relative flex h-19 w-50 shrink-0 items-center gap-3 overflow-hidden rounded-[18px] border border-slate-200 bg-white px-4 shadow-[0_4px_14px_rgba(15,23,42,0.08)]"
+              className="relative flex h-14 w-38 shrink-0 items-center gap-2 overflow-hidden rounded-[18px] border border-slate-200 bg-white px-3 shadow-[0_4px_14px_rgba(15,23,42,0.08)] sm:h-19 sm:w-50 sm:gap-3 sm:px-4"
             >
               <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ backgroundColor: partner.accent }} />
-              <span className="relative flex h-10.5 w-10.5 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_2px_6px_rgba(15,23,42,0.08)]">
+              <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_2px_6px_rgba(15,23,42,0.08)] sm:h-10.5 sm:w-10.5">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
                   width={30}
                   height={30}
-                  className="h-7.5 w-7.5 object-contain"
+                  className="h-5.5 w-5.5 object-contain sm:h-7.5 sm:w-7.5"
                 />
               </span>
-              <span className="min-w-0 truncate text-[16px] font-semibold text-[#1F2937]">{partner.name}</span>
+              <span className="min-w-0 truncate text-[13px] font-semibold text-[#1F2937] sm:text-[16px]">{partner.name}</span>
             </div>
           ))}
         </div>
