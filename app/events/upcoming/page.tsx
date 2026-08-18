@@ -88,8 +88,8 @@ export default function UpcomingEventsPage() {
                       </Button>
                       <Button
                         href="/contact"
-                        variant="outline"
-                        className="border-white/30 text-white hover:bg-white/10"
+                        variant="ghost"
+                        className="border-2 border-white/80 bg-white/10 text-white hover:bg-white/25 hover:text-white"
                       >
                         Register Interest
                       </Button>
