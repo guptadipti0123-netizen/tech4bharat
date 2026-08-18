@@ -75,38 +75,38 @@ export default function WhoShouldAttend() {
         </AnimatedSection>
 
         {/* Desktop / tablet: hub-and-spoke row */}
-        <div className="mt-9 hidden items-center justify-center gap-6 sm:flex lg:gap-10">
-          <div className="flex flex-col gap-7">
+        <div className="mt-10 hidden items-center justify-center gap-4 sm:flex lg:gap-8 xl:gap-12">
+          <div className="flex flex-col gap-6 lg:gap-8">
             {leftPersonas.map((item) => (
               <Spoke key={item.label} item={item} align="left" />
             ))}
           </div>
 
-          <AnimatedSection className="relative aspect-3/2 w-56 shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white lg:w-64">
+          <AnimatedSection className="relative aspect-4/3 w-72 shrink-0 overflow-hidden rounded-3xl shadow-[0_14px_36px_rgba(6,26,44,0.18)] ring-6 ring-white md:w-84 lg:w-[380px] xl:w-[420px]">
             <Image
               src="/images/gallery/startup-events-1.jpg"
               alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
               fill
-              sizes="256px"
+              sizes="(max-width: 1024px) 380px, 420px"
               className="object-cover brightness-105"
             />
           </AnimatedSection>
 
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col gap-6 lg:gap-8">
             {rightPersonas.map((item) => (
               <Spoke key={item.label} item={item} align="right" />
             ))}
           </div>
         </div>
 
-        {/* Mobile: circle on top, six personas stacked in a compact 2-col grid */}
-        <div className="mt-9 flex flex-col items-center sm:hidden">
-          <AnimatedSection className="relative aspect-3/2 w-48 shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white">
+        {/* Mobile: image on top, six personas stacked in a compact 2-col grid */}
+        <div className="mt-8 flex flex-col items-center sm:hidden">
+          <AnimatedSection className="relative aspect-16/10 w-full max-w-[320px] shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white">
             <Image
               src="/images/gallery/startup-events-1.jpg"
               alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
               fill
-              sizes="192px"
+              sizes="320px"
               className="object-cover brightness-105"
             />
           </AnimatedSection>
