@@ -179,21 +179,21 @@ export default function BootcampSessions() {
                     </p>
 
                     {/* Description */}
-                    <p className="mt-2.5 text-[13px] leading-relaxed text-slate-600">
+                    <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-slate-600">
                       {session.description}
                     </p>
                   </div>
 
                   {/* Key Takeaways Chips */}
                   <div className="mt-5 border-t border-slate-100 pt-4">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
                       Key Highlights
                     </p>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
+                    <div className="mt-2.5 flex flex-wrap gap-2">
                       {session.takeaways.map((item) => (
                         <span
                           key={item}
-                          className="inline-flex items-center gap-1 rounded-lg bg-slate-50 border border-slate-200/80 px-2 py-0.5 text-[11px] font-medium text-slate-700"
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-slate-50 border border-slate-200/80 px-2.5 py-1 text-xs font-medium text-slate-700"
                         >
                           <CheckCircle2
                             size={11}

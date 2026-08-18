@@ -121,19 +121,19 @@ export default function FundingCategories() {
                         <Icon size={13} className="sm:hidden" />
                         <Icon size={15} className="hidden sm:block" />
                       </span>
-                      <h3 className="min-w-0 flex-1 text-[12px] font-bold leading-tight text-[#102A43] sm:text-[15px]">
+                      <h3 className="min-w-0 flex-1 text-[15px] font-bold leading-tight text-[#0B2A4A] sm:text-[17px]">
                         {source.title}
                       </h3>
                     </div>
 
-                    <p className="mt-1 line-clamp-2 text-[10px] leading-snug text-[#526777] sm:text-[12.5px]">
+                    <p className="mt-2 text-[13px] leading-relaxed text-slate-600 sm:text-[14.5px]">
                       {source.description}
                     </p>
                   </div>
 
-                  <div className="mt-2 border-t pt-1.5 sm:pt-2" style={{ borderColor: `${source.border}33` }}>
+                  <div className="mt-3 border-t pt-2" style={{ borderColor: `${source.border}33` }}>
                     <span
-                      className="inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[8.5px] font-semibold sm:px-2.5 sm:text-[10.5px]"
+                      className="inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-[11px] font-semibold sm:text-[12px]"
                       style={{ backgroundColor: source.iconBg, color: source.border }}
                     >
                       {source.fundingType}

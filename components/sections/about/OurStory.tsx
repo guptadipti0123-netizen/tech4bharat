@@ -53,11 +53,11 @@ export default function OurStory() {
               <h2 className="mt-2 text-[20px] sm:text-[26px] lg:text-[30px] font-extrabold tracking-tight text-[#0B2A4A]">
                 Who We Are
               </h2>
-              <p className="mt-3 text-[14.5px] sm:text-[15.5px] lg:text-[16px] leading-relaxed text-slate-600">
+              <p className="mt-3 text-base sm:text-[17px] leading-relaxed text-slate-600">
                 Tech4Bharat is a national initiative dedicated to empowering India&apos;s youth
                 with cutting-edge skills in the rapidly evolving technology landscape.
               </p>
-              <p className="mt-2.5 text-[14.5px] sm:text-[15.5px] lg:text-[16px] leading-relaxed text-slate-600">
+              <p className="mt-2.5 text-base sm:text-[17px] leading-relaxed text-slate-600">
                 We believe the nation&apos;s progress rests on empowering young minds with the
                 right knowledge, tools, and opportunities.
               </p>

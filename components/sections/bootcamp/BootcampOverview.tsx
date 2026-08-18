@@ -79,13 +79,13 @@ export default function BootcampOverview() {
                         </h3>
                       </div>
                       {block.body && (
-                        <p className="mt-2 text-[15px] leading-relaxed text-slate-600">{block.body}</p>
+                        <p className="mt-2 text-base leading-relaxed text-slate-600">{block.body}</p>
                       )}
                       {block.list && (
-                        <ul className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-[15px] text-slate-600">
+                        <ul className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1.5 text-base text-slate-600">
                           {block.list.map((item) => (
-                            <li key={item} className="flex items-center gap-1.5">
-                              <span className="h-1 w-1 shrink-0 rounded-full bg-brand-400" />
+                            <li key={item} className="flex items-center gap-2">
+                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
                               {item}
                             </li>
                           ))}
