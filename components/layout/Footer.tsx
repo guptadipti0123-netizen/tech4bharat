@@ -8,9 +8,9 @@ import BackToTop from "@/components/layout/BackToTop";
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Programs", href: "/programs" },
   { label: "Startup Portfolio", href: "/portfolio" },
-  { label: "Events", href: "/events" },
+  { label: "Upcoming Events", href: "/events/upcoming" },
+  { label: "Past Events", href: "/events/past" },
 ];
 
 const programLinks = [

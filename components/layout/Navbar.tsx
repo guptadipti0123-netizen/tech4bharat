@@ -8,10 +8,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   Award,
   Briefcase,
+  CalendarCheck,
   ChevronDown,
   Compass,
   Flame,
   Handshake,
+  History,
   Menu,
   Rocket,
   Users,
@@ -30,7 +32,7 @@ interface NavChild {
 
 interface NavItem {
   label: string;
-  /** Omitted for items that should act as a dropdown trigger only (e.g. Social Impact, Resources, Network) —
+  /** Omitted for items that should act as a dropdown trigger only (e.g. Social Impact, Resources, Network, Events) —
    *  no page of their own, clicking/tapping just opens the submenu. */
   href?: string;
   children?: NavChild[];
@@ -56,7 +58,13 @@ const navLinks: NavItem[] = [
       { label: "Advisors & Mentors", href: "/mentors", icon: Users },
     ],
   },
-  { label: "Events", href: "/events" },
+  {
+    label: "Events",
+    children: [
+      { label: "Upcoming Events", href: "/events/upcoming", icon: CalendarCheck },
+      { label: "Past Events", href: "/events/past", icon: History },
+    ],
+  },
   {
     label: "Resources",
     children: [
