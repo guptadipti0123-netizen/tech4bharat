@@ -9,16 +9,13 @@ interface ProgramItem {
   title: string;
   description: string;
   chips: [string, string, string];
+  href: string;
   accent: string;
   cardBg: string;
   chipBg: string;
   shadow: string;
 }
 
-// `id` gives each card a real anchor target — the Navbar's Programs dropdown links to
-// /programs#incubation and /programs#workshops directly.
-// One shared color set for every card — same accent, tint, and shadow — so the four cards
-// read as perfectly uniform, distinguished only by their icon, title, description, and chips.
 const ACCENT = "#155E9A";
 const CARD_BG = "#EAF4FB";
 const CHIP_BG = "rgba(21,94,154,.08)";
@@ -28,9 +25,10 @@ const programs: ProgramItem[] = [
   {
     id: "incubation",
     icon: Rocket,
-    title: "Startup Incubation",
-    description: "Structured, cohort-based support from first idea to a working, fundable company.",
-    chips: ["Idea Validation", "Product Development", "Demo Day"],
+    title: "Incubation & Acceleration",
+    description: "Structured support from early-stage prototype validation to scaling and field pilots.",
+    chips: ["Idea Validation", "Prototype Stage", "Growth & Scale"],
+    href: "/incubation-acceleration",
     accent: ACCENT,
     cardBg: CARD_BG,
     chipBg: CHIP_BG,
@@ -39,9 +37,10 @@ const programs: ProgramItem[] = [
   {
     id: "mentorship",
     icon: Users,
-    title: "Mentorship",
-    description: "One-on-one guidance from experienced operators and industry mentors.",
-    chips: ["1:1 Sessions", "Industry Experts", "Career Guidance"],
+    title: "Advisors & Mentors",
+    description: "Guidance from experienced advisors across IIT Bombay, industry, and governance.",
+    chips: ["1:1 Guidance", "Domain Experts", "Strategic Advisory"],
+    href: "/mentors",
     accent: ACCENT,
     cardBg: CARD_BG,
     chipBg: CHIP_BG,
@@ -50,9 +49,10 @@ const programs: ProgramItem[] = [
   {
     id: "workshops",
     icon: Calendar,
-    title: "Workshops & Training",
-    description: "Hands-on sessions covering fundraising, product, and go-to-market fundamentals.",
-    chips: ["Hands-on Learning", "Live Workshops", "Skill Building"],
+    title: "Startup Bootcamp",
+    description: "Intensive 1-day founder bootcamp in Mumbai covering validation to funding.",
+    chips: ["Mumbai 2026", "15+ Startups", "Investor Readiness"],
+    href: "/startup-bootcamp",
     accent: ACCENT,
     cardBg: CARD_BG,
     chipBg: CHIP_BG,
@@ -61,9 +61,10 @@ const programs: ProgramItem[] = [
   {
     id: "funding-networking",
     icon: Handshake,
-    title: "Funding & Networking",
-    description: "Grant facilitation and curated introductions to our investor and partner network.",
-    chips: ["Investor Connect", "Grant Support", "Partner Network"],
+    title: "Funding Opportunities",
+    description: "Facilitating access to government schemes, grants, and investor networks.",
+    chips: ["Startup India", "BIRAC Grants", "Investor Connect"],
+    href: "/funding-opportunities",
     accent: ACCENT,
     cardBg: CARD_BG,
     chipBg: CHIP_BG,
@@ -71,11 +72,7 @@ const programs: ProgramItem[] = [
   },
 ];
 
-const learnMoreHref = "/contact";
-
-// One shared card template rendered four times — only the accent color, tint, icon, and
-// copy change per card, so every card reads as the same design system.
-function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg, chipBg, shadow }: ProgramItem) {
+function ProgramCard({ id, icon: Icon, title, description, chips, href, accent, cardBg, chipBg, shadow }: ProgramItem) {
   return (
     <div
       id={id}
@@ -107,8 +104,8 @@ function ProgramCard({ id, icon: Icon, title, description, chips, accent, cardBg
 
       <div className="mt-auto">
         <div className="mt-2.5 h-px w-8 sm:mt-5 sm:w-10" style={{ backgroundColor: accent, opacity: 0.3 }} />
-        <Button href={learnMoreHref} variant="primary" size="sm" className="mt-2 w-fit px-2.5 py-1.5 text-[10.5px] sm:mt-4 sm:px-4.5 sm:py-2.25 sm:text-[13px]">
-          Learn More <ArrowUpRight size={12} className="sm:hidden" /><ArrowUpRight size={16} className="hidden sm:block" />
+        <Button href={href} variant="primary" size="sm" className="mt-2 w-fit px-2.5 py-1.5 text-[10.5px] sm:mt-4 sm:px-4.5 sm:py-2.25 sm:text-[13px]">
+          Explore Program <ArrowUpRight size={12} className="sm:hidden" /><ArrowUpRight size={16} className="hidden sm:block" />
         </Button>
       </div>
     </div>
