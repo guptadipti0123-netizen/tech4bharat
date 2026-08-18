@@ -35,25 +35,11 @@ export default function PageHero({
   title,
   description,
   image,
-  icon: Icon,
   titleClassName,
   descriptionClassName,
 }: PageHeroProps) {
   return (
-    <section className="relative bg-linear-to-b from-brand-50 via-white to-white pb-7 pt-20 sm:pb-10 sm:pt-24">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <DotGrid className="left-0 top-0 h-full w-full text-brand-700/5" />
-        <Blob tone="secondary" className="-left-24 -top-24 h-72 w-72" />
-        <Blob tone="accent" className="-right-16 top-10 h-64 w-64" animate={false} />
-        {Icon && (
-          <Icon
-            aria-hidden="true"
-            strokeWidth={1}
-            className="absolute -right-8 bottom-0 h-56 w-56 text-brand-700/6 sm:h-64 sm:w-64"
-          />
-        )}
-      </div>
-
+    <section className="relative bg-gradient-to-b from-[#EBF3FA] via-[#F8FAFC] to-white pb-8 pt-20 sm:pb-12 sm:pt-24 border-b border-slate-200/50">
       <Container className="relative">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <h1

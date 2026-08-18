@@ -39,11 +39,7 @@ const highlights = [
  *  parts on the right, and four compact highlight chips along the bottom. */
 export default function BootcampOverview() {
   return (
-    <section className="relative overflow-hidden bg-brand-50 py-10 sm:py-11">
-      <DotGrid className="left-0 top-0 h-full w-full text-brand-700/4" />
-      <Blob tone="brand" className="-left-24 top-0 h-72 w-72" />
-      <Blob tone="secondary" className="-right-20 bottom-0 h-64 w-64" animate={false} />
-
+    <section className="relative overflow-hidden bg-slate-50 py-10 sm:py-14 border-t border-slate-200/60">
       <Container className="relative">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">

@@ -55,17 +55,17 @@ export default function PastEventsPage() {
       />
 
       {/* Impact Numbers */}
-      <section className="border-b border-slate-200/80 bg-white py-6 sm:py-8">
+      <section className="border-b border-slate-200/80 bg-white py-6 sm:py-9">
         <Container>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {pastStats.map((stat, i) => (
-              <AnimatedSection key={stat.label} delay={i * 0.05} className="text-center">
-                <div className="rounded-2xl bg-slate-50 p-4 border border-slate-100">
-                  <p className="text-2xl sm:text-3xl font-black text-[#0B2A4A]">{stat.value}</p>
-                  <p className="mt-1 text-xs text-slate-600">{stat.label}</p>
-                </div>
-              </AnimatedSection>
-            ))}
+          <div className="rounded-3xl bg-gradient-to-r from-[#0B2A4A] via-[#103E6B] to-[#155E9A] p-6 sm:p-8 text-white shadow-md">
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:divide-x sm:divide-white/20">
+              {pastStats.map((stat, i) => (
+                <AnimatedSection key={stat.label} delay={i * 0.05} className={`text-center ${i > 0 ? "sm:pl-6" : ""}`}>
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-amber-300">{stat.value}</p>
+                  <p className="mt-1 text-xs font-medium text-white/85 leading-snug">{stat.label}</p>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
