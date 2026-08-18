@@ -41,33 +41,6 @@ const accelerationPoints = [
   "Facilitation for government schemes and grants",
 ];
 
-const supportAreas = [
-  {
-    icon: Lightbulb,
-    title: "Product Validation & Business Models",
-    description:
-      "Structured support to validate product-market fit, refine value propositions, and develop sustainable business models for social impact.",
-  },
-  {
-    icon: Users,
-    title: "Advisor & Mentor Guidance",
-    description:
-      "Direct guidance from experienced advisors across academia (IIT Bombay), industry, government, and the startup ecosystem.",
-  },
-  {
-    icon: Handshake,
-    title: "Field Implementation & Pilot Projects",
-    description:
-      "Facilitating partnerships with NGOs and institutions for field testing and pilot deployment of startup technologies.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Government Schemes & Investor Readiness",
-    description:
-      "Assistance in navigating Startup India schemes, government grants, and preparing founders for investor networking.",
-  },
-];
-
 export default function IncubationAccelerationPage() {
   return (
     <>
@@ -78,7 +51,7 @@ export default function IncubationAccelerationPage() {
       />
 
       {/* Incubation & Acceleration Tracks */}
-      <section className="bg-white py-8 sm:py-14">
+      <section className="bg-white py-10 sm:py-16">
         <Container>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
             {/* Incubation */}
@@ -113,7 +86,7 @@ export default function IncubationAccelerationPage() {
                   </ul>
                 </div>
 
-                <div className="mt-6 pt-2">
+                <div className="mt-8 pt-2">
                   <Button href="/contact" variant="primary" size="sm" className="w-full justify-center">
                     Inquire for Incubation <ArrowRight size={14} />
                   </Button>
@@ -153,7 +126,7 @@ export default function IncubationAccelerationPage() {
                   </ul>
                 </div>
 
-                <div className="mt-6 pt-2">
+                <div className="mt-8 pt-2">
                   <Button href="/contact" variant="secondary" size="sm" className="w-full justify-center">
                     Inquire for Acceleration <ArrowRight size={14} />
                   </Button>
@@ -161,47 +134,6 @@ export default function IncubationAccelerationPage() {
               </div>
             </AnimatedSection>
           </div>
-        </Container>
-      </section>
-
-      {/* Key Support Pillars */}
-      <section className="bg-slate-50 py-8 sm:py-12 border-t border-slate-200/60">
-        <Container>
-          <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <h2 className="text-[18px] sm:text-[22px] font-bold text-[#0B2A4A]">
-              Key Program Focus Areas
-            </h2>
-            <p className="mt-1 text-xs text-slate-600 sm:text-sm">
-              Hands-on support aligned with national social entrepreneurship priorities.
-            </p>
-          </AnimatedSection>
-
-          <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {supportAreas.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <AnimatedSection key={item.title} delay={i * 0.05} className="h-full">
-                  <div className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-4.5 shadow-2xs">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
-                      <Icon size={18} />
-                    </span>
-                    <h3 className="mt-3 text-sm font-bold text-[#0B2A4A]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-600">
-                      {item.description}
-                    </p>
-                  </div>
-                </AnimatedSection>
-              );
-            })}
-          </div>
-
-          <AnimatedSection delay={0.2} className="mt-8 text-center">
-            <Button href="/contact" variant="primary" size="md">
-              Connect With Tech4Bharat <ArrowRight size={15} />
-            </Button>
-          </AnimatedSection>
         </Container>
       </section>
     </>
