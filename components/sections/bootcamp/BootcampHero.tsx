@@ -1,47 +1,40 @@
 import Image from "next/image";
-import { ArrowRight, Calendar, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Calendar, Clock, MapPin, Rocket, ShieldCheck, Users } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import Blob from "@/components/ui/Blob";
-import DotGrid from "@/components/ui/DotGrid";
 
 const infoChips = [
   { icon: Calendar, label: "October 2026" },
   { icon: MapPin, label: "Mumbai" },
-  { icon: Clock, label: "One-Day Program" },
+  { icon: Clock, label: "One-Day Intensive" },
+  { icon: Users, label: "Min. 15 Startups" },
+  { icon: ShieldCheck, label: "Social Impact Focus" },
 ];
 
-/** Premium split hero — copy and event details on the left, the complete campus photo on
- *  the right in its own rounded, floating frame. Replaces the previous full-bleed banner
- *  treatment, which forced a landscape photo into a very wide/short box and cropped most of
- *  it away on wide screens; here the image is never cropped to fill an unrelated ratio. */
 export default function BootcampHero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-secondary-50 pb-10 pt-24 sm:pb-14 sm:pt-28">
-      <DotGrid className="left-0 top-0 h-full w-full text-brand-700/4" />
-      <Blob tone="brand" className="-left-32 top-10 h-96 w-96" />
-      <Blob tone="accent" className="-right-24 bottom-0 h-80 w-80" animate={false} />
-
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#EBF3FA] via-[#F8FAFC] to-white pb-10 pt-20 sm:pb-14 sm:pt-26 border-b border-slate-200/50">
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <h1 className="text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200/60 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700">
+              <Rocket size={14} /> National Startup Bootcamp
+            </span>
+            <h1 className="mt-3 text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
               One-Day Startup Bootcamp 2026
             </h1>
-            <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-slate-600">
-              A one-day intensive startup bootcamp designed to help early-stage founders
-              validate ideas, build sustainable businesses, connect with experts, and prepare
-              for funding opportunities.
+            <p className="mt-3 max-w-xl text-[14px] sm:text-[15px] leading-relaxed text-slate-600">
+              An intensive one-day bootcamp organized in Mumbai to equip social impact entrepreneurs with actionable business frameworks, investor readiness, and ecosystem connections.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-2 sm:gap-2.5">
               {infoChips.map(({ icon: Icon, label }) => (
                 <span
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-700"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-2xs"
                 >
-                  <Icon size={15} /> {label}
+                  <Icon size={14} className="text-brand-600" /> {label}
                 </span>
               ))}
             </div>
