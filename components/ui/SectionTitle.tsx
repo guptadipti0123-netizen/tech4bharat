@@ -58,8 +58,8 @@ export default function SectionTitle({
       {description && (
         <p
           className={cn(
-            "mt-3 text-[13px] leading-relaxed sm:mt-4 sm:text-[15px]",
-            isDark ? "text-white/70" : "text-slate-600",
+            "mt-3 text-[14.5px] leading-relaxed sm:mt-4 sm:text-[16px]",
+            isDark ? "text-white/80" : "text-slate-600",
             descriptionClassName
           )}
         >

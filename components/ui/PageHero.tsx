@@ -52,7 +52,7 @@ export default function PageHero({
           </h1>
           <p
             className={cn(
-              "mx-auto mt-4 max-w-2xl text-[14px] text-slate-600 sm:text-[15px]",
+              "mx-auto mt-4 max-w-2xl text-[15px] sm:text-[16.5px] leading-relaxed text-slate-600",
               descriptionClassName
             )}
           >

@@ -72,14 +72,14 @@ export default function IncubationAccelerationPage() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
+                  <p className="mt-4 text-[14px] sm:text-[15px] leading-relaxed text-slate-600">
                     Designed for early-stage social impact founders looking to validate ideas, build working prototypes, and establish solid business fundamentals.
                   </p>
 
                   <ul className="mt-5 space-y-2.5 border-t border-slate-200/80 pt-4">
                     {incubationPoints.map((point) => (
-                      <li key={point} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                        <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-brand-600" />
+                      <li key={point} className="flex items-start gap-2.5 text-[13.5px] sm:text-[14.5px] text-slate-700">
+                        <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-brand-600" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -112,14 +112,14 @@ export default function IncubationAccelerationPage() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
-                    Tailored for impact startups with an initial product ready to execute pilot deployments, access markets, and prepare for funding.
+                  <p className="mt-4 text-[14px] sm:text-[15px] leading-relaxed text-slate-600">
+                    For growth-stage startups ready to scale operations, secure institutional funding, and expand their market footprint.
                   </p>
 
                   <ul className="mt-5 space-y-2.5 border-t border-slate-200/80 pt-4">
                     {accelerationPoints.map((point) => (
-                      <li key={point} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                        <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-[#0B2A4A]" />
+                      <li key={point} className="flex items-start gap-2.5 text-[13.5px] sm:text-[14.5px] text-slate-700">
+                        <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-brand-600" />
                         <span>{point}</span>
                       </li>
                     ))}

@@ -87,14 +87,14 @@ function ProgramCard({ id, icon: Icon, title, description, chips, href, accent, 
         <Icon size={24} className="hidden sm:block" style={{ color: accent }} strokeWidth={1.75} />
       </span>
 
-      <h3 className="mt-2 text-[12.5px] font-bold leading-tight text-ink-900 sm:mt-4 sm:text-[20px]">{title}</h3>
-      <p className="mt-1 line-clamp-3 text-[10.5px] leading-snug text-slate-600 sm:mt-2 sm:text-[14px] sm:leading-relaxed">{description}</p>
+      <h3 className="mt-3 text-[15px] font-bold leading-tight text-[#0B2A4A] sm:mt-4 sm:text-[19px]">{title}</h3>
+      <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-slate-600 sm:text-[14px]">{description}</p>
 
-      <div className="mt-2 flex flex-wrap gap-1 sm:mt-4 sm:gap-2">
+      <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
         {chips.map((chip) => (
           <span
             key={chip}
-            className="rounded-full px-1.5 py-0.5 text-[8.5px] font-semibold sm:px-3 sm:py-1 sm:text-[12px]"
+            className="rounded-full px-2.5 py-0.5 text-[11px] font-semibold sm:px-3 sm:py-1 sm:text-[12px]"
             style={{ backgroundColor: chipBg, color: accent }}
           >
             {chip}
@@ -102,10 +102,10 @@ function ProgramCard({ id, icon: Icon, title, description, chips, href, accent, 
         ))}
       </div>
 
-      <div className="mt-auto">
-        <div className="mt-2.5 h-px w-8 sm:mt-5 sm:w-10" style={{ backgroundColor: accent, opacity: 0.3 }} />
-        <Button href={href} variant="primary" size="sm" className="mt-2 w-fit px-2.5 py-1.5 text-[10.5px] sm:mt-4 sm:px-4.5 sm:py-2.25 sm:text-[13px]">
-          Explore Program <ArrowUpRight size={12} className="sm:hidden" /><ArrowUpRight size={16} className="hidden sm:block" />
+      <div className="mt-auto pt-3">
+        <div className="h-px w-8 sm:w-10" style={{ backgroundColor: accent, opacity: 0.3 }} />
+        <Button href={href} variant="primary" size="sm" className="mt-3 w-fit px-3 py-1.5 text-xs sm:mt-4 sm:px-4.5 sm:py-2 sm:text-[13px]">
+          Explore Program <ArrowUpRight size={14} />
         </Button>
       </div>
     </div>

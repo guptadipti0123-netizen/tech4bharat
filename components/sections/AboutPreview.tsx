@@ -34,10 +34,10 @@ export default function AboutPreview() {
                   National Platform for Social Entrepreneurship
                 </h2>
 
-                <p className="mt-3 text-[12px] sm:text-[13.5px] leading-relaxed text-gray-600">
+                <p className="mt-3 text-[14.5px] sm:text-[15.5px] leading-relaxed text-slate-600">
                   Tech4Bharat is dedicated to empowering India&apos;s youth with cutting-edge skills and supporting social impact startups across critical national domains.
                 </p>
-                <p className="mt-2 text-[12px] sm:text-[13.5px] leading-relaxed text-gray-600">
+                <p className="mt-2.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-slate-600">
                   Through mentorship, research translation with leading academic institutions, and ecosystem partnerships, we help founders build sustainable ventures for Bharat.
                 </p>
 
