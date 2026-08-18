@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Badge from "@/components/ui/Badge";
-import { getDomainImage } from "@/lib/images";
+import StartupLogo from "@/components/ui/StartupLogo";
 import type { Startup } from "@/lib/data";
 
 interface DomainAccent {
@@ -60,17 +59,16 @@ export default function StartupCard({ startup }: { startup: Startup }) {
 
       <div className="flex flex-1 flex-col">
         {/* Header: Logo + Startup Name */}
-        <div className="flex items-center gap-1.5 sm:gap-3">
-          <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-md border border-slate-100 shadow-[0_2px_10px_rgba(11,42,74,0.1)] sm:h-12 sm:w-12 sm:rounded-xl">
-            <Image
-              src={getDomainImage(startup.domain)}
-              alt={`${startup.domain} industry`}
-              fill
-              sizes="48px"
-              className="object-cover object-top"
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="shrink-0">
+            <StartupLogo
+              name={startup.name}
+              domain={startup.domain}
+              size={44}
+              className="h-8 w-8 rounded-lg shadow-xs sm:h-11 sm:w-11 sm:rounded-xl"
             />
           </div>
-          <h3 className="text-[11.5px] font-bold leading-tight text-[#102A43] sm:text-[16px] truncate">
+          <h3 className="text-[12px] font-bold leading-tight text-[#102A43] sm:text-[16px] truncate">
             {startup.name}
           </h3>
         </div>
