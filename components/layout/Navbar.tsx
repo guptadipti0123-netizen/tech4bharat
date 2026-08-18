@@ -45,10 +45,9 @@ const navLinks: NavItem[] = [
   {
     label: "Social Impact",
     children: [
-      { label: "Programs", href: "/programs", icon: Compass },
-      { label: "Incubation & Acceleration", href: "/incubation-acceleration", icon: Rocket },
       { label: "Startup Portfolio", href: "/portfolio", icon: Briefcase },
-      { label: "Startup Bootcamp", href: "/startup-bootcamp", icon: Flame },
+      { label: "Startup Support Programs", href: "/programs", icon: Compass },
+      { label: "Incubation & Acceleration", href: "/incubation-acceleration", icon: Rocket },
     ],
   },
   {
@@ -63,6 +62,7 @@ const navLinks: NavItem[] = [
     children: [
       { label: "Upcoming Events", href: "/events/upcoming", icon: CalendarCheck },
       { label: "Past Events", href: "/events/past", icon: History },
+      { label: "Startup Bootcamp", href: "/startup-bootcamp", icon: Flame },
     ],
   },
   {

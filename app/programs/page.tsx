@@ -20,8 +20,8 @@ export default function ProgramsPage() {
   return (
     <>
       <PageHero
-        title="Programs"
-        description="Structured support for founders at every stage of the journey."
+        title="Startup Support Programs"
+        description="Comprehensive support for social impact entrepreneurs — mentoring, incubation, funding opportunities, and ecosystem networking."
         icon={Lightbulb}
       />
       <ProgramGrid />
