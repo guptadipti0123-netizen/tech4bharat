@@ -14,8 +14,9 @@ const quickLinks = [
 ];
 
 const programLinks = [
+  { label: "Incubation & Acceleration", href: "/incubation-acceleration" },
+  { label: "Startup Support Programs", href: "/programs" },
   { label: "Startup Bootcamp", href: "/startup-bootcamp" },
-  { label: "Incubation & Acceleration", href: "/programs" },
   { label: "Funding Opportunities", href: "/funding-opportunities" },
   { label: "Advisors & Mentors", href: "/mentors" },
 ];

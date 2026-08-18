@@ -12,25 +12,38 @@ interface DomainAccent {
 
 const domainAccents: Record<string, DomainAccent> = {
   AgriTech: { border: "#2E8B57", borderHover: "#256E46" },
+  "Water & Sanitation": { border: "#0284C7", borderHover: "#0369A1" },
+  MedTech: { border: "#4F46E5", borderHover: "#4338CA" },
   HealthTech: { border: "#2563EB", borderHover: "#1E4FC2" },
+  "AI/ML": { border: "#6366F1", borderHover: "#4F46E5" },
+  ClimateTech: { border: "#0F766E", borderHover: "#0C5F59" },
+  "Clean Energy": { border: "#D97706", borderHover: "#B45309" },
+  "Waste Management": { border: "#65A30D", borderHover: "#4D7C0F" },
+  "Education Technology": { border: "#7C3AED", borderHover: "#6428C7" },
+  "Rural Development": { border: "#0284C7", borderHover: "#075985" },
+  "Women Empowerment": { border: "#DB2777", borderHover: "#BE185D" },
+  "Livelihood Generation": { border: "#E11D48", borderHover: "#BE123C" },
+  "Other Social Impact Innovations": { border: "#0F766E", borderHover: "#115E59" },
+  // Backward compatibility aliases
   EdTech: { border: "#7C3AED", borderHover: "#6428C7" },
   FinTech: { border: "#F59E0B", borderHover: "#C17F09" },
-  ClimateTech: { border: "#0F766E", borderHover: "#0C5F59" },
   DeepTech: { border: "#4338CA", borderHover: "#362DA3" },
-  "Women Empowerment": { border: "#DB2777", borderHover: "#B31F63" },
 };
 
 const defaultAccent: DomainAccent = { border: "#2E8B57", borderHover: "#256E46" };
 
-/** Directory-style portfolio card — same photo + Badge-pill + dual Read More footer
- *  structure as the original design. Only the spacing was tightened, and a subtle
- *  off-white background plus a domain-colored border/left accent strip were layered on
- *  top; nothing was repositioned or redesigned. Height follows content — cards with a
- *  shorter tagline are shorter, not stretched to match their row's tallest sibling. */
+/** Directory-style portfolio card with dedicated domain accents and badges */
 export default function StartupCard({ startup }: { startup: Startup }) {
   const href = startup.website ?? "/contact";
   const accent = domainAccents[startup.domain] ?? defaultAccent;
-  const displayDomain = startup.domain === "Women Empowerment" ? "Women Emp." : startup.domain;
+  const displayDomain =
+    startup.domain === "Women Empowerment"
+      ? "Women Emp."
+      : startup.domain === "Education Technology"
+      ? "EdTech"
+      : startup.domain === "Other Social Impact Innovations"
+      ? "Social Impact"
+      : startup.domain;
 
   return (
     <div

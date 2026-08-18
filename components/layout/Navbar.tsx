@@ -9,9 +9,11 @@ import {
   Award,
   Briefcase,
   ChevronDown,
+  Compass,
   Flame,
   Handshake,
   Menu,
+  Rocket,
   Users,
   Wallet,
   X,
@@ -28,7 +30,7 @@ interface NavChild {
 
 interface NavItem {
   label: string;
-  /** Omitted for items that should act as a dropdown trigger only (e.g. Resources) —
+  /** Omitted for items that should act as a dropdown trigger only (e.g. Social Impact, Resources, Network) —
    *  no page of their own, clicking/tapping just opens the submenu. */
   href?: string;
   children?: NavChild[];
@@ -39,9 +41,10 @@ interface NavItem {
 const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
   {
-    label: "Programs",
-    href: "/programs",
+    label: "Social Impact",
     children: [
+      { label: "Programs", href: "/programs", icon: Compass },
+      { label: "Incubation & Acceleration", href: "/incubation-acceleration", icon: Rocket },
       { label: "Startup Portfolio", href: "/portfolio", icon: Briefcase },
       { label: "Startup Bootcamp", href: "/startup-bootcamp", icon: Flame },
     ],

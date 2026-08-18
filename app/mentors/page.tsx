@@ -72,7 +72,7 @@ export default function MentorsPage() {
             </div>
           </AnimatedSection>
 
-          <div className="mx-auto mt-6 sm:mt-8 grid max-w-3xl grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4.5">
+          <div className="mx-auto mt-6 sm:mt-8 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
             {advisors.map((advisor, i) => (
               <AnimatedSection key={advisor.name} delay={i * 0.05} animation="scale" className="h-full">
                 <MentorCard

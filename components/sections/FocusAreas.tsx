@@ -122,8 +122,8 @@ export default function FocusAreas() {
           </div>
 
           <AnimatedSection delay={0.2} className="mt-6 text-center">
-            <Button href="/about" variant="outline" size="sm">
-              Explore All Domains <ArrowRight size={14} />
+            <Button href="/portfolio" variant="outline" size="sm">
+              Explore All 13 Domains in Portfolio <ArrowRight size={14} />
             </Button>
           </AnimatedSection>
         </div>
