@@ -35,13 +35,13 @@ export default function MentorsPage() {
               <h2 className="text-[20px] sm:text-[26px] font-bold text-[#020024] tracking-tight">
                 Operators Who&apos;ve Built at Scale
               </h2>
-              <p className="mx-auto mt-1.5 max-w-xl text-[12px] sm:text-[14px] text-gray-600">
+              <p className="mx-auto mt-2 max-w-xl text-base sm:text-lg leading-relaxed text-slate-600">
                 Hands-on guidance from founders and seasoned operators who have built impactful products.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4.5">
+          <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
             {mentors.map((mentor, i) => (
               <AnimatedSection key={mentor.name} delay={i * 0.05} animation="scale" className="h-full">
                 <MentorCard
@@ -66,7 +66,7 @@ export default function MentorsPage() {
               <h2 className="text-[19px] sm:text-[24px] font-bold text-[#020024] tracking-tight">
                 Strategic &amp; Academic Advisors
               </h2>
-              <p className="mx-auto mt-1.5 max-w-xl text-[12px] sm:text-[14px] text-gray-600">
+              <p className="mx-auto mt-2 max-w-xl text-base sm:text-lg leading-relaxed text-slate-600">
                 Academic and industry leaders shaping Tech4Bharat&apos;s programs and ecosystem partnerships.
               </p>
             </div>

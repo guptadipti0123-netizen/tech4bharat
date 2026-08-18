@@ -141,34 +141,33 @@ export default function ContactPage() {
             />
           </AnimatedSection>
           
-          {/* Compact 2-column mobile & 4-column desktop directory */}
-          <div className="mt-4 sm:mt-6 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-4">
+          {/* Responsive 1-col mobile, 2-col tablet & 4-column desktop directory */}
+          <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
             {quickContacts.map((contact, i) => {
               const Icon = contact.icon;
               return (
                 <AnimatedSection key={contact.title} delay={i * 0.05} animation="scale" className="h-full">
-                  <div className="group flex h-full flex-col justify-between rounded-xl border border-slate-200/90 bg-white p-2.5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-[#155E9A]/30 hover:shadow-md sm:rounded-2xl sm:p-4">
+                  <div className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-[#155E9A]/40 hover:shadow-md">
                     <div>
                       {/* Top row: Icon badge & Channel tag */}
-                      <div className="flex items-center justify-between gap-1">
+                      <div className="flex items-center justify-between gap-2">
                         <span
-                          className={`flex h-7.5 w-7.5 sm:h-9 sm:w-9 items-center justify-center rounded-lg sm:rounded-xl border shadow-2xs group-hover:scale-105 transition-transform ${contact.iconBg} ${contact.iconColor}`}
+                          className={`flex h-10 w-10 items-center justify-center rounded-xl border shadow-2xs group-hover:scale-105 transition-transform ${contact.iconBg} ${contact.iconColor}`}
                         >
-                          <Icon size={14} className="sm:hidden" />
-                          <Icon size={17} className="hidden sm:block" />
+                          <Icon size={18} />
                         </span>
-                        <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[8px] sm:text-[9.5px] font-semibold text-slate-600 group-hover:bg-blue-50 group-hover:text-[#155E9A] transition-colors">
+                        <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600 group-hover:bg-blue-50 group-hover:text-[#155E9A] transition-colors">
                           {contact.badge}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="mt-2 text-[12px] sm:text-[14px] font-bold text-[#0B2A4A] leading-snug group-hover:text-[#155E9A] transition-colors">
+                      <h3 className="mt-3 text-[15px] sm:text-[16px] font-bold text-[#0B2A4A] leading-snug group-hover:text-[#155E9A] transition-colors">
                         {contact.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="mt-0.5 line-clamp-2 text-[9.5px] sm:text-[11.5px] leading-relaxed text-slate-500">
+                      <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-slate-500">
                         {contact.description}
                       </p>
                     </div>
@@ -176,7 +175,7 @@ export default function ContactPage() {
                     {/* Email Action Bar */}
                     <a
                       href={`mailto:${contact.email}`}
-                      className="mt-2.5 flex items-center justify-between rounded-lg bg-blue-50/80 px-2 py-1 text-[8.5px] font-semibold text-[#155E9A] transition-all group-hover:bg-[#155E9A] group-hover:text-white sm:px-2.5 sm:py-1.5 sm:text-[10.5px]"
+                      className="mt-4 flex items-center justify-between rounded-xl bg-blue-50/80 px-3 py-2 text-xs font-semibold text-[#155E9A] transition-all group-hover:bg-[#155E9A] group-hover:text-white"
                     >
                       <span className="truncate">{contact.email}</span>
                       <span className="shrink-0 ml-1 font-bold">→</span>

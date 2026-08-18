@@ -119,7 +119,7 @@ export default function ProgramGrid() {
   return (
     <section className="relative overflow-hidden bg-brand-50 pb-8 pt-3 sm:pb-12 sm:pt-6">
       <Container className="relative">
-        <div className="grid grid-cols-2 gap-2.5 sm:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {programs.map((program, i) => (
             <AnimatedSection key={program.title} delay={i * 0.08} animation="scale" className="h-full">
               <ProgramCard {...program} />
