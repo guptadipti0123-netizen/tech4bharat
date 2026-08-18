@@ -5,6 +5,7 @@ import BootcampHighlights from "@/components/sections/bootcamp/BootcampHighlight
 import WhoShouldAttend from "@/components/sections/bootcamp/WhoShouldAttend";
 import ExpertsSpeakers from "@/components/sections/bootcamp/ExpertsSpeakers";
 import BootcampSchedule from "@/components/sections/bootcamp/BootcampSchedule";
+import BootcampSessions from "@/components/sections/bootcamp/BootcampSessions";
 import { events } from "@/lib/events";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function StartupBootcampPage() {
     <>
       <BootcampHero />
       <BootcampOverview />
+      <BootcampSessions />
       <BootcampHighlights />
       <WhoShouldAttend />
       <ExpertsSpeakers />
