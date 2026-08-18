@@ -52,13 +52,13 @@ export default function MentorCard({
               </div>
             )}
             <div className="min-w-0">
-              <h3 className="truncate text-[13.5px] sm:text-[15px] font-bold leading-tight text-[#020024]">
+              <h3 className="truncate text-[15px] sm:text-[16px] font-bold leading-tight text-[#0B2A4A]">
                 {name}
               </h3>
-              <p className="mt-0.5 truncate text-[11px] sm:text-[12px] font-medium text-slate-500">
+              <p className="mt-0.5 truncate text-[12px] sm:text-[13px] font-medium text-slate-500">
                 {designation}
               </p>
-              <p className="truncate text-[10.5px] sm:text-[11.5px] font-semibold text-[#1e3a8a]">
+              <p className="truncate text-[12px] sm:text-[13px] font-semibold text-[#155E9A]">
                 {institution}
               </p>
             </div>
@@ -70,14 +70,14 @@ export default function MentorCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${name} on LinkedIn`}
-              className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#4f6ff2] transition-colors duration-200 hover:bg-[#4f6ff2] hover:text-white"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#155E9A] transition-colors duration-200 hover:bg-[#155E9A] hover:text-white"
             >
-              <LinkedinIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+              <LinkedinIcon className="h-4 w-4" />
             </a>
           )}
         </div>
 
-        <p className="mt-3 line-clamp-3 text-[11px] sm:text-[12px] leading-relaxed text-gray-600">
+        <p className="mt-3.5 line-clamp-3 text-[13px] sm:text-[14px] leading-relaxed text-slate-600">
           {bio}
         </p>
       </div>

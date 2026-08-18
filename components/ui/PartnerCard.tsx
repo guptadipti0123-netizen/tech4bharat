@@ -38,12 +38,12 @@ export default function PartnerCard({ name, description, badge, logo, delay = 0 
               {getInitials(name)}
             </span>
           )}
-          <h4 className="font-heading min-w-0 flex-1 truncate text-[14px] font-bold leading-snug text-ink-900 sm:text-[15px]">{name}</h4>
-          <Badge variant="neutral" className="shrink-0 px-2 py-0.5 text-[9px]">
+          <h4 className="font-heading min-w-0 flex-1 truncate text-[15px] font-bold leading-snug text-[#0B2A4A] sm:text-[16px]">{name}</h4>
+          <Badge variant="neutral" className="shrink-0 px-2 py-0.5 text-[11px] font-semibold">
             {badge}
           </Badge>
         </div>
-        <p className="text-[12.5px] leading-relaxed text-slate-600 sm:text-[13px]">{description}</p>
+        <p className="text-[13px] leading-relaxed text-slate-600 sm:text-[14px]">{description}</p>
       </div>
     </motion.div>
   );

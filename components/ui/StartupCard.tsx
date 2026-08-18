@@ -59,51 +59,50 @@ export default function StartupCard({ startup }: { startup: Startup }) {
 
       <div className="flex flex-1 flex-col">
         {/* Header: Logo + Startup Name */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-3">
           <div className="shrink-0">
             <StartupLogo
               name={startup.name}
               domain={startup.domain}
               size={44}
-              className="h-8 w-8 rounded-lg shadow-xs sm:h-11 sm:w-11 sm:rounded-xl"
+              className="h-10 w-10 rounded-xl shadow-xs sm:h-11 sm:w-11"
             />
           </div>
-          <h3 className="text-[12px] font-bold leading-tight text-[#102A43] sm:text-[16px] truncate">
+          <h3 className="text-[15px] sm:text-[17px] font-bold leading-tight text-[#0B2A4A] truncate">
             {startup.name}
           </h3>
         </div>
 
         {/* Badges: Domain & Stage */}
-        <div className="mt-1.5 flex items-center gap-1 sm:mt-2 sm:gap-1.5">
-          <Badge className="bg-secondary-50 px-1.5 py-0 text-[7.5px] text-secondary-700 sm:px-2 sm:py-0.5 sm:text-[10.5px] whitespace-nowrap">
+        <div className="mt-2 flex items-center gap-1.5">
+          <Badge className="bg-secondary-50 px-2 py-0.5 text-[11px] sm:text-[12px] font-medium text-secondary-700 whitespace-nowrap">
             {displayDomain}
           </Badge>
-          <Badge className="bg-secondary-50 px-1.5 py-0 text-[7.5px] text-secondary-700 sm:px-2 sm:py-0.5 sm:text-[10.5px] whitespace-nowrap">
+          <Badge className="bg-secondary-50 px-2 py-0.5 text-[11px] sm:text-[12px] font-medium text-secondary-700 whitespace-nowrap">
             {startup.stage}
           </Badge>
         </div>
 
         {/* Description: clamped to 2 lines with consistent spacing */}
-        <p className="mt-1.5 line-clamp-2 text-[9.5px] font-medium leading-snug text-slate-600 sm:mt-2 sm:text-[13px] sm:leading-[1.4] flex-1">
+        <p className="mt-2.5 line-clamp-2 text-[13px] sm:text-[14px] leading-relaxed text-slate-600 flex-1">
           {startup.tagline}
         </p>
       </div>
 
       {/* Footer: Read More + Arrow */}
-      <div className="mt-2 flex items-center justify-between border-t border-secondary-100/80 pt-1.5 sm:mt-3 sm:pt-2.5">
+      <div className="mt-3 flex items-center justify-between border-t border-secondary-100/80 pt-2 sm:pt-3">
         <Link
           href={href}
-          className="text-[9px] font-semibold uppercase tracking-wide text-brand-700 transition-colors hover:underline sm:text-xs"
+          className="text-xs sm:text-[13px] font-bold text-brand-700 transition-colors hover:underline"
         >
           Read More
         </Link>
         <Link
           href={href}
           aria-label={`Read more about ${startup.name}`}
-          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-brand-600 text-brand-600 transition-all duration-300 group-hover:bg-brand-600 group-hover:text-white sm:h-7 sm:w-7"
+          className="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full border-2 border-brand-600 text-brand-600 transition-all duration-300 group-hover:bg-brand-600 group-hover:text-white"
         >
-          <ArrowUpRight size={10} className="sm:hidden" />
-          <ArrowUpRight size={13} className="hidden sm:block" />
+          <ArrowUpRight size={13} />
         </Link>
       </div>
     </div>
