@@ -120,7 +120,7 @@ export default function UpcomingEventsPage() {
                 Scheduled Workshops &amp; Sprints
               </span>
               <h2 className="mt-1 text-xl sm:text-2xl font-bold text-[#0B2A4A]">
-                Upcoming Sessions ({otherUpcomingEvents.length})
+                Upcoming Sessions ({upcomingEvents.length})
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md">
@@ -128,8 +128,8 @@ export default function UpcomingEventsPage() {
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {otherUpcomingEvents.map((event, i) => {
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+            {upcomingEvents.map((event, i) => {
               const { day, month } = getDateParts(event.date);
               return (
                 <AnimatedSection key={event.id} delay={i * 0.05} className="h-full">

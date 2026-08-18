@@ -138,7 +138,7 @@ export default function PastEventsPage() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
             {pastEvents.map((event, i) => {
               const { day, month } = getDateParts(event.date);
               return (
