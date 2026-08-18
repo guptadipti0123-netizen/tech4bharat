@@ -15,41 +15,44 @@ interface JourneyDay {
   icon: LucideIcon;
 }
 
+// Kept distinct from the Event Gallery further down this same page (EventGalleryMarquee),
+// which already carries the Policy Workshop's full real photo archive — so this uses other
+// genuine Tech4Bharat/program photos instead of repeating that archive.
 const days: JourneyDay[] = [
   {
     title: "Foundations",
     description: "Inaugural session and an introduction to technology policy fundamentals.",
-    image: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png",
+    image: "/images/gallery/gallery-1.jpg",
     icon: Book,
   },
   {
     title: "AI & Digital Governance",
     description: "Exploring digital narratives, blockchain, and AI-driven public infrastructure.",
-    image: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
+    image: "/images/gallery/technology-1.jpg",
     icon: Brain,
   },
   {
     title: "Innovation",
     description: "Innovation management, policy, and strategic frameworks for emerging tech.",
-    image: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png",
+    image: "/images/gallery/conference-podium-1.jpg",
     icon: Lightbulb,
   },
   {
     title: "Cyber-Physical Systems",
     description: "Clean energy systems, UAV simulation, and security analysis.",
-    image: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg",
+    image: "/images/gallery/technology-3.jpg",
     icon: Shield,
   },
   {
     title: "Strategic Technologies",
     description: "Earth observation, strategic technologies, and a field visit to C-DAC.",
-    image: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",
+    image: "/images/gallery/field-visit-industrial.jpg",
     icon: Globe,
   },
   {
     title: "Policy Drafting",
     description: "Hands-on policy drafting exercises and the program's concluding session.",
-    image: "/images/legacy/policy-workshop-3.jpg",
+    image: "/images/gallery/students-1.jpg",
     icon: FileText,
   },
 ];

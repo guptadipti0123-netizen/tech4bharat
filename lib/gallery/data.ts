@@ -2,137 +2,13 @@ import type { GalleryCategory, GalleryPhoto } from "./types";
 
 /**
  * The bundled local photo library — today this is the only `GalleryRepository`
- * implementation's data source. Every entry here has been visually verified as a genuine
- * photograph of Indian people/settings (no AI-generated faces, no foreign stock, no
- * illustrations). Nothing outside `repository.ts` should import this file directly.
+ * implementation's data source. Every entry here is a genuine photograph of Indian
+ * people/settings, and deliberately excludes any photo already used elsewhere on the site
+ * (see `lib/images.ts`, `lib/data.ts`) so nothing on this page repeats a shot a visitor may
+ * have already seen on another page. Nothing outside `repository.ts` should import this
+ * file directly.
  */
 export const localGalleryPhotos: GalleryPhoto[] = [
-  {
-    id: "gallery-1",
-    src: "/images/gallery/gallery-1.jpg",
-    alt: "Student founders discussing their venture on the campus lawn",
-    categories: ["students", "startup"],
-    source: "local",
-  },
-  {
-    id: "gallery-2",
-    src: "/images/gallery/gallery-2.jpg",
-    alt: "A founder briefing the team at the incubation centre",
-    categories: ["startup", "government"],
-    source: "local",
-  },
-  {
-    id: "gallery-3",
-    src: "/images/gallery/gallery-3.jpg",
-    alt: "The team mapping out a product roadmap on a whiteboard",
-    categories: ["startup", "networking"],
-    source: "local",
-  },
-  {
-    id: "gallery-4",
-    src: "/images/gallery/gallery-4.jpg",
-    alt: "A founder at the Tech4Bharat office",
-    categories: ["startup", "awards"],
-    source: "local",
-  },
-  {
-    id: "gallery-5",
-    src: "/images/gallery/gallery-5.jpg",
-    alt: "The team planning sprints on a shared whiteboard",
-    categories: ["startup", "networking"],
-    source: "local",
-  },
-  {
-    id: "gallery-6",
-    src: "/images/gallery/gallery-6.jpg",
-    alt: "Student innovators collaborating on a laptop during a mentorship session",
-    categories: ["students", "mentorship", "women-entrepreneurship"],
-    source: "local",
-  },
-  {
-    id: "gallery-7",
-    src: "/images/gallery/gallery-7.jpg",
-    alt: "Founders working through a plan together over coffee",
-    categories: ["mentorship", "hackathon"],
-    source: "local",
-  },
-  {
-    id: "gallery-8",
-    src: "/images/gallery/gallery-8.jpg",
-    alt: "Student developers at a college hackathon showcase",
-    categories: ["hackathon", "students", "innovation"],
-    source: "local",
-  },
-  {
-    id: "gallery-9",
-    src: "/images/gallery/gallery-9.jpg",
-    alt: "Colleagues connecting during a team huddle",
-    categories: ["networking", "startup"],
-    source: "local",
-  },
-  {
-    id: "gallery-10",
-    src: "/images/gallery/gallery-10.jpg",
-    alt: "Team members networking at the Tech4Bharat office",
-    categories: ["networking", "government"],
-    source: "local",
-  },
-  {
-    id: "gallery-11",
-    src: "/images/gallery/gallery-11.jpg",
-    alt: "Founders celebrating a new hire at the incubation centre",
-    categories: ["awards", "startup"],
-    source: "local",
-  },
-  {
-    id: "gallery-12",
-    src: "/images/gallery/gallery-12.jpg",
-    alt: "Mentors and founders in conversation",
-    categories: ["networking", "mentorship"],
-    source: "local",
-  },
-  {
-    id: "gallery-13",
-    src: "/images/gallery/gallery-13.jpg",
-    alt: "A founder reflecting between working sessions",
-    categories: ["research", "startup"],
-    source: "local",
-  },
-  {
-    id: "gallery-14",
-    src: "/images/gallery/gallery-14.jpg",
-    alt: "The team celebrating together at the office",
-    categories: ["awards", "networking"],
-    source: "local",
-  },
-  {
-    id: "gallery-15",
-    src: "/images/gallery/gallery-15.jpg",
-    alt: "A founder and mentor collaborating over a laptop at home",
-    categories: ["mentorship", "networking"],
-    source: "local",
-  },
-  {
-    id: "hackathons-2",
-    src: "/images/gallery/hackathons-2.jpg",
-    alt: "Founders pairing on code during a hackathon sprint",
-    categories: ["hackathon", "innovation", "research"],
-    source: "local",
-  },
-  {
-    id: "hackathons-3",
-    src: "/images/gallery/hackathons-3.jpg",
-    alt: "Student developers crowded around a laptop at a college hackathon",
-    categories: ["hackathon", "students", "innovation"],
-    source: "local",
-  },
-  {
-    id: "agriculture-1",
-    src: "/images/gallery/agriculture-1.jpg",
-    alt: "An AgriTech founder surveying a wheat field near his family farm",
-    categories: ["agriculture", "innovation"],
-    source: "local",
-  },
   {
     id: "agriculture-2",
     src: "/images/gallery/agriculture-2.jpg",
@@ -141,59 +17,10 @@ export const localGalleryPhotos: GalleryPhoto[] = [
     source: "local",
   },
   {
-    id: "agriculture-3",
-    src: "/images/gallery/agriculture-3.jpg",
-    alt: "Women farmers operating equipment in a cotton field",
-    categories: ["agriculture", "women-entrepreneurship"],
-    source: "local",
-  },
-  {
-    id: "students-1",
-    src: "/images/gallery/students-1.jpg",
-    alt: "A student researching in the campus library",
-    categories: ["students", "research"],
-    source: "local",
-  },
-  {
-    id: "students-3",
-    src: "/images/gallery/students-3.jpg",
-    alt: "Students reviewing a project together outdoors on campus",
-    categories: ["students", "networking"],
-    source: "local",
-  },
-  {
-    id: "domains-agritech",
-    src: "/images/domains/agritech.jpg",
-    alt: "Women farmers operating a tractor supported by an AgriTech innovation",
-    categories: ["agriculture", "women-entrepreneurship"],
-    source: "local",
-  },
-  {
-    id: "domains-healthtech",
-    src: "/images/domains/healthtech.jpg",
-    alt: "A HealthTech founder and clinician at a partner hospital",
-    categories: ["women-entrepreneurship", "research"],
-    source: "local",
-  },
-  {
-    id: "programs-incubation",
-    src: "/images/programs/incubation.jpg",
-    alt: "Founders and mentors in a strategy session at the incubation centre",
-    categories: ["startup", "government"],
-    source: "local",
-  },
-  {
-    id: "programs-mentoring",
-    src: "/images/programs/mentoring.jpg",
-    alt: "Student mentees collaborating on a laptop during a mentorship session",
-    categories: ["mentorship", "women-entrepreneurship", "students"],
-    source: "local",
-  },
-  {
-    id: "about-team",
-    src: "/images/about/team.png",
-    alt: "The Tech4Bharat team collaborating at the innovation centre",
-    categories: ["startup", "networking"],
+    id: "rural-buffalo-herder",
+    src: "/images/gallery/rural-buffalo-herder.jpg",
+    alt: "A farmer herding water buffaloes along a rural road",
+    categories: ["agriculture"],
     source: "local",
   },
   {
@@ -203,16 +30,9 @@ export const localGalleryPhotos: GalleryPhoto[] = [
     categories: ["government", "research"],
     source: "local",
   },
-  {
-    id: "policy-workshop-3",
-    src: "/images/legacy/policy-workshop-3.jpg",
-    alt: "Students and faculty at the closing session of the Digital & Tech Policy Workshop, COEP",
-    categories: ["students", "government"],
-    source: "local",
-  },
-  // Full 6-day Digital & Tech Policy Workshop archive (Dec 18-23, 2025, COEP Technological
-  // University), extracted from the old Tech For Bharat website. Grouped under their own
-  // "legacy-workshops" category so the complete day-by-day set has a dedicated home.
+  // Digital & Tech Policy Workshop archive (Dec 18-23, 2025, COEP Technological University),
+  // extracted from the old Tech For Bharat website. Grouped under their own
+  // "legacy-workshops" category so the day-by-day set has a dedicated home.
   {
     id: "legacy-day1-i2",
     src: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png",
@@ -225,13 +45,6 @@ export const localGalleryPhotos: GalleryPhoto[] = [
     src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
     alt: "Day 2 — Digital Narratives & Blockchain: the full cohort and faculty in the auditorium",
     categories: ["legacy-workshops", "networking"],
-    source: "local",
-  },
-  {
-    id: "legacy-day2-i2",
-    src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
-    alt: "Day 2 — Digital Public Infrastructure & AI: faculty and students at the session close",
-    categories: ["legacy-workshops", "government"],
     source: "local",
   },
   {
@@ -253,13 +66,6 @@ export const localGalleryPhotos: GalleryPhoto[] = [
     src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png",
     alt: "Day 4 — UAV Simulation & Security Analysis: the cohort in the lecture hall",
     categories: ["legacy-workshops", "students"],
-    source: "local",
-  },
-  {
-    id: "legacy-day5-i1",
-    src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png",
-    alt: "Day 5 — Earth Observation & Strategic Technologies: the cohort on their field visit to C-DAC",
-    categories: ["legacy-workshops", "research"],
     source: "local",
   },
   {

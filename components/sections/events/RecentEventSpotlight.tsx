@@ -65,7 +65,7 @@ export default function RecentEventSpotlight() {
             <div className="relative">
               <div className="relative aspect-4/3 overflow-hidden rounded-[28px] border-4 border-white shadow-2xl">
                 <Image
-                  src="/images/legacy/policy-workshop-1.png"
+                  src="/images/gallery/hackathons-3.jpg"
                   alt="Digital & Tech Policy Workshop session at COEP Technological University"
                   fill
                   priority

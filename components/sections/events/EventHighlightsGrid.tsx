@@ -11,50 +11,28 @@ interface HighlightPhoto {
   badge: string;
 }
 
-// Every card in this uniform grid is a real photo â€” the "Visit" and "Networking" entries
-// previously had no photo of their own (text-only cards), so they now use real, unused
-// photos from the same Digital & Tech Policy Workshop shoot rather than staying text-only,
-// which would have broken the uniform image-grid this redesign calls for.
+// Kept distinct from both GalleryPreview (homepage) and the Event Gallery further down this
+// same page, which already carries the Policy Workshop's full real photo archive.
 const highlightPhotos: HighlightPhoto[] = [
   {
-    src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
-    alt: "Faculty and students at the close of the Digital Public Infrastructure & AI session",
+    src: "/images/gallery/students-campus-group.jpg",
+    alt: "Students and faculty gathered together on campus",
     badge: "Workshop",
   },
   {
-    src: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png",
-    alt: "The cohort during the Introduction to Technology Policy session on Day 1",
-    badge: "Mentoring",
-  },
-  {
-    src: "/images/legacy/policy-workshop-2.png",
-    alt: "Dr. Chaitanya Giri of Observer Research Foundation speaking at the workshop",
+    src: "/images/gallery/conference-podium-3.jpg",
+    alt: "A panel discussion at a Tech4Bharat event",
     badge: "Panel",
   },
   {
-    src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",
-    alt: "The cohort on their field visit to C-DAC",
+    src: "/images/gallery/woman-office-call.jpg",
+    alt: "A founder connecting with the Tech4Bharat network",
+    badge: "Networking",
+  },
+  {
+    src: "/images/gallery/heritage-tour.jpg",
+    alt: "The cohort on an outreach field visit",
     badge: "Visit",
-  },
-  {
-    src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png",
-    alt: "Students and faculty gathered together in the lecture hall",
-    badge: "Networking",
-  },
-  {
-    src: "/images/legacy/workshops/day1-i1-inaugural-session.png",
-    alt: "Dr. Chaitanya Giri opening the workshop with a talk on science & technology policy",
-    badge: "Panel",
-  },
-  {
-    src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
-    alt: "The cohort and faculty during the Digital Narratives & Blockchain session on Day 2",
-    badge: "Workshop",
-  },
-  {
-    src: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png",
-    alt: "Participants and organizers in a candid group photo during the Strategic Innovation Frameworks session",
-    badge: "Networking",
   },
 ];
 
@@ -66,10 +44,9 @@ const badgeTone: Record<string, string> = {
   Networking: "bg-accent-700",
 };
 
-/** Event Highlights â€” a uniform, premium photo grid. Every card is the same size (280px
- *  tall), same border/radius/shadow treatment, with only a bottom-left category badge
- *  distinguishing them â€” 4 columns on desktop (two full rows of four), 2 on tablet, 1 on
- *  mobile. */
+/** Event Highlights â€” a single-row, slow auto-scrolling marquee (loops seamlessly, pauses
+ *  on hover) instead of a static grid, so this strip reads as distinct motion rather than
+ *  another photo grid sitting next to the homepage's Gallery preview. */
 export default function EventHighlightsGrid() {
   return (
     <section className="relative overflow-hidden bg-secondary-50 py-6 sm:py-9">
@@ -84,18 +61,22 @@ export default function EventHighlightsGrid() {
             descriptionClassName="mt-2 text-[14px] sm:mt-3 sm:text-[18px] font-medium leading-relaxed text-[#526777]"
           />
         </AnimatedSection>
+      </Container>
 
-        <AnimatedSection delay={0.1} className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-9 sm:gap-6 lg:grid-cols-4">
-          {highlightPhotos.map((photo) => (
+      <AnimatedSection delay={0.1} className="relative mt-6 sm:mt-9">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-secondary-50 to-transparent sm:w-28" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-secondary-50 to-transparent sm:w-28" />
+        <div className="flex w-max gap-2.5 animate-[marquee_80s_linear_infinite] hover:[animation-play-state:paused] sm:gap-6">
+          {[...highlightPhotos, ...highlightPhotos].map((photo, i) => (
             <div
-              key={photo.src}
-              className="group relative h-28 w-full overflow-hidden rounded-lg border border-blue-100 shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-70 sm:rounded-2xl"
+              key={`${photo.src}-${i}`}
+              className="group relative h-28 w-44 shrink-0 overflow-hidden rounded-lg border border-blue-100 shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-70 sm:w-104 sm:rounded-2xl"
             >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 640px) 176px, 416px"
                 className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-linear-to-t from-ink-900/55 via-transparent to-transparent" />
@@ -109,8 +90,8 @@ export default function EventHighlightsGrid() {
               </span>
             </div>
           ))}
-        </AnimatedSection>
-      </Container>
+        </div>
+      </AnimatedSection>
     </section>
   );
 }

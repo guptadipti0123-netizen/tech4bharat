@@ -13,9 +13,8 @@ interface HighlightPhoto {
   width: string;
 }
 
-// A real-photo showcase rather than a feature list. Every photo below is a genuine
-// Tech4Bharat/Startup Bootcamp moment from the project's own asset library — no stock or
-// AI-generated imagery. Grouped into the natural moments a bootcamp day actually contains.
+// A real-photo showcase rather than a feature list, grouped into the natural moments a
+// bootcamp day actually contains.
 const highlightPhotos: HighlightPhoto[] = [
   {
     src: "/images/legacy/policy-workshop-1.png",
@@ -30,7 +29,7 @@ const highlightPhotos: HighlightPhoto[] = [
     width: "w-70 md:w-52 lg:w-46",
   },
   {
-    src: "/images/programs/incubation.jpg",
+    src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
     alt: "Founders and mentors in a strategy session at the incubation centre",
     group: "Mentoring Sessions",
     width: "w-76 md:w-58 lg:w-52",
@@ -42,43 +41,43 @@ const highlightPhotos: HighlightPhoto[] = [
     width: "w-64 md:w-44 lg:w-40",
   },
   {
-    src: "/images/gallery/gallery-9.jpg",
+    src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png",
     alt: "Colleagues connecting during a team huddle",
     group: "Founder Networking",
     width: "w-70 md:w-52 lg:w-46",
   },
   {
-    src: "/images/gallery/bootcamps-1.jpg",
+    src: "/images/gallery/conference-podium-3.jpg",
     alt: "Founders and mentors at a Tech4Bharat Startup Bootcamp session",
     group: "Workshops",
     width: "w-76 md:w-58 lg:w-52",
   },
   {
-    src: "/images/gallery/bootcamps-2.jpg",
+    src: "/images/gallery/students-campus-group.jpg",
     alt: "A founder mapping out ideas on a sticky-note wall during a workshop session",
     group: "Workshops",
     width: "w-64 md:w-44 lg:w-40",
   },
   {
-    src: "/images/gallery/mentorship-1.jpg",
+    src: "/images/gallery/conference-podium-2.jpg",
     alt: "A mentor and founder in conversation at a program networking lounge",
     group: "Mentoring Sessions",
     width: "w-70 md:w-52 lg:w-46",
   },
   {
-    src: "/images/gallery/startup-events-1.jpg",
+    src: "/images/legacy/workshops/day1-i1-inaugural-session.png",
     alt: "A founder presenting results to the room during a pitch session",
     group: "Pitch Sessions",
     width: "w-76 md:w-58 lg:w-52",
   },
   {
-    src: "/images/gallery/demo-day-3.jpg",
+    src: "/images/gallery/gallery-15.jpg",
     alt: "A founder preparing his presentation ahead of Demo Day",
     group: "Pitch Sessions",
     width: "w-64 md:w-44 lg:w-40",
   },
   {
-    src: "/images/gallery/award-ceremonies-3.jpg",
+    src: "/images/gallery/hackathons-3.jpg",
     alt: "Founders and partners shaking hands over a table of shared metrics",
     group: "Investor Meetings",
     width: "w-70 md:w-52 lg:w-46",

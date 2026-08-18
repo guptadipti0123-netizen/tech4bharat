@@ -52,7 +52,7 @@ export default function ImpactOutcomes() {
               {/* Left Column: Workshop Photo with Embedded Stats Glass Bar */}
               <div className="relative min-h-[220px] sm:min-h-[280px] lg:min-h-full bg-slate-900 overflow-hidden flex flex-col justify-end">
                 <Image
-                  src="/images/legacy/policy-workshop-3.jpg"
+                  src="/images/legacy/workshops/day1-i1-inaugural-session.png"
                   alt="Students and faculty at the closing session of a Tech4Bharat workshop"
                   fill
                   sizes="(max-width: 1024px) 100vw, 44vw"

@@ -15,19 +15,19 @@ interface ExpertCategory {
 // Tech4Bharat gallery, not a stock placeholder or a fabricated name.
 const categories: ExpertCategory[] = [
   {
-    image: "/images/gallery/gallery-12.jpg",
+    image: "/images/gallery/gallery-7.jpg",
     badge: "Mentor",
     title: "Startup Mentors",
     description: "Operators who have built & scaled companies.",
   },
   {
-    image: "/images/programs/startup-pitching.jpg",
+    image: "/images/legacy/workshops/day1-i2-intro-to-tech-policy.png",
     badge: "Investor",
     title: "Investors",
     description: "Angels and VCs backing early-stage founders.",
   },
   {
-    image: "/images/gallery/gallery-9.jpg",
+    image: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",
     badge: "Industry Leader",
     title: "Industry Experts",
     description: "Specialists in product, growth & scale.",

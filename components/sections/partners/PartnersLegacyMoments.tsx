@@ -8,9 +8,9 @@ interface MomentPhoto {
   alt: string;
 }
 
-// Real photos from Tech4Bharat's earlier Digital & Tech Policy Workshop program â€” including
-// the cohort's field visit to partner institution C-DAC â€” genuine collaboration moments
-// rather than generic stock "networking" photography.
+// Real collaboration moments with partner institutions — genuine photography rather than
+// generic stock "networking" imagery. Kept distinct from the Digital & Tech Policy
+// Workshop's own Event Gallery, which already covers that program's full photo archive.
 const photos: MomentPhoto[] = [
   {
     src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",

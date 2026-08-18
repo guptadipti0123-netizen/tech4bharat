@@ -93,7 +93,7 @@ export default function ContactPage() {
         style={{ backgroundColor: "#0B2A4A" }}
       >
         <Image
-          src="/images/gallery/gallery-12.jpg"
+          src="/images/gallery/gallery-15.jpg"
           alt="Contact Tech4Bharat team"
           fill
           priority
@@ -200,7 +200,7 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <div className="group relative aspect-video overflow-hidden rounded-2xl sm:rounded-3xl border-4 border-white shadow-md">
                   <Image
-                    src="/images/gallery/gallery-2.jpg"
+                    src="/images/gallery/gallery-6.jpg"
                     alt="Founders and mentors collaborating at the Tech4Bharat office"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"

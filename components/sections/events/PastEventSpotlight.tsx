@@ -54,8 +54,8 @@ const agendaTopics: AgendaTopic[] = [
 const collagePhotos = [
   { src: getEventImage("ai-workshop-bharatgen-2025"), alt: "AI Workshop by BharatGen session at Cognizant Lab, COEP" },
   { src: "/images/gallery/mentorship-2.jpg", alt: "Mentors and founders at a Tech4Bharat program" },
-  { src: "/images/gallery/gallery-3.jpg", alt: "Founders collaborating at a Tech4Bharat program" },
-  { src: "/images/gallery/hackathons-1.jpg", alt: "Founders building during a Tech4Bharat hackathon session" },
+  { src: "/images/gallery/gallery-7.jpg", alt: "Founders collaborating at a Tech4Bharat program" },
+  { src: "/images/gallery/hackathons-2.jpg", alt: "Founders building during a Tech4Bharat hackathon session" },
 ];
 
 /** A single curated past-event spotlight â€” a magazine-style split instead of one dominant

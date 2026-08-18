@@ -22,11 +22,6 @@ const tiles: GalleryTile[] = [
     caption: "Policy Foundations",
   },
   {
-    src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
-    alt: "Digital Narratives & Blockchain Workshop",
-    caption: "Digital Narratives",
-  },
-  {
     src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png",
     alt: "Digital Public Infrastructure & AI Session",
     caption: "DPI & AI Governance",
@@ -37,9 +32,14 @@ const tiles: GalleryTile[] = [
     caption: "Simulation & Security",
   },
   {
-    src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",
-    alt: "Cohort Field Visit to C-DAC",
-    caption: "C-DAC Field Visit",
+    src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png",
+    alt: "Cohort Field Visit — Earth Observation & Strategic Technologies",
+    caption: "Earth Observation Visit",
+  },
+  {
+    src: "/images/legacy/policy-workshop-3.jpg",
+    alt: "Students and faculty at the closing session of the workshop",
+    caption: "Closing Session",
   },
 ];
 

@@ -19,7 +19,7 @@ const homePrograms: HomeProgram[] = [
     title: "Startup Portfolio",
     badge: "Incubation",
     description: "Startups incubated and supported across critical sectors in India.",
-    image: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png",
+    image: "/images/gallery/gallery-1.jpg",
     href: "/portfolio",
     linkLabel: "Discover portfolio",
   },

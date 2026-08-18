@@ -9,7 +9,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const heroSlides = [
   {
-    src: "/images/legacy/policy-workshop-1.png",
+    src: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg",
     alt: "Tech4Bharat Digital & Tech Policy Workshop session at COEP University",
   },
   {
