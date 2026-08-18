@@ -70,61 +70,6 @@ export default function PastEventsPage() {
         </Container>
       </section>
 
-      {/* Spotlight Past Event */}
-      {spotlightEvent && (
-        <section className="bg-slate-50 py-8 sm:py-14">
-          <Container>
-            <AnimatedSection>
-              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-                <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 border border-emerald-200">
-                        Event Completed
-                      </span>
-                      <span className="text-xs text-slate-500 font-medium">{spotlightEvent.date}</span>
-                    </div>
-
-                    <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-[#0B2A4A]">
-                      {spotlightEvent.title}
-                    </h2>
-                    <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-slate-600">
-                      {spotlightEvent.longDescription}
-                    </p>
-
-                    <div className="mt-4 flex flex-wrap gap-4 text-xs text-slate-600">
-                      <span className="flex items-center gap-1.5">
-                        <MapPin size={14} className="text-brand-600" /> {spotlightEvent.venue}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Award size={14} className="text-brand-600" /> {spotlightEvent.type}
-                      </span>
-                    </div>
-
-                    <div className="mt-6 flex flex-wrap gap-3">
-                      <Link
-                        href={`/events/${spotlightEvent.slug}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-700 hover:underline"
-                      >
-                        Read Event Summary <ArrowRight size={14} />
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="relative aspect-16/10 overflow-hidden rounded-2xl border border-slate-100 shadow-xs">
-                    <Image
-                      src={getEventImage(spotlightEvent.slug)}
-                      alt={spotlightEvent.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </Container>
-        </section>
-      )}
 
       {/* Grid of All Past Events */}
       <section className="bg-white py-8 sm:py-14">

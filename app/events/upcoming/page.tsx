@@ -111,25 +111,26 @@ export default function UpcomingEventsPage() {
         </section>
       )}
 
-      {/* Grid of All Upcoming Events */}
-      <section className="bg-slate-50/60 py-8 sm:py-14">
-        <Container>
-          <AnimatedSection className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-700">
-                Scheduled Workshops &amp; Sprints
-              </span>
-              <h2 className="mt-1 text-xl sm:text-2xl font-bold text-[#0B2A4A]">
-                Upcoming Sessions ({upcomingEvents.length})
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md">
-              Participate in specialized sprints led by active investors, operators, and sector specialists.
-            </p>
-          </AnimatedSection>
+      {/* Grid of Other Upcoming Sessions */}
+      {otherUpcomingEvents.length > 0 && (
+        <section className="bg-slate-50/60 py-8 sm:py-14">
+          <Container>
+            <AnimatedSection className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-700">
+                  Scheduled Workshops &amp; Sprints
+                </span>
+                <h2 className="mt-1 text-xl sm:text-2xl font-bold text-[#0B2A4A]">
+                  Upcoming Workshops &amp; Sprints ({otherUpcomingEvents.length})
+                </h2>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 max-w-md">
+                Participate in specialized sprints led by active investors, operators, and sector specialists.
+              </p>
+            </AnimatedSection>
 
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
-            {upcomingEvents.map((event, i) => {
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+              {otherUpcomingEvents.map((event, i) => {
               const { day, month } = getDateParts(event.date);
               return (
                 <AnimatedSection key={event.id} delay={i * 0.05} className="h-full">
@@ -207,6 +208,7 @@ export default function UpcomingEventsPage() {
           </div>
         </Container>
       </section>
+      )}
 
       {/* Host / Collaborate CTA */}
       <section className="bg-white py-10 sm:py-16">

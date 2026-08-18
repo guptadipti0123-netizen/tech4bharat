@@ -40,10 +40,10 @@ export function getDomainImage(domain: string | null | undefined): string {
 
 /** Events & Bootcamps imagery — one distinct banner per event, keyed by slug. */
 export const eventImageMap: Record<string, string> = {
-  "tech4bharat-startup-bootcamp-2026": "/images/gallery/gallery-8.jpg",
+  "tech4bharat-startup-bootcamp-2026": "/images/gallery/bootcamps-1.jpg",
   "fundraising-masterclass": "/images/events/event-fundraising.jpg",
   "agritech-innovation-challenge": "/images/events/event-agritech-challenge.jpg",
-  "healthtech-summit-2025": "/images/gallery/heritage-tour.jpg",
+  "healthtech-summit-2025": "/images/gallery/conference-podium-2.jpg",
   "product-validation-bootcamp-2025": "/images/events/event-product-validation.jpg",
   "women-founders-networking-night": "/images/events/event-women-founders.jpg",
   "demo-day-winter-cohort": "/images/gallery/students-campus-group.jpg",
