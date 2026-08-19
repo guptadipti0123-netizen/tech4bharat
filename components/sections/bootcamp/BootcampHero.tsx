@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Calendar, Clock, MapPin, Rocket, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Calendar, Clock, MapPin, ShieldCheck, Users } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -18,10 +18,7 @@ export default function BootcampHero() {
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200/60 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700">
-              <Rocket size={14} /> National Startup Bootcamp
-            </span>
-            <h1 className="mt-3 text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
+            <h1 className="text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
               One-Day Startup Bootcamp 2026
             </h1>
             <p className="mt-3 max-w-xl text-[14px] sm:text-[15px] leading-relaxed text-slate-600">
