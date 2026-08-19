@@ -7,111 +7,170 @@ import {
   HeartPulse,
   Leaf,
   Recycle,
+  Sparkles,
   Sprout,
+  type LucideIcon,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-const domainList = [
+interface DomainItem {
+  title: string;
+  icon: LucideIcon;
+  tag: string;
+  description: string;
+  color: string;
+  iconBg: string;
+  borderHover: string;
+  tagBg: string;
+  tagColor: string;
+}
+
+const domainList: DomainItem[] = [
   {
     title: "AgriTech",
     icon: Sprout,
     tag: "Agriculture",
     description: "Smart farming, supply chain, and yield optimization.",
-    iconBg: "bg-emerald-50 text-emerald-600 border-emerald-100",
+    color: "#059669",
+    iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200",
+    borderHover: "hover:border-emerald-400",
+    tagBg: "bg-emerald-50 border-emerald-100",
+    tagColor: "text-emerald-700",
   },
   {
     title: "AI / DeepTech",
     icon: Brain,
     tag: "AI & ML",
     description: "Machine learning, data governance & generative systems.",
-    iconBg: "bg-indigo-50 text-indigo-600 border-indigo-100",
+    color: "#4F46E5",
+    iconBg: "bg-indigo-50 text-indigo-600 border-indigo-200",
+    borderHover: "hover:border-indigo-400",
+    tagBg: "bg-indigo-50 border-indigo-100",
+    tagColor: "text-indigo-700",
   },
   {
     title: "Climate & Clean Energy",
     icon: Leaf,
     tag: "Sustainability",
     description: "Renewable energy, carbon reduction, and grid tech.",
-    iconBg: "bg-teal-50 text-teal-600 border-teal-100",
+    color: "#0D9488",
+    iconBg: "bg-teal-50 text-teal-600 border-teal-200",
+    borderHover: "hover:border-teal-400",
+    tagBg: "bg-teal-50 border-teal-100",
+    tagColor: "text-teal-700",
   },
   {
     title: "HealthTech & MedTech",
     icon: HeartPulse,
     tag: "Healthcare",
     description: "Affordable diagnostics, telemedicine & devices.",
-    iconBg: "bg-rose-50 text-rose-600 border-rose-100",
+    color: "#E11D48",
+    iconBg: "bg-rose-50 text-rose-600 border-rose-200",
+    borderHover: "hover:border-rose-400",
+    tagBg: "bg-rose-50 border-rose-100",
+    tagColor: "text-rose-700",
   },
   {
     title: "Water & Sanitation",
     icon: Droplets,
     tag: "Clean Water",
     description: "Purification tech, leak detection & conservation.",
-    iconBg: "bg-sky-50 text-sky-600 border-sky-100",
+    color: "#0284C7",
+    iconBg: "bg-sky-50 text-sky-600 border-sky-200",
+    borderHover: "hover:border-sky-400",
+    tagBg: "bg-sky-50 border-sky-100",
+    tagColor: "text-sky-700",
   },
   {
     title: "Waste Management",
     icon: Recycle,
     tag: "Circular",
     description: "Recycling automation, bio-waste & material recovery.",
-    iconBg: "bg-amber-50 text-amber-600 border-amber-100",
+    color: "#D97706",
+    iconBg: "bg-amber-50 text-amber-600 border-amber-200",
+    borderHover: "hover:border-amber-400",
+    tagBg: "bg-amber-50 border-amber-100",
+    tagColor: "text-amber-700",
   },
   {
     title: "EdTech & Skilling",
     icon: GraduationCap,
     tag: "Education",
     description: "Vernacular learning, tech skilling & STEM tools.",
-    iconBg: "bg-violet-50 text-violet-600 border-violet-100",
+    color: "#7C3AED",
+    iconBg: "bg-purple-50 text-purple-600 border-purple-200",
+    borderHover: "hover:border-purple-400",
+    tagBg: "bg-purple-50 border-purple-100",
+    tagColor: "text-purple-700",
   },
   {
     title: "Rural Development",
     icon: Building2,
     tag: "Livelihoods",
     description: "Rural micro-enterprises & digital public infra.",
-    iconBg: "bg-blue-50 text-blue-600 border-blue-100",
+    color: "#2563EB",
+    iconBg: "bg-blue-50 text-blue-600 border-blue-200",
+    borderHover: "hover:border-blue-400",
+    tagBg: "bg-blue-50 border-blue-100",
+    tagColor: "text-blue-700",
   },
 ];
 
-/** Social Impact Domains — rich, modern vector icon cards inspired by tech4bharat.com,
- *  compact typography, responsive 2-column mobile grid, with no AI/stock placeholders. */
 export default function FocusAreas() {
   return (
-    <section className="relative overflow-hidden py-8 sm:py-14 bg-white">
+    <section className="relative overflow-hidden py-10 sm:py-16 bg-white">
       <Container>
-        <div className="rounded-3xl bg-gradient-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-4 sm:p-8 lg:p-10 shadow-lg border border-white/60">
+        <div className="rounded-3xl bg-gradient-to-b from-[#EBF3FA] via-[#F4F8FC] to-[#DCE9F6] p-5 sm:p-8 lg:p-10 shadow-xl border border-white">
           <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
-              Key Focus Areas
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
+              <Sparkles size={13} className="text-brand-600" /> Key Focus Areas
             </span>
-            <h2 className="mt-2 text-[20px] sm:text-[26px] lg:text-[30px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+            <h2 className="mt-2.5 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold tracking-tight text-[#0B2A4A]">
               Social Impact Domains
             </h2>
-            <p className="mx-auto mt-1.5 max-w-lg text-[12px] sm:text-[14px] leading-relaxed text-gray-600">
-              Supporting innovations that solve core socio-economic challenges across India.
+            <p className="mx-auto mt-2 max-w-xl text-base sm:text-[17px] leading-relaxed text-slate-600">
+              Supporting purpose-driven startups solving core socio-economic challenges across India.
             </p>
           </AnimatedSection>
 
-          <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-2.5 sm:gap-3.5 lg:grid-cols-4 sm:overflow-visible">
+          <div className="mt-8 grid grid-cols-2 gap-3.5 sm:gap-5 lg:grid-cols-4">
             {domainList.map((item, i) => {
               const Icon = item.icon;
               return (
-                <AnimatedSection key={item.title} delay={i * 0.03} className="h-full">
-                  <div className="group flex h-full flex-col justify-between rounded-xl sm:rounded-2xl border border-white/80 bg-white/80 p-3 sm:p-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#4f6ff2] hover:shadow-md">
+                <AnimatedSection key={item.title} delay={i * 0.04} className="h-full">
+                  <div
+                    className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200/80 bg-white p-4 sm:p-5.5 shadow-[0_4px_16px_rgba(11,42,74,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${item.borderHover}`}
+                  >
+                    {/* Top color highlight strip */}
+                    <div
+                      className="absolute inset-x-0 top-0 h-1 transition-all duration-300 group-hover:h-1.5"
+                      style={{ backgroundColor: item.color }}
+                    />
+
                     <div>
-                      <div className="flex items-center justify-between">
-                        <span className={`flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg sm:rounded-xl border shadow-2xs group-hover:scale-105 transition-transform ${item.iconBg}`}>
-                          <Icon size={16} className="sm:hidden" />
-                          <Icon size={18} className="hidden sm:block" />
+                      {/* Top row: Icon + Tag */}
+                      <div className="flex items-center justify-between gap-1.5">
+                        <span
+                          className={`flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-xl border shadow-2xs transition-transform duration-300 group-hover:scale-105 ${item.iconBg}`}
+                        >
+                          <Icon size={19} strokeWidth={2} />
                         </span>
-                        <span className="rounded-full bg-slate-100 border border-slate-200/60 px-2 py-0.5 text-[8.5px] sm:text-[9.5px] font-semibold text-slate-600">
+                        <span
+                          className={`rounded-full border px-2 py-0.5 text-[10px] sm:text-[11.5px] font-bold ${item.tagBg} ${item.tagColor}`}
+                        >
                           {item.tag}
                         </span>
                       </div>
 
-                      <h3 className="mt-2 text-[12.5px] sm:text-[14px] font-bold text-[#0B2A4A] leading-snug group-hover:text-[#155E9A] transition-colors">
+                      {/* Domain Title */}
+                      <h3 className="mt-3 text-[14.5px] sm:text-[16.5px] font-bold text-[#0B2A4A] leading-snug group-hover:text-brand-700 transition-colors">
                         {item.title}
                       </h3>
-                      <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] leading-snug text-slate-500">
+
+                      {/* Domain Description */}
+                      <p className="mt-1.5 text-[12.5px] sm:text-[13.5px] leading-relaxed text-slate-600">
                         {item.description}
                       </p>
                     </div>
@@ -121,9 +180,14 @@ export default function FocusAreas() {
             })}
           </div>
 
-          <AnimatedSection delay={0.2} className="mt-6 text-center">
-            <Button href="/portfolio" variant="outline" size="sm">
-              Explore All 13 Domains in Portfolio <ArrowRight size={14} />
+          <AnimatedSection delay={0.2} className="mt-8 text-center">
+            <Button
+              href="/portfolio"
+              variant="primary"
+              size="md"
+              className="shadow-md shadow-brand-700/15"
+            >
+              Explore All 13 Domains in Portfolio <ArrowRight size={15} />
             </Button>
           </AnimatedSection>
         </div>
