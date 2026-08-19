@@ -113,10 +113,7 @@ export default function BootcampSessions() {
       <Container>
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700">
-              <Sparkles size={13} className="text-brand-600" /> Intensive Curriculum
-            </span>
-            <h2 className="mt-2.5 text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[28px] lg:text-[32px]">
+            <h2 className="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[28px] lg:text-[32px]">
               Six Core Bootcamp Session Tracks
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
