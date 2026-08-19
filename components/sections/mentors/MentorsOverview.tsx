@@ -1,125 +1,122 @@
+import {
+  Building2,
+  Coins,
+  Compass,
+  GraduationCap,
+  Handshake,
+  Landmark,
+  Rocket,
+  Users,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-interface MentorPillar {
-  num: string;
-  badge: string;
-  title: string;
-  description: string;
-  accent: string;
-  cardBg: string;
-  badgeBg: string;
-}
-
-const pillars: MentorPillar[] = [
+const onboardingDomains = [
   {
-    num: "01",
-    badge: "Founders",
-    title: "Startup Mentors",
-    description: "Experienced founders who have built & scaled tech ventures across India.",
-    accent: "#155E9A",
-    cardBg: "bg-[#F5FAFE] hover:bg-[#EAF4FB]",
-    badgeBg: "bg-blue-100/80 text-[#155E9A]",
-  },
-  {
-    num: "02",
-    badge: "Execution",
-    title: "Operators & Leaders",
-    description: "Specialists with deep expertise in product, engineering & growth.",
-    accent: "#059669",
-    cardBg: "bg-[#F0FDF4] hover:bg-[#DCFCE7]",
-    badgeBg: "bg-emerald-100/80 text-emerald-800",
-  },
-  {
-    num: "03",
-    badge: "Capital",
-    title: "Angel & VC Investors",
-    description: "Early-stage capital partners backing innovative social impact ventures.",
-    accent: "#D97706",
-    cardBg: "bg-[#FFFBEB] hover:bg-[#FEF3C7]",
-    badgeBg: "bg-amber-100/80 text-amber-800",
-  },
-  {
-    num: "04",
-    badge: "Research",
-    title: "Academic Scholars",
-    description: "Faculty & researchers from IITs driving deep-tech translation.",
+    icon: GraduationCap,
+    title: "Academia",
+    description: "Faculty & researchers from IITs and premier institutions driving deep-tech translation.",
     accent: "#7C3AED",
-    cardBg: "bg-[#FAF5FF] hover:bg-[#F3E8FF]",
-    badgeBg: "bg-purple-100/80 text-purple-800",
+    bg: "bg-[#FAF5FF] border-purple-200/80",
+    iconBg: "bg-purple-100 text-purple-700",
   },
   {
-    num: "05",
-    badge: "Industry",
-    title: "Industry Specialists",
-    description: "Corporate & technology leaders offering real-world market access.",
+    icon: Building2,
+    title: "Industry",
+    description: "Corporate leaders & technology operators offering direct market access and scaling insights.",
     accent: "#0284C7",
-    cardBg: "bg-[#F0F9FF] hover:bg-[#E0F2FE]",
-    badgeBg: "bg-sky-100/80 text-sky-800",
+    bg: "bg-[#F0F9FF] border-sky-200/80",
+    iconBg: "bg-sky-100 text-sky-700",
   },
   {
-    num: "06",
-    badge: "Governance",
-    title: "Policy & Ecosystem",
-    description: "Strategic advisors connecting startups with government grants & DPI.",
+    icon: Landmark,
+    title: "Government",
+    description: "Policy experts connecting founders with DPIIT schemes, BIRAC grants, and public innovation.",
     accent: "#0D9488",
-    cardBg: "bg-[#F0FDFA] hover:bg-[#CCFBF1]",
-    badgeBg: "bg-teal-100/80 text-teal-800",
+    bg: "bg-[#F0FDFA] border-teal-200/80",
+    iconBg: "bg-teal-100 text-teal-700",
   },
+  {
+    icon: Rocket,
+    title: "Startup Ecosystem",
+    description: "Successful founders & seasoned angel investors providing hands-on playbook guidance.",
+    accent: "#155E9A",
+    bg: "bg-[#F5FAFE] border-blue-200/80",
+    iconBg: "bg-blue-100 text-[#155E9A]",
+  },
+];
+
+const supportPillars = [
+  { icon: Users, label: "Hands-on Mentoring" },
+  { icon: Compass, label: "Strategic Guidance" },
+  { icon: Handshake, label: "Ecosystem Partnerships" },
+  { icon: Coins, label: "Fundraising Support" },
 ];
 
 export default function MentorsOverview() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-6 sm:pt-24 sm:pb-10">
-      {/* Background gradient */}
+    <section className="relative overflow-hidden pt-22 pb-8 sm:pt-28 sm:pb-12 bg-white">
+      {/* Background soft gradient */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10"
         style={{
-          background: "linear-gradient(180deg, #edeef8 0%, #f8f9ff 60%, #c5d1ff 100%)",
+          background: "linear-gradient(180deg, #EBF3FA 0%, #F8FAFC 60%, #FFFFFF 100%)",
         }}
       />
 
       <Container className="relative">
-        <div className="mx-auto max-w-5xl rounded-2xl sm:rounded-3xl bg-linear-to-b from-[#F5FAFE] via-white to-[#EEF6FC] p-3.5 sm:p-7 shadow-md border border-blue-100/90 backdrop-blur-md">
-          <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50/90 border border-blue-100 px-2.5 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#1e3a8a]">
-              Ecosystem Mentorship
-            </span>
-            <h1 className="mt-1 text-[19px] sm:text-[26px] lg:text-[30px] font-extrabold tracking-tight bg-linear-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+        <div className="mx-auto max-w-5xl rounded-3xl bg-white p-5 sm:p-8 lg:p-10 shadow-xl border border-slate-200/80">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <h1 className="text-[24px] sm:text-[32px] lg:text-[36px] font-extrabold tracking-tight text-[#0B2A4A]">
               Mentors &amp; Advisors
             </h1>
-            <p className="mx-auto mt-0.5 max-w-lg text-[11px] sm:text-[13px] leading-relaxed text-slate-600">
-              Operators, investors, and academics guiding Tech4Bharat founders with real-world experience.
+            <p className="mx-auto mt-3 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
+              The process of onboarding experienced advisors from academia, industry, government, and the startup ecosystem will commence immediately after company incorporation to strengthen mentoring, strategic guidance, partnerships, and fundraising support.
             </p>
+
+            {/* 4 Support Pillars Chips */}
+            <div className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-3">
+              {supportPillars.map(({ icon: Icon, label }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-blue-200/80 bg-blue-50/70 px-3.5 py-1.5 text-xs sm:text-[13px] font-bold text-[#155E9A] shadow-2xs"
+                >
+                  <Icon size={15} className="text-[#155E9A]" /> {label}
+                </span>
+              ))}
+            </div>
           </AnimatedSection>
 
-          {/* 2-col on mobile, 3-col on desktop — compact cards with themed colors & side accent borders */}
-          <div className="mt-4 sm:mt-6 grid grid-cols-2 gap-2 sm:gap-3.5 lg:grid-cols-3">
-            {pillars.map((item, i) => (
-              <AnimatedSection key={item.num} delay={i * 0.03} className="h-full">
-                <div
-                  style={{ borderLeftColor: item.accent }}
-                  className={`group flex h-full flex-col justify-between rounded-xl border border-slate-200/90 border-l-[3.5px] ${item.cardBg} p-2.5 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:rounded-2xl sm:p-3.5`}
-                >
-                  <div>
-                    <span className={`inline-block rounded-md px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold ${item.badgeBg} transition-colors`}>
-                      {item.badge}
-                    </span>
+          {/* 4 Advisor Domain Categories Grid */}
+          <div className="mt-8 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4.5">
+            {onboardingDomains.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <AnimatedSection key={item.title} delay={i * 0.05} className="h-full">
+                  <div
+                    style={{ borderTopColor: item.accent }}
+                    className={`group flex h-full flex-col justify-between rounded-2xl border ${item.bg} border-t-4 p-4.5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md`}
+                  >
+                    <div>
+                      <span
+                        className={`flex h-10 w-10 items-center justify-center rounded-xl font-bold shadow-2xs ${item.iconBg}`}
+                      >
+                        <Icon size={20} strokeWidth={2} />
+                      </span>
 
-                    {/* Title */}
-                    <h3 className="mt-1.5 text-[11.5px] sm:text-[13.5px] font-bold text-[#0B2A4A] leading-tight group-hover:text-[#155E9A] transition-colors">
-                      {item.title}
-                    </h3>
+                      <h3 className="mt-3 text-[16px] sm:text-[17px] font-bold text-[#0B2A4A] leading-tight group-hover:text-brand-700 transition-colors">
+                        {item.title}
+                      </h3>
 
-                    {/* Description */}
-                    <p className="mt-0.5 line-clamp-2 text-[9.5px] sm:text-[11px] leading-snug text-slate-600">
-                      {item.description}
-                    </p>
+                      <p className="mt-1.5 text-[13px] sm:text-[14px] leading-relaxed text-slate-600">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </Container>
