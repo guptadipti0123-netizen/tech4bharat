@@ -1,20 +1,16 @@
 import {
-  ArrowUpRight,
   CheckCircle2,
   Coins,
   Globe2,
   Handshake,
   Landmark,
   Lightbulb,
-  Sparkles,
   TrendingUp,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
-import SectionTitle from "@/components/ui/SectionTitle";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
 interface SessionTrack {
-  track: string;
   icon: typeof Coins;
   title: string;
   subtitle: string;
@@ -28,7 +24,6 @@ interface SessionTrack {
 
 const sessions: SessionTrack[] = [
   {
-    track: "Track 01",
     icon: Coins,
     title: "Fundraising",
     subtitle: "Seed Capital & Pitch Strategy",
@@ -41,7 +36,6 @@ const sessions: SessionTrack[] = [
     shadowColor: "rgba(5, 150, 105, 0.12)",
   },
   {
-    track: "Track 02",
     icon: TrendingUp,
     title: "Business Model Development",
     subtitle: "Unit Economics & Monetization",
@@ -54,7 +48,6 @@ const sessions: SessionTrack[] = [
     shadowColor: "rgba(79, 70, 229, 0.12)",
   },
   {
-    track: "Track 03",
     icon: Lightbulb,
     title: "Product Validation",
     subtitle: "Hypothesis Testing & MVP Sprints",
@@ -67,7 +60,6 @@ const sessions: SessionTrack[] = [
     shadowColor: "rgba(217, 119, 6, 0.12)",
   },
   {
-    track: "Track 04",
     icon: Globe2,
     title: "Market Access",
     subtitle: "GTM & Distribution Channels",
@@ -80,7 +72,6 @@ const sessions: SessionTrack[] = [
     shadowColor: "rgba(8, 145, 178, 0.12)",
   },
   {
-    track: "Track 05",
     icon: Landmark,
     title: "Government Schemes",
     subtitle: "Policy Incentives & Public Grants",
@@ -93,7 +84,6 @@ const sessions: SessionTrack[] = [
     shadowColor: "rgba(30, 64, 175, 0.12)",
   },
   {
-    track: "Track 06",
     icon: Handshake,
     title: "Investor Readiness & Networking",
     subtitle: "Data Rooms & 1:1 Pitches",
@@ -109,15 +99,15 @@ const sessions: SessionTrack[] = [
 
 export default function BootcampSessions() {
   return (
-    <section className="bg-slate-50/70 py-12 sm:py-16 border-t border-slate-200/60">
+    <section className="relative overflow-hidden bg-white py-12 sm:py-16 border-t border-slate-200/60">
       <Container>
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[22px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[28px] lg:text-[32px]">
-              Six Core Bootcamp Session Tracks
+            <h2 className="text-[22px] font-bold leading-[1.15] tracking-tight text-[#0B2A4A] sm:text-[28px] lg:text-[32px]">
+              Core Bootcamp Session Tracks
             </h2>
-            <p className="mx-auto mt-2 max-w-xl text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
-              Every track is designed with practical frameworks, operator insights, and direct mentor reviews.
+            <p className="mx-auto mt-2 max-w-xl text-base leading-relaxed text-slate-600 sm:text-[17px]">
+              Every session is structured around practical frameworks, operator insights, and direct mentor reviews.
             </p>
           </div>
         </AnimatedSection>
@@ -126,80 +116,65 @@ export default function BootcampSessions() {
           {sessions.map((session, i) => {
             const Icon = session.icon;
             return (
-              <AnimatedSection key={session.title} delay={i * 0.06} className="h-full">
+              <AnimatedSection key={session.title} delay={i * 0.05} className="h-full">
                 <div
                   style={{
-                    backgroundColor: "#FFFFFF",
-                    boxShadow: `0 8px 24px -6px ${session.shadowColor}`,
+                    boxShadow: `0 4px 20px -4px ${session.shadowColor}`,
                   }}
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-slate-300"
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-slate-300"
                 >
-                  {/* Subtle top color highlight strip */}
+                  {/* Top colored accent header banner */}
                   <div
-                    className="absolute inset-x-0 top-0 h-1.5 transition-all duration-300 group-hover:h-2"
-                    style={{ backgroundColor: session.accentColor }}
-                  />
-
-                  <div>
-                    {/* Header: Icon + Track Badge */}
-                    <div className="flex items-center justify-between pt-1">
-                      <div
-                        style={{
-                          backgroundColor: session.bgLight,
-                          color: session.accentColor,
-                        }}
-                        className="flex h-12 w-12 items-center justify-center rounded-2xl border border-black/5 shadow-xs transition-transform duration-300 group-hover:scale-105"
-                      >
-                        <Icon size={22} strokeWidth={2} />
-                      </div>
-
-                      <span
-                        style={{
-                          backgroundColor: session.bgLight,
-                          color: session.accentColor,
-                        }}
-                        className="rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide border border-black/5"
-                      >
-                        {session.track}
-                      </span>
+                    style={{ backgroundColor: session.bgLight }}
+                    className="flex items-center gap-3.5 border-b border-slate-100 p-5 sm:p-6"
+                  >
+                    <div
+                      style={{
+                        backgroundColor: "#FFFFFF",
+                        color: session.accentColor,
+                        borderColor: `${session.accentColor}30`,
+                      }}
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border shadow-xs transition-transform duration-300 group-hover:scale-105"
+                    >
+                      <Icon size={24} strokeWidth={2} />
                     </div>
 
-                    {/* Title & Subtitle */}
-                    <h3 className="mt-4 text-[17px] font-bold text-[#0B2A4A] group-hover:text-brand-700 transition-colors">
-                      {session.title}
-                    </h3>
-                    <p
-                      style={{ color: session.accentColor }}
-                      className="text-[12px] font-semibold mt-0.5"
-                    >
-                      {session.subtitle}
-                    </p>
-
-                    {/* Description */}
-                    <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-slate-600">
-                      {session.description}
-                    </p>
+                    <div>
+                      <h3 className="text-[17px] font-bold text-[#0B2A4A] leading-snug group-hover:text-brand-700 transition-colors">
+                        {session.title}
+                      </h3>
+                      <p
+                        style={{ color: session.accentColor }}
+                        className="text-xs font-semibold mt-0.5"
+                      >
+                        {session.subtitle}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Key Takeaways Chips */}
-                  <div className="mt-5 border-t border-slate-100 pt-4">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                      Key Highlights
+                  {/* Body Content */}
+                  <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
+                    <p className="text-[14px] sm:text-[15px] leading-relaxed text-slate-600">
+                      {session.description}
                     </p>
-                    <div className="mt-2.5 flex flex-wrap gap-2">
-                      {session.takeaways.map((item) => (
-                        <span
-                          key={item}
-                          className="inline-flex items-center gap-1.5 rounded-lg bg-slate-50 border border-slate-200/80 px-2.5 py-1 text-xs font-medium text-slate-700"
-                        >
-                          <CheckCircle2
-                            size={11}
-                            style={{ color: session.accentColor }}
-                            className="shrink-0"
-                          />
-                          {item}
-                        </span>
-                      ))}
+
+                    {/* Integrated Key Highlights Checklist */}
+                    <div className="mt-5 border-t border-slate-100/90 pt-4">
+                      <div className="flex flex-col gap-2">
+                        {session.takeaways.map((item) => (
+                          <div
+                            key={item}
+                            className="flex items-center gap-2 text-[13px] font-medium text-slate-700"
+                          >
+                            <CheckCircle2
+                              size={15}
+                              style={{ color: session.accentColor }}
+                              className="shrink-0"
+                            />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
