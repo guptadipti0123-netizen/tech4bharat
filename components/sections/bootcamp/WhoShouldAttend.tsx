@@ -84,8 +84,8 @@ export default function WhoShouldAttend() {
 
           <AnimatedSection className="relative aspect-4/3 w-72 shrink-0 overflow-hidden rounded-3xl shadow-[0_14px_36px_rgba(6,26,44,0.18)] ring-6 ring-white md:w-84 lg:w-[380px] xl:w-[420px]">
             <Image
-              src="/images/gallery/startup-events-1.jpg"
-              alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
+              src="/images/legacy/policy-workshop-1.png"
+              alt="Indian founders and students attending a Tech4Bharat Startup Bootcamp workshop"
               fill
               sizes="(max-width: 1024px) 380px, 420px"
               className="object-cover brightness-105"
@@ -103,8 +103,8 @@ export default function WhoShouldAttend() {
         <div className="mt-8 flex flex-col items-center sm:hidden">
           <AnimatedSection className="relative aspect-16/10 w-full max-w-[320px] shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_28px_rgba(6,26,44,0.16)] ring-4 ring-white">
             <Image
-              src="/images/gallery/startup-events-1.jpg"
-              alt="Founders and mentors at a Tech4Bharat Startup Bootcamp session"
+              src="/images/legacy/policy-workshop-1.png"
+              alt="Indian founders and students attending a Tech4Bharat Startup Bootcamp workshop"
               fill
               sizes="320px"
               className="object-cover brightness-105"
