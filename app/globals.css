@@ -173,7 +173,7 @@ section[id] {
 
 /* Frosted-glass surface used by the floating header and glass cards */
 .glass-surface {
-  background: color-mix(in srgb, white 78%, transparent);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  background: color-mix(in srgb, white 94%, transparent);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }

@@ -151,8 +151,8 @@ export default function FocusAreas() {
 
                     <div className="pl-1 sm:pl-0">
                       {/* Top row */}
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-2.5">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-2.5 min-w-0">
                           <span
                             className={`flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border shadow-2xs transition-transform duration-300 group-hover:scale-105 ${item.iconBg}`}
                           >
@@ -164,7 +164,7 @@ export default function FocusAreas() {
                           </h3>
                         </div>
                         <span
-                          className={`rounded-full border px-2.5 py-0.5 text-[10.5px] sm:text-[11px] font-bold shrink-0 ${item.tagBg} ${item.tagColor}`}
+                          className={`rounded-full border px-2.5 py-0.5 text-[10.5px] sm:text-[11px] font-bold shrink-0 mt-0.5 ${item.tagBg} ${item.tagColor}`}
                         >
                           {item.tag}
                         </span>
