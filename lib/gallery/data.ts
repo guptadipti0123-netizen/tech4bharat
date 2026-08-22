@@ -55,9 +55,9 @@ export const localGalleryPhotos: GalleryPhoto[] = [
     source: "local",
   },
   {
-    id: "legacy-day4-i1",
-    src: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg",
-    alt: "Day 4 — Clean Energy & Cyber-Physical Systems: a memento exchange between speakers",
+    id: "legacy-day5-i1",
+    src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png",
+    alt: "Day 5 — Earth Observation & Strategic Technologies: cohort field visit to C-DAC",
     categories: ["legacy-workshops", "research"],
     source: "local",
   },

@@ -18,7 +18,7 @@ const photos: GalleryPhoto[] = [
   { src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png", alt: "Day 2 — Digital Narratives & Blockchain: the full cohort and faculty in the auditorium" },
   { src: "/images/legacy/workshops/day2-i2-digital-public-infrastructure-ai.png", alt: "Day 2 — Digital Public Infrastructure & AI: faculty and students at the session close" },
   { src: "/images/legacy/workshops/day3-i2-strategic-innovation-frameworks.png", alt: "Day 3 — Strategic Innovation Frameworks: a candid group photo with the cohort" },
-  { src: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg", alt: "Day 4 — Clean Energy & Cyber-Physical Systems: a memento exchange between speakers" },
+  { src: "/images/legacy/workshops/day6-i1-policy-drafting-concluding-session.jpg", alt: "Day 6 — Policy Drafting & Concluding Session: cohort and faculty in the lecture hall" },
   { src: "/images/legacy/workshops/day4-i2-uav-simulation-security-analysis.png", alt: "Day 4 — UAV Simulation & Security Analysis: the cohort in the lecture hall" },
   { src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png", alt: "Day 5 — Earth Observation & Strategic Technologies: the cohort on their field visit to C-DAC" },
   { src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png", alt: "Day 5 — Field Visit & Advanced Computing: the cohort back in session" },

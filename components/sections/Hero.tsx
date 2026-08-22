@@ -9,16 +9,16 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const heroSlides = [
   {
-    src: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg",
-    alt: "Tech4Bharat Digital & Tech Policy Workshop session at COEP University",
-  },
-  {
     src: "/images/legacy/workshops/day2-i1-digital-narratives-blockchain.png",
     alt: "Participants and faculty in the auditorium during Tech4Bharat session",
   },
   {
     src: "/images/legacy/policy-workshop-2.png",
     alt: "Expert speaker addressing the Tech4Bharat workshop cohort",
+  },
+  {
+    src: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png",
+    alt: "Tech4Bharat cohort field visit and advanced computing session at C-DAC",
   },
   {
     src: "/images/legacy/workshops/day5-i2-field-visit-advanced-computing.png",

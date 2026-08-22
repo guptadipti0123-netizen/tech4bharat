@@ -465,7 +465,7 @@ export const blogPosts: BlogPost[] = [
     category: "Policy",
     date: "Feb 2026",
     readTime: "8 min read",
-    image: "/images/legacy/workshops/day4-i1-clean-energy-cyberphysical-systems.jpg",
+    image: "/images/legacy/workshops/day5-i1-earth-observation-strategic-tech.png",
     slug: "state-level-government-schemes",
   },
   {

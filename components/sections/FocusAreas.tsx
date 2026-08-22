@@ -135,42 +135,48 @@ export default function FocusAreas() {
             </p>
           </AnimatedSection>
 
-          <div className="mt-8 grid grid-cols-2 gap-3.5 sm:gap-5 lg:grid-cols-4">
+          <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             {domainList.map((item, i) => {
               const Icon = item.icon;
               return (
-                <AnimatedSection key={item.title} delay={i * 0.04} className="h-full">
+                <AnimatedSection key={item.title} delay={i * 0.03} className="h-full">
                   <div
-                    className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200/80 bg-white p-4 sm:p-5.5 shadow-[0_4px_16px_rgba(11,42,74,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${item.borderHover}`}
+                    className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200/80 bg-white p-3.5 sm:p-5.5 shadow-[0_4px_16px_rgba(11,42,74,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${item.borderHover}`}
                   >
-                    {/* Top color highlight strip */}
+                    {/* Left colored bar on mobile, Top colored bar on desktop */}
                     <div
-                      className="absolute inset-x-0 top-0 h-1 transition-all duration-300 group-hover:h-1.5"
+                      className="absolute left-0 top-0 bottom-0 w-1 sm:inset-x-0 sm:top-0 sm:bottom-auto sm:h-1 sm:w-full transition-all duration-300 group-hover:w-1.5 sm:group-hover:h-1.5"
                       style={{ backgroundColor: item.color }}
                     />
 
-                    <div>
-                      {/* Top row: Icon + Tag */}
-                      <div className="flex items-center justify-between gap-1.5">
+                    <div className="pl-1 sm:pl-0">
+                      {/* Top row */}
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2.5">
+                          <span
+                            className={`flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border shadow-2xs transition-transform duration-300 group-hover:scale-105 ${item.iconBg}`}
+                          >
+                            <Icon size={18} strokeWidth={2} className="sm:hidden" />
+                            <Icon size={20} strokeWidth={2} className="hidden sm:block" />
+                          </span>
+                          <h3 className="text-[14.5px] font-bold text-[#0B2A4A] leading-snug group-hover:text-brand-700 transition-colors sm:hidden">
+                            {item.title}
+                          </h3>
+                        </div>
                         <span
-                          className={`flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-xl border shadow-2xs transition-transform duration-300 group-hover:scale-105 ${item.iconBg}`}
-                        >
-                          <Icon size={19} strokeWidth={2} />
-                        </span>
-                        <span
-                          className={`rounded-full border px-2 py-0.5 text-[10px] sm:text-[11.5px] font-bold ${item.tagBg} ${item.tagColor}`}
+                          className={`rounded-full border px-2.5 py-0.5 text-[10.5px] sm:text-[11px] font-bold shrink-0 ${item.tagBg} ${item.tagColor}`}
                         >
                           {item.tag}
                         </span>
                       </div>
 
-                      {/* Domain Title */}
-                      <h3 className="mt-3 text-[14.5px] sm:text-[16.5px] font-bold text-[#0B2A4A] leading-snug group-hover:text-brand-700 transition-colors">
+                      {/* Desktop Title */}
+                      <h3 className="hidden sm:block mt-3.5 text-[16px] font-bold text-[#0B2A4A] leading-snug group-hover:text-brand-700 transition-colors">
                         {item.title}
                       </h3>
 
-                      {/* Domain Description */}
-                      <p className="mt-1.5 text-[12.5px] sm:text-[13.5px] leading-relaxed text-slate-600">
+                      {/* Description */}
+                      <p className="mt-2 text-[12.5px] sm:text-[13px] leading-relaxed text-slate-600">
                         {item.description}
                       </p>
                     </div>
