@@ -76,7 +76,7 @@ export default function Hero() {
     <section
       id="top"
       aria-label="Hero Showcase"
-      className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-115"
+      className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:aspect-[21/9] sm:min-h-100 sm:max-h-[480px] lg:max-h-[500px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
