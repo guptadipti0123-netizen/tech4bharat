@@ -114,19 +114,19 @@ export default function Hero() {
 
       <div className="relative flex h-full min-h-135 items-end pb-8 pt-20 sm:min-h-160 sm:items-center sm:pb-0 sm:pt-0 lg:min-h-screen">
         <Container>
-          <AnimatedSection className="max-w-2xl">
-            <h1 className="text-balance text-[26px] font-extrabold leading-[1.15] tracking-tight text-white sm:text-[36px] md:text-[42px] lg:text-[48px]">
+          <AnimatedSection className="max-w-xl">
+            <h1 className="text-balance text-[1.45rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
               A National Platform for{" "}
               <span className="text-[#FFE08A]">Social Entrepreneurship and Innovation</span>
             </h1>
-            <p className="mt-3.5 max-w-xl text-balance text-[16px] font-medium leading-relaxed text-white sm:mt-4 sm:text-[19px] lg:text-[21px]">
-              Tech4Bharat is proposed to be established as a Section 8 Company.
+            <p className="mt-3 max-w-lg text-balance text-[13px] leading-6 text-white/85 sm:mt-4 sm:text-[14px]">
+              Tech4Bharat is proposed to be established as a Section 8 Company — a national platform for social entrepreneurship and innovation.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3 sm:mt-6">
-              <Button href="/programs" size="md">
-                Explore Programs <ArrowRight size={16} />
+            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-3">
+              <Button href="/programs" size="sm">
+                Explore Programs <ArrowRight size={18} />
               </Button>
-              <Button href="/contact" size="md" variant="outline">
+              <Button href="/contact" size="sm" variant="outline">
                 Contact Us
               </Button>
             </div>
