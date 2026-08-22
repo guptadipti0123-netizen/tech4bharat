@@ -120,7 +120,7 @@ export default function Hero() {
               <span className="text-[#FFE08A]">Social Entrepreneurship and Innovation</span>
             </h1>
             <p className="mt-3 max-w-lg text-balance text-[13px] leading-6 text-white/85 sm:mt-4 sm:text-[14px]">
-              Tech4Bharat is proposed to be established as a Section 8 Company — a national platform for social entrepreneurship and innovation.
+              Tech4Bharat is proposed to be established as a Section 8 Company.
             </p>
             <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-3">
               <Button href="/programs" size="sm">
