@@ -106,8 +106,8 @@ export default function Hero() {
           );
         })}
       </div>
-      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent sm:from-[#0B2A4A]/90 sm:via-[#0B2A4A]/55 sm:to-[#0B2A4A]/30" />
-      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/25 to-transparent sm:from-[#0B2A4A]/85 sm:via-[#0B2A4A]/40" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/25 to-transparent" />
 
       <div className="relative flex h-full min-h-135 items-end pb-6 pt-16 sm:min-h-160 sm:pb-12 lg:h-screen lg:pb-16">
         <Container>
