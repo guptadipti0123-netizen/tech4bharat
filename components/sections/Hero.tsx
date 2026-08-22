@@ -76,7 +76,7 @@ export default function Hero() {
     <section
       id="top"
       aria-label="Hero Showcase"
-      className="relative min-h-135 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-0 sm:aspect-[21/9] sm:max-h-[420px] lg:max-h-[440px]"
+      className="relative min-h-135 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-160 lg:h-screen lg:min-h-screen"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -109,7 +109,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent sm:from-[#0B2A4A]/90 sm:via-[#0B2A4A]/55 sm:to-[#0B2A4A]/30" />
       <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/25 to-transparent sm:from-[#0B2A4A]/85 sm:via-[#0B2A4A]/40" />
 
-      <div className="relative flex h-full min-h-135 items-end pb-6 pt-16 sm:min-h-0 sm:pb-10 lg:pb-12">
+      <div className="relative flex h-full min-h-135 items-end pb-6 pt-16 sm:min-h-160 sm:pb-12 lg:h-screen lg:pb-16">
         <Container>
           <AnimatedSection className="max-w-xl">
             <h1 className="text-balance text-[1.1rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
