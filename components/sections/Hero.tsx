@@ -109,10 +109,10 @@ export default function Hero() {
           );
         })}
       </div>
-      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent" />
-      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/25 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/90 via-[#0B2A4A]/55 to-[#0B2A4A]/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#0B2A4A]/85 via-[#0B2A4A]/40 to-transparent" />
 
-      <div className="relative flex h-full min-h-135 items-end pb-8 pt-20 sm:min-h-160 sm:items-center sm:pb-0 sm:pt-0 lg:min-h-screen">
+      <div className="relative flex h-full items-end pb-10 pt-20 sm:items-center sm:pb-0 sm:pt-0">
         <Container>
           <AnimatedSection className="max-w-xl">
             <h1 className="text-balance text-[1.45rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
