@@ -20,18 +20,14 @@ export default function AboutHero() {
         <div className="grid items-center gap-5 sm:gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left Column: Text & CTAs */}
           <AnimatedSection className="lg:col-span-6">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-400/30 bg-blue-500/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-blue-300 backdrop-blur-md sm:px-3 sm:py-1 sm:text-xs">
+            <h1 className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
               About Tech4Bharat
-            </span>
-            <h1 className="mt-2.5 text-balance text-[1.3rem] font-bold leading-tight tracking-tight text-white sm:mt-3.5 sm:text-3xl lg:text-[34px]">
-              A National Platform for{" "}
-              <span className="text-[#FFE08A]">Social Entrepreneurship</span> & Innovation
             </h1>
-            <p className="mt-2.5 text-balance text-[12.5px] leading-relaxed text-slate-200 sm:mt-4 sm:text-base">
+            <p className="mt-3 text-balance text-[13px] leading-relaxed text-slate-200 sm:mt-4 sm:text-[15px]">
               Tech4Bharat is proposed to be established as a Section 8 Company — a national
               platform for social entrepreneurship and innovation.
             </p>
-            <div className="mt-3.5 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-4">
+            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-3">
               <Button href="/programs" size="sm">
                 Explore Programs <ArrowRight size={16} />
               </Button>
