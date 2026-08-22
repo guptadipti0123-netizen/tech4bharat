@@ -12,7 +12,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
  *  short phones; it does not crop the image (contain, not cover). */
 export default function AboutHero() {
   return (
-    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:aspect-[16/7] sm:min-h-125 sm:max-h-[540px] lg:max-h-[560px]">
+    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:aspect-[21/9] sm:min-h-0 sm:max-h-[380px] lg:max-h-[400px]">
       <Image
         src="/images/about/team.png"
         alt="Tech4Bharat team collaborating at the innovation centre"
@@ -24,7 +24,7 @@ export default function AboutHero() {
       <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/90 via-[#0B2A4A]/55 to-[#0B2A4A]/30" />
       <div className="absolute inset-0 bg-linear-to-r from-[#0B2A4A]/85 via-[#0B2A4A]/40 to-transparent" />
 
-      <div className="relative flex h-full items-end pb-10 pt-20 sm:pb-12 lg:pb-14">
+      <div className="relative flex h-full items-end pb-8 pt-20 sm:pb-8 lg:pb-10">
         <Container>
           <AnimatedSection className="max-w-xl">
             <h1 className="text-balance text-[1.45rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
