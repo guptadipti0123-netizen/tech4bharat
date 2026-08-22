@@ -27,17 +27,17 @@ export default function AboutPreview() {
 
             <AnimatedSection delay={0.08}>
               <div className="flex flex-col justify-center rounded-2xl bg-white/75 p-5 sm:p-7 shadow-sm backdrop-blur-md border border-white/70">
-                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
+                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1e3a8a]">
                   About Tech4Bharat
                 </span>
-                <h2 className="mt-2.5 text-[20px] sm:text-[26px] font-extrabold leading-tight text-[#020024] tracking-tight">
+                <h2 className="mt-2.5 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold leading-tight text-[#0B2A4A] tracking-tight">
                   National Platform for Social Entrepreneurship
                 </h2>
 
-                <p className="mt-3 text-base sm:text-[17px] leading-relaxed text-slate-600">
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
                   Tech4Bharat is dedicated to empowering India&apos;s youth with cutting-edge skills and supporting social impact startups across critical national domains.
                 </p>
-                <p className="mt-2.5 text-base sm:text-[17px] leading-relaxed text-slate-600">
+                <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-slate-600">
                   Through mentorship, research translation with leading academic institutions, and ecosystem partnerships, we help founders build sustainable ventures for Bharat.
                 </p>
 

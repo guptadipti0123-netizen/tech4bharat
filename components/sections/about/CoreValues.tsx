@@ -93,13 +93,13 @@ export default function CoreValues() {
 
       <Container>
         <AnimatedSection className="mx-auto max-w-xl text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EAF4FB] px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#1976D2]">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EAF4FB] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#1976D2]">
             Guiding Principles
           </span>
-          <h2 className="mt-2 font-(family-name:--font-poppins) text-[20px] font-extrabold leading-tight tracking-tight text-[#0B2A4A] sm:text-[23px] lg:text-[25px]">
+          <h2 className="mt-2 font-(family-name:--font-poppins) text-[22px] font-extrabold leading-tight tracking-tight text-[#0B2A4A] sm:text-[26px] lg:text-[28px]">
             Core Values
           </h2>
-          <p className="mx-auto mt-2 max-w-lg text-balance text-[12.5px] leading-relaxed text-slate-600 sm:text-[13.5px]">
+          <p className="mx-auto mt-2 max-w-lg text-balance text-[13.5px] leading-relaxed text-slate-600 sm:text-[15px]">
             The principles that guide every initiative at Tech4Bharat.
           </p>
         </AnimatedSection>

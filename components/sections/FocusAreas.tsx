@@ -130,7 +130,7 @@ export default function FocusAreas() {
             <h2 className="mt-2.5 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold tracking-tight text-[#0B2A4A]">
               Social Impact Domains
             </h2>
-            <p className="mx-auto mt-2 max-w-xl text-base sm:text-[17px] leading-relaxed text-slate-600">
+            <p className="mx-auto mt-2 max-w-xl text-[13.5px] sm:text-[15px] leading-relaxed text-slate-600">
               Supporting purpose-driven startups solving core socio-economic challenges across India.
             </p>
           </AnimatedSection>

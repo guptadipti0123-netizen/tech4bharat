@@ -44,7 +44,7 @@ export default function PageHero({
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <h1
             className={cn(
-              "text-[26px] font-extrabold leading-tight tracking-tight text-ink-900 sm:text-[32px] lg:text-[36px]",
+              "text-[26px] font-extrabold leading-tight tracking-tight text-ink-900 sm:text-[34px] lg:text-[40px]",
               titleClassName
             )}
           >
@@ -52,7 +52,7 @@ export default function PageHero({
           </h1>
           <p
             className={cn(
-              "mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600",
+              "mx-auto mt-3 max-w-2xl text-[14px] sm:text-[16px] leading-relaxed text-slate-600",
               descriptionClassName
             )}
           >

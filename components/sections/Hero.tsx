@@ -112,21 +112,21 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent" />
       <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/25 to-transparent" />
 
-      <div className="relative flex h-full min-h-135 items-end pb-6 pt-16 sm:min-h-160 sm:items-center sm:pb-0 sm:pt-0 lg:min-h-screen">
+      <div className="relative flex h-full min-h-135 items-end pb-8 pt-20 sm:min-h-160 sm:items-center sm:pb-0 sm:pt-0 lg:min-h-screen">
         <Container>
-          <AnimatedSection className="max-w-xl">
-            <h1 className="text-balance text-[1.1rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.45rem] lg:text-[1.7rem]">
+          <AnimatedSection className="max-w-2xl">
+            <h1 className="text-balance text-[26px] font-extrabold leading-[1.15] tracking-tight text-white sm:text-[36px] md:text-[42px] lg:text-[48px]">
               A National Platform for{" "}
               <span className="text-[#FFE08A]">Social Entrepreneurship and Innovation</span>
             </h1>
-            <p className="mt-2 max-w-lg text-balance text-[11.5px] leading-5 text-white/85 sm:mt-3 sm:text-[12.5px]">
+            <p className="mt-3.5 max-w-xl text-balance text-[16px] font-medium leading-relaxed text-white sm:mt-4 sm:text-[19px] lg:text-[21px]">
               Tech4Bharat is proposed to be established as a Section 8 Company.
             </p>
-            <div className="mt-3 flex flex-wrap gap-2 sm:mt-4 sm:gap-2.5">
-              <Button href="/programs" size="sm" className="px-3 py-1.5 text-[12px]">
-                Explore Programs <ArrowRight size={14} />
+            <div className="mt-5 flex flex-wrap gap-3 sm:mt-6">
+              <Button href="/programs" size="md">
+                Explore Programs <ArrowRight size={16} />
               </Button>
-              <Button href="/contact" size="sm" variant="outline" className="px-3 py-1.5 text-[12px]">
+              <Button href="/contact" size="md" variant="outline">
                 Contact Us
               </Button>
             </div>

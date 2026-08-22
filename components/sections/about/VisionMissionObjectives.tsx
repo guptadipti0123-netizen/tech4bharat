@@ -47,7 +47,7 @@ export default function VisionMissionObjectives() {
           <SectionTitle
             title="Vision, Mission & Objectives"
             className="max-w-3xl"
-            titleClassName="text-balance text-[19px] sm:text-[21px] font-bold leading-tight tracking-tight text-[#082F63] lg:text-[23px]"
+            titleClassName="text-balance text-[22px] sm:text-[26px] font-extrabold leading-tight tracking-tight text-[#082F63] lg:text-[28px]"
           />
         </AnimatedSection>
 

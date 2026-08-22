@@ -18,7 +18,7 @@ export default function BootcampHero() {
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <AnimatedSection>
-            <h1 className="text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0B2A4A] sm:text-[32px] lg:text-[36px]">
+            <h1 className="text-[26px] font-extrabold leading-[1.15] tracking-tight text-[#0B2A4A] sm:text-[34px] lg:text-[40px]">
               One-Day Startup Bootcamp 2026
             </h1>
             <p className="mt-3 max-w-xl text-[14px] sm:text-[15px] leading-relaxed text-slate-600">

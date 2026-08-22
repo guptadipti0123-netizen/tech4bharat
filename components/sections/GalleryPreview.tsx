@@ -51,13 +51,13 @@ export default function GalleryPreview() {
       <Container>
         <div className="rounded-3xl bg-gradient-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-4 sm:p-7 shadow-lg border border-white/60">
           <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1e3a8a]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#1e3a8a]">
               Workshop Highlights
             </span>
-            <h2 className="mt-2 text-[20px] sm:text-[26px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+            <h2 className="mt-2 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
               Moments From the Ecosystem
             </h2>
-            <p className="mx-auto mt-1.5 max-w-lg text-[12px] sm:text-[14px] leading-relaxed text-gray-600">
+            <p className="mx-auto mt-2 max-w-lg text-[13.5px] sm:text-[15px] leading-relaxed text-slate-600">
               Glimpses from our hands-on workshops, campus cohorts, and institutional field visits.
             </p>
           </AnimatedSection>
@@ -75,7 +75,7 @@ export default function GalleryPreview() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#020024]/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-2.5 sm:p-3">
-                    <span className="text-[10.5px] sm:text-[12px] font-semibold text-white drop-shadow-sm">
+                    <span className="text-xs sm:text-[13px] font-semibold text-white drop-shadow-sm">
                       {tile.caption}
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export default function GalleryPreview() {
           </div>
 
           <AnimatedSection delay={0.2} className="mt-6 text-center">
-            <Button href="/gallery" variant="outline" size="sm" className="text-xs">
+            <Button href="/gallery" variant="outline" size="sm" className="text-xs sm:text-sm">
               View Full Gallery <ArrowRight size={13} />
             </Button>
           </AnimatedSection>

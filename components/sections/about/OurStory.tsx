@@ -47,17 +47,17 @@ export default function OurStory() {
           <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-10">
             {/* Left Column (Desktop) / Top (Mobile): Who We Are Text */}
             <AnimatedSection className="text-center lg:text-left">
-              <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 border border-blue-100/90 px-2.5 py-0.5 text-[9.5px] sm:text-[10.5px] font-bold uppercase tracking-wider text-[#155E9A]">
+              <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 border border-blue-100/90 px-2.5 py-0.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#155E9A]">
                 Our Foundation
               </span>
-              <h2 className="mt-2 text-[20px] sm:text-[26px] lg:text-[30px] font-extrabold tracking-tight text-[#0B2A4A]">
+              <h2 className="mt-2 text-[22px] sm:text-[28px] lg:text-[30px] font-extrabold tracking-tight text-[#0B2A4A]">
                 Who We Are
               </h2>
-              <p className="mt-3 text-base sm:text-[17px] leading-relaxed text-slate-600">
-                Tech4Bharat is a national initiative dedicated to empowering India&apos;s youth
+              <p className="mt-2.5 text-[12px] sm:text-[13px] leading-relaxed text-slate-600">
+                Tech4Bharat is dedicated to empowering India&apos;s youth
                 with cutting-edge skills in the rapidly evolving technology landscape.
               </p>
-              <p className="mt-2.5 text-base sm:text-[17px] leading-relaxed text-slate-600">
+              <p className="mt-2 text-[12px] sm:text-[13px] leading-relaxed text-slate-600">
                 We believe the nation&apos;s progress rests on empowering young minds with the
                 right knowledge, tools, and opportunities.
               </p>
