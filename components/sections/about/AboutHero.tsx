@@ -12,7 +12,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
  *  short phones; it does not crop the image (contain, not cover). */
 export default function AboutHero() {
   return (
-    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:aspect-[21/9] sm:min-h-100 sm:max-h-[480px] lg:max-h-[500px]">
+    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-115">
       <Image
         src="/images/about/team.png"
         alt="Tech4Bharat team collaborating at the innovation centre"
