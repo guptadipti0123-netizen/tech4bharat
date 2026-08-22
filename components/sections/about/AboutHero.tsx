@@ -12,7 +12,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
  *  short phones; it does not crop the image (contain, not cover). */
 export default function AboutHero() {
   return (
-    <section className="relative aspect-4/3 min-h-140 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-115">
+    <section className="relative h-[380px] w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:h-[420px] lg:h-[440px]">
       <Image
         src="/images/about/team.png"
         alt="Tech4Bharat team collaborating at the innovation centre"
@@ -24,17 +24,17 @@ export default function AboutHero() {
       <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/90 via-[#0B2A4A]/55 to-[#0B2A4A]/30" />
       <div className="absolute inset-0 bg-linear-to-r from-[#0B2A4A]/85 via-[#0B2A4A]/40 to-transparent" />
 
-      <div className="relative flex h-full items-end pb-10 pt-20 sm:pb-14 lg:pb-16">
+      <div className="relative flex h-full items-end pb-8 pt-20 sm:pb-10 lg:pb-12">
         <Container>
           <AnimatedSection className="max-w-xl">
             <h1 className="text-balance text-[1.45rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
               About Tech4Bharat
             </h1>
-            <p className="mt-3 max-w-lg text-balance text-[13px] leading-6 text-white/85 sm:mt-4 sm:text-[14px]">
+            <p className="mt-2.5 max-w-lg text-balance text-[13px] leading-6 text-white/85 sm:mt-3 sm:text-[14px]">
               Tech4Bharat is proposed to be established as a Section 8 Company — a national
               platform for social entrepreneurship and innovation.
             </p>
-            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-6 sm:gap-3">
+            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-5 sm:gap-3">
               <Button href="/programs" size="sm">
                 Explore Programs <ArrowRight size={18} />
               </Button>
