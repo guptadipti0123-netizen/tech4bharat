@@ -77,7 +77,7 @@ export default function PartnersPreview() {
 
                   {/* Institutional Crest Monogram */}
                   <div
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br ${partner.gradient} text-white font-extrabold text-xs tracking-wider shadow-xs group-hover:scale-105 transition-transform`}
+                    className={`flex h-10 min-w-11 px-1 shrink-0 items-center justify-center rounded-lg bg-linear-to-br ${partner.gradient} text-white font-extrabold text-[11px] sm:text-xs tracking-tight whitespace-nowrap shadow-xs group-hover:scale-105 transition-transform`}
                   >
                     {partner.monogram}
                   </div>
