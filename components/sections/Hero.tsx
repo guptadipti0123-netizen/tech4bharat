@@ -76,16 +76,13 @@ export default function Hero() {
     <section
       id="top"
       aria-label="Hero Showcase"
-      className="relative h-[380px] w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:h-[420px] lg:h-[440px]"
+      className="relative min-h-135 w-full overflow-hidden rounded-b-[48px] bg-[#0B2A4A] sm:min-h-0 sm:aspect-[21/9] sm:max-h-[420px] lg:max-h-[440px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Background slideshow — same treatment (gradient wash, rounded-b corners) as the
-          About page hero, so the two pages read as one visual language. Stacking is by
-          plain DOM order (image, then gradients, then content) — no z-index — matching
-          AboutHero's pattern exactly. */}
+      {/* Background slideshow */}
       <div className="absolute inset-0">
         {heroSlides.map((slide, index) => {
           const isActive = index === currentSlide;
@@ -109,24 +106,24 @@ export default function Hero() {
           );
         })}
       </div>
-      <div className="absolute inset-0 bg-linear-to-t from-[#0B2A4A]/90 via-[#0B2A4A]/55 to-[#0B2A4A]/30" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#0B2A4A]/85 via-[#0B2A4A]/40 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent sm:from-[#0B2A4A]/90 sm:via-[#0B2A4A]/55 sm:to-[#0B2A4A]/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/25 to-transparent sm:from-[#0B2A4A]/85 sm:via-[#0B2A4A]/40" />
 
-      <div className="relative flex h-full items-end pb-8 pt-20 sm:pb-10 lg:pb-12">
+      <div className="relative flex h-full min-h-135 items-end pb-6 pt-16 sm:min-h-0 sm:pb-10 lg:pb-12">
         <Container>
           <AnimatedSection className="max-w-xl">
-            <h1 className="text-balance text-[1.45rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
+            <h1 className="text-balance text-[1.1rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[1.9rem] lg:text-[2.15rem]">
               A National Platform for{" "}
               <span className="text-[#FFE08A]">Social Entrepreneurship and Innovation</span>
             </h1>
-            <p className="mt-2.5 max-w-lg text-balance text-[13px] leading-6 text-white/85 sm:mt-3 sm:text-[14px]">
+            <p className="mt-2 max-w-lg text-balance text-[11.5px] leading-5 text-white/85 sm:mt-3 sm:text-[14px] sm:leading-6">
               Tech4Bharat is proposed to be established as a Section 8 Company.
             </p>
-            <div className="mt-4 flex flex-wrap gap-2.5 sm:mt-5 sm:gap-3">
-              <Button href="/programs" size="sm">
-                Explore Programs <ArrowRight size={18} />
+            <div className="mt-3 flex flex-wrap gap-2 sm:mt-5 sm:gap-3">
+              <Button href="/programs" size="sm" className="px-3 py-1.5 text-[12px] sm:px-4 sm:py-2 sm:text-[13px]">
+                Explore Programs <ArrowRight size={14} className="sm:hidden" /><ArrowRight size={18} className="hidden sm:inline-block" />
               </Button>
-              <Button href="/contact" size="sm" variant="outline">
+              <Button href="/contact" size="sm" variant="outline" className="px-3 py-1.5 text-[12px] sm:px-4 sm:py-2 sm:text-[13px]">
                 Contact Us
               </Button>
             </div>
