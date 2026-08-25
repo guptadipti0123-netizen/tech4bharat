@@ -139,7 +139,7 @@ export default function VentureSpotlight() {
         </div>
 
         {/* Interactive Selector Tabs */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+        <div className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
           {spotlightStartups.map((startup) => {
             const isSelected = activeStartup.id === startup.id;
             return (
@@ -147,7 +147,7 @@ export default function VentureSpotlight() {
                 key={startup.id}
                 type="button"
                 onClick={() => setActiveStartup(startup)}
-                className={`flex items-center gap-3 p-3 sm:p-4 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
+                className={`flex items-center gap-2 sm:gap-3 p-2.5 sm:p-4 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                   isSelected
                     ? "bg-[#0B2A4A] text-white border-[#0B2A4A] shadow-md"
                     : "bg-[#F8FAFC] text-slate-800 border-slate-200 hover:bg-slate-100 hover:border-slate-300"
@@ -156,14 +156,14 @@ export default function VentureSpotlight() {
                 <StartupLogo
                   name={startup.name}
                   domain={startup.domain}
-                  size={36}
-                  className="h-8 w-8 sm:h-9 sm:w-9 rounded-lg shrink-0"
+                  size={32}
+                  className="h-7 w-7 sm:h-9 sm:w-9 rounded-lg shrink-0"
                 />
                 <div className="min-w-0">
-                  <div className="font-bold text-sm sm:text-[15px] truncate leading-tight">
+                  <div className="font-bold text-xs sm:text-[15px] truncate leading-tight">
                     {startup.name}
                   </div>
-                  <div className={`text-[11px] truncate mt-0.5 ${isSelected ? "text-slate-300" : "text-slate-500"}`}>
+                  <div className={`text-[10px] sm:text-[11px] truncate mt-0.5 ${isSelected ? "text-slate-300" : "text-slate-500"}`}>
                     {startup.domain}
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export default function VentureSpotlight() {
         </div>
 
         {/* Selected Startup Detail Card */}
-        <div className="mt-6 rounded-3xl border border-slate-200 bg-linear-to-b from-[#F5FAFE] via-white to-[#F5FAFE] p-6 sm:p-8 lg:p-10 shadow-sm">
+        <div className="mt-4 sm:mt-6 rounded-2xl sm:rounded-3xl border border-slate-200 bg-linear-to-b from-[#F5FAFE] via-white to-[#F5FAFE] p-4 sm:p-8 lg:p-10 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Col: Details & Problem / Solution */}
             <div className="lg:col-span-7">

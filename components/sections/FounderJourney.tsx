@@ -99,8 +99,34 @@ export default function FounderJourney() {
           </p>
         </AnimatedSection>
 
-        {/* 4-Stage Stepper Buttons */}
-        <div className="mt-6 sm:mt-8 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
+        {/* Mobile Segmented Stage Selector */}
+        <div className="mt-5 grid grid-cols-4 gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200/80 sm:hidden">
+          {stages.map((stage, idx) => {
+            const isSelected = activeStage === idx;
+            return (
+              <button
+                key={stage.step}
+                type="button"
+                onClick={() => setActiveStage(idx)}
+                className={`py-2 px-1 rounded-lg text-center transition-all ${
+                  isSelected
+                    ? "bg-[#0B2A4A] text-white shadow-xs"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                <div className={`text-[10px] font-mono font-extrabold ${isSelected ? "text-amber-300" : "text-slate-500"}`}>
+                  P-{stage.step}
+                </div>
+                <div className="text-[11.5px] font-bold truncate mt-0.5">
+                  {stage.phase.split(" ")[0]}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Desktop & Tablet 4-Stage Stepper Buttons */}
+        <div className="mt-6 sm:mt-8 hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
           {stages.map((stage, idx) => {
             const Icon = stage.icon;
             const isSelected = activeStage === idx;
