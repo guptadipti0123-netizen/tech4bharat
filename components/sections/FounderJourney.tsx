@@ -84,24 +84,23 @@ export default function FounderJourney() {
   const [activeStage, setActiveStage] = useState(0);
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-18 bg-white border-y border-slate-200/80">
+    <section className="relative overflow-hidden py-8 sm:py-12 bg-white border-y border-slate-100">
       <Container>
         {/* Section Header */}
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700">
-            <ShieldCheck size={14} className="text-brand-600" />
-            <span>Structured Incubation Framework</span>
-          </div>
-          <h2 className="mt-3 text-[24px] sm:text-[32px] lg:text-[38px] font-extrabold tracking-tight text-[#0B2A4A]">
+        <AnimatedSection className="mx-auto max-w-2xl text-center">
+          <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
+            <ShieldCheck size={13} className="text-brand-600" /> Incubation Framework
+          </span>
+          <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-tight text-[#0B2A4A]">
             The 4-Stage Bharat Acceleration Pipeline
           </h2>
-          <p className="mx-auto mt-2.5 max-w-2xl text-[14px] sm:text-[16px] leading-relaxed text-slate-600">
-            From initial grassroots problem discovery and academic lab R&amp;D to regulatory pilots and national scaling — how we support founders every step of the way.
+          <p className="mx-auto mt-1.5 max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-slate-600">
+            How we guide purpose-driven founders from grassroots discovery to national scale.
           </p>
         </AnimatedSection>
 
-        {/* 4-Stage Stepper Buttons (Desktop & Tablet) */}
-        <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3">
+        {/* 4-Stage Stepper Buttons */}
+        <div className="mt-6 sm:mt-8 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
           {stages.map((stage, idx) => {
             const Icon = stage.icon;
             const isSelected = activeStage === idx;
@@ -110,34 +109,34 @@ export default function FounderJourney() {
                 key={stage.step}
                 type="button"
                 onClick={() => setActiveStage(idx)}
-                className={`relative flex flex-col items-start p-4 sm:p-5 rounded-2xl border text-left transition-all duration-300 cursor-pointer ${
+                className={`relative flex flex-col items-start p-3 sm:p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                   isSelected
-                    ? "bg-[#0B2A4A] text-white border-[#0B2A4A] shadow-lg shadow-[#0B2A4A]/15 scale-101"
+                    ? "bg-[#0B2A4A] text-white border-[#0B2A4A] shadow-md scale-101"
                     : "bg-[#F8FAFC] text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                 }`}
               >
                 <div className="flex items-center justify-between w-full">
                   <span
-                    className={`font-mono text-xs sm:text-sm font-extrabold px-2 py-0.5 rounded-md ${
+                    className={`font-mono text-[11px] font-extrabold px-1.5 py-0.5 rounded ${
                       isSelected ? "bg-amber-400 text-slate-950" : "bg-slate-200 text-slate-800"
                     }`}
                   >
                     PHASE {stage.step}
                   </span>
                   <div
-                    className={`flex h-8 w-8 items-center justify-center rounded-lg ${
+                    className={`flex h-7 w-7 items-center justify-center rounded-lg ${
                       isSelected ? "bg-white/15 text-white" : "bg-white text-brand-600 border border-slate-200"
                     }`}
                   >
-                    <Icon size={18} />
+                    <Icon size={15} />
                   </div>
                 </div>
 
-                <div className="mt-3">
-                  <div className={`text-xs font-semibold ${isSelected ? "text-amber-300" : "text-brand-600"}`}>
+                <div className="mt-2.5">
+                  <div className={`text-[11px] font-semibold ${isSelected ? "text-amber-300" : "text-brand-600"}`}>
                     {stage.phase}
                   </div>
-                  <div className="text-[14.5px] sm:text-[15.5px] font-bold leading-snug mt-0.5">
+                  <div className="text-[13px] sm:text-[14px] font-bold leading-snug mt-0.5 truncate w-full">
                     {stage.title}
                   </div>
                 </div>
@@ -147,29 +146,29 @@ export default function FounderJourney() {
         </div>
 
         {/* Active Stage Deep-Dive Card */}
-        <div className="mt-6 rounded-3xl border border-slate-200 bg-[#F5FAFE] p-6 sm:p-8 lg:p-10 shadow-sm">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div className="mt-4 sm:mt-5 rounded-2xl border border-slate-200 bg-[#F5FAFE] p-4 sm:p-6 lg:p-7 shadow-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
             {/* Left Col: Overview & Deliverables */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-50 border border-brand-200 px-3 py-0.5 text-xs font-bold text-brand-700">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-2.5 py-0.5 text-[11px] font-bold text-brand-800">
                 Phase {stages[activeStage].step}: {stages[activeStage].badge}
-              </div>
-              <h3 className="mt-3 text-[22px] sm:text-[26px] font-extrabold text-[#0B2A4A] leading-tight">
+              </span>
+              <h3 className="mt-2 text-[18px] sm:text-[20px] font-bold text-[#0B2A4A] leading-snug">
                 {stages[activeStage].title}
               </h3>
-              <p className="mt-3 text-[14px] sm:text-[15.5px] leading-relaxed text-slate-700">
+              <p className="mt-2 text-[13px] sm:text-[13.5px] leading-relaxed text-slate-700">
                 {stages[activeStage].description}
               </p>
 
               {/* Deliverables */}
-              <div className="mt-5">
-                <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900">
+              <div className="mt-3.5 pt-3 border-t border-slate-200/70">
+                <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-slate-800">
                   Key Milestones &amp; Outcomes
                 </h4>
-                <ul className="mt-3 space-y-2.5">
+                <ul className="mt-2 space-y-1.5">
                   {stages[activeStage].deliverables.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-[13.5px] sm:text-[14.5px] text-slate-700">
-                      <CheckCircle2 size={17} className="mt-0.5 shrink-0 text-emerald-600" />
+                    <li key={item} className="flex items-start gap-2 text-[12.5px] sm:text-[13px] text-slate-700">
+                      <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-emerald-600" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -178,23 +177,23 @@ export default function FounderJourney() {
             </div>
 
             {/* Right Col: Institutional Support Box */}
-            <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs h-full">
+            <div className="lg:col-span-5 flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-xs h-full">
               <div>
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-700">
-                  <Building2 size={16} />
-                  <span>Institutional Ecosystem Backing</span>
+                <div className="flex items-center gap-1.5 text-[11.5px] font-bold uppercase tracking-wider text-brand-700">
+                  <Building2 size={14} />
+                  <span>Institutional Backing</span>
                 </div>
-                <p className="mt-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed text-slate-600">
+                <p className="mt-2 text-[12.5px] sm:text-[13px] leading-relaxed text-slate-600">
                   {stages[activeStage].supportPillars}
                 </p>
 
-                <div className="mt-4 border-t border-slate-100 pt-3.5">
-                  <div className="text-[12px] font-semibold text-slate-500">Partner Hubs Involved:</div>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
+                <div className="mt-3 border-t border-slate-100 pt-2.5">
+                  <div className="text-[11px] font-semibold text-slate-500">Partner Hubs:</div>
+                  <div className="mt-1.5 flex flex-wrap gap-1">
                     {["IIT Bombay CDTIES", "COEP Tech University", "VJTI Mumbai", "C-DAC Pune"].map((hub) => (
                       <span
                         key={hub}
-                        className="rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700 border border-slate-200"
+                        className="rounded-md bg-slate-50 px-2 py-0.5 text-[10.5px] font-semibold text-slate-700 border border-slate-200"
                       >
                         {hub}
                       </span>
@@ -203,12 +202,12 @@ export default function FounderJourney() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                <Button href="/incubation-acceleration" size="sm" variant="primary" className="text-xs">
-                  Apply for Incubation <ArrowRight size={13} />
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2.5">
+                <Button href="/incubation-acceleration" size="sm" variant="primary" className="text-xs px-3 py-1.5">
+                  Incubation Details <ArrowRight size={12} />
                 </Button>
-                <Button href="/programs" size="sm" variant="outline" className="text-xs">
-                  View Programs
+                <Button href="/programs" size="sm" variant="outline" className="text-xs px-3 py-1.5">
+                  All Programs
                 </Button>
               </div>
             </div>
