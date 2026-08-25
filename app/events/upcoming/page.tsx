@@ -129,13 +129,13 @@ export default function UpcomingEventsPage() {
               </p>
             </AnimatedSection>
 
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="mx-auto max-w-4xl space-y-4">
               {otherUpcomingEvents.map((event, i) => {
               const { day, month } = getDateParts(event.date);
               return (
                 <AnimatedSection key={event.id} delay={i * 0.05} className="h-full">
-                  <div className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-md">
-                    <div className="relative aspect-16/9 w-full overflow-hidden bg-slate-100">
+                  <div className="group flex flex-col md:flex-row overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md">
+                    <div className="relative aspect-16/9 md:aspect-auto md:w-5/12 shrink-0 overflow-hidden bg-slate-100 min-h-[190px]">
                       <Image
                         src={getEventImage(event.slug)}
                         alt={event.title}
@@ -158,36 +158,38 @@ export default function UpcomingEventsPage() {
                       </div>
                     </div>
 
-                    <div className="flex flex-1 flex-col p-5">
-                      <div className="flex items-center gap-3 text-xs text-slate-500">
-                        <span className="flex items-center gap-1">
-                          <MapPin size={13} className="text-brand-600" /> {event.venue}
-                        </span>
-                        {event.time && (
+                    <div className="flex flex-1 flex-col justify-between p-4 sm:p-5">
+                      <div>
+                        <div className="flex items-center gap-3 text-xs text-slate-500">
                           <span className="flex items-center gap-1">
-                            <Clock size={13} className="text-brand-600" /> {event.time}
+                            <MapPin size={13} className="text-brand-600" /> {event.venue}
                           </span>
+                          {event.time && (
+                            <span className="flex items-center gap-1">
+                              <Clock size={13} className="text-brand-600" /> {event.time}
+                            </span>
+                          )}
+                        </div>
+
+                        <h3 className="mt-2 text-base sm:text-lg font-bold text-[#0B2A4A] group-hover:text-brand-700 transition-colors">
+                          {event.title}
+                        </h3>
+
+                        <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-slate-600">
+                          {event.description}
+                        </p>
+
+                        {event.speakers.length > 0 && (
+                          <div className="mt-3 border-t border-slate-100 pt-2.5">
+                            <p className="text-xs font-semibold text-slate-800">
+                              Speaker: {event.speakers[0].name}
+                            </p>
+                            <p className="text-[11px] text-slate-500">
+                              {event.speakers[0].designation}
+                            </p>
+                          </div>
                         )}
                       </div>
-
-                      <h3 className="mt-2.5 text-base font-bold text-[#0B2A4A] group-hover:text-brand-700 transition-colors line-clamp-2">
-                        {event.title}
-                      </h3>
-
-                      <p className="mt-1.5 text-xs leading-relaxed text-slate-600 line-clamp-2 flex-1">
-                        {event.description}
-                      </p>
-
-                      {event.speakers.length > 0 && (
-                        <div className="mt-3.5 border-t border-slate-100 pt-3">
-                          <p className="text-[11px] font-semibold text-slate-700">
-                            Speaker: {event.speakers[0].name}
-                          </p>
-                          <p className="text-[10px] text-slate-500 truncate">
-                            {event.speakers[0].designation}
-                          </p>
-                        </div>
-                      )}
 
                       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
                         <Link
@@ -196,7 +198,7 @@ export default function UpcomingEventsPage() {
                         >
                           View Details <ArrowRight size={13} />
                         </Link>
-                        <Button href="/contact" size="sm" variant="outline" className="text-[11px] py-1 px-3">
+                        <Button href="/contact" size="sm" variant="outline" className="text-xs py-1 px-3.5">
                           RSVP
                         </Button>
                       </div>

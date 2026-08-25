@@ -44,19 +44,19 @@ export default function BootcampHero() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.15} animation="scale">
-            <div className="relative mx-auto w-full max-w-xl">
+            <div className="relative mx-auto w-full max-w-md">
               <div
-                className="pointer-events-none absolute -inset-6 -z-10 rounded-[36px] opacity-70"
+                className="pointer-events-none absolute -inset-4 -z-10 rounded-[28px] opacity-70"
                 style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(21,94,154,0.16), transparent 70%)" }}
                 aria-hidden="true"
               />
-              <div className="relative h-95 w-full animate-float overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-2xl sm:h-115 lg:h-140">
+              <div className="relative aspect-4/3 max-h-[320px] w-full animate-float overflow-hidden rounded-2xl border-4 border-white bg-white shadow-xl">
                 <Image
                   src="/images/gallery/gallery-8.jpg"
                   alt="Founders collaborating at the Tech4Bharat Startup Bootcamp"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 450px"
                   className="object-cover object-center"
                 />
               </div>
