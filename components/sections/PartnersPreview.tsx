@@ -55,11 +55,10 @@ export default function PartnersPreview() {
     <section id="partners" className="bg-[#F8FAFC] py-10 sm:py-16 border-t border-slate-200/80">
       <Container>
         <AnimatedSection className="mx-auto max-w-2xl text-center">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700">
-            <ShieldCheck size={14} className="text-brand-600" />
-            <span>Institutional Alliances</span>
-          </div>
-          <h2 className="mt-2.5 text-[24px] sm:text-[30px] lg:text-[36px] font-extrabold tracking-tight text-[#0B2A4A]">
+          <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
+            <ShieldCheck size={13} className="text-brand-600" /> Institutional Alliances
+          </span>
+          <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-tight text-[#0B2A4A]">
             Knowledge &amp; Technology Partners
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-[14px] sm:text-[15.5px] leading-relaxed text-slate-600">

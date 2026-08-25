@@ -43,10 +43,10 @@ export default function ProgramsPreview() {
           <AnimatedSection>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
               <div>
-                <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#1e3a8a]">
+                <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
                   Founder Pathways
                 </span>
-                <h2 className="mt-2 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+                <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-tight text-[#0B2A4A]">
                   How Founders Work With Us
                 </h2>
               </div>

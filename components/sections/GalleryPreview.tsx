@@ -51,10 +51,10 @@ export default function GalleryPreview() {
       <Container>
         <div className="rounded-3xl bg-gradient-to-b from-[#edeef8] via-[#f8f9ff] to-[#c5d1ff] p-4 sm:p-7 shadow-lg border border-white/60">
           <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#1e3a8a]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
               Workshop Highlights
             </span>
-            <h2 className="mt-2 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold tracking-tight bg-gradient-to-r from-[#020024] via-[#090979] to-[#00D4FF] bg-clip-text text-transparent">
+            <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-tight text-[#0B2A4A]">
               Moments From the Ecosystem
             </h2>
             <p className="mx-auto mt-2 max-w-lg text-[13.5px] sm:text-[15px] leading-relaxed text-slate-600">

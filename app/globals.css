@@ -53,9 +53,9 @@
   --color-sand-200: #cfe6f5;
   --color-sand-300: #9fcbe8;
 
-  /* Heading ink — the given Text Dark (#102A43), used site-wide for
+  /* Heading ink — the given Text Dark (#0B2A4A), used site-wide for
      headings and hover states. */
-  --color-ink-900: #102a43;
+  --color-ink-900: #0b2a4a;
 
   /* Neutral scale — retuned to a blue-tinted gray so `slate-*` utilities
      already used across ~30 components automatically match the new palette

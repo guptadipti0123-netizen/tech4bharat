@@ -27,10 +27,10 @@ export default function AboutPreview() {
 
             <AnimatedSection delay={0.08}>
               <div className="flex flex-col justify-center rounded-2xl bg-white/75 p-5 sm:p-7 shadow-sm backdrop-blur-md border border-white/70">
-                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-[#1e3a8a]">
+                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
                   About Tech4Bharat
                 </span>
-                <h2 className="mt-2.5 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold leading-tight text-[#0B2A4A] tracking-tight">
+                <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold leading-tight text-[#0B2A4A] tracking-tight">
                   National Platform for Social Entrepreneurship
                 </h2>
 

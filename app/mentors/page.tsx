@@ -32,10 +32,10 @@ export default function MentorsPage() {
         <Container className="relative">
           <AnimatedSection>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-[20px] sm:text-[26px] font-bold text-[#020024] tracking-tight">
+              <h2 className="text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold text-[#0B2A4A] tracking-tight">
                 Operators Who&apos;ve Built at Scale
               </h2>
-              <p className="mx-auto mt-2 max-w-xl text-base sm:text-lg leading-relaxed text-slate-600">
+              <p className="mx-auto mt-2 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600">
                 Hands-on guidance from founders and seasoned operators who have built impactful products.
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function MentorsPage() {
         <Container className="relative">
           <AnimatedSection>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-[19px] sm:text-[24px] font-bold text-[#020024] tracking-tight">
+              <h2 className="text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold text-[#0B2A4A] tracking-tight">
                 Strategic &amp; Academic Advisors
               </h2>
               <p className="mx-auto mt-2 max-w-xl text-base sm:text-lg leading-relaxed text-slate-600">

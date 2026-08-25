@@ -123,11 +123,10 @@ export default function VentureSpotlight() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700">
-              <TrendingUp size={14} className="text-brand-600" />
-              <span>Venture Impact Showcase</span>
-            </div>
-            <h2 className="mt-2.5 text-[24px] sm:text-[32px] lg:text-[36px] font-extrabold tracking-tight text-[#0B2A4A]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
+              <TrendingUp size={13} className="text-brand-600" /> Venture Impact Showcase
+            </span>
+            <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-tight text-[#0B2A4A]">
               High-Impact Ventures Solving for Bharat
             </h2>
             <p className="mt-2 max-w-2xl text-[14px] sm:text-[15.5px] leading-relaxed text-slate-600">

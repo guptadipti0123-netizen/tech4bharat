@@ -175,11 +175,10 @@ export default function IncubationAccelerationPage() {
       <section className="bg-[#F8FAFC] py-12 sm:py-16 border-t border-slate-200/80">
         <Container>
           <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700">
-              <ShieldCheck size={14} />
-              <span>Selection Framework</span>
-            </div>
-            <h2 className="mt-3 text-[22px] sm:text-[28px] font-extrabold text-[#0B2A4A]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
+              <ShieldCheck size={13} className="text-brand-600" /> Selection Framework
+            </span>
+            <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-tight text-[#0B2A4A]">
               What We Look For in Founding Teams
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-slate-600">
