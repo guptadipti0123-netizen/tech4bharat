@@ -208,24 +208,9 @@ export default function Navbar() {
                 </div>
               );
             })}
-
-            {/* High-contrast Apply Now CTA */}
-            <Link
-              href="/incubation-acceleration"
-              className="ml-2 inline-flex items-center gap-1.5 rounded-full bg-[#0B2A4A] px-4 py-2 font-heading text-xs font-bold text-white shadow-md shadow-[#0B2A4A]/20 transition-all hover:bg-brand-600 hover:scale-105"
-            >
-              <Rocket size={13} />
-              <span>Apply Now</span>
-            </Link>
           </nav>
 
           <div className="flex items-center gap-1 xl:hidden">
-            <Link
-              href="/incubation-acceleration"
-              className="mr-1 inline-flex items-center gap-1 rounded-full bg-[#0B2A4A] px-3 py-1.5 text-xs font-bold text-white shadow-xs"
-            >
-              <span>Apply</span>
-            </Link>
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-full bg-brand-50 p-2 text-brand-700"
