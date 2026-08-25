@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   ArrowRight,
   Brain,
@@ -23,8 +24,6 @@ interface DomainItem {
   color: string;
   iconBg: string;
   borderHover: string;
-  tagBg: string;
-  tagColor: string;
 }
 
 const domainList: DomainItem[] = [
@@ -32,168 +31,145 @@ const domainList: DomainItem[] = [
     title: "AgriTech",
     icon: Sprout,
     tag: "Agriculture",
-    description: "Smart farming, supply chain, and yield optimization.",
+    description: "Smart farming, supply chain & soil analytics",
     color: "#059669",
     iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200",
     borderHover: "hover:border-emerald-400",
-    tagBg: "bg-emerald-50 border-emerald-100",
-    tagColor: "text-emerald-700",
   },
   {
-    title: "AI / DeepTech",
+    title: "AI & DeepTech",
     icon: Brain,
-    tag: "AI & ML",
-    description: "Machine learning, data governance & generative systems.",
+    tag: "DeepTech",
+    description: "Machine learning, Indic AI & computer vision",
     color: "#4F46E5",
     iconBg: "bg-indigo-50 text-indigo-600 border-indigo-200",
     borderHover: "hover:border-indigo-400",
-    tagBg: "bg-indigo-50 border-indigo-100",
-    tagColor: "text-indigo-700",
   },
   {
     title: "Climate & Clean Energy",
     icon: Leaf,
-    tag: "Sustainability",
-    description: "Renewable energy, carbon reduction, and grid tech.",
+    tag: "CleanTech",
+    description: "Solar microgrids & industrial carbon reduction",
     color: "#0D9488",
     iconBg: "bg-teal-50 text-teal-600 border-teal-200",
     borderHover: "hover:border-teal-400",
-    tagBg: "bg-teal-50 border-teal-100",
-    tagColor: "text-teal-700",
   },
   {
     title: "HealthTech & MedTech",
     icon: HeartPulse,
     tag: "Healthcare",
-    description: "Affordable diagnostics, telemedicine & devices.",
+    description: "Affordable diagnostic devices & telemedicine",
     color: "#E11D48",
     iconBg: "bg-rose-50 text-rose-600 border-rose-200",
     borderHover: "hover:border-rose-400",
-    tagBg: "bg-rose-50 border-rose-100",
-    tagColor: "text-rose-700",
   },
   {
     title: "Water & Sanitation",
     icon: Droplets,
     tag: "Clean Water",
-    description: "Purification tech, leak detection & conservation.",
+    description: "Solar water purification & leak detection",
     color: "#0284C7",
     iconBg: "bg-sky-50 text-sky-600 border-sky-200",
     borderHover: "hover:border-sky-400",
-    tagBg: "bg-sky-50 border-sky-100",
-    tagColor: "text-sky-700",
   },
   {
     title: "Waste Management",
     icon: Recycle,
-    tag: "Circular",
-    description: "Recycling automation, bio-waste & material recovery.",
+    tag: "Circularity",
+    description: "Automated recycling & bio-waste recovery",
     color: "#D97706",
     iconBg: "bg-amber-50 text-amber-600 border-amber-200",
     borderHover: "hover:border-amber-400",
-    tagBg: "bg-amber-50 border-amber-100",
-    tagColor: "text-amber-700",
   },
   {
     title: "EdTech & Skilling",
     icon: GraduationCap,
     tag: "Education",
-    description: "Vernacular learning, tech skilling & STEM tools.",
+    description: "Vernacular STEM tools & tech apprenticeships",
     color: "#7C3AED",
     iconBg: "bg-purple-50 text-purple-600 border-purple-200",
     borderHover: "hover:border-purple-400",
-    tagBg: "bg-purple-50 border-purple-100",
-    tagColor: "text-purple-700",
   },
   {
     title: "Rural Development",
     icon: Building2,
     tag: "Livelihoods",
-    description: "Rural micro-enterprises & digital public infra.",
+    description: "Digital public infra & artisan market linkage",
     color: "#2563EB",
     iconBg: "bg-blue-50 text-blue-600 border-blue-200",
     borderHover: "hover:border-blue-400",
-    tagBg: "bg-blue-50 border-blue-100",
-    tagColor: "text-blue-700",
   },
 ];
 
 export default function FocusAreas() {
   return (
-    <section className="relative overflow-hidden py-10 sm:py-16 bg-white">
+    <section className="relative overflow-hidden py-8 sm:py-12 bg-white">
       <Container>
-        <div className="rounded-3xl bg-gradient-to-b from-[#EBF3FA] via-[#F4F8FC] to-[#DCE9F6] p-5 sm:p-8 lg:p-10 shadow-xl border border-white">
+        <div className="rounded-3xl bg-gradient-to-b from-[#EBF3FA] via-[#F4F8FC] to-[#DCE9F6] p-4 sm:p-7 shadow-lg border border-white">
           <AnimatedSection className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-200/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#155E9A]">
               <Sparkles size={13} className="text-brand-600" /> Key Focus Areas
             </span>
-            <h2 className="mt-2.5 text-[22px] sm:text-[28px] lg:text-[32px] font-extrabold tracking-tight text-[#0B2A4A]">
+            <h2 className="mt-2 text-[22px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-tight text-[#0B2A4A]">
               Social Impact Domains
             </h2>
-            <p className="mx-auto mt-2 max-w-xl text-[13.5px] sm:text-[15px] leading-relaxed text-slate-600">
+            <p className="mx-auto mt-1.5 max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-slate-600">
               Supporting purpose-driven startups solving core socio-economic challenges across India.
             </p>
           </AnimatedSection>
 
-          <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          {/* Sleek Compact Micro-Cards Grid */}
+          <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-3">
             {domainList.map((item, i) => {
               const Icon = item.icon;
               return (
-                <AnimatedSection key={item.title} delay={i * 0.03} className="h-full">
-                  <div
-                    className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200/80 bg-white p-3.5 sm:p-5.5 shadow-[0_4px_16px_rgba(11,42,74,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${item.borderHover}`}
+                <AnimatedSection key={item.title} delay={i * 0.02} className="h-full">
+                  <Link
+                    href="/portfolio"
+                    className={`group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-200/90 bg-white p-3 shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${item.borderHover}`}
                   >
-                    {/* Left colored bar on mobile, Top colored bar on desktop */}
-                    <div
-                      className="absolute left-0 top-0 bottom-0 w-1 sm:inset-x-0 sm:top-0 sm:bottom-auto sm:h-1 sm:w-full transition-all duration-300 group-hover:w-1.5 sm:group-hover:h-1.5"
+                    {/* Left Accent Bar */}
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-y-0 left-0 w-1"
                       style={{ backgroundColor: item.color }}
                     />
 
-                    <div className="pl-1 sm:pl-0">
-                      {/* Top row */}
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          <span
-                            className={`flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border shadow-2xs transition-transform duration-300 group-hover:scale-105 ${item.iconBg}`}
-                          >
-                            <Icon size={18} strokeWidth={2} className="sm:hidden" />
-                            <Icon size={20} strokeWidth={2} className="hidden sm:block" />
-                          </span>
-                          <h3 className="text-[14.5px] font-bold text-[#0B2A4A] leading-snug group-hover:text-brand-700 transition-colors sm:hidden">
-                            {item.title}
-                          </h3>
-                        </div>
-                        <span
-                          className={`rounded-full border px-2.5 py-0.5 text-[10.5px] sm:text-[11px] font-bold shrink-0 mt-0.5 ${item.tagBg} ${item.tagColor}`}
-                        >
+                    {/* Icon */}
+                    <span
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border shadow-2xs transition-transform duration-200 group-hover:scale-105 ${item.iconBg}`}
+                    >
+                      <Icon size={18} strokeWidth={2} />
+                    </span>
+
+                    {/* Content */}
+                    <div className="min-w-0 flex-1 pl-0.5">
+                      <div className="flex items-center justify-between gap-1">
+                        <h3 className="truncate text-[13.5px] sm:text-[14.5px] font-bold text-[#0B2A4A] group-hover:text-brand-700 transition-colors">
+                          {item.title}
+                        </h3>
+                        <span className="shrink-0 text-[10px] font-bold text-slate-400">
                           {item.tag}
                         </span>
                       </div>
-
-                      {/* Desktop Title */}
-                      <h3 className="hidden sm:block mt-3.5 text-[16px] font-bold text-[#0B2A4A] leading-snug group-hover:text-brand-700 transition-colors">
-                        {item.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="mt-2 text-[12.5px] sm:text-[13px] leading-relaxed text-slate-600">
+                      <p className="truncate text-[11.5px] sm:text-xs text-slate-500 mt-0.5">
                         {item.description}
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 </AnimatedSection>
               );
             })}
           </div>
 
-          <AnimatedSection delay={0.2} className="mt-8 text-center">
+          <AnimatedSection delay={0.15} className="mt-5 text-center">
             <Button
               href="/portfolio"
-              variant="primary"
-              size="md"
-              className="shadow-md shadow-brand-700/15"
+              variant="outline"
+              size="sm"
+              className="text-xs"
             >
-              Explore All 13 Domains in Portfolio <ArrowRight size={15} />
+              Explore All 13 Domains in Portfolio <ArrowRight size={13} />
             </Button>
           </AnimatedSection>
         </div>
