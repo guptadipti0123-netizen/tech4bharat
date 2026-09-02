@@ -47,11 +47,24 @@ export default function Footer() {
         {/* Columns */}
         <div className="grid gap-8 pt-8 sm:grid-cols-2 sm:pt-10 lg:grid-cols-4 lg:gap-10">
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="rounded-xl" />
-              <span className="font-heading text-base font-bold leading-none text-white">
-                Tech<span className="text-brand-300">4</span>Bharat
-              </span>
+            <Link href="/" className="group flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white p-1 shadow-sm transition-transform duration-200 group-hover:scale-105">
+                <Image
+                  src="/logo-icon.png"
+                  alt="Tech4Bharat"
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-heading text-base font-bold leading-none text-white">
+                  Tech<span className="text-[#F15A24]">4</span>Bharat
+                </span>
+                <span className="mt-1 text-[10px] font-medium tracking-wide text-white/70">
+                  Innovation with Impact
+                </span>
+              </div>
             </Link>
           </div>
 

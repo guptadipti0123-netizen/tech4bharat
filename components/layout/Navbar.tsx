@@ -124,10 +124,22 @@ export default function Navbar() {
       >
         <Container className="flex h-14 items-center justify-between md:h-17.5">
           <Link href="/" className="group flex min-w-0 shrink items-center gap-2.5">
-            <Image src="/logo1.png" alt="Tech4Bharat" width={36} height={36} className="h-9 w-9 rounded-xl md:h-10 md:w-10" />
-            <span className="font-heading text-[16px] font-semibold leading-none text-ink-900 md:text-lg">
-              Tech<span className="text-brand-500">4</span>Bharat
-            </span>
+            <Image
+              src="/logo-icon.png"
+              alt="Tech4Bharat"
+              width={42}
+              height={42}
+              priority
+              className="h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-105 md:h-10 md:w-10"
+            />
+            <div className="flex flex-col">
+              <span className="font-heading text-[16px] font-bold leading-none tracking-tight text-ink-900 md:text-lg">
+                Tech<span className="text-[#F15A24]">4</span>Bharat
+              </span>
+              <span className="hidden text-[9px] font-medium tracking-wide text-slate-500 sm:block md:text-[10px]">
+                Innovation with Impact
+              </span>
+            </div>
           </Link>
 
           <nav className="hidden items-center gap-1 xl:flex">

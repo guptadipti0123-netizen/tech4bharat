@@ -3,7 +3,6 @@ import Hero from "@/components/sections/Hero";
 import AboutPreview from "@/components/sections/AboutPreview";
 import FocusAreas from "@/components/sections/FocusAreas";
 import FounderJourney from "@/components/sections/FounderJourney";
-import VentureSpotlight from "@/components/sections/VentureSpotlight";
 import ProgramsPreview from "@/components/sections/ProgramsPreview";
 import PartnersPreview from "@/components/sections/PartnersPreview";
 import GalleryPreview from "@/components/sections/GalleryPreview";
@@ -59,7 +58,6 @@ export default function Home() {
       <AboutPreview />
       <FocusAreas />
       <FounderJourney />
-      <VentureSpotlight />
       <ProgramsPreview />
       <PartnersPreview />
       <GalleryPreview />

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Building2,
@@ -78,9 +79,12 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
     <>
       <aside className="hidden w-64 shrink-0 border-r border-slate-200 bg-white lg:flex lg:flex-col">
         <div className="flex h-20 items-center border-b border-slate-100 px-6">
-          <Link href="/admin" className="font-heading text-lg font-bold text-brand-900">
-            Tech<span className="text-accent-500">4</span>Bharat
-            <span className="ml-1.5 text-sm font-medium text-slate-400">Admin</span>
+          <Link href="/admin" className="flex items-center gap-2.5 font-heading text-lg font-bold text-brand-900">
+            <Image src="/logo-icon.png" alt="Tech4Bharat" width={32} height={32} className="h-8 w-8 object-contain" />
+            <span>
+              Tech<span className="text-[#F15A24]">4</span>Bharat
+              <span className="ml-1.5 text-xs font-semibold text-slate-400">Admin</span>
+            </span>
           </Link>
         </div>
         {nav}
@@ -91,7 +95,13 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
           <div className="fixed inset-0 bg-ink-900/60" onClick={onMobileClose} aria-hidden="true" />
           <aside className="fixed inset-y-0 left-0 flex w-72 flex-col bg-white shadow-2xl">
             <div className="flex h-20 items-center justify-between border-b border-slate-100 px-6">
-              <span className="font-heading text-lg font-bold text-brand-900">Admin Menu</span>
+              <Link href="/admin" onClick={onMobileClose} className="flex items-center gap-2.5 font-heading text-lg font-bold text-brand-900">
+                <Image src="/logo-icon.png" alt="Tech4Bharat" width={32} height={32} className="h-8 w-8 object-contain" />
+                <span>
+                  Tech<span className="text-[#F15A24]">4</span>Bharat
+                  <span className="ml-1.5 text-xs font-semibold text-slate-400">Admin</span>
+                </span>
+              </Link>
               <button
                 type="button"
                 onClick={onMobileClose}
